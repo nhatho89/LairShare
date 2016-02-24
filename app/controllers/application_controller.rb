@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def require_no_user!
+    render json: {error: "Already logged in"}, status: 400 if current_user
+  end
+
+  def require_login!
+    render json: {error: "Not logged in"}, status: 401 if current_user.nil?
+  end
+
   def current_user
     return nil unless session[:token]
     @current_user ||= User.find_by_session_token(session[:token])
@@ -26,7 +34,7 @@ class ApplicationController < ActionController::Base
     session[:token] = nil
   end
 
-  def require_signed_in!
-    redirect_to new_session_url unless signed_in?
+  def require_user!
+    render json: ["Not logged in!"] if current_user.nil?
   end
 end

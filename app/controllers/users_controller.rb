@@ -9,12 +9,12 @@ class UsersController < ApplicationController
       sign_in(@user)
       render json: current_user, :include => :user_profile
     else
-      flash.now[:errors] = @user.errors.full_messages, status: 400
+      render json: @user.errors.full_messages, status: 400
     end
   end
 
   private
   def user_params
-    params.require(:user).permit(:password, :super_name)
+    params.require(:user).permit(:password, :username)
   end
 end
