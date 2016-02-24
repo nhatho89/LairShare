@@ -1,24 +1,23 @@
-class Api::SessionsController < ApplicationController
-  before_action :require_no_user!, only: :create
+class SessionsController < ApplicationController
+  def new
+  end
 
   def create
     user = User.find_by_credentials(
       params[:user][:username],
-      params[:user][:password])
-    if user.nil?
-      render json: {error: "User not found"}, status: 401
+      params[:user][:password]
+    )
+
+    if user
+      sign_in(user)
+      redirect_to root_url
     else
-      login_user!(user)
-      render json: current_user, :include => :user_profile
+      render :new
     end
   end
 
   def destroy
-    logout_user!
-    render json: ["Logout successfully"]
-  end
-
-  def show
-    render json: current_user, :include => :user_profile
+    sign_out
+    redirect_to new_session_url
   end
 end

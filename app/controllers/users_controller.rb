@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       sign_in(@user)
-      render json: current_user, :include => :user_profile
+      redirect_to root_url
     else
-      render json: @user.errors.full_messages, status: 400
+      render :new
     end
   end
 
