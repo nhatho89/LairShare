@@ -2,15 +2,23 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var RoomConstants = require('../constants/roomConstants.js');
 
-var _rooms = [];
+var _rooms = {};
 var RoomStore = new Store(AppDispatcher)
 
 var receiveRoom = function(rooms) {
-  _rooms = rooms;
-}
+  _rooms = {};
+  rooms.forEach(function(room) {
+  _rooms[room.id] = room;
+  });
+};
+
+var patchDetail = function(room) {
+_rooms[room.id] = room;
+};
+
 
 RoomStore.all = function() {
-  return _rooms.slice(0);
+  return Object.assign({}, _rooms);
 };
 
 RoomStore.__onDispatch = function(payload) {

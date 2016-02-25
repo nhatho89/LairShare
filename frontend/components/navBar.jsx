@@ -38,7 +38,7 @@ var NavBar = React.createClass({
 
               <ul className="navbar-left">
 
-                
+
 
                   <li>
                     <a className="LS-logo" href="#">
@@ -58,7 +58,9 @@ var NavBar = React.createClass({
                       <img alt="LinkedIn" src="/assets/LinkedIn.png" />
                     </a>
                   </li>
+
               </ul>
+
             </div>
       </div>
     );

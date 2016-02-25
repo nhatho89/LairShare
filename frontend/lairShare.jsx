@@ -10,13 +10,26 @@ var RoomStore = require('./stores/room.js');
 var ApiUtil = require('./util/apiUtil.js');
 var hashHistory = require('react-router').hashHistory;
 var CurrentUser = require('./components/currentUser');
+var NavBar = require('./components/navBar');
+var Search = require('./components/Search');
+var RoomShow = require('./components/RoomShow');
+var RoomForm = require('./components/RoomForm');
+var ReviewForm = require('./components/ReviewForm');
 
+
+// var SearchIndex = require('./components/searchIndex');
+// var Redirect = ReactRouter.Redirect;
 
 
 
 var routes = (
   <Route component={App} path="/">
     <IndexRoute component={LandingPage}/>
+    <Route component={Search} path="rooms"/>
+      <Route path="rooms/new" component={RoomForm}/>
+      <Route path="rooms/:roomId" component={RoomShow}>
+        <Route path="review" components={ReviewForm}/>
+      </Route>
   </Route>
 );
 
