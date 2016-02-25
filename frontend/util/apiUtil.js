@@ -1,17 +1,16 @@
-var ApiUtil = {
+var RoomActions = require('../actions/roomAction.jsx');
 
-  
-  // createUserAccount: function(credentials, receiveNewUser) {
-  //   $.ajax({
-  //     url: 'api/users',
-  //     method: "post",
-  //     // data: {user: credentials},
-  //     success: function(user){
-  //               receiveNewUser(user);
-  //     }
-  //   });
-  // }
+var ApiUtil = {
+  fetchAllRooms: function() {
+      $.ajax({
+        url: 'api/rooms',
+        success: function(allRooms) {
+          RoomActions.receiveAllRooms(allRooms);
+        }
+      })
+    }
 
 };
 
+window.ApiUtil = ApiUtil;
 module.exports = ApiUtil;

@@ -2,6 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.landingPage {
-    background-image: url('../../app/assets/images/airbnb.png');
+
+
+
+
+
+// #content {
+//   margin: 0 auto;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   height: 600px;
+//   width: 100%;
+//   background-image: url("/assets/underwater/underwater-base.jpg");
+//   background-size: cover;
+// }
+[class*="logo"] {
+  display: inline;
+}
+
+// .Home-logo img[src="/assets/Home-logo.png"] {
+//   width: 50px;
+//   height: 50px;
+// }
+
+.LS-logo img[src="/assets/LS-logo-1.png"] {
+  width: 50px;
+  height: 50px;
+}
+
+.LI-logo img[src="/assets/LinkedIn.png"] {
+  width: auto;
+  height: 50px;
+}
+
+.GH-logo img[src="/assets/GitHub.png"] {
+  width: auto;
+  height: 50px;
+}
+
+ul li{
+  list-style: none;
+  display: inline;
+  padding: 10px 10px;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+
+
+.navBar-left {
+  display: inline-block;
+  float: left;
+  padding: 10px 20px;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+
+}
+
+.navBar-right {
+  display: inline;
+  float: right;
+  padding: 10px 20px;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
 }

@@ -4,6 +4,8 @@ var LandingSearchBar = require('./landingPageComponents/landingSearchBar.jsx');
 
 var LandingPage = React.createClass({
 
+
+
   render: function() {
     return (
       <div className="landing-page">
@@ -13,10 +15,12 @@ var LandingPage = React.createClass({
 
           <h4>Rent from or share secret lairs with Super Villains across the world!!</h4>
         </div>
-        <LandingSearchBar history={this.props.history}/>
+        <LandingSearchBar/>
       </div>
     );
   }
 });
 
 module.exports = LandingPage;
+
+//Share your lair with supervillains...

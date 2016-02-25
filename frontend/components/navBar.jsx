@@ -1,38 +1,61 @@
 var React = require('react');
+var UserLoginForm = require('./userLoginForm.jsx');
+var CurrentUser = require('./currentUser');
+var UserStore = require('../stores/userStore');
+var UserActions = require('../actions/userAction');
 
 var NavBar = React.createClass({
 
+  getInitialState: function() {
+    return {
+      user: UserStore.currentUser()
+    };
+  },
+
+  componentDidMount: function() {
+    this.userListener = UserStore.addListener(this.userChange);
+    UserActions.getCurrentUser();
+  },
+
+  userChange: function() {
+    this.setState({ user: UserStore.currentUser() });
+  },
+
   render: function() {
+    var contents = (this.state.user) ?
+    this.state.user.username : <UserLoginForm/>;
     return (
       <div>
 
         <div id="navbar" className="navbar-collapse collapse">
+              <ul className="navBar-right">
+                <li>
+                  {contents}
+                </li>
 
+
+              </ul>
 
               <ul className="navbar-left">
+
+                
+
                   <li>
                     <a className="LS-logo" href="#">
-                      <img alt="LairShare" src="/assets/LS-logo.png" />
+                      <img alt="LairShare" src="/assets/LS-logo-1.png" />
                     </a>
                   </li>
+
+
                   <li>
-                    <a
-                      href="#">
-                      LairShare
+                    <a className="GH-logo" href="https://github.com/nhatho89">
+                      <img alt="GitHub" src="/assets/GitHub.png" />
                     </a>
                   </li>
+
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/nhatho89">
-                      GitHub
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://www.linkedin.com/in/nhatho89">
-                      LinkedIn
+                    <a className="LI-logo" href="https://www.linkedin.com/in/nhatho89">
+                      <img alt="LinkedIn" src="/assets/LinkedIn.png" />
                     </a>
                   </li>
               </ul>
