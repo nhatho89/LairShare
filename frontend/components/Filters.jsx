@@ -2,34 +2,34 @@ var React = require('react');
 var FilterActions = require('../actions/filter_actions');
 
 var Filters = React.createClass({
-  maxSeatingChanged: function(e){
-    FilterActions.updateMaxSeating(e.target.value);
+  maxSleepNumChanged: function(e){
+    FilterActions.updateMaxSleepNum(e.target.value);
   },
-  minSeatingChanged: function (e) {
-    FilterActions.updateMinSeating(e.target.value);
+  minSleepNumChanged: function (e) {
+    FilterActions.updateMinSleepNum(e.target.value);
   },
   currentMax: function(){
-    return this.props.filterParams.maxSeating;
+    return this.props.filterParams.maxSleepNum;
   },
   currentMin: function(){
-    return this.props.filterParams.minSeating;
+    return this.props.filterParams.minSleepNum;
   },
-  updateSeating: function (min, max) {
+  updateSleepNum: function (min, max) {
     FilterActions.updateParams({
-      seating: {min: min, max: max}
+      max_sleep_num: {min: min, max: max}
     });
   },
   render: function(){
     return (
       <div>
-        <label>Minimum Seats</label>
+        <label>Minimum Sleep Num</label>
         <input type="number"
-          onChange={this.minSeatingChanged}
+          onChange={this.minSleepNumChanged}
           value={this.currentMin()}/>
          <br/>
-        <label>Maximum Seats</label>
+        <label>Maximum Sleep Num</label>
         <input type="number"
-          onChange={this.maxSeatingChanged}
+          onChange={this.maxSleepNumChanged}
           value={this.currentMax()}/>
       </div>
     );

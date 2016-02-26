@@ -1,22 +1,23 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var Store = require('flux/utils').Store;
-var _params = { minSeating: 1, maxSeating: 10 };
+var _params = { minSleepNum: 1, maxSleepNum: 10 };
 var FilterConstants = require('../constants/filter_constants');
 
 var FilterParamsStore = new Store(AppDispatcher);
 
 FilterParamsStore.params = function () {
-  return Object.assign({}, _params);
+  return _params;
 };
 
 FilterParamsStore.__onDispatch = function (payload) {
   switch(payload.actionType){
-    case FilterConstants.UPDATE_MAX_SEATING:
-      _params.maxSeating = payload.maxSeating;
+    case FilterConstants.UPDATE_MAX_SLEEP_NUM:
+      _params.maxSleepNum = payload.maxSleepNum;
       FilterParamsStore.__emitChange();
       break;
-    case FilterConstants.UPDATE_MIN_SEATING:
-      _params.minSeating = payload.minSeating;
+    case FilterConstants.UPDATE_MIN_SLEEP_NUM:
+      _params.minSleepNum = payload.minSleepNum;
+
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_BOUNDS:

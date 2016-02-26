@@ -11,8 +11,8 @@ class Api::RoomsController < ApplicationController
 
   private
 
-  def seating_range
-    (params[:minSeating]..params[:maxSeating])
+  def max_sleep_num_range
+    (params[:minSleep]..params[:maxSleepNum])
   end
 
   def room_params
@@ -20,7 +20,7 @@ class Api::RoomsController < ApplicationController
       :lat,
       :lng,
       :description,
-      :seating
+      :max_sleep_num
     )
   end
 

@@ -10,9 +10,9 @@ var Room = React.createClass({
       <div>
         <ul>
           <img height="200px" src={this.props.room.picture_url}/>
-          <li>Rating: {this.props.room.average_rating || "No reviews yet"}</li>
           <li>Description: {this.props.room.description}</li>
-          <li>Seats: {this.props.room.seating}</li>
+          <li>Sleeps: {this.props.room.max_sleep_num}</li>
+          <li>Rating: {this.props.room.average_rating || "No reviews yet"}</li>
           <li>Latitude: {this.props.room.lat}</li>
           <li>Longitude: {this.props.room.lng}</li>
         </ul>

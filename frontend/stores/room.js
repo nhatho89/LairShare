@@ -16,7 +16,6 @@ var patchDetail = function(room) {
 _rooms[room.id] = room;
 };
 
-
 RoomStore.all = function() {
   return Object.assign({}, _rooms);
 };

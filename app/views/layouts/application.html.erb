@@ -10,6 +10,7 @@ type="text/javascript"></script>
 
 </head>
 <body>
+  <%= button_to 'Rooms', '/#/rooms', method: :get%>
   <% if signed_in? %>
   Hello, <%= current_user.username %>
   <%= button_to "Sign Out", session_url, :method => :delete %>

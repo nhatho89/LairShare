@@ -1,10 +1,37 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.input-group {
+  text-align: center;
+}
+.container-title {
+  height: 300px;
+}
+.container-title h1, h4 {
+  transform: translateY(120px);
+  text-align: center;
+}
 
+.half {
+  height: 400px;
+  width: 400px;
+}
 
+.room-index-item {
+  display: inline-block;
+}
 
+.room-index-item img {
+  width: auto;
+  height: 200px;
+  border: 3px solid black;
+}
 
+.room-index-item img[src="assets/VolcanoLair/entrance.jpg"] {
+    width: 356px;
+    height: 200px;
+    overflow: hidden;
+}
 
 
 // #content {
@@ -42,7 +69,7 @@
   height: 50px;
 }
 
-ul li{
+#navbar ul li{
   list-style: none;
   display: inline;
   padding: 10px 10px;
@@ -66,4 +93,8 @@ ul li{
   padding: 10px 20px;
   border-right: 2px solid white;
   border-left: 2px solid white;
+}
+
+#navbar {
+  border: 2px solid black;
 }

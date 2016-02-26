@@ -46,7 +46,9 @@ var RoomShow = React.createClass({
 
     return (
         <div>
-          <Link to="/" >Back to Rooms Index</Link>
+
+          <Link to="/rooms" >Back to Rooms Index</Link>
+          {Map}
           <Map className="half"
             singleRoom={true}
             rooms={rooms}

@@ -5,6 +5,7 @@ var LandingSearchBar = require('./landingPageComponents/landingSearchBar.jsx');
 var LandingPage = React.createClass({
 
 
+  // <LandingSearchBar/>
 
   render: function() {
     return (
@@ -12,10 +13,8 @@ var LandingPage = React.createClass({
 
         <div className="container-title">
           <h1>WELCOME HOME</h1>
-
           <h4>Rent from or share secret lairs with Super Villains across the world!!</h4>
         </div>
-        <LandingSearchBar/>
       </div>
     );
   }

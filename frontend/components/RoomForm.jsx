@@ -10,7 +10,7 @@ var RoomForm = React.createClass({
   getInitialState: function(){
     return {
       description: "",
-      seating: 2
+      max_sleep_num: 2
     };
   },
   handleSubmit: function(event){
@@ -38,8 +38,8 @@ var RoomForm = React.createClass({
             <label>Description</label>
             <input type="text" valueLink={this.linkState('description')}/>
             <br/>
-            <label>Number of Seats</label>
-            <input min='0' type="number" valueLink={this.linkState('seating')}/>
+            <label>Number of Beds</label>
+            <input min='0' type="number" valueLink={this.linkState('max_sleep_num')}/>
             <br/>
             <label>Latitude</label>
             <input type="text" disabled="true" value={lat}/>

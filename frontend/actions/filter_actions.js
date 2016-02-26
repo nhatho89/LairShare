@@ -8,16 +8,16 @@ var FilterActions = {
       bounds: bounds
     });
   },
-  updateMinSeating: function (value){
+  updateMinSleepNum: function (value){
     AppDispatcher.dispatch({
-      actionType: FilterConstants.UPDATE_MIN_SEATING,
-      minSeating: value,
+      actionType: FilterConstants.UPDATE_MIN_SLEEP_NUM,
+      minSleepNum: value,
     });
   },
-  updateMaxSeating: function (value){
+  updateMaxSleepNum: function (value){
     AppDispatcher.dispatch({
-      actionType: FilterConstants.UPDATE_MAX_SEATING,
-      maxSeating: value,
+      actionType: FilterConstants.UPDATE_MAX_SLEEP_NUM,
+      maxSleepNum: value,
     });
   }
 };
