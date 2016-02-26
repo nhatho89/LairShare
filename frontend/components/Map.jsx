@@ -89,6 +89,7 @@ var Map = React.createClass({
     });
   },
   createMarkerFromRoom: function (room) {
+    
     var that = this;
     var pos = new google.maps.LatLng(room.lat, room.lng);
     var marker = new google.maps.Marker({

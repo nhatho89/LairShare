@@ -42,7 +42,7 @@ var Index = React.createClass({
 
 
     return (
-      <div>
+      <div className="search-results">
         <h1>Index</h1>
         {
           filteredRooms.map(function(room){

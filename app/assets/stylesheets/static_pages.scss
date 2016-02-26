@@ -17,7 +17,7 @@
   width: 400px;
 }
 
-.room-index-item {
+.search-results {
   display: inline-block;
 }
 
@@ -37,14 +37,12 @@
 // #content {
 //   margin: 0 auto;
 //   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   height: 600px;
+//   height: 100%;
 //   width: 100%;
-//   background-image: url("/assets/underwater/underwater-base.jpg");
+//   background-color: purple;
 //   background-size: cover;
 // }
+
 [class*="logo"] {
   display: inline;
 }
@@ -82,8 +80,6 @@
   display: inline-block;
   float: left;
   padding: 10px 20px;
-  border-right: 2px solid white;
-  border-left: 2px solid white;
 
 }
 
@@ -91,8 +87,7 @@
   display: inline;
   float: right;
   padding: 10px 20px;
-  border-right: 2px solid white;
-  border-left: 2px solid white;
+
 }
 
 #navbar {
