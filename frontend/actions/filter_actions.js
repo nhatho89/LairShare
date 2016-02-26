@@ -13,13 +13,13 @@ var FilterActions = {
       actionType: FilterConstants.UPDATE_MIN_SLEEP_NUM,
       minSleepNum: value,
     });
-  },
-  updateMaxSleepNum: function (value){
-    AppDispatcher.dispatch({
-      actionType: FilterConstants.UPDATE_MAX_SLEEP_NUM,
-      maxSleepNum: value,
-    });
   }
+  // updateMaxSleepNum: function (value){
+  //   AppDispatcher.dispatch({
+  //     actionType: FilterConstants.UPDATE_MAX_SLEEP_NUM,
+  //     maxSleepNum: value,
+  //   });
+  // }
 };
 
 module.exports = FilterActions;

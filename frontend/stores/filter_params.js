@@ -11,10 +11,10 @@ FilterParamsStore.params = function () {
 
 FilterParamsStore.__onDispatch = function (payload) {
   switch(payload.actionType){
-    case FilterConstants.UPDATE_MAX_SLEEP_NUM:
-      _params.maxSleepNum = payload.maxSleepNum;
-      FilterParamsStore.__emitChange();
-      break;
+    // case FilterConstants.UPDATE_MAX_SLEEP_NUM:
+    //   _params.maxSleepNum = payload.maxSleepNum;
+    //   FilterParamsStore.__emitChange();
+    //   break;
     case FilterConstants.UPDATE_MIN_SLEEP_NUM:
       _params.minSleepNum = payload.minSleepNum;
 

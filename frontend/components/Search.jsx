@@ -1,6 +1,6 @@
 var React = require('react');
 var RoomStore = require('../stores/room');
-var FilterParamsStore = require('../stores/filter_params');
+var FilterStore = require('../stores/filter_params');
 var ApiUtil = require('../util/apiUtil');
 var Filters = require('./Filters');
 var Index = require('./Index');
@@ -11,7 +11,7 @@ function _getAllRooms() {
 }
 
 function _getFilterParams() {
-  return FilterParamsStore.params();
+  return FilterStore.params();
 }
 var Search = React.createClass({
   contextTypes: {
@@ -24,6 +24,7 @@ var Search = React.createClass({
     var newParams = _getFilterParams();
     this.setState({ filterParams: newParams });
     ApiUtil.fetchAllRooms();
+    
   },
   getInitialState: function(){
     return {
@@ -34,7 +35,7 @@ var Search = React.createClass({
   },
   componentDidMount: function(){
     this.roomListener = RoomStore.addListener(this._roomsChanged);
-    this.filterListener = FilterParamsStore.addListener(this._filtersChanged);
+    this.filterListener = FilterStore.addListener(this._filtersChanged);
     ApiUtil.fetchAllRooms();
   },
   componentWillUnmount: function(){
