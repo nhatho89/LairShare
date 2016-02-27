@@ -13,6 +13,13 @@ var FilterActions = {
       actionType: FilterConstants.UPDATE_MIN_SLEEP_NUM,
       minSleepNum: value,
     });
+  },
+
+  updateRoomType: function (value) {
+    AppDispatcher.dispatch({
+      actionType: FilterConstants.UPDATE_ROOM_TYPE,
+      roomType: value
+    })
   }
   // updateMaxSleepNum: function (value){
   //   AppDispatcher.dispatch({

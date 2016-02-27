@@ -1,13 +1,14 @@
 var RoomActions = require('../actions/roomAction.jsx');
+var FilterStore = require('../stores/filter_params');
 
 var ApiUtil = {
   fetchAllRooms: function() {
-      $.ajax({
-        url: 'api/rooms',
-        success: function(allRooms) {
+
+    var filter = FilterStore.params();
+    
+      $.get('api/rooms', filter, function(allRooms) {
           RoomActions.receiveAllRooms(allRooms);
-        }
-      })
+        })
     },
 
   createRoom: function(data){

@@ -19,6 +19,16 @@ var Filters = React.createClass({
       max_sleep_num: {min: min}
     });
   },
+
+  roomTypeChanged: function(e) {
+
+    FilterActions.updateRoomType(e.target.value)
+  },
+
+  currentRoomType: function(roomType) {
+    return this.props.filterParams.type_id;
+  },
+
   render: function(){
     // <label>Maximum Sleep Num</label>
     // <input type="number"
@@ -30,7 +40,23 @@ var Filters = React.createClass({
         <input type="number"
           onChange={this.minSleepNumChanged}
           value={this.currentMin()}/>
-         <br/>
+        <br/>
+        <label>Room Type:</label><br/>
+        <label>Whole Facility
+          <input type="checkbox"
+            onChange={this.roomTypeChanged}
+            value={'wholeFacility'}/>
+        </label>
+        <label>Shared Facility
+          <input type="checkbox"
+            onChange={this.roomTypeChanged}
+            value={'sharedFacility'}/>
+        </label>
+        <label>Private Room
+          <input type="checkbox"
+            onChange={this.roomTypeChanged}
+            value={'private'}/>
+        </label><br/>
       </div>
     );
   }

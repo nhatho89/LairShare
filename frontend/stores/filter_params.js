@@ -1,13 +1,18 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var Store = require('flux/utils').Store;
-var _params = { minSleepNum: 1, maxSleepNum: 10 };
 var FilterConstants = require('../constants/filter_constants');
 
 var FilterParamsStore = new Store(AppDispatcher);
 
+var _params = { max_sleep_num: 1};
+var _roomType = {wholeFacility: false, sharedFacility: false, private: false};
 FilterParamsStore.params = function () {
-  return _params;
+  return Object.assign({}, _params, {roomType: _roomType});
 };
+
+// FilterParamsStore.roomType = function() {
+//   return _roomType;
+// };
 
 FilterParamsStore.__onDispatch = function (payload) {
   switch(payload.actionType){
@@ -16,12 +21,17 @@ FilterParamsStore.__onDispatch = function (payload) {
     //   FilterParamsStore.__emitChange();
     //   break;
     case FilterConstants.UPDATE_MIN_SLEEP_NUM:
-      _params.minSleepNum = payload.minSleepNum;
+      _params.max_sleep_num = payload.minSleepNum;
 
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_BOUNDS:
       _params.bounds = payload.bounds;
+      FilterParamsStore.__emitChange();
+      break;
+    case FilterConstants.UPDATE_ROOM_TYPE:
+
+      _roomType[payload.roomType] = !_roomType[payload.roomType];
       FilterParamsStore.__emitChange();
       break;
   }

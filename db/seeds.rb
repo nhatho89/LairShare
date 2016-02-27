@@ -8,7 +8,7 @@
 Room.create!(
   title: "alamo square, many dogs",
   host_id: 4,
-  type_id: 1,
+  room_type: "sharedFacility",
   price: 100,
   location: "San Francisco",
   lat: 37.72877375956114,
@@ -22,7 +22,7 @@ Room.create!(
 Room.create!(
   title: "UN plaza, food truck access",
   host_id: 50,
-  type_id: 1,
+  room_type: "private",
   price: 200,
   location: "San Francisco",
   lat: 37.779760,
@@ -35,7 +35,7 @@ Room.create!(
 Room.create!(
   title: "Ocean Beach, sandy and cold",
   host_id: 3,
-  type_id: 1,
+  room_type: "wholeFacility",
   price: 300,
   location: "San Francisco",
   lat: 37.369996,

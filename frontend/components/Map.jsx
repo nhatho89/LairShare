@@ -74,6 +74,7 @@ var Map = React.createClass({
     var that = this;
     google.maps.event.addListener(this.map, 'idle', function() {
       var bounds = that.map.getBounds();
+      
       var northEast = _getCoordsObj(bounds.getNorthEast());
       var southWest = _getCoordsObj(bounds.getSouthWest());
       //actually issue the request
@@ -89,7 +90,7 @@ var Map = React.createClass({
     });
   },
   createMarkerFromRoom: function (room) {
-    
+
     var that = this;
     var pos = new google.maps.LatLng(room.lat, room.lng);
     var marker = new google.maps.Marker({
