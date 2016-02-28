@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Room.create!(
-  title: "alamo square, many dogs",
+  title: "Underwater Fortress",
   host_id: 4,
   room_type: "sharedFacility",
-  price: 100,
+  price: 400,
   location: "San Francisco",
   lat: 37.72877375956114,
   lng: -122.574462890625,
@@ -20,7 +20,35 @@ Room.create!(
 )
 
 Room.create!(
-  title: "UN plaza, food truck access",
+  title: "Warehouse",
+  host_id: 4,
+  room_type: "private",
+  price: 100,
+  location: "San Francisco",
+  lat: 37.72877375956114,
+  lng: -122.414462890625,
+  primary_photo_url: 'assets/warehouse/warehouse-1.jpg',
+  max_sleep_num: 7,
+  description: 'Inconspicuously hidden!',
+
+)
+
+Room.create!(
+  title: "Forest",
+  host_id: 4,
+  room_type: "sharedFacility",
+  price: 250,
+  location: "San Francisco",
+  lat: 37.79328295176572,
+  lng: -122.46047973632812,
+  primary_photo_url: 'assets/forest/forest-1.jpg',
+  max_sleep_num: 4,
+  description: 'Inconspicuously hidden!',
+
+)
+
+Room.create!(
+  title: "Volcano Lair",
   host_id: 50,
   room_type: "private",
   price: 200,
@@ -33,7 +61,7 @@ Room.create!(
 )
 
 Room.create!(
-  title: "Ocean Beach, sandy and cold",
+  title: "Mountain Retreat",
   host_id: 3,
   room_type: "wholeFacility",
   price: 300,

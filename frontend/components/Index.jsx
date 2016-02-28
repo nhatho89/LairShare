@@ -1,5 +1,6 @@
 var React = require('react');
 var IndexItem = require('./IndexItem');
+
 // var FilterStore = require('../stores/filter_params.js');
 // var Map = require('./Map');
 // var Search = require('./Search');
@@ -29,6 +30,9 @@ var Index = React.createClass({
   // },
 
 
+
+
+
   render: function(){
     var handleItemClick = this.handleItemClick;
     var that = this;
@@ -51,7 +55,7 @@ var Index = React.createClass({
     // })
 
 
-    
+
     return (
       <div className="search-results">
         <h1>Index</h1>

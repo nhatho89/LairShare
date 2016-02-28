@@ -4,10 +4,46 @@ var FilterConstants = require('../constants/filter_constants');
 
 var FilterParamsStore = new Store(AppDispatcher);
 
-var _params = { max_sleep_num: 1};
-var _roomType = {wholeFacility: false, sharedFacility: false, private: false};
+// var _params = { max_sleep_num: 1};
+// var _roomType = {wholeFacility: false, sharedFacility: false, private: false};
+// var _priceRange = {min: 50, max: 450 };
+
+
+var _params = {
+  max_sleep_num: 1,
+
+  bounds: {
+    northEast: {
+      lat: 37,
+      lng: 122
+    },
+
+    southWest: {
+      lat: 36.9,
+      lng: 121.9
+    }
+  },
+  dates: {
+    checkin: '03/01/2016',
+    checkout: '3/11/2016'
+  },
+
+  roomType: {
+    wholeFacility: true,
+    sharedFacility: true,
+    private: true
+  },
+
+  priceRange: {
+    min: 50,
+    max: 400
+  }
+};
+
 FilterParamsStore.params = function () {
-  return Object.assign({}, _params, {roomType: _roomType});
+  return _params
+  // Object.assign({}, _params, {roomType: _roomType});
+  // Object.assign({}, _params, {priceRange: _priceRange});
 };
 
 // FilterParamsStore.roomType = function() {
@@ -26,12 +62,21 @@ FilterParamsStore.__onDispatch = function (payload) {
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_BOUNDS:
+
       _params.bounds = payload.bounds;
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_ROOM_TYPE:
-
-      _roomType[payload.roomType] = !_roomType[payload.roomType];
+      _params.roomType[payload.roomType] = !_params.roomType[payload.roomType];
+      FilterParamsStore.__emitChange();
+      break;
+    case FilterConstants.UPDATE_PRICE_RANGE:
+      _params.priceRange = payload.priceRange;
+      FilterParamsStore.__emitChange();
+      break;
+    case FilterConstants.UPDATE_PRICE_RANGE:
+      _params.dates = payload.dates;
+      console.log(_params.dates);
       FilterParamsStore.__emitChange();
       break;
   }

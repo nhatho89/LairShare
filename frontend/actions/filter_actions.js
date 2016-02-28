@@ -2,10 +2,10 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var FilterConstants = require('../constants/filter_constants');
 
 var FilterActions = {
-  updateBounds: function (bounds) {
+  updateBounds: function (value) {
     AppDispatcher.dispatch({
       actionType: FilterConstants.UPDATE_BOUNDS,
-      bounds: bounds
+      bounds: value
     });
   },
   updateMinSleepNum: function (value){
@@ -19,6 +19,20 @@ var FilterActions = {
     AppDispatcher.dispatch({
       actionType: FilterConstants.UPDATE_ROOM_TYPE,
       roomType: value
+    })
+  },
+
+  updatePriceRange: function(value) {
+    AppDispatcher.dispatch({
+      actionType: FilterConstants.UPDATE_PRICE_RANGE,
+      priceRange: value
+    });
+  },
+
+  updateDates: function(value) {
+    AppDispatcher.dispatch({
+      actionType: FilterConstants.UPDATE_DATES,
+      dates: value
     })
   }
   // updateMaxSleepNum: function (value){

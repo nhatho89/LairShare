@@ -27,8 +27,9 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
+    "bootstrap-slider": "^6.0.16",
     "flux": "^2.1.1",
-    "history": "~1.13.0",
+    "history": "^1.13.1",
     "jquery": "^2.1.4",
     "react": "^0.14.2",
     "react-addons-linked-state-mixin": "^0.14.2",
