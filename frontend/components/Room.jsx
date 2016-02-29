@@ -2,20 +2,27 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Review = require('./Review');
 
+//children of RoomShow
+
 var Room = React.createClass({
   render: function () {
     var reviews = this.props.room.reviews || [];
     var Link = ReactRouter.Link;
     return (
       <div>
-        <ul>
-          <img height="200px" src={this.props.room.picture_url}/>
-          <li>Description: {this.props.room.description}</li>
-          <li>Sleeps: {this.props.room.max_sleep_num}</li>
-          <li>Rating: {this.props.room.average_rating || "No reviews yet"}</li>
-          <li>Latitude: {this.props.room.lat}</li>
-          <li>Longitude: {this.props.room.lng}</li>
-        </ul>
+        <div>
+          <Link to="/rooms">Keep Searching!</Link>
+        </div>
+        <div>
+          <ul>
+            <img height="200px" src={this.props.room.picture_url}/>
+            <li>Description: {this.props.room.description}</li>
+            <li>Sleeps: {this.props.room.max_sleep_num}</li>
+            <li>Rating: {this.props.room.average_rating || "No reviews yet"}</li>
+            <li>Latitude: {this.props.room.lat}</li>
+            <li>Longitude: {this.props.room.lng}</li>
+          </ul>
+        </div>
         <div className="reviews">
           <h3>Reviews</h3>
           {reviews.map(function (review) {

@@ -33,6 +33,12 @@
 
 
 //map
+
+.room-show-map {
+  width: 300px;
+  height: 300px;
+}
+
 .right-half {
   // float: right;
   width: 50%;
@@ -54,13 +60,109 @@
 }
 
 
+//room page
+
+.carousel-container {
+  width: 80%;
+  height: auto;
+  text-align: center;
+
+}
+
+.slider-list {
+  width: 80%;
+  height: auto;
+  text-align: center;
+}
+
+.slider-slide {
+  width: 80%;
+  height: auto;
+  justify-content: center;
+}
+
+.slider-frame {
+  justify-content: center;
+  text-align: center;
+}
+
 
 //search
 
+// .price-range-slider-container {
+//   position: relative;
+//   justify-content: center;
+//   width: 80%;
+//   height: auto;
+//   text-align: center;
+// }
+//
+// .search-index-price-range {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//
+//   text-align: center;
+// }
+
+
+.room-type-checkbox-container div {
+  position: relative;
+  display: inline-flex;
+  // margin: 30px;
+  justify-content: space-around;
+   border-top: 1px solid #ffffff;
+   background: #8f9da6;
+   background: -webkit-gradient(linear, left top, left bottom, from(#a7b2ba), to(#8f9da6));
+   background: -webkit-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -moz-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -ms-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -o-linear-gradient(top, #a7b2ba, #8f9da6);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.room-type-checkbox-container div:hover {
+   border-top-color: #62a2c4;
+   background: #62a2c4;
+   color: #ccc;
+   }
+.room-type-checkbox-container div:active {
+   border-top-color: #7d9bad;
+   background: #7d9bad;
+   }
+
+
+//
+// .room-type-checkbox-container div {
+//   display: inline-block;
+//   border: 2px solid silver;
+//   margin: 2px;
+// }
+
+// .room-type-checkbox-container div:hover {
+//   display: inline-block;
+//   border: 2px solid blue;
+//   margin: 2px;
+//   background-color: silver;
+// }
+
 .search-results {
-  // display: flex;
+  display: flex;
+  flex-wrap: wrap;
   // flex-flow: row wrap;
   text-align: center;
+
 }
 
 .filters {
@@ -80,7 +182,7 @@
 
 .room-index-item ul img {
   width: auto;
-  height: 200px;
+  height: 150px;
   overflow: hidden;
 }
 
@@ -95,18 +197,31 @@
 
 
 .LS-logo img[src="/assets/LS-logo-1.png"] {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+
+}
+.LS-logo img[src="/assets/LS-logo-1.png"]:hover {
+  box-shadow: 0px 0px 20px #000;
+    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
 }
 
 .LI-logo img[src="/assets/LinkedIn.png"] {
   width: auto;
-  height: 50px;
+  height: 40px;
+}
+.LI-logo img[src="/assets/LinkedIn.png"]:hover {
+  box-shadow: 0px 0px 20px #000;
+    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
 }
 
 .GH-logo img[src="/assets/GitHub.png"] {
   width: auto;
-  height: 50px;
+  height: 40px;
+}
+.GH-logo img[src="/assets/GitHub.png"]:hover {
+  box-shadow: 0px 0px 20px #000;
+    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
 }
 
 #navbar ul li{
@@ -120,7 +235,7 @@
 .navBar-left ul {
   display: inline-block;
   float: left;
-  padding: 10px 20px;
+  padding: 5px 5px;
 
 }
 
@@ -132,6 +247,6 @@
 }
 
 #navbar {
-  // border: 2px solid black;
+  border: 2px solid #DCDCDC;
   background-color: silver;
 }

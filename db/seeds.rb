@@ -74,7 +74,7 @@ Room.create!(
   location: "San Francisco",
   lat: 37.52861709268237,
   lng: -122.4591064453125,
-  primary_photo_url: 'assets/VolcanoLair/entrance.jpg',
+  primary_photo_url: 'assets/Mountain/entrance.jpg',
   max_sleep_num: 8,
   description: 'No more rocky patches! Errr.....!',
 )

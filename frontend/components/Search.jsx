@@ -1,5 +1,5 @@
 var React = require('react');
-var RoomStore = require('../stores/room');
+var RoomStore = require('../stores/roomStore');
 var FilterStore = require('../stores/filter_params');
 var ApiUtil = require('../util/apiUtil');
 var Filters = require('./Filters');

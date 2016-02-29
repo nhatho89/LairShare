@@ -227,6 +227,7 @@ var Filters = React.createClass({
     //   value={this.currentMax()}/>
     return (
       <div className="search-filters">
+        <br/>
 
         <div className="calendar-filter">
           <div className="input-group-btn div-btn-stylefix">
@@ -249,10 +250,14 @@ var Filters = React.createClass({
             style={{textAlign:"center"}}/>
         </div>
 
+        <br/>
+        <hr/>
+        <br/>
+
 
         <div className="price-range-container">
             <div className="price-range-title-container">
-              <label>Price Range</label>
+              <label>Price Range</label><br/>
               <input type="text" id="search-index-amount" readOnly="true" style={{border:'0', color:'#f6931f', fontWeight:'bold', background: "transparent"}} />
             </div>
             <div className="price-range-slider-container">
@@ -271,9 +276,14 @@ var Filters = React.createClass({
           </div>
 
 
+          <br/>
+          <hr/>
+          <br/>
+
+
           <div className="guest-num-container">
             <div className="guest-num-title-container">
-              <label>Number of Guests</label>
+              <label>Number of Guests</label><br/>
             </div>
             <div className="guest-num-selection-container">
               <input type="number"
@@ -282,34 +292,51 @@ var Filters = React.createClass({
             </div>
           </div>
 
+
+          <br/>
+          <hr/>
+          <br/>
+
+
           <div className="room-type-container">
             <div className="room-type-title-container">
-              <label>Room Type:</label><br/>
+              <label>Room Type:</label><br/><br/>
             </div>
             <div className="room-type-checkbox-container">
-              <label>Whole Facility
-                <input type="checkbox"
-                  onChange={this.roomTypeChanged}
-                  value={'wholeFacility'}
-                  defaultChecked="true"
-                  />
-              </label>
-              <label>Shared Facility
-                <input type="checkbox"
-                  onChange={this.roomTypeChanged}
-                  value={'sharedFacility'}
-                  defaultChecked="true"
-                  />
-              </label>
-              <label>Private Room
-                <input type="checkbox"
-                  onChange={this.roomTypeChanged}
-                  value={'private'}
-                  defaultChecked="true"
-                  />
-              </label>
+              <div>
+                <label>Whole Facility
+                  <input type="checkbox"
+                    onChange={this.roomTypeChanged}
+                    value={'wholeFacility'}
+                    defaultChecked="true"/>
+                </label>
+              </div>
+                <div>
+                  <label>Shared Facility
+
+                    <input type="checkbox"
+                      onChange={this.roomTypeChanged}
+                      value={'sharedFacility'}
+                      defaultChecked="true"
+                      />
+                  </label>
+                </div>
+                <div>
+                  <label>Private Room
+                    <input type="checkbox"
+                      onChange={this.roomTypeChanged}
+                      value={'private'}
+                      defaultChecked="true"
+                      />
+                  </label>
+
+                </div>
             </div>
           </div>
+
+          <br/>
+          <hr/>
+          <br/>
 
 
       </div>
