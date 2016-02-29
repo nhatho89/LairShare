@@ -28,18 +28,12 @@ var NavBar = React.createClass({
       <div>
 
         <div id="navbar" className="navbar-collapse collapse">
-              <ul className="navBar-right">
-                <li>
+              <div className="navBar-right">
                   {contents}
-                </li>
+              </div>
 
-
-              </ul>
-
-              <ul className="navbar-left">
-
-
-
+              <div className="navbar-left">
+                <ul>
                   <li>
                     <a className="LS-logo" href="#">
                       <img alt="LairShare" src="/assets/LS-logo-1.png" />
@@ -58,8 +52,9 @@ var NavBar = React.createClass({
                       <img alt="LinkedIn" src="/assets/LinkedIn.png" />
                     </a>
                   </li>
+                </ul>
 
-              </ul>
+              </div>
 
             </div>
       </div>

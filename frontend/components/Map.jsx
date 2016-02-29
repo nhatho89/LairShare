@@ -74,7 +74,7 @@ var Map = React.createClass({
     var that = this;
     google.maps.event.addListener(this.map, 'idle', function() {
       var bounds = that.map.getBounds();
-      
+
       var northEast = _getCoordsObj(bounds.getNorthEast());
       var southWest = _getCoordsObj(bounds.getSouthWest());
       //actually issue the request
@@ -113,7 +113,7 @@ var Map = React.createClass({
     }
   },
   render: function(){
-    return ( <div className="half" ref="map">Map</div>);
+    return ( <div className="gmap" ref="map">Map</div>);
   }
 });
 

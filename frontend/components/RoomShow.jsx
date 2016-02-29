@@ -4,6 +4,7 @@ var ReactRouter = require('react-router');
 var Room = require('./Room');
 var Map = require('./Map');
 var ApiUtil = require('../util/apiUtil');
+var PropTypes = React.PropTypes;
 
 var RoomShow = React.createClass({
   contextTypes: {
@@ -40,9 +41,9 @@ var RoomShow = React.createClass({
     var rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
+      var reviewURL = "/rooms/" + this.state.room.id + "/review";
+      var Link = ReactRouter.Link;
     }
-    var Link = ReactRouter.Link;
-    var reviewURL = "/rooms/" + this.state.room.id + "/review";
 
     return (
         <div>
@@ -60,7 +61,7 @@ var RoomShow = React.createClass({
               <Link to={reviewURL}>Leave a Review</Link>
           }
         </div>
-      );
+      )
   }
 });
 

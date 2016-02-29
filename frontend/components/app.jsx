@@ -2,6 +2,7 @@ var React = require('react');
 var NavBar = require('./navBar.jsx');
 
 
+
 var UserStore = require('../stores/userStore');
 var UserActions = require('../actions/userAction');
 

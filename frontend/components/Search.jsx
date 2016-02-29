@@ -24,7 +24,7 @@ var Search = React.createClass({
     var newParams = _getFilterParams();
     this.setState({ filterParams: newParams });
     ApiUtil.fetchAllRooms();
-    
+
   },
   getInitialState: function(){
     return {
@@ -50,15 +50,16 @@ var Search = React.createClass({
   },
   render: function(){
     return(
-      <div>
-        <h5>Click Map to Add Room!</h5>
-        <Map
-          onMapClick={this.handleMapClick}
-          onMarkerClick={this.handleMarkerClick}
-          rooms={this.state.rooms}/>
-        <div className="half">
+      <div className="search-container">
+        <div className="left-half">
           <Filters rooms={this.state.rooms} filterParams={this.state.filterParams}/>
           <Index rooms={this.state.rooms} history={this.props.history} />
+        </div>
+        <div className="right-half">
+          <Map
+            onMapClick={this.handleMapClick}
+            onMarkerClick={this.handleMarkerClick}
+            rooms={this.state.rooms}/>
         </div>
       </div>
     );

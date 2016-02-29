@@ -226,39 +226,36 @@ var Filters = React.createClass({
     //   onChange={this.maxSleepNumChanged}
     //   value={this.currentMax()}/>
     return (
-      <div>
+      <div className="search-filters">
+
+        <div className="calendar-filter">
+          <div className="input-group-btn div-btn-stylefix">
+            <button
+              className="btn btn-secondary btn-stylefix"
+              type="button"
+              onClick={this.openDateRangePicker}>
+            </button>
+            <i className="glyphicon-calendar" />
+          </div>
+          <input
+            name="daterange"
+            id="search-index-daterange"
+            ref="searchDateRangeInput"
+            className="form-control input-stylefix"
+            type="text"
+            autoComplete="off"
+            placeholder="Check In - Check Out"
+            value={this.dateRange}
+            style={{textAlign:"center"}}/>
+        </div>
 
 
-        <div className="col-md-8 row-space-1-sm">
-                  <div className="input-group">
-                    <span className="input-group-btn span-btn-stylefix">
-                      <button
-                        className="btn btn-secondary btn-stylefix"
-                        type="button"
-                        onClick={this.openDateRangePicker}>
-                        <i className="glyphicon glyphicon-calendar fa fa-calendar" />
-                      </button>
-                    </span>
-                    <input
-                      name="daterange"
-                      id="search-index-daterange"
-                      ref="searchDateRangeInput"
-                      className="form-control input-stylefix"
-                      type="text"
-                      autoComplete="off"
-                      placeholder="Check In - Check Out"
-                      value={this.dateRange}
-                      style={{textAlign:"center"}}/>
-                  </div>
-                </div>
-
-
-        <div className="row row-filter">
-            <div className="col-lg-2 col-md-12 text-center-sm text-center-md row-space-sm-1">
+        <div className="price-range-container">
+            <div className="price-range-title-container">
               <label>Price Range</label>
               <input type="text" id="search-index-amount" readOnly="true" style={{border:'0', color:'#f6931f', fontWeight:'bold', background: "transparent"}} />
             </div>
-            <div className="col-lg-9 col-md-12 price-range-container">
+            <div className="price-range-slider-container">
               <div id="search-index-price-range" className="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                 <div id="min-max-range" className="ui-slider-range ui-widget-header ui-corner-all" style={{left: '15%', width: '30%'}}>
                 </div>
@@ -274,36 +271,47 @@ var Filters = React.createClass({
           </div>
 
 
+          <div className="guest-num-container">
+            <div className="guest-num-title-container">
+              <label>Number of Guests</label>
+            </div>
+            <div className="guest-num-selection-container">
+              <input type="number"
+                onChange={this.minSleepNumChanged}
+                value={this.currentMin()}/>
+            </div>
+          </div>
+
+          <div className="room-type-container">
+            <div className="room-type-title-container">
+              <label>Room Type:</label><br/>
+            </div>
+            <div className="room-type-checkbox-container">
+              <label>Whole Facility
+                <input type="checkbox"
+                  onChange={this.roomTypeChanged}
+                  value={'wholeFacility'}
+                  defaultChecked="true"
+                  />
+              </label>
+              <label>Shared Facility
+                <input type="checkbox"
+                  onChange={this.roomTypeChanged}
+                  value={'sharedFacility'}
+                  defaultChecked="true"
+                  />
+              </label>
+              <label>Private Room
+                <input type="checkbox"
+                  onChange={this.roomTypeChanged}
+                  value={'private'}
+                  defaultChecked="true"
+                  />
+              </label>
+            </div>
+          </div>
 
 
-
-        <label>Minimum Sleep Num</label>
-        <input type="number"
-          onChange={this.minSleepNumChanged}
-          value={this.currentMin()}/>
-        <br/>
-        <label>Room Type:</label><br/>
-        <label>Whole Facility
-          <input type="checkbox"
-            onChange={this.roomTypeChanged}
-            value={'wholeFacility'}
-            defaultChecked="true"
-            />
-        </label>
-        <label>Shared Facility
-          <input type="checkbox"
-            onChange={this.roomTypeChanged}
-            value={'sharedFacility'}
-            defaultChecked="true"
-            />
-        </label>
-        <label>Private Room
-          <input type="checkbox"
-            onChange={this.roomTypeChanged}
-            value={'private'}
-            defaultChecked="true"
-            />
-        </label><br/>
       </div>
     );
   }

@@ -1,56 +1,88 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.input-group {
-  text-align: center;
-}
-.container-title {
-  height: 300px;
-}
-.container-title h1, h4 {
-  transform: translateY(120px);
-  text-align: center;
+
+
+//landing page
+
+#content {
+  height: auto !important;
+  height: 100%;
+  width: auto !important;
+  width: 100%;
 }
 
-.half {
-  height: 400px;
-  width: 400px;
+.search-container {
+  display: flex;
+  height: inherit;
+  width: inherit;
+  justify-content: space-around;
+  // width: 900px;
+
 }
+
+
+//map
+.right-half {
+  // float: right;
+  width: 50%;
+  height: 550px;
+}
+
+
+.left-half {
+  // float: right;
+  width: 50%;
+  height: 550px;
+  overflow:auto;
+}
+
+.gmap {
+  height: 100%;
+  width: 100%;
+
+}
+
+
+
+//search
 
 .search-results {
-  display: inline-block;
+  // display: flex;
+  // flex-flow: row wrap;
+  text-align: center;
 }
 
-.room-index-item img {
+.filters {
+  float: left;
+  display: inline;
+}
+
+.room-index-item {
+  border: 3px solid black;
+  list-style: none;
+
+}
+
+.room-index-item ul {
+  list-style: none;
+}
+
+.room-index-item ul img {
   width: auto;
   height: 200px;
-  border: 3px solid black;
-}
-
-.room-index-item img[src="assets/VolcanoLair/entrance.jpg"] {
-    width: 356px;
-    height: 200px;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 
-// #content {
-//   margin: 0 auto;
-//   position: fixed;
-//   height: 100%;
-//   width: 100%;
-//   background-color: purple;
-//   background-size: cover;
-// }
+
+//navbar
+
 
 [class*="logo"] {
   display: inline;
 }
 
-// .Home-logo img[src="/assets/Home-logo.png"] {
-//   width: 50px;
-//   height: 50px;
-// }
 
 .LS-logo img[src="/assets/LS-logo-1.png"] {
   width: 50px;
@@ -76,7 +108,7 @@
 }
 
 
-.navBar-left {
+.navBar-left ul {
   display: inline-block;
   float: left;
   padding: 10px 20px;

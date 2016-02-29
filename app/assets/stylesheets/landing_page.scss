@@ -1,0 +1,23 @@
+.input-group {
+  text-align: center;
+}
+.container-title {
+  height: 300px;
+}
+.container-title h1, h4 {
+  transform: translateY(120px);
+  text-align: center;
+}
+
+.container-title h1 {
+  display: block;
+  font-size: 60px;
+  font-weight: 700;
+  color: silver;
+}
+
+.container-title h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: silver;
+}
