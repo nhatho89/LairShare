@@ -24,6 +24,8 @@ class Api::ReservationsController < ApplicationController
         end
   end
 
+  
+
 
   private
   # def query_params
@@ -40,5 +42,5 @@ class Api::ReservationsController < ApplicationController
     )
   end
 
-end
+
 end

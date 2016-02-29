@@ -1,6 +1,7 @@
 class Api::RoomsController < ApplicationController
   def index
     @rooms = Room.all
+
     if(params[:bounds])
       @rooms = Room.in_bounds(params[:bounds])
     end
@@ -22,15 +23,16 @@ class Api::RoomsController < ApplicationController
       @rooms = @rooms.where("price >= ?", params[:priceRange][:min])
     end
 
-    if (params[:checkin])
-      start_date = filter_params["dates"]["checkin"]
-      @rooms = @rooms.where("start_date >= ?", Date.now)
+
+    if (params[:dates])
+      end_date = params[:dates][:checkout]
+      start_date = params[:dates][:checkin]
+      # @rooms = @rooms.reservations.all.where("start_date > ? OR end_date < ?", end_date, start_date )#.
+      @rooms = @rooms.where.not(id: Reservation.unavailable_room_ids(params[:dates][:checkin], params[:dates][:checkout]))
     end
 
-    if (params[:end_date])
-      end_date = filter_params["dates"]["checkout"]
 
-    end
+
 
 
 
@@ -65,8 +67,7 @@ class Api::RoomsController < ApplicationController
       :max_sleep_num,
       :room_type,
       :price,
-      :start_date,
-      :end_date
+
     )
   end
 

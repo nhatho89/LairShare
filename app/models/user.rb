@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_many :reservations,
+  foreign_key: :guest_id,
+    primary_key: :id,
+    class_name: 'Reservation'
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)

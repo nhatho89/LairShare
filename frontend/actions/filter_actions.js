@@ -34,6 +34,12 @@ var FilterActions = {
       actionType: FilterConstants.UPDATE_DATES,
       dates: value
     })
+  },
+
+  resetDates: function() {
+    AppDispatcher.dispatch({
+      actionType: FilterConstants.RESET_DATES
+    });
   }
   // updateMaxSleepNum: function (value){
   //   AppDispatcher.dispatch({

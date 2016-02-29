@@ -24,8 +24,8 @@ var _params = {
     }
   },
   dates: {
-    checkin: '03/01/2016',
-    checkout: '3/11/2016'
+    checkin: null,
+    checkout: null
   },
 
   roomType: {
@@ -74,11 +74,14 @@ FilterParamsStore.__onDispatch = function (payload) {
       _params.priceRange = payload.priceRange;
       FilterParamsStore.__emitChange();
       break;
-    case FilterConstants.UPDATE_PRICE_RANGE:
+    case FilterConstants.UPDATE_DATES:
       _params.dates = payload.dates;
-      console.log(_params.dates);
       FilterParamsStore.__emitChange();
       break;
+      case FilterConstants.RESET_DATES:
+        _params.dates = {checkin: null, checkout: null};
+        FilterParamsStore.__emitChange();
+        break;
   }
 };
 
