@@ -29,13 +29,26 @@ var Filters = React.createClass({
   //   return date._d.getTime();
   // },
 
+
+
+  //TODO Need to fix
+
   handleChangeStart: function(startDate) {
+    if (startDate < moment()._d) {
+      alert("Pick a valid date!")
+    };
+
     FilterActions.updateStartDates({
       startDate: startDate._d.getTime()
     })
   },
 
   handleChangeEnd: function(endDate) {
+
+    // if (endDate < (new Date(this.props.startDate).toUTCString())) {
+    //   alert("Pick a valid date!")
+    // };
+
     FilterActions.updateEndDates({
       endDate: endDate._d.getTime()
     })
@@ -280,7 +293,7 @@ var Filters = React.createClass({
     //   value={this.dateRange}
     //   style={{textAlign:"center"}}/>
 
-
+// new Date(this.props.startDate).toUTCString()
     return (
       <div className="search-filters">
         <hr/>
