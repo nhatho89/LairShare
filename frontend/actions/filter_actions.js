@@ -29,9 +29,16 @@ var FilterActions = {
     });
   },
 
-  updateDates: function(value) {
+  updateStartDates: function(value) {
     AppDispatcher.dispatch({
-      actionType: FilterConstants.UPDATE_DATES,
+      actionType: FilterConstants.UPDATE_START_DATES,
+      dates: value
+    })
+  },
+
+  updateEndDates: function(value) {
+    AppDispatcher.dispatch({
+      actionType: FilterConstants.UPDATE_END_DATES,
       dates: value
     })
   },

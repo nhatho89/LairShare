@@ -13,12 +13,12 @@ var IndexItem = React.createClass({
           <ul className="room-picture">
             <img src={room.primary_photo_url}/>
           </ul>
-          
+
           <ul className="room-info">
             <li>
               {room.description}
             </li>
-            <br/>
+            
             <li>
               Price: {room.price}
             </li>

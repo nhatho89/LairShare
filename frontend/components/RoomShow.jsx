@@ -42,6 +42,11 @@ var RoomShow = React.createClass({
     var room = this._findRoomById(roomId);
     this.setState({ room: room });
   },
+
+  reservationClick: function() {
+    this.props.history.pushState(null, "reservation/" + room.id);
+  },
+
   render: function () {
     var rooms = [];
     if (this.state.room) {
@@ -62,21 +67,29 @@ var RoomShow = React.createClass({
 
 
 
-          <div className="room-show-map">
-            <Map className="half"
-              singleRoom={true}
-              rooms={rooms}
-              onMapClick={this.handleMapClick}
-              onMarkerClick={this.handleMarkerClick} />
-            <Room room={this.state.room} className="half" />
-          </div>
-          <div>
-            {
-              this.props.children ||
-              <Link to={reviewURL}>Leave a Review</Link>
-            }
+        <div className="room-show-content-container">
+          <div className="left-half-room">
+            <div>
+              <Room room={this.state.room} className="half" />
+            </div>
+            <div>
+              {
+                this.props.children ||
+                <Link to={reviewURL}>Leave a Review</Link>
+              }
+
+            </div>
 
           </div>
+          <div className="right-half-room">
+            <div>
+              <button onClick={this.reservationClick}>Book Now</button>
+            </div>
+            <Map
+              singleRoom={true}
+              rooms={rooms} />
+          </div>
+        </div>
         </div>
       )
   }

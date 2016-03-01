@@ -4,6 +4,7 @@ var FilterStore = require('../stores/filter_params');
 var ApiUtil = {
   fetchAllRooms: function() {
     var filter = FilterStore.params();
+    console.log(filter);
       $.get('api/rooms', filter, function(allRooms) {
           RoomActions.receiveAllRooms(allRooms);
         })

@@ -21,40 +21,49 @@ var NavBar = React.createClass({
     this.setState({ user: UserStore.currentUser() });
   },
 
+  redirectUserProfile: function() {
+    this.props.history.pushState(null, "users/" + this.state.user.id);
+  },
+
   render: function() {
     var contents = (this.state.user) ?
-    this.state.user.username : <UserLoginForm/>;
+    this.state.user.username.toUpperCase() : <UserLoginForm/>;
     return (
       <div>
 
         <div id="navbar" className="navbar-collapse collapse">
-              <div className="navBar-right">
-                  {contents}
-              </div>
-
-              <div className="navbar-left">
-                <ul>
-                  <li>
-                    <a className="LS-logo" href="#">
-                      <img alt="LairShare" src="/assets/LS-logo-1.png" />
-                    </a>
-                  </li>
+          <div className="navbar-left">
+            <ul>
+              <li>
+                <a className="LS-logo" href="#">
+                  <img alt="LairShare" src="/assets/LS-logo-1.png" />
+                </a>
+              </li>
 
 
-                  <li>
-                    <a className="GH-logo" href="https://github.com/nhatho89">
-                      <img alt="GitHub" src="/assets/GitHub.png" />
-                    </a>
-                  </li>
+              <li>
+                <a className="GH-logo" href="https://github.com/nhatho89">
+                  <img alt="GitHub" src="/assets/GitHub.png" />
+                </a>
+              </li>
 
-                  <li>
-                    <a className="LI-logo" href="https://www.linkedin.com/in/nhatho89">
-                      <img alt="LinkedIn" src="/assets/LinkedIn.png" />
-                    </a>
-                  </li>
-                </ul>
+              <li>
+                <a className="LI-logo" href="https://www.linkedin.com/in/nhatho89">
+                  <img alt="LinkedIn" src="/assets/LinkedIn.png" />
+                </a>
+              </li>
+            </ul>
 
-              </div>
+          </div>
+
+          <form action="/#/rooms" method="get">
+            <input type="submit" value="Rooms Index"/>
+          </form>
+
+          <div className="navBar-right" onClick={this.redirectUserProfile}>
+              {contents}
+          </div>
+
 
             </div>
       </div>

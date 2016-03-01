@@ -34,6 +34,7 @@ var Search = React.createClass({
     };
   },
   componentDidMount: function(){
+    
     this.roomListener = RoomStore.addListener(this._roomsChanged);
     this.filterListener = FilterStore.addListener(this._filtersChanged);
     ApiUtil.fetchAllRooms();

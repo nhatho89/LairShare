@@ -24,11 +24,12 @@ class Api::RoomsController < ApplicationController
     end
 
 
-    if (params[:dates])
-      end_date = params[:dates][:checkout]
-      start_date = params[:dates][:checkin]
+    if (params[:dates][:startDate] && params[:dates][:endDate])
+
+      end_date = params[:dates][:endDate]
+      start_date = params[:dates][:startDate]
       # @rooms = @rooms.reservations.all.where("start_date > ? OR end_date < ?", end_date, start_date )#.
-      @rooms = @rooms.where.not(id: Reservation.unavailable_room_ids(params[:dates][:checkin], params[:dates][:checkout]))
+      @rooms = @rooms.where.not(id: Reservation.unavailable_room_ids(params[:dates][:startDate], params[:dates][:endDate]))
     end
 
 

@@ -24,8 +24,8 @@ var _params = {
     }
   },
   dates: {
-    checkin: null,
-    checkout: null
+    startDate: null,
+    endDate: null
   },
 
   roomType: {
@@ -58,11 +58,9 @@ FilterParamsStore.__onDispatch = function (payload) {
     //   break;
     case FilterConstants.UPDATE_MIN_SLEEP_NUM:
       _params.max_sleep_num = payload.minSleepNum;
-
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_BOUNDS:
-
       _params.bounds = payload.bounds;
       FilterParamsStore.__emitChange();
       break;
@@ -74,15 +72,20 @@ FilterParamsStore.__onDispatch = function (payload) {
       _params.priceRange = payload.priceRange;
       FilterParamsStore.__emitChange();
       break;
-    case FilterConstants.UPDATE_DATES:
-      _params.dates = payload.dates;
+    case FilterConstants.UPDATE_START_DATES:
+      _params.dates.startDate = payload.dates.startDate;
       FilterParamsStore.__emitChange();
       break;
-      case FilterConstants.RESET_DATES:
-        _params.dates = {checkin: null, checkout: null};
-        FilterParamsStore.__emitChange();
-        break;
+    case FilterConstants.UPDATE_END_DATES:
+      _params.dates.endDate = payload.dates.endDate;
+      FilterParamsStore.__emitChange();
+      break;
+    case FilterConstants.RESET_DATES:
+      _params.dates = {startDate: null, endDate: null};
+      FilterParamsStore.__emitChange();
+      break;
   }
 };
 
+window.FilterParamsStore = FilterParamsStore;
 module.exports = FilterParamsStore;

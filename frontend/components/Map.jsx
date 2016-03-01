@@ -17,7 +17,7 @@ var Map = React.createClass({
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
       center: this.centerRoomCoords(),
-      zoom: 13
+      zoom: 10
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.registerListeners();

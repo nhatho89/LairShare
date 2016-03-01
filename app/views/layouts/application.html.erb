@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKoAy6rkH7LN5KwoNWQIIfC-QJ5IkPakc"
 type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -18,7 +20,7 @@ type="text/javascript"></script>
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js">
   </script>
-  <script
+  <!-- <script
     type="text/javascript"
     src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js">
   </script>
@@ -26,7 +28,7 @@ type="text/javascript"></script>
     rel="stylesheet"
     type="text/css"
     href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css">
-  </link>
+  </link> -->
 
 
 
@@ -37,14 +39,14 @@ type="text/javascript"></script>
 
 
 
-  <%= button_to 'Rooms', '/#/rooms', method: :get%>
+  <!-- <%= button_to 'Rooms', '/#/rooms', method: :get%>
   <% if signed_in? %>
   Hello, <%= current_user.username %>
   <%= button_to "Sign Out", session_url, :method => :delete %>
 <% else %>
   <%= link_to "Sign In", new_session_url %>
   <%= link_to "Sign Up", new_user_url %>
-<% end %>
+<% end %> -->
 
 
 <%= yield %>
