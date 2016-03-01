@@ -13,6 +13,16 @@
     "type": "git",
     "url": "git+https://github.com/appacademy/BenchBnb.git"
   },
+
+  "engines": {
+  "node": "4.1.1",
+  "npm": "2.1.x"
+  },
+  
+  "scripts": {
+  "postinstall": "./node_modules/.bin/webpack"
+  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
