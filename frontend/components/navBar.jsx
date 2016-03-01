@@ -25,6 +25,9 @@ var NavBar = React.createClass({
     this.props.history.pushState(null, "users/" + this.state.user.id);
   },
 
+  // <form action="/#/rooms" method="get">
+  //   <input type="submit" value="Rooms Index"/>
+  // </form>
   render: function() {
     var contents = (this.state.user) ?
     this.state.user.username.toUpperCase() : <UserLoginForm/>;
@@ -56,9 +59,6 @@ var NavBar = React.createClass({
 
           </div>
 
-          <form action="/#/rooms" method="get">
-            <input type="submit" value="Rooms Index"/>
-          </form>
 
           <div className="navBar-right" onClick={this.redirectUserProfile}>
               {contents}

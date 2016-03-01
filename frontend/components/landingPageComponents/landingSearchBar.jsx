@@ -28,7 +28,7 @@ var LandingSearchBar = React.createClass({
         placeholder: "Please set location"
       });
     } else {
-      setTimeout(this.redirectToSearch, 2000);
+      setTimeout(this.redirectToSearch, 1000);
       this.setState({
         showLoading: true
       })

@@ -8,8 +8,11 @@ var moment = require('moment');
 var StayDates = React.createClass({
 
   handleChangeStart: function(startDate) {
+    debugger
     if (startDate < moment()._d) {
       alert("Pick a valid date!")
+    } else if (startDate && this.props.endDate) {
+      console.log("helo");
     };
 
     FilterActions.updateStartDates({

@@ -9,11 +9,6 @@ var RoomType = React.createClass({
     FilterActions.updateRoomType(e.target.value)
   },
 
-  currentRoomType: function(roomType) {
-
-    return this.props.filterParams.type_id;
-  },
-
   render: function() {
     return (
       <div className="room-type-container">

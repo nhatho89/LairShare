@@ -30,7 +30,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <NavBar/>
+        <NavBar history={this.props.history}/>
         {this.props.children}
       </div>
     );

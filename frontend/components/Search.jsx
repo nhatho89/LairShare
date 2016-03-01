@@ -1,6 +1,6 @@
 var React = require('react');
-var RoomStore = require('../stores/roomStore');
-var FilterStore = require('../stores/filter_params');
+var RoomStore = require('../stores/roomStore.js');
+var FilterStore = require('../stores/filter_params.js');
 var ApiUtil = require('../util/apiUtil');
 var Filters = require('./Filters');
 var Index = require('./Index');
@@ -34,7 +34,7 @@ var Search = React.createClass({
     };
   },
   componentDidMount: function(){
-    
+
     this.roomListener = RoomStore.addListener(this._roomsChanged);
     this.filterListener = FilterStore.addListener(this._filtersChanged);
     ApiUtil.fetchAllRooms();

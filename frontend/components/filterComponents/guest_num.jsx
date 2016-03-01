@@ -6,19 +6,6 @@ var GuestNum = React.createClass({
   minSleepNumChanged: function (e) {
     FilterActions.updateMinSleepNum(e.target.value);
   },
-  // currentMax: function(){
-  //   return this.props.filterParams.maxSleepNum;
-  // },
-  currentMin: function(){
-
-    return this.props.filterParams.minSleepNum;
-  },
-
-  updateSleepNum: function (min) {
-    FilterActions.updateParams({
-      max_sleep_num: {min: min}
-    });
-  },
 
   render: function() {
     return (
