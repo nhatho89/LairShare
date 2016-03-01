@@ -1,7 +1,7 @@
 {
-  "name": "BenchBnb",
+  "name": "LairShare",
   "version": "1.0.0",
-  "description": "air bnb for benches!",
+  "description": "air bnb for super villains!",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appacademy/BenchBnb.git"
+    "url": "git+https://github.com/nhatho89/LairShare.git"
   },
 
   "engines": {
   "node": "4.1.1",
   "npm": "2.1.x"
   },
-  
+
   "scripts": {
   "postinstall": "./node_modules/.bin/webpack"
   },
@@ -27,9 +27,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/appacademy/BenchBnb/issues"
+    "url": "https://github.com/nhatho89/LairShare/issues"
   },
-  "homepage": "https://github.com/appacademy/BenchBnb#readme",
+  "homepage": "https://github.com/nhatho89/LairShare#readme",
   "devDependencies": {
     "babel-core": "^6.2.0",
     "babel-loader": "^6.2.0",
