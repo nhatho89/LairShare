@@ -33,10 +33,10 @@
   "devDependencies": {
     "babel-core": "^6.2.0",
     "babel-loader": "^6.2.0",
-    "babel-preset-react": "^6.1.18",
-    "webpack": "^1.12.2"
+    "babel-preset-react": "^6.1.18"
   },
   "dependencies": {
+    "webpack": "^1.12.2",
     "bootstrap": "^3.3.6",
     "bootstrap-slider": "^6.0.16",
     "flux": "^2.1.1",
