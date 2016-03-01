@@ -15,6 +15,7 @@ class Api::ReservationsController < ApplicationController
   # end
 
   def create
+    fail
     @reservation = current_user.trip_reservations.new(reservation_params)
         # debugger
         if @reservation.save
@@ -24,7 +25,7 @@ class Api::ReservationsController < ApplicationController
         end
   end
 
-  
+
 
 
   private

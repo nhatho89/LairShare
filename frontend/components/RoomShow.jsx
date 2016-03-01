@@ -5,7 +5,7 @@ var Room = require('./Room');
 var Map = require('./Map');
 var ApiUtil = require('../util/apiUtil');
 var Carousel = require('nuka-carousel');
-
+var Modal = require('react-modal');
 
 var PropTypes = React.PropTypes;
 

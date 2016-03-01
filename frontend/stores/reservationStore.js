@@ -72,21 +72,11 @@ ReservationStore.isAvailable = function(){
 
 ReservationStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
-    case ReservationConstants.DETAILS_RECEIVED:
-      verified(payload.avail);
-      ReservationStore.__emitChange();
-      break;
-    case ReservationConstants.RSVP_CONFIRMED:
+    case ReservationConstants.CREATE_RESERVATION:
+    debugger
       receiveNewReservation(payload.reservation);
       ReservationStore.__emitChange();
-    case ReservationConstants.RESET_RSVPSTORE:
-      resetReservationStore();
-      ReservationStore.__emitChange();
       break;
-
-      // phase B datepicker
-    // case ReservationConstants.UNAVAILABILITY_RECEIVED:
-
   }
 };
 
