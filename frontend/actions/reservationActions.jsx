@@ -5,11 +5,12 @@ var ReservationActions = {
 
   //TODO Edit this to do confirmation reservation
   createReservation: function(value) {
+    debugger
     AppDispatcher.dispatch({
-      actionType: RsvpConstants.CREATE_RESERVATION,
+      actionType: ReservationConstants.CREATE_RESERVATION,
       reservation: value
     });
-  },
+  }
 }
 
 module.exports = ReservationActions;

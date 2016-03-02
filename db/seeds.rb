@@ -88,7 +88,7 @@ Reservation.create!(
     room_id: "4",
     guest_id: "1",
     guest_num: "1",
-    start_date: "2016-2-01",
-    end_date: "2016-4-05",
+    start_date: "2016-3-14",
+    end_date: "2016-5-05",
     status: "1"
   )

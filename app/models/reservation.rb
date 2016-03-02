@@ -19,6 +19,16 @@ class Reservation < ActiveRecord::Base
   #   source: :primary_pic
 
 
+  STATUS = {
+    0 => "PENDING",
+    1 => "CONFIRMED",
+    2 => "DENIED",
+    3 => "CANCELED BY HOST",
+    4 => "CANCELED BY GUEST",
+    5 => "NOT AVAILABLE"
+  }
+
+
 
 
   validates :room_id, :guest_id, :guest_num, presence: true

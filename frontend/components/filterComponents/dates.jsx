@@ -4,41 +4,62 @@ var DateTools = require('../../helpers/date.js');
 var DatePicker = require('react-datepicker');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
+var FilterStore = require('../../stores/filter_params.js');
 
 var StayDates = React.createClass({
 
+  getInitialState: function() {
+    return {
+      startDate: moment(),
+      endDate: moment()
+    }
+  },
+
   handleChangeStart: function(startDate) {
-    
-    if (startDate < moment()._d) {
-      alert("Pick a valid date!")
-    } else if (startDate && this.props.endDate) {
-      console.log("helo");
-    };
+
+    // if (startDate < moment()) {
+    //   alert("Pick a valid date!")
+    // } else if (startDate && this.props.endDate) {
+    //   console.log("helo");
+    // };
 
     FilterActions.updateStartDates({
-      startDate: startDate._d.getTime()
+      startDate: startDate
     })
+
   },
 
   handleChangeEnd: function(endDate) {
 
-//moment(parseInt(dateTime)).format('MM-DD-YYYY')
-    // if (endDate < (new Date(this.props.startDate).toUTCString())) {
-    //   alert("Pick a valid date!")
-    // };
+// moment(parseInt(dateTime)).format('MM-DD-YYYY')
+//     if (endDate < (new Date(this.props.startDate).toUTCString())) {
+//       alert("Pick a valid date!")
+//     };
 
     FilterActions.updateEndDates({
-      endDate: endDate._d.getTime()
+      endDate: endDate
     })
   },
 
 
-  formatDate: function(date) {
-    var dateArr = date.toJSON().slice(0,10).split('-');
-    return (dateArr[1] + '/' + dateArr[2] + '/' + dateArr[0]);
+
+
+
+  componentDidMount: function() {
+    FilterStore.addListener(this.displayDate)
+  },
+
+  displayDate: function() {
+
+    this.setState({
+      startDate: FilterStore.params().dates.startDate,
+      endDate: FilterStore.params().dates.endDate
+    })
+
   },
 
   render: function() {
+    
     return (
       <div>
 
@@ -54,14 +75,12 @@ var StayDates = React.createClass({
 
         <div className="calendar-filter">
           <DatePicker
-            selected={this.props.startDate}
-            startDate={this.props.startDate}
-            endDate={this.props.endDate}
+            selected={this.state.startDate}
+
             onChange={this.handleChangeStart} />
           <DatePicker
-            selected={this.props.endDate}
-            startDate={this.props.startDate}
-            endDate={this.props.endDate}
+            selected={this.state.endDate}
+
             onChange={this.handleChangeEnd} />
         </div>
       </div>

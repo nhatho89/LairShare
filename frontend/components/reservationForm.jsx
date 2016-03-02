@@ -5,6 +5,10 @@ var moment = require('moment');
 var ReservationForm = React.createClass({
   // mixins: [LinkedStateMixin],
 
+  handleSubmit: function() {
+    alert("hello!")
+  },
+
   render: function() {
     return (
       <div className="container-fluid">

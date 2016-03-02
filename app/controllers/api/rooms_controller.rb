@@ -27,11 +27,8 @@ class Api::RoomsController < ApplicationController
     if (params[:dates][:startDate] && params[:dates][:endDate])
 
 
-      sec = ('1379844601000'.to_f / 1000).to_s
-      Date.strptime(sec, '%s')
-
-      end_date = Date.strptime((params[:dates][:endDate].to_f / 1000).to_s, '%s')
-      start_date = Date.strptime((params[:dates][:startDate].to_f / 1000).to_s, '%s')
+      end_date = params[:dates][:endDate]
+      start_date = params[:dates][:startDate]
       # @rooms = @rooms.reservations.all.where("start_date > ? OR end_date < ?", end_date, start_date )#.
       @rooms = @rooms.where.not(id: Reservation.unavailable_room_ids(start_date, end_date))
     end

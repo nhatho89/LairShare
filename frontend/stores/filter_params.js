@@ -27,8 +27,8 @@ var _params = {
     }
   },
   dates: {
-    startDate: moment()._d.getTime(),
-    endDate: null
+    startDate: moment().add(604800000),
+    endDate: moment().add(604800000 * 2)
   },
 
   roomType: {
@@ -44,7 +44,15 @@ var _params = {
 };
 
 FilterParamsStore.params = function () {
-  return _params
+  if (typeof _params.dates.startDate === 'string') {
+    _params.dates.startDate = moment(_params.dates.startDate)
+  }
+
+  if (typeof _params.dates.endDate === 'string') {
+    _params.dates.endDate = moment(_params.dates.endDate)
+  }
+
+  return _params;
   // Object.assign({}, _params, {roomType: _roomType});
   // Object.assign({}, _params, {priceRange: _priceRange});
 };
@@ -76,17 +84,17 @@ FilterParamsStore.__onDispatch = function (payload) {
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_START_DATES:
-      _params.dates.startDate = payload.dates.startDate;
+      _params.dates.startDate = moment(payload.dates.startDate);
       FilterParamsStore.__emitChange();
       break;
     case FilterConstants.UPDATE_END_DATES:
-      _params.dates.endDate = payload.dates.endDate;
+      _params.dates.endDate = moment(payload.dates.endDate);
       FilterParamsStore.__emitChange();
       break;
-    case FilterConstants.RESET_DATES:
-      _params.dates = {startDate: null, endDate: null};
-      FilterParamsStore.__emitChange();
-      break;
+    // case FilterConstants.RESET_DATES:
+    //   _params.dates = {startDate: null, endDate: null};
+    //   FilterParamsStore.__emitChange();
+    //   break;
   }
 };
 
