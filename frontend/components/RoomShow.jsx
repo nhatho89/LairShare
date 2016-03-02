@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var RoomStore = require('../stores/roomStore');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
@@ -7,7 +8,9 @@ var Map = require('./Map');
 var ApiUtil = require('../util/apiUtil');
 var Carousel = require('nuka-carousel');
 var Modal = require('react-modal');
-var RoomShow = require('./RoomShow.jsx');
+var RoomForm = require('./RoomForm.jsx');
+var modalStyle = require('./modalStyle.jsx');
+var ReservationForm = require('./reservationForm.jsx');
 
 var PropTypes = React.PropTypes;
 
@@ -67,31 +70,7 @@ var RoomShow = React.createClass({
       var Link = ReactRouter.Link;
     }
 
-    var style = {
-        overlay : {
-          position          : 'fixed',
-          top               : 0,
-          left              : 0,
-          right             : 0,
-          bottom            : 0,
-          backgroundColor   : 'rgba(255, 255, 255, 0.75)'
-        },
-        content : {
-          position                   : 'absolute',
-          top                        : '40px',
-          left                       : '40px',
-          right                      : '40px',
-          bottom                     : '40px',
-          border                     : '1px solid #ccc',
-          background                 : '#fff',
-          overflow                   : 'auto',
-          WebkitOverflowScrolling    : 'touch',
-          borderRadius               : '4px',
-          outline                    : 'none',
-          padding                    : '20px'
 
-        }
-      };
 
 
       console.log(this.state.room);
@@ -119,13 +98,11 @@ var RoomShow = React.createClass({
               isOpen={this.state.showModal}
               onRequestClose={this.closeModal}
               closeTimeoutMS={0}
-              style={style}>
-
-              <h1>Modal Content</h1>
-              <p>Etc.</p>
+              style={modalStyle}>
+              {modalContent}
+              <ReservationForm />
             </Modal>
-
-            <button onClick={this.openModal}>Book now</button>
+            <button onClick={this.openModal}>Reserve Lair!</button>
 
             <Map
               singleRoom={true}
