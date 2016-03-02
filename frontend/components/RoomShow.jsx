@@ -99,9 +99,11 @@ var RoomShow = React.createClass({
               onRequestClose={this.closeModal}
               closeTimeoutMS={0}
               style={modalStyle}>
-              {modalContent}
+
               <ReservationForm />
+
             </Modal>
+            
             <button onClick={this.openModal}>Reserve Lair!</button>
 
             <Map

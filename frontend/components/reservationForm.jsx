@@ -1,16 +1,172 @@
 var React = require('react');
+// var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var moment = require('moment');
 
-var reservationForm = React.createClass({
+var ReservationForm = React.createClass({
+  // mixins: [LinkedStateMixin],
 
   render: function() {
     return (
-        <div>
-          <h1>Make Reservation</h1><br/>
-          <h4>This is where you would book a room...</h4><br/><br/>
-          <h4>IF YOU WERE ACTUALLY A SUPERVILLAIN!</h4>
-          <br/><br/>
-          <h4>Leave this place imposter!</h4>    
-      </div>
+      <div className="container-fluid">
+          <div className="col-xs-12 col-md-7">
+            <form
+               className="input-group col-xs-12"
+               onSubmit={this.handleSubmit}>
+              <div className="row">
+                <div className="payment-container">
+                  <h3>Payment</h3>
+                  <div className="form-group col-xs-6">
+                  <label htmlFor="payment-method">Payment Method</label>
+                    <select
+                       className="form-control"
+                       id="payment-method"
+                       >
+                      <option>AMEX xxxxxxxxxx3001</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <h3>Introduce Yourself to Nhat</h3>
+                <p>Giving your host more information will make them more likely to confirm your booking request:</p>
+                <div className="row">
+                  <div className="col-xs-2 no-padding-right">
+
+
+
+
+                  </div>
+                  <div className="col-xs-10 no-padding-left">
+                    <ul>
+                      <li>Tell Nhat a little about yourself</li>
+                      <li>What brings you to San Francisco? Who’s joining you?</li>
+                      <li>What do you love about this listing? Mention it!</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="row row-space-3">
+                <div className="input-group col-xs-12">
+                  <textarea
+                    className="form-control"
+                    rows="5"
+                    placeholder="Message your host..."
+
+                    >
+                  </textarea>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-xs-12">
+                  <div className="row">
+                    <div className="checkbox">
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="agreement"
+                          required
+                          title="Before booking agree to the House Rules and Terms."
+                          >
+                        </input>
+                        I agree to the House Rules, Cancellation Policy, and to the Guest Refund Policy. I also agree to pay the total amount shown, which includes Occupancy Taxes and Service Fees.
+                      </label>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <button
+                      type="submit"
+                      className="btn btn-primary center-block"
+                      >
+
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div className="col-xs-12 col-md-offset-1 col-md-4">
+            <div className="row">
+
+
+
+
+            </div>
+            <div className="row">
+              <h4>Room Title</h4>
+              <p>City</p>
+            </div>
+            <div className="row">
+              <p>
+                <strong>Private</strong>
+                {" for "}
+                <strong>3 Guests</strong>
+              </p>
+              <p>
+                {"From "}
+                <strong>
+                  Checkin Date
+                </strong>
+                {" to "}
+                <strong>
+                  Checkout Date
+                </strong>
+              </p>
+            </div>
+            <div className="row">
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      {"$100"}
+                    </td>
+                    <td>
+                      {"$200"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Cleaning fee
+                    </td>
+                    <td>
+                      {"$20"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Service fee
+                    </td>
+                    <td>
+                      {"$30"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Occupancy Taxes
+                    </td>
+                    <td>
+                      {"$50"}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Total
+                    </td>
+                    <td>
+                      {"$330?"}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+
+
+        </div>
 
 
     );
@@ -18,4 +174,4 @@ var reservationForm = React.createClass({
 
 });
 
-module.exports = reservationForm;
+module.exports = ReservationForm;

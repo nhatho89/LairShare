@@ -8,7 +8,7 @@ var moment = require('moment');
 var StayDates = React.createClass({
 
   handleChangeStart: function(startDate) {
-    debugger
+    
     if (startDate < moment()._d) {
       alert("Pick a valid date!")
     } else if (startDate && this.props.endDate) {
@@ -22,6 +22,7 @@ var StayDates = React.createClass({
 
   handleChangeEnd: function(endDate) {
 
+//moment(parseInt(dateTime)).format('MM-DD-YYYY')
     // if (endDate < (new Date(this.props.startDate).toUTCString())) {
     //   alert("Pick a valid date!")
     // };
@@ -29,6 +30,12 @@ var StayDates = React.createClass({
     FilterActions.updateEndDates({
       endDate: endDate._d.getTime()
     })
+  },
+
+
+  formatDate: function(date) {
+    var dateArr = date.toJSON().slice(0,10).split('-');
+    return (dateArr[1] + '/' + dateArr[2] + '/' + dateArr[0]);
   },
 
   render: function() {
