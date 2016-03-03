@@ -1,6 +1,8 @@
 var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var ReservationConstants = require('../constants/reservationConstants.js');
+
+
 var ReservationStore = new Store(AppDispatcher);
 
 var _reservationParams = {
@@ -30,6 +32,10 @@ var resetReservationStore = function() {
   }
 };
 
+ReservationStore.params = function() {
+  return _reservationParams;
+};
+
 // var verified = function(avail) {
 //   _reservationStatus = {
 //     verified: true,
@@ -38,7 +44,7 @@ var resetReservationStore = function() {
 //   };
 // };
 
-var receiveNewReservation = function(reservation) {
+// var receiveNewReservation = function(reservation) {
   // _reservationConfParams = {
   //   reservationId: reservation.id,
   //   roomId: reservation.roomId,
@@ -71,7 +77,7 @@ ReservationStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case ReservationConstants.CREATE_RESERVATION:
     debugger
-      _reservationParams = payload.reservation);
+      _reservationParams = payload.reservation;
       ReservationStore.__emitChange();
       break;
   }

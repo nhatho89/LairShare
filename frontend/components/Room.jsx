@@ -1,12 +1,13 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var Review = require('./Review');
+// var Link = ReactRouter.Link
 
 //children of RoomShow
 
 var Room = React.createClass({
   render: function () {
-    var reviews = this.props.room.reviews || [];
+    // var reviews = this.props.room.reviews || [];
     var Link = ReactRouter.Link;
     return (
       <div>
@@ -23,15 +24,15 @@ var Room = React.createClass({
             <li>Longitude: {this.props.room.lng}</li>
           </ul>
         </div>
-        <div className="reviews">
-          <h3>Reviews</h3>
-          {reviews.map(function (review) {
-           return <Review key={review.id} {...review} />;
-         })}
-        </div>
       </div>
     );
   }
 });
 
+// <div className="reviews">
+//   <h3>Reviews</h3>
+//   {reviews.map(function (review) {
+//     return <Review key={review.id} {...review} />;
+//   })}
+// </div>
 module.exports = Room;

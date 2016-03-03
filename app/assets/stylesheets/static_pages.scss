@@ -20,6 +20,34 @@
 //   visibility: visible;
 // }
 
+.reserve-lair-button:hover {
+  height: 40px;
+  width: 80px;
+  background-color: blue;
+  font-weight: bolder;
+  color: white;
+}
+
+.reserve-lair-button {
+  height: 30px;
+  width: 70px;
+}
+
+.room-show-content-container {
+  display: flex;
+  justify-content: space-between;
+}
+.right-half-room {
+  flex-direction: column;
+
+  right: 0px;
+}
+.right-half-room .gmap {
+  height: 300px;
+  width: 300px;
+  right: 0px;
+}
+
 hr {
   display: block;
     height: 1px;

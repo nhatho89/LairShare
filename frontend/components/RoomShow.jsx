@@ -66,8 +66,8 @@ var RoomShow = React.createClass({
     var rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
-      var reviewURL = "/rooms/" + this.state.room.id + "/review";
-      var Link = ReactRouter.Link;
+      // var reviewURL = "/rooms/" + this.state.room.id + "/review";
+      // var Link = ReactRouter.Link;
     }
 
 
@@ -100,11 +100,11 @@ var RoomShow = React.createClass({
               closeTimeoutMS={0}
               style={modalStyle}>
 
-              <ReservationForm />
+              <ReservationForm room={this.state.room}/>
 
             </Modal>
-            
-            <button onClick={this.openModal}>Reserve Lair!</button>
+
+            <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
 
             <Map
               singleRoom={true}

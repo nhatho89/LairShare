@@ -1,15 +1,49 @@
 var React = require('react');
 // var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
+var ReservationStore = require('../stores/reservationStore.js');
+var ReservationActions = require('../actions/reservationActions.jsx');
+var FilterStore = require('../stores/filter_params');
 
 var ReservationForm = React.createClass({
+
+  getInitialState: function() {
+    return {
+      message: "Send a message to your host!"
+    }
+  },
   // mixins: [LinkedStateMixin],
 
-  handleSubmit: function() {
-    alert("hello!")
+  handleSubmit: function(e) {
+    // console.log(e);
+    e.preventDefault();
+    // Get roomId from url this.props....
+    // get filter_params from the store
+    // get data from form
+    // send all data to actionHandler
+    
+    ReservationActions.createNewReservation({
+      roomID: this.props.room.id,
+      guests: FilterStore.params().max_sleep_num,
+      //TODO may cause errors because dates are in form of moments
+      startDate: FilterStore.params().dates.startDate,
+      endDate: FilterStore.params().dates.endDate,
+      message: this.state.message
+    });
+
+
+  },
+
+  messageHandler(message) {
+    this.setState({
+      message: message
+    })
   },
 
   render: function() {
+    // var roomID = this.props.
+
+    var host = ReservationStore.params.host;
     return (
       <div className="container-fluid">
           <div className="col-xs-12 col-md-7">
@@ -26,13 +60,14 @@ var ReservationForm = React.createClass({
                        id="payment-method"
                        >
                       <option>AMEX xxxxxxxxxx3001</option>
+                      <option>VISA xxxxxxxxxx6503</option>
                     </select>
                   </div>
                 </div>
               </div>
 
               <div className="row">
-                <h3>Introduce Yourself to Nhat</h3>
+                <h3>Introduce Yourself to {host}</h3>
                 <p>Giving your host more information will make them more likely to confirm your booking request:</p>
                 <div className="row">
                   <div className="col-xs-2 no-padding-right">
@@ -56,7 +91,7 @@ var ReservationForm = React.createClass({
                     className="form-control"
                     rows="5"
                     placeholder="Message your host..."
-
+                    onChange={this.messageHandler}
                     >
                   </textarea>
                 </div>
@@ -81,9 +116,8 @@ var ReservationForm = React.createClass({
                   <div className="row">
                     <button
                       type="submit"
-                      className="btn btn-primary center-block"
-                      >
-
+                      className="btn btn-primary center-block">
+                      Submit
                     </button>
                   </div>
                 </div>

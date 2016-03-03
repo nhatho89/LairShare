@@ -1,6 +1,10 @@
 class Reservation < ActiveRecord::Base
   belongs_to :room
 
+  has_one :host,
+  through: :room,
+  source: :user
+
   belongs_to :guest,
     foreign_key: :guest_id,
     primary_key: :id,

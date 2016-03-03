@@ -4,7 +4,7 @@ var ReservationConstants = require('../constants/reservationConstants.js');
 var ReservationActions = {
 
   //TODO Edit this to do confirmation reservation
-  createReservation: function(value) {
+  createNewReservation: function(value) {
     debugger
     AppDispatcher.dispatch({
       actionType: ReservationConstants.CREATE_RESERVATION,

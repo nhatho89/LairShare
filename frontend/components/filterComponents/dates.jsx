@@ -46,7 +46,11 @@ var StayDates = React.createClass({
 
 
   componentDidMount: function() {
-    FilterStore.addListener(this.displayDate)
+    this.displayListener = FilterStore.addListener(this.displayDate);
+  },
+
+  componentWillUnmount: function() {
+    this.displayListener.remove();
   },
 
   displayDate: function() {
@@ -59,7 +63,7 @@ var StayDates = React.createClass({
   },
 
   render: function() {
-    
+
     return (
       <div>
 

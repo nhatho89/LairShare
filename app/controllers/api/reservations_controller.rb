@@ -1,6 +1,6 @@
 class Api::ReservationsController < ApplicationController
 
-  before_action :require_login!#, except: :query
+  # before_action :require_login!#, except: :query
 
   # def query
   #   # rsvp = Reservation.new(query_params)
@@ -23,6 +23,10 @@ class Api::ReservationsController < ApplicationController
         else
           render json: @reservation.errors.full_messages, status: 401
         end
+  end
+
+  def index
+    @reservations = Reservation.all
   end
 
 
