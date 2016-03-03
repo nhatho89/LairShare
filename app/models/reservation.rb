@@ -18,9 +18,10 @@ class Reservation < ActiveRecord::Base
   # has_one :host_profile,
   #   through: :room,
   #   source: :host_profile
-  # has_one :room_primary_pic,
-  #   through: :room,
-  #   source: :primary_pic
+
+  has_one :room_primary_pic,
+    through: :room,
+    source: :primary_pic
 
 
   STATUS = {
@@ -51,7 +52,8 @@ class Reservation < ActiveRecord::Base
   end
 
   def self.user_trips_with_details(user)
-    user.trip_reservations.includes(:room, :host, :host_profile, :room_primary_pic).where("reservations.status != ?", 5)
+    fail
+    user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 5)
   end
 
   # def self.isAvailable(query_params)

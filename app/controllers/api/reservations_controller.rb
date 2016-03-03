@@ -10,7 +10,7 @@ class Api::ReservationsController < ApplicationController
   # end
   #
   def trips
-    @trips = Reservation.user_trips_with_details(current_user)
+    @trips = current_user.trip_reservations
     render :trips, status: 200
   end
 

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :rooms, only: [:index, :create, :update, :destroy, :show]
     resources :reservations, only: [:index, :create]
-
+    get '/reservations/trips', to: 'reservations#trips'
   end
 
   resources :users, only: [:new, :create, :show]
