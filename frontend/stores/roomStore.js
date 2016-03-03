@@ -12,6 +12,10 @@ var receiveRoom = function(rooms) {
   });
 };
 
+RoomStore.find = function(id) {
+  return _rooms[id];
+};
+
 var patchDetail = function(room) {
 _rooms[room.id] = room;
 };
@@ -24,6 +28,10 @@ RoomStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case RoomConstants.ROOMS_RECEIVED:
     receiveRoom(payload.rooms)
+    RoomStore.__emitChange();
+    break;
+    case RoomConstants.ROOM_RECEIVED:
+    patchDetail(payload.room)
     RoomStore.__emitChange();
     break;
   }

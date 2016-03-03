@@ -13,7 +13,6 @@ var ApiUtil = {
 
     console.log(filter);
       $.get('api/rooms', filter, function(allRooms) {
-        
           RoomActions.receiveAllRooms(allRooms);
         })
     },
@@ -24,32 +23,44 @@ var ApiUtil = {
   //   });
   // },
 
-  createReservation: function(message, receiveNewTripConfCB) {
-    debugger
-    var room = RoomStore.all();
+  fetchARoom: function(id) {
+    $.get('api/rooms/' + id, function(room) {
+        RoomActions.receiveRoom(room);
+      })
+  },
+
+  createReservation: function(reservationParams) {
+
+    // var room = RoomStore.find(id);
     // debugger;
     $.ajax({
-      url: 'api/reservations/',
+      url: 'api/reservations',
       method: "post",
       dataType: "json",
       data: {reservation: {
-        room_id: room.roomId,
-        start_date: new Date(room.startDate),
-        end_date: new Date(room.endDate),
-        guest_num: room.guests
+        room_id: reservationParams.roomId,
+        start_date: new Date(reservationParams.startDate),
+        end_date: new Date(reservationParams.endDate),
+        guest_num: reservationParams.guests,
+        message: reservationParams.message
       }},
       success: function(newReservation){
+        debugger
         ReservationActions.createReservation(newReservation);
+
+      },
+      error: function(e) {
+        debugger
       }
     });
   },
 
-createReservation: function(data) {
-  debugger
-  $.post('api/reservations', { reservation: data }, function(reservation) {
-    ReservationActions.receiveReservation([reservation]);
-    });
-  },
+// createReservation: function(data) {
+//   debugger
+//   $.post('api/reservations', { reservation: data }, function(reservation) {
+//     ReservationActions.receiveReservation([reservation]);
+//     });
+//   },
 
   createReview: function(data) {
     $.post('api/reviews', { review: data }, function (room) {

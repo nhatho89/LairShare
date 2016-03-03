@@ -15,9 +15,7 @@ class Api::ReservationsController < ApplicationController
   # end
 
   def create
-    fail
-    @reservation = current_user.trip_reservations.new(reservation_params)
-        # debugger
+    @reservation = current_user.reservations.new(reservation_params)
         if @reservation.save
           render json: @reservation, status: 201
         else

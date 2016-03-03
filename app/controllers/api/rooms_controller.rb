@@ -45,6 +45,11 @@ class Api::RoomsController < ApplicationController
     render 'index'
   end
 
+  def show
+    @room = Room.find(params[:id])
+    render :show
+  end
+
 
   def create
     room = Room.create!(room_params)

@@ -6,27 +6,37 @@ var Review = require('./Review');
 //children of RoomShow
 
 var Room = React.createClass({
+
   render: function () {
-    // var reviews = this.props.room.reviews || [];
+    
     var Link = ReactRouter.Link;
+    if (this.props.room) {
+      var components = (
+        <div>
+          <div>
+            <Link to="/rooms">Keep Searching!</Link>
+          </div>
+          <div>
+            <ul>
+              <img height="200px" src={this.props.room.picture_url}/>
+              <li>Description: {this.props.room.description}</li>
+              <li>Sleeps: {this.props.room.max_sleep_num}</li>
+              <li>Rating: {this.props.room.average_rating || "No reviews yet"}</li>
+              <li>Latitude: {this.props.room.lat}</li>
+              <li>Longitude: {this.props.room.lng}</li>
+            </ul>
+          </div>
+        </div>);
+      } else {
+        components = <div></div>;
+      };
+    // var reviews = this.props.room.reviews || [];
+
     return (
       <div>
-        <div>
-          <Link to="/rooms">Keep Searching!</Link>
-        </div>
-        <div>
-          <ul>
-            <img height="200px" src={this.props.room.picture_url}/>
-            <li>Description: {this.props.room.description}</li>
-            <li>Sleeps: {this.props.room.max_sleep_num}</li>
-            <li>Rating: {this.props.room.average_rating || "No reviews yet"}</li>
-            <li>Latitude: {this.props.room.lat}</li>
-            <li>Longitude: {this.props.room.lng}</li>
-          </ul>
-        </div>
+        {components}
       </div>
-    );
-  }
+  );}
 });
 
 // <div className="reviews">

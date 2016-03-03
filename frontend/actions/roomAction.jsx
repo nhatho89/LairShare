@@ -7,7 +7,17 @@ var RoomActions = {
       actionType: RoomConstants.ROOMS_RECEIVED,
       rooms: rooms
     });
+  },
+
+  receiveRoom: function(room){
+    AppDispatcher.dispatch({
+      actionType: RoomConstants.ROOM_RECEIVED,
+      room: room
+    });
   }
+
 }
+
+
 
 module.exports = RoomActions;

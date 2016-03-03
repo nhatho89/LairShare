@@ -22,31 +22,21 @@ var RoomShow = React.createClass({
   },
   getInitialState: function () {
     var roomId = this.props.params.roomId;
-    var room = this._findRoomById(roomId) || {} ;
+    var room = RoomStore.find(roomId) || {} ;
     return { room: room, showModal: false };
   },
-  _findRoomById: function (id) {
-    console.log("looking for: " + id);
-    var res;
-    var that = this;
-    //  Object.keys(RoomStore.all()).forEach(function (roomId) {
-    //   if (id == roomId) {
-    //     res = RoomStore.all()[roomId];
-    //   }
-    // }.bind(this));
-    return RoomStore.all()[id];
-    //  return res;
-  },
+
   componentDidMount: function () {
     this.roomListener = RoomStore.addListener(this._roomChanged);
-    ApiUtil.fetchAllRooms();
+    ApiUtil.fetchARoom(this.props.params.roomId);
   },
   componentWillUnmount: function () {
     this.roomListener.remove();
   },
   _roomChanged: function () {
+
     var roomId = this.props.params.roomId;
-    var room = this._findRoomById(roomId);
+    var room = RoomStore.find(roomId);
     this.setState({ room: room });
   },
 
@@ -63,6 +53,7 @@ var RoomShow = React.createClass({
   },
 
   render: function () {
+
     var rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
@@ -111,8 +102,8 @@ var RoomShow = React.createClass({
               rooms={rooms} />
           </div>
         </div>
-        </div>
-      )
+      </div>
+    );
   }
 });
 
