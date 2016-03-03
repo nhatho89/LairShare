@@ -29,6 +29,22 @@ var ApiUtil = {
       })
   },
 
+  fetchUserDetail: function(userId, receiveDetailCB) {
+    // debugger
+    $.ajax({
+      url: 'api/users/'+ userId,
+      method: "get",
+      success: function(user){
+        console.log(user);
+                  receiveDetailCB(user);
+                },
+      error: function(error, status){
+                  debugger;
+                  // console.log(status)
+                }
+    });
+  },
+
   createReservation: function(reservationParams) {
 
     // var room = RoomStore.find(id);
@@ -41,12 +57,12 @@ var ApiUtil = {
         room_id: reservationParams.roomId,
         start_date: new Date(reservationParams.startDate),
         end_date: new Date(reservationParams.endDate),
+        guest_id: reservationParams.guestId,
         guest_num: reservationParams.guests,
         message: reservationParams.message
       }},
       success: function(newReservation){
-        debugger
-        ReservationActions.createReservation(newReservation);
+        ReservationActions.createNewReservation(newReservation);
 
       },
       error: function(e) {

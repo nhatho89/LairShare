@@ -3,11 +3,13 @@ var UserLoginForm = require('./userLoginForm.jsx');
 var CurrentUser = require('./currentUser');
 var UserStore = require('../stores/userStore');
 var UserActions = require('../actions/userAction');
-
+var History = require('react-router').History;
 var NavBar = React.createClass({
+  mixins: [History],
 
   getInitialState: function() {
     return {
+
       user: UserStore.currentUser()
     };
   },
@@ -22,7 +24,7 @@ var NavBar = React.createClass({
   },
 
   redirectUserProfile: function() {
-    this.props.history.pushState(null, "users/" + this.state.user.id);
+    this.history.push({pathname: "users/" + this.state.user.id});
   },
 
   // <form action="/#/rooms" method="get">

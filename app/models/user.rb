@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :reservations,
-  foreign_key: :guest_id,
+  has_many :trip_reservations,
+    foreign_key: :guest_id,
     primary_key: :id,
     class_name: 'Reservation'
 

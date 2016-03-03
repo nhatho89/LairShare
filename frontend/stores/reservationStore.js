@@ -10,7 +10,8 @@ var _reservationParams = {
   host: null,
   startDate: null,
   endDate: null,
-  guests: null
+  guests: null,
+  guestId: null
   // status: null
 };
 
@@ -76,7 +77,7 @@ ReservationStore.params = function() {
 ReservationStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case ReservationConstants.CREATE_RESERVATION:
-    debugger
+    // debugger
       _reservationParams = payload.reservation;
       ReservationStore.__emitChange();
       break;

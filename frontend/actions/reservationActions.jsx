@@ -5,7 +5,6 @@ var ReservationActions = {
 
   //TODO Edit this to do confirmation reservation
   createNewReservation: function(value) {
-    debugger
     AppDispatcher.dispatch({
       actionType: ReservationConstants.CREATE_RESERVATION,
       reservation: value

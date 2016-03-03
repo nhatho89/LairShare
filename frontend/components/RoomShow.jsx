@@ -23,7 +23,7 @@ var RoomShow = React.createClass({
   getInitialState: function () {
     var roomId = this.props.params.roomId;
     var room = RoomStore.find(roomId) || {} ;
-    return { room: room, showModal: false };
+    return { room: room, showModal: false, openConfModal: false};
   },
 
   componentDidMount: function () {
@@ -45,11 +45,27 @@ var RoomShow = React.createClass({
   },
 
   openModal: function() {
-    this.setState({showModal: !this.state.showModal})
+    this.setState({showModal: true})
   },
 
   closeModal: function() {
-    this.setState({showModal: !this.state.showModal})
+    this.setState({showModal: false})
+
+
+
+  },
+
+  openConfirmationModal: function() {
+    this.setState({
+      openConfModal: true
+    })
+  },
+
+  closeConfirmationModal: function() {
+    this.setState({
+      openConfModal: false,
+      showModal: false
+    });
   },
 
   render: function () {
@@ -91,7 +107,17 @@ var RoomShow = React.createClass({
               closeTimeoutMS={0}
               style={modalStyle}>
 
-              <ReservationForm room={this.state.room}/>
+              <ReservationForm openConfirmationModal={this.openConfirmationModal} room={this.state.room}/>
+
+            </Modal>
+
+            <Modal
+              isOpen={this.state.openConfModal}
+              onRequestClose={this.closeConfirmationModal}
+              closeTimeoutMS={0}
+              style={modalStyle}>
+
+              <h1>Congrats! You've booked a Lair!</h1>
 
             </Modal>
 

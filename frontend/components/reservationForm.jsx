@@ -7,31 +7,35 @@ var FilterStore = require('../stores/filter_params');
 var Modal = require('react-modal');
 var modalStyle = require('./modalStyle.jsx');
 var ApiUtil = require('../util/apiUtil.js');
+var UserStore = require('../stores/userStore.js');
+var RoomShow = require('./RoomShow.jsx');
 
 var ReservationForm = React.createClass({
 
   getInitialState: function() {
     return {
-      message: "Send a message to your host!",
-      openConfModal: false
+      message: "Send a message to your host!"
     }
   },
   // mixins: [LinkedStateMixin],
 
   handleSubmit: function(e) {
+
     // console.log(e);
     e.preventDefault();
-
-    this.openConfirmationModal();
+    debugger
+    // this.openConfirmationModal();
     // Get roomId from url this.props....
     // get filter_params from the store
     // get data from form
     // send all data to actionHandler
 
-    
+
+    this.props.openConfirmationModal();
     ApiUtil.createReservation({
       roomId: this.props.room.id,
       guests: FilterStore.params().max_sleep_num,
+      guestId: UserStore.currentUser(),
       //TODO may cause errors because dates are in form of moments
       startDate: FilterStore.params().dates.startDate,
       endDate: FilterStore.params().dates.endDate,
@@ -39,19 +43,6 @@ var ReservationForm = React.createClass({
     });
 
 
-  },
-
-  openConfirmationModal: function() {
-    this.setState({
-      openConfModal: true
-    })
-  },
-
-  closeConfirmationModal: function() {
-    this.setState({
-      openConfModal: false
-
-    })
   },
 
   messageHandler(message) {
@@ -144,16 +135,6 @@ var ReservationForm = React.createClass({
               </div>
             </form>
           </div>
-
-          <Modal
-            isOpen={this.state.openConfModal}
-            onRequestClose={this.closeConfirmationModal}
-            closeTimeoutMS={0}
-            style={modalStyle}>
-
-            <h1>Congrats! You've booked a Lair!</h1>
-
-          </Modal>
 
           <div className="col-xs-12 col-md-offset-1 col-md-4">
             <div className="row">

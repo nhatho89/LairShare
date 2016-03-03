@@ -9,6 +9,10 @@ var RoomActions = {
     });
   },
 
+  // fetchRoomDetail: function(roomId) {
+  //   ApiUtil.fetchRoomDetail(roomId, this.receiveRoomDetail);
+  // },
+
   receiveRoom: function(room){
     AppDispatcher.dispatch({
       actionType: RoomConstants.ROOM_RECEIVED,

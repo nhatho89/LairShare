@@ -9,12 +9,13 @@ class Api::ReservationsController < ApplicationController
   #   render :query, status: 200
   # end
   #
-  # def trips
-  #   @trips = Reservation.user_trips_with_details(current_user)
-  #   render :trips, status: 200
-  # end
+  def trips
+    @trips = Reservation.user_trips_with_details(current_user)
+    render :trips, status: 200
+  end
 
   def create
+
     @reservation = current_user.reservations.new(reservation_params)
         if @reservation.save
           render json: @reservation, status: 201
@@ -38,9 +39,10 @@ class Api::ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(
     :room_id,
-    :guest_num,
     :start_date,
     :end_date,
+    :guest_num,
+    :guest_id,
     :message
     )
   end

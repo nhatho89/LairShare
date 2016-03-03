@@ -10,9 +10,9 @@ class Reservation < ActiveRecord::Base
     primary_key: :id,
     class_name: 'User'
 
-  # has_one :host,
-  #   through: :room,
-  #   source: :host
+  has_one :host,
+    through: :room,
+    source: :host
 
 
   # has_one :host_profile,

@@ -24,7 +24,7 @@ var UserAction = {
       actionType: UserConstants.LOG_OUT_USER
     });
   },
-
+  
   getCurrentUser: function() {
     UserUtil.getCurrentUser();
   }
