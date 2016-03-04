@@ -26,7 +26,8 @@ var SearchIndex = React.createClass({
       latLng: null,
       // filterParams: FilterStore.params(),
       // showResult: JSLoaderStore.isReady('gMaps')
-      showResult: false
+      showResult: false,
+      centerLatLng: null
     });
   },
 
@@ -137,17 +138,11 @@ var SearchIndex = React.createClass({
         <div className="search-container">
           <div className="left-half">
             <div className="row">
-              <h2 style={{display: "none"}}>Search Filter Placeholder</h2>
               <Filter/>
             </div>
-            <div className="row search-list-result" >
+            <div className="search-list-result" >
               <h2 style={{display: "none"}}>Search Result Header Placeholder</h2>
-                <h4>
-                  This Demo system currently only contains sample room data in
-                  <a onClick={this.handleClick}>
-                    {" San Francisco"}
-                  </a>
-                </h4>
+              <List rooms={this.state.rooms} history={this.props.history} />
                </div>
           </div>
           <div className="right-half">
@@ -156,9 +151,7 @@ var SearchIndex = React.createClass({
         </div>
       );
     } else {
-      return(
-        <LoadingScreen />
-      );
+      return <div></div>
     }
   }
 });

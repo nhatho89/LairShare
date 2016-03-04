@@ -1,6 +1,5 @@
 var React = require('react');
-var ListItemImage= require('./listItemImage.jsx');
-var ListItemBody = require('./listItemBody.jsx');
+var Index = require('./Index.jsx');
 
 
 
@@ -20,8 +19,7 @@ var ListItem = React.createClass({
         <div
           className="container-fluid cursor-pointer"
           id={"room-" + room.id}>
-          <ListItemImage handleClick={this.handleClick} room={room} />
-          <ListItemBody handleClick={this.handleClick} room={room} />
+          <Index/>
         </div>
       </div>
     );

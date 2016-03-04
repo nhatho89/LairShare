@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var RoomStore = require('../stores/roomStore');
+var UserStore = require('../stores/userStore.js');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 var Room = require('./Room');
@@ -11,11 +12,13 @@ var Modal = require('react-modal');
 // var RoomForm = require('./RoomForm.jsx');
 var modalStyle = require('./modalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
+var History = require('react-router').History;
 
 var PropTypes = React.PropTypes;
 
 var RoomShow = React.createClass({
   mixins: [Carousel.ControllerMixin],
+  mixins: [History],
 
   contextTypes: {
     router: React.PropTypes.func
@@ -66,6 +69,7 @@ var RoomShow = React.createClass({
       openConfModal: false,
       showModal: false
     });
+    this.history.push({pathname: '/users/' + UserStore.currentUser.id})
   },
 
   render: function () {

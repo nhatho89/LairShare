@@ -19,6 +19,16 @@
 // .daterangepicker:focus {
 //   visibility: visible;
 // }
+.sf-button:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 17px;
+}
+
+.sf-button {
+  color: blue;
+  text-decoration: underline;
+}
 
 .reserve-lair-button:hover {
   height: 40px;
