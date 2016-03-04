@@ -24,14 +24,27 @@ var Map = React.createClass({
     this.markers = [];
     Object.keys(this.props.rooms).forEach(this.createMarkerFromRoom);
   },
+
   centerRoomCoords: function () {
-    if (this.props.rooms[0] && this.props.rooms[0].lng) {
+    
+    if (this.props.centerLatLng) {
+      this.setState({
+        lat: this.props.centerLatLng.lat,
+        lng: this.props.centerLatLng.lng
+      })
+      return {
+      lat: this.props.centerLatLng.lat,
+      lng: this.props.centerLatLng.lng
+      }
+    } else if (this.props.rooms[0] && this.props.rooms[0].lng) {
       var room = this.props.rooms[0];
       return { lat: room.lat, lng: room.lng };
     } else {
       return CENTER;
     }
+
   },
+
   componentDidUpdate: function (oldProps) {
     this._onChange();
   },

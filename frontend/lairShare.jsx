@@ -13,7 +13,7 @@ var CurrentUser = require('./components/currentUser');
 var NavBar = require('./components/navBar');
 var Search = require('./components/Search');
 var RoomShow = require('./components/RoomShow');
-var RoomForm = require('./components/RoomForm');
+// var RoomForm = require('./components/RoomForm');
 var ReviewForm = require('./components/ReviewForm');
 var UserIndex = require('./components/userIndex.jsx');
 var SearchIndex = require('./components/searchIndex.jsx');
@@ -24,6 +24,7 @@ var Redirect = ReactRouter.Redirect;
 // var Redirect = ReactRouter.Redirect;
 
 
+// <Route path="rooms/new" component={RoomForm}/>
 
 var routes = (
   <Route component={App} path="/">
@@ -32,7 +33,6 @@ var routes = (
     <Route path="users/:id" component={UserIndex}></Route>
     <Route path="/search/:loc" component={SearchIndex} />
     <Redirect path="rooms" to="/search/San-Francisco" />
-    <Route path="rooms/new" component={RoomForm}/>
     <Route path="rooms/:roomId" component={RoomShow}>
       <Route path="review" components={ReviewForm}/>
     </Route>

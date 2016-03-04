@@ -8,7 +8,7 @@ var Map = require('./Map');
 var ApiUtil = require('../util/apiUtil');
 var Carousel = require('nuka-carousel');
 var Modal = require('react-modal');
-var RoomForm = require('./RoomForm.jsx');
+// var RoomForm = require('./RoomForm.jsx');
 var modalStyle = require('./modalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 

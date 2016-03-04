@@ -1,5 +1,6 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var RoomConstants = require('../constants/roomConstants');
+var ApiUtil = require('../util/apiUtil.js');
 
 var RoomActions = {
   receiveAllRooms: function(rooms){
@@ -8,6 +9,11 @@ var RoomActions = {
       rooms: rooms
     });
   },
+
+  // fetchAllRooms: function() {
+  //   debugger
+  //   ApiUtil.fetchAllRooms(this.receiveAllRooms);
+  // },
 
   // fetchRoomDetail: function(roomId) {
   //   ApiUtil.fetchRoomDetail(roomId, this.receiveRoomDetail);

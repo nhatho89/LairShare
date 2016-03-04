@@ -12,6 +12,7 @@ var Map = require('./Map.jsx');
 var JSLoaderStore = require('../stores/jsLoaderStore.js');
 var LoadingScreen = require('./loadingScreen.jsx');
 var Filter = require('./Filters.jsx');
+var Search = require('./Search.jsx');
 
 
 var SearchIndex = React.createClass({
@@ -37,13 +38,10 @@ var SearchIndex = React.createClass({
     // debugger;
   },
 
-  _updateFilter: function() {
-    // console.log("updatefilter");
-    // this.setState({
-    //   filterParams: FilterStore.params()
-    // });
-    RoomActions.fetchFilteredRooms();
-  },
+  // _updateFilter: function() {
+  //
+  //   RoomActions.fetchAllRooms();
+  // },
 
   _updateMapsStatus: function() {
     if (JSLoaderStore.isReady('gMaps')) {
@@ -59,7 +57,7 @@ var SearchIndex = React.createClass({
 
 
   _geoConverter: function(locStr) {
-    debugger
+
     if (locStr === "San-Francisco" || locStr === "san-francisco") {
       this.history.push({pathname: 'rooms'});
     };
@@ -101,7 +99,7 @@ var SearchIndex = React.createClass({
 
   componentWillUnmount: function() {
     this.roomToken.remove();
-    this.filterToken.remove();
+    // this.filterToken.remove();
   },
 
   componentDidMount: function() {
@@ -115,13 +113,18 @@ var SearchIndex = React.createClass({
       this.mapsReadyToken = JSLoaderStore.addListener(this._updateMapsStatus);
     }
     this.roomToken = RoomStore.addListener(this._updateRooms);
-    this.filterToken = FilterStore.addListener(this._updateFilter);
+    // this.filterToken = FilterStore.addListener(this._updateFilter);
 
     // RoomActions.fetchCurrentMapRooms();
   },
 
+  handleClick: function(e) {
+    e.preventDefault();
+    this.history.push({pathname: 'rooms/'});
+  },
+
   render: function() {
-    debugger
+
     var showResult = this.state.showResult;
     // // For testing
     // showResult = false;
@@ -131,8 +134,8 @@ var SearchIndex = React.createClass({
     if (showResult) {
       // console.log("searchIndexRendered");
       return (
-        <div className="container-fluid below-nav" id="sidx">
-          <div className="col-xs-12 col-md-7 search-result" id="sidx-left">
+        <div className="search-container">
+          <div className="left-half">
             <div className="row">
               <h2 style={{display: "none"}}>Search Filter Placeholder</h2>
               <Filter/>
@@ -141,13 +144,13 @@ var SearchIndex = React.createClass({
               <h2 style={{display: "none"}}>Search Result Header Placeholder</h2>
                 <h4>
                   This Demo system currently only contains sample room data in
-                  <a href="#/rooms">
+                  <a onClick={this.handleClick}>
                     {" San Francisco"}
                   </a>
                 </h4>
                </div>
           </div>
-          <div className="col-md-5 search-map hidden-xs">
+          <div className="right-half">
             <Map centerLatLng={this.state.centerLatLng}/>
           </div>
         </div>

@@ -7,6 +7,7 @@ var RoomStore = require('../stores/roomStore.js');
 
 var ApiUtil = {
   fetchAllRooms: function() {
+    
     var filter = FilterStore.params();
     filter.dates.startDate = filter.dates.startDate.format()
     filter.dates.endDate = filter.dates.endDate.format()
