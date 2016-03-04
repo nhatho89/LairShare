@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var FilterActions = require('../actions/filter_actions');
-
+var RoomStore = require('../stores/roomStore.js');
 function _getCoordsObj(latLng) {
   return {
     lat: latLng.lat(),
@@ -16,11 +16,20 @@ var Map = React.createClass({
   getInitialState: function() {
     return {
       centerLatLng: this.props.centerLatLng,
-      rooms: this.props.rooms
+      rooms: RoomStore.all()
     }
   },
 
+  setRoom: function() {
+    this.setState({
+      rooms: RoomStore.all()
+    })
+
+    this._onChange();
+  },
+
   componentDidMount: function(){
+    this.roomListener = RoomStore.addListener(this.setRoom);
     console.log('map mounted');
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
@@ -30,34 +39,26 @@ var Map = React.createClass({
     this.map = new google.maps.Map(map, mapOptions);
     this.registerListeners();
     this.markers = [];
-    Object.keys(this.props.rooms).forEach(this.createMarkerFromRoom);
+    Object.keys(this.state.rooms).forEach(this.createMarkerFromRoom);
   },
 
   centerRoomCoords: function () {
-
     if (this.state.centerLatLng) {
-      // this.setState({
-      //   lat: this.props.centerLatLng.lat,
-      //   lng: this.props.centerLatLng.lng
-      // })
+
+
       return {
       lat: this.state.centerLatLng.lat,
       lng: this.state.centerLatLng.lng
       }
-    // } else if (this.props.rooms[0] && this.props.rooms[0].lng) {
-    //   var room = this.props.rooms[0];
-    //   return { lat: room.lat, lng: room.lng };
+
     } else {
       return CENTER;
     }
 
   },
 
-  // componentDidUpdate: function (oldProps) {
-  //   debugger
-  // },
+
   _onChange: function(){
-    // debugger
     var rooms = this.state.rooms;
     var toAdd = [], toRemove = this.markers.slice(0);
     var that = this;
@@ -65,7 +66,6 @@ var Map = React.createClass({
     Object.keys(rooms).forEach(function(id, idx){
       var room = that.state.rooms[id];
       var idx = -1;
-      //check if room is already on map as a marker
       for(var i = 0; i < toRemove.length; i++){
         if(toRemove[i].roomId == room.id){
           idx = i;
@@ -73,37 +73,31 @@ var Map = React.createClass({
         }
       }
       if(idx === -1){
-        //if it's not already on the map, we need to add a marker
         toAdd.push(room);
       } else {
-        //if it IS already on the map AND in the store, we don't need
-        //to remove it
+
         toRemove.splice(idx, 1);
       }
     });
     toAdd.forEach(this.createMarkerFromRoom);
     toRemove.forEach(this.removeMarker);
 
-    // this.centerRoomCoords();
 
-    // if (this.props.singleRoom) {
-    //   this.map.setOptions({draggable: false});
-      this.map.setCenter(this.centerRoomCoords());
-    // }
+
   },
 
   componentWillReceiveProps: function(newProps) {
     this.setState({
-      centerLatLng: newProps.centerLatLng,
-      rooms: newProps.rooms
+      centerLatLng: newProps.centerLatLng
     })
-
+    this.map.setCenter({lat: newProps.centerLatLng.lat, lng: newProps.centerLatLng.lng });
     this._onChange();
 
   },
 
   componentWillUnmount: function(){
     console.log("map UNmounted");
+    this.roomListener.remove();
   },
   registerListeners: function(){
     var that = this;
@@ -138,6 +132,7 @@ var Map = React.createClass({
     });
     this.markers.push(marker);
   },
+
   removeMarker: function(marker){
     for(var i = 0; i < this.markers.length; i++){
       if (this.markers[i].roomId === marker.roomId){
