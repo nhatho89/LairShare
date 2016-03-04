@@ -1,0 +1,33 @@
+/*.user-trip-outer-container {
+  display: flex;
+  width: inherit;
+
+}
+
+.user-trip-outer-container:hover {
+  background-color: silver;
+}*/
+
+.user-trip-categories {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-group-item {
+  border: 2px solid silver;
+  margin: 3px;
+}
+
+.list-group-item:hover {
+  background-color: silver;
+}
+
+.active {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+/*.trip-detail-panel {
+  height: 400px;
+}*/

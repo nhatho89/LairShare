@@ -35,11 +35,12 @@ var ApiUtil = {
       url: 'api/users/'+ userId,
       method: "get",
       success: function(user){
+        debugger
         console.log(user);
                   receiveDetailCB(user);
                 },
       error: function(error, status){
-                  debugger;
+                  // debugger;
                   // console.log(status)
                 }
     });
@@ -71,12 +72,21 @@ var ApiUtil = {
     });
   },
 
-// createReservation: function(data) {
-//   debugger
-//   $.post('api/reservations', { reservation: data }, function(reservation) {
-//     ReservationActions.receiveReservation([reservation]);
-//     });
-//   },
+  fetchTrips: function(receiveUserTripsCB) {
+    $.ajax({
+      url: 'api/reservations/trips',
+      method: "get",
+      success: function(trips){
+        // debugger
+                  receiveUserTripsCB(trips);
+                },
+      error: function(error, status){
+                  debugger;
+                  // console.log(status)
+                }
+    });
+  },
+
 
   createReview: function(data) {
     $.post('api/reviews', { review: data }, function (room) {

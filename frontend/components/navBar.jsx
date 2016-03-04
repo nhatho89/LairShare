@@ -25,6 +25,9 @@ var NavBar = React.createClass({
 
   redirectUserProfile: function() {
     this.history.push({pathname: "users/" + this.state.user.id});
+    // if (SessionStore.hasCurrentUser()) {
+    //     TripActions.fetchUserTrips();
+    //   }
   },
 
   // <form action="/#/rooms" method="get">
