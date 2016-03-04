@@ -18,7 +18,7 @@ var List = React.createClass({
     var redirectPrompt = (
       <h4>
         This demo only contains data for
-        <a href="#/rooms">
+        <a href="#/search/San-Francisco">
           {" San Francisco"}
         </a>
       </h4>

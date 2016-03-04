@@ -13,7 +13,8 @@ var JSLoaderStore = require('../stores/jsLoaderStore.js');
 var LoadingScreen = require('./loadingScreen.jsx');
 var Filter = require('./Filters.jsx');
 var Search = require('./Search.jsx');
-
+var ApiUtil = require('../util/apiUtil.js');
+var Index = require('./Index');
 
 var SearchIndex = React.createClass({
   // mixins: [ReactRouter.history],
@@ -23,8 +24,7 @@ var SearchIndex = React.createClass({
   getInitialState: function() {
     return({
       rooms: RoomStore.all(),
-      latLng: null,
-      // filterParams: FilterStore.params(),
+      filterParams: FilterStore.params(),
       // showResult: JSLoaderStore.isReady('gMaps')
       showResult: false,
       centerLatLng: null
@@ -58,10 +58,6 @@ var SearchIndex = React.createClass({
 
 
   _geoConverter: function(locStr) {
-
-    if (locStr === "San-Francisco" || locStr === "san-francisco") {
-      this.history.push({pathname: 'rooms'});
-    };
     this.geocoder = new google.maps.Geocoder();
     // console.log("geoConverter called");
     var _showMaps = this._showMaps;
@@ -72,6 +68,7 @@ var SearchIndex = React.createClass({
           lat: results[0].geometry.location.lat(),
           lng: results[0].geometry.location.lng()
         };
+
         // console.log(latLng);
         _showMaps(latLng);
       } else {
@@ -81,7 +78,15 @@ var SearchIndex = React.createClass({
     });
   },
 
+  _filtersChanged: function () {
+    var newParams = FilterStore.params();
+    this.setState({ filterParams: newParams });
+    ApiUtil.fetchAllRooms();
+
+  },
+
   _showMaps: function(centerLatLng) {
+    
     this.setState({
       showResult: true,
       centerLatLng: centerLatLng
@@ -89,6 +94,7 @@ var SearchIndex = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
+
     var newLocStr = newProps.params.loc;
     // console.log("searchIndexReceivedNewProps" + newLocStr);
     // debugger;
@@ -100,7 +106,8 @@ var SearchIndex = React.createClass({
 
   componentWillUnmount: function() {
     this.roomToken.remove();
-    // this.filterToken.remove();
+    this.filterListener.remove();
+
   },
 
   componentDidMount: function() {
@@ -114,14 +121,20 @@ var SearchIndex = React.createClass({
       this.mapsReadyToken = JSLoaderStore.addListener(this._updateMapsStatus);
     }
     this.roomToken = RoomStore.addListener(this._updateRooms);
+    ApiUtil.fetchAllRooms();
     // this.filterToken = FilterStore.addListener(this._updateFilter);
+    this.filterListener = FilterStore.addListener(this._filtersChanged);
 
     // RoomActions.fetchCurrentMapRooms();
   },
 
-  handleClick: function(e) {
-    e.preventDefault();
-    this.history.push({pathname: 'rooms/'});
+  // handleClick: function(e) {
+  //   e.preventDefault();
+  //   this.history.push({pathname: '/search/San-Francisco'});
+  // },
+
+  handleMarkerClick: function (room) {
+    this.props.history.pushState(null, "rooms/" + room.id);
   },
 
   render: function() {
@@ -138,15 +151,25 @@ var SearchIndex = React.createClass({
         <div className="search-container">
           <div className="left-half">
             <div className="row">
-              <Filter/>
+              <Filter rooms={this.state.rooms} filterParams={this.state.filterParams}/>
+              <Index rooms={this.state.rooms} history={this.props.history} />
             </div>
             <div className="search-list-result" >
               <h2 style={{display: "none"}}>Search Result Header Placeholder</h2>
-              <List rooms={this.state.rooms} history={this.props.history} />
+                <h4>
+                  This demo only contains data for
+                  <a href="#/search/San-Francisco">
+                    {" San Francisco"}
+                  </a>
+                </h4>
                </div>
           </div>
           <div className="right-half">
-            <Map centerLatLng={this.state.centerLatLng}/>
+            <Map
+              centerLatLng={this.state.centerLatLng}
+              rooms={this.state.rooms}
+              onMarkerClick={this.handleMarkerClick}/>
+
           </div>
         </div>
       );

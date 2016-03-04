@@ -12,6 +12,14 @@ function _getCoordsObj(latLng) {
 var CENTER = {lat: 37.7758, lng: -122.435};
 
 var Map = React.createClass({
+
+  getInitialState: function() {
+    return {
+      centerLatLng: this.props.centerLatLng,
+      rooms: this.props.rooms
+    }
+  },
+
   componentDidMount: function(){
     console.log('map mounted');
     var map = ReactDOM.findDOMNode(this.refs.map);
@@ -26,35 +34,36 @@ var Map = React.createClass({
   },
 
   centerRoomCoords: function () {
-    
-    if (this.props.centerLatLng) {
-      this.setState({
-        lat: this.props.centerLatLng.lat,
-        lng: this.props.centerLatLng.lng
-      })
+
+    if (this.state.centerLatLng) {
+      // this.setState({
+      //   lat: this.props.centerLatLng.lat,
+      //   lng: this.props.centerLatLng.lng
+      // })
       return {
-      lat: this.props.centerLatLng.lat,
-      lng: this.props.centerLatLng.lng
+      lat: this.state.centerLatLng.lat,
+      lng: this.state.centerLatLng.lng
       }
-    } else if (this.props.rooms[0] && this.props.rooms[0].lng) {
-      var room = this.props.rooms[0];
-      return { lat: room.lat, lng: room.lng };
+    // } else if (this.props.rooms[0] && this.props.rooms[0].lng) {
+    //   var room = this.props.rooms[0];
+    //   return { lat: room.lat, lng: room.lng };
     } else {
       return CENTER;
     }
 
   },
 
-  componentDidUpdate: function (oldProps) {
-    this._onChange();
-  },
+  // componentDidUpdate: function (oldProps) {
+  //   debugger
+  // },
   _onChange: function(){
-    var rooms = this.props.rooms;
+    // debugger
+    var rooms = this.state.rooms;
     var toAdd = [], toRemove = this.markers.slice(0);
     var that = this;
 
     Object.keys(rooms).forEach(function(id, idx){
-      var room = that.props.rooms[id];
+      var room = that.state.rooms[id];
       var idx = -1;
       //check if room is already on map as a marker
       for(var i = 0; i < toRemove.length; i++){
@@ -75,11 +84,24 @@ var Map = React.createClass({
     toAdd.forEach(this.createMarkerFromRoom);
     toRemove.forEach(this.removeMarker);
 
-    if (this.props.singleRoom) {
-      this.map.setOptions({draggable: false});
+    // this.centerRoomCoords();
+
+    // if (this.props.singleRoom) {
+    //   this.map.setOptions({draggable: false});
       this.map.setCenter(this.centerRoomCoords());
-    }
+    // }
   },
+
+  componentWillReceiveProps: function(newProps) {
+    this.setState({
+      centerLatLng: newProps.centerLatLng,
+      rooms: newProps.rooms
+    })
+
+    this._onChange();
+
+  },
+
   componentWillUnmount: function(){
     console.log("map UNmounted");
   },

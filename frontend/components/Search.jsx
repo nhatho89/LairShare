@@ -14,9 +14,9 @@ function _getFilterParams() {
   return FilterStore.params();
 }
 var Search = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.func
-  },
+  // contextTypes: {
+  //   router: React.PropTypes.func
+  // },
   _roomsChanged: function(){
     this.setState({rooms: _getAllRooms()});
   },

@@ -58,7 +58,7 @@ var Index = React.createClass({
 
     return (
       <div className="search-results">
-        
+
         {
           Object.keys(this.props.rooms).map(function(id){
             var room = that.props.rooms[id];

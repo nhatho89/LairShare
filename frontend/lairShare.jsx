@@ -25,14 +25,14 @@ var Redirect = ReactRouter.Redirect;
 
 
 // <Route path="rooms/new" component={RoomForm}/>
+// <Redirect path="rooms" to="/search/San-Francisco" />
+// <Route component={Search} path="rooms"/>
 
 var routes = (
   <Route component={App} path="/">
     <IndexRoute component={LandingPage}/>
-    <Route component={Search} path="rooms"/>
     <Route path="users/:id" component={UserIndex}></Route>
     <Route path="/search/:loc" component={SearchIndex} />
-    <Redirect path="rooms" to="/search/San-Francisco" />
     <Route path="rooms/:roomId" component={RoomShow}>
       <Route path="review" components={ReviewForm}/>
     </Route>

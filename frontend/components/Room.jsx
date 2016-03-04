@@ -8,13 +8,13 @@ var Review = require('./Review');
 var Room = React.createClass({
 
   render: function () {
-    
+
     var Link = ReactRouter.Link;
     if (this.props.room) {
       var components = (
         <div>
           <div>
-            <Link to="/rooms">Keep Searching!</Link>
+            <Link to="/search/San-Francisco">Keep Searching!</Link>
           </div>
           <div>
             <ul>
