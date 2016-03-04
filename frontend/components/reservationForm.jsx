@@ -23,7 +23,6 @@ var ReservationForm = React.createClass({
 
     // console.log(e);
     e.preventDefault();
-    debugger
     // this.openConfirmationModal();
     // Get roomId from url this.props....
     // get filter_params from the store

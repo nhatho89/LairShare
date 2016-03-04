@@ -43,9 +43,9 @@ var Search = React.createClass({
     this.roomListener.remove();
     this.filterListener.remove();
   },
-  handleMapClick: function(coords){
-    this.props.history.pushState(null, "rooms/new", coords);
-  },
+  // handleMapClick: function(coords){
+  //   this.props.history.pushState(null, "rooms/new", coords);
+  // },
   handleMarkerClick: function (room) {
     this.props.history.pushState(null, "rooms/" + room.id);
   },
@@ -58,7 +58,6 @@ var Search = React.createClass({
         </div>
         <div className="right-half">
           <Map
-            onMapClick={this.handleMapClick}
             onMarkerClick={this.handleMarkerClick}
             rooms={this.state.rooms}/>
         </div>
@@ -67,4 +66,5 @@ var Search = React.createClass({
   }
 });
 
+// onMapClick={this.handleMapClick}
 module.exports = Search

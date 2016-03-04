@@ -7,22 +7,16 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nhatho89/LairShare.git"
   },
-
   "engines": {
     "node": "5.6.0",
     "npm": "3.6.x"
   },
-
-  "scripts": {
-  "postinstall": "./node_modules/.bin/webpack"
-  },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -30,15 +24,14 @@
     "url": "https://github.com/nhatho89/LairShare/issues"
   },
   "homepage": "https://github.com/nhatho89/LairShare#readme",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "babel-core": "^6.2.0",
     "babel-loader": "^6.2.0",
     "babel-preset-react": "^6.1.18",
-    "webpack": "^1.12.2",
     "bootstrap": "^3.3.6",
     "bootstrap-slider": "^6.0.16",
+    "compass": "^0.1.1",
     "flux": "^2.1.1",
     "history": "^1.13.1",
     "jquery": "^2.1.4",
@@ -48,6 +41,7 @@
     "react-datepicker": "^0.23.2",
     "react-dom": "^0.14.2",
     "react-modal": "^0.6.1",
-    "react-router": "^1.0.0-rc4"
+    "react-router": "^1.0.0-rc4",
+    "webpack": "^1.12.2"
   }
 }

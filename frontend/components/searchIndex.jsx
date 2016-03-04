@@ -4,21 +4,25 @@ var RoomStore = require('../stores/roomStore.js');
 var FilterStore = require('../stores/filter_params.js');
 var RoomActions = require('../actions/roomAction.jsx');
 var FilterActions = require('../actions/filter_actions.js')
-
+// var SearchForm = require('./searchForm.jsx');
+var History = require('react-router').History;
 
 var List = require('./list.jsx');
-var Map = require('./map.jsx');
+var Map = require('./Map.jsx');
 var JSLoaderStore = require('../stores/jsLoaderStore.js');
 var LoadingScreen = require('./loadingScreen.jsx');
-
+var Filter = require('./Filters.jsx');
 
 
 var SearchIndex = React.createClass({
   // mixins: [ReactRouter.history],
+  mixins: [History],
+
 
   getInitialState: function() {
     return({
       rooms: RoomStore.all(),
+      latLng: null,
       // filterParams: FilterStore.params(),
       // showResult: JSLoaderStore.isReady('gMaps')
       showResult: false
@@ -50,12 +54,16 @@ var SearchIndex = React.createClass({
   },
 
   _startSearchProcess: function() {
-    this.geocoder = new google.maps.Geocoder();
     this._geoConverter(this.props.params.loc);
   },
 
 
   _geoConverter: function(locStr) {
+    debugger
+    if (locStr === "San-Francisco" || locStr === "san-francisco") {
+      this.history.push({pathname: 'rooms'});
+    };
+    this.geocoder = new google.maps.Geocoder();
     // console.log("geoConverter called");
     var _showMaps = this._showMaps;
     this.geocoder.geocode({"address": locStr}, function(results, status){
@@ -113,7 +121,7 @@ var SearchIndex = React.createClass({
   },
 
   render: function() {
-
+    debugger
     var showResult = this.state.showResult;
     // // For testing
     // showResult = false;
@@ -127,12 +135,17 @@ var SearchIndex = React.createClass({
           <div className="col-xs-12 col-md-7 search-result" id="sidx-left">
             <div className="row">
               <h2 style={{display: "none"}}>Search Filter Placeholder</h2>
-              <SearchForm />
+              <Filter/>
             </div>
             <div className="row search-list-result" >
               <h2 style={{display: "none"}}>Search Result Header Placeholder</h2>
-              <List rooms={this.state.rooms} history={this.props.history} />
-            </div>
+                <h4>
+                  This Demo system currently only contains sample room data in
+                  <a href="#/rooms">
+                    {" San Francisco"}
+                  </a>
+                </h4>
+               </div>
           </div>
           <div className="col-md-5 search-map hidden-xs">
             <Map centerLatLng={this.state.centerLatLng}/>

@@ -1,8 +1,10 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var History = require('react-router').History;
 
 
 var LandingSearchBar = React.createClass({
+  mixins: [History],
 
   getInitialState: function() {
     return ({
@@ -39,7 +41,8 @@ var LandingSearchBar = React.createClass({
   redirectToSearch: function() {
     var loc = this.state.loc.replace(/\W+/g, "-");
     console.log("pushStatefromsearch");
-    this.props.history.pushState(null, 'search/' + loc);
+
+    this.history.push({pathname: 'search/' + loc});
   },
 
 
@@ -53,42 +56,7 @@ var LandingSearchBar = React.createClass({
   },
 
   render: function() {
-    var org1 = (
-      <div>
-        <form className="form-horizontal" role="form" onSubmit={this.handleSearch}>
-          <div className="input-group input-group-lg">
-            <input
-               type="text"
-               className="form-control"
 
-               placeholder= {this.state.placeholder} />
-            <span className="input-group-addon">@</span>
-          </div>
-          <button>Search</button>
-        </form>
-      </div>
-    );
-
-    var design1 = (
-      <div className="col-xs-12" id="landing-search-bar">
-        <div className="row">
-          <div className="col-xs-8 col-xs-offset-2">
-              <form  role="form" onSubmit={this.handleSearch}>
-                <div className="input-group">
-                  <input
-                     type="text"
-                     className="form-control"
-
-                     placeholder= {this.state.placeholder} />
-                   <span className="input-group-button">
-                     <button className="btn btn-default" type="button">Search</button>
-                   </span>
-                </div>
-              </form>
-          </div>
-        </div>
-      </div>
-    );
     var buttonSubmit = (
       <span className="input-group-btn">
         <button className="btn btn-default" type="button" onClick={this.handleSearch}>Search</button>

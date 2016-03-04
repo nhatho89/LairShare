@@ -18,7 +18,7 @@ var List = React.createClass({
     var redirectPrompt = (
       <h4>
         This Demo system currently only contains sample room data in
-        <a href="#/search/94102-CA-USA?f82ss9">
+        <a href="#/rooms">
           {" San Francisco"}
         </a>
       </h4>

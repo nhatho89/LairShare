@@ -35,7 +35,7 @@ var ApiUtil = {
       url: 'api/users/'+ userId,
       method: "get",
       success: function(user){
-        debugger
+
         console.log(user);
                   receiveDetailCB(user);
                 },
@@ -49,7 +49,7 @@ var ApiUtil = {
   createReservation: function(reservationParams) {
 
     // var room = RoomStore.find(id);
-    // debugger;
+    debugger
     $.ajax({
       url: 'api/reservations',
       method: "post",
@@ -58,13 +58,13 @@ var ApiUtil = {
         room_id: reservationParams.roomId,
         start_date: new Date(reservationParams.startDate),
         end_date: new Date(reservationParams.endDate),
-        guest_id: reservationParams.guestId,
+        guest_id: reservationParams.guestId.id,
         guest_num: reservationParams.guests,
         message: reservationParams.message
       }},
       success: function(newReservation){
         ReservationActions.createNewReservation(newReservation);
-
+        debugger
       },
       error: function(e) {
         debugger
