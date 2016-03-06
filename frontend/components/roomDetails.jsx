@@ -71,49 +71,37 @@ var RoomDetails = React.createClass({
             <div className="row">
               <div className="col-xs-6">
                 <p>
-                  <img
-                    className="room-amenity-icon"
-                    src="/assets/icons/amenities/kitchen" />
+                  IMAGE
                   <strong>{" Kitchen"}</strong>
                 </p>
               </div>
               <div className="col-xs-6">
                 <p>
-                  <img
-                    className="room-amenity-icon"
-                    src="/assets/icons/amenities/tv" />
+                  IMAGE
                   <strong>{" TV"}</strong>
                 </p>
               </div>
               <div className="col-xs-6">
                 <p>
-                  <img
-                    className="room-amenity-icon"
-                    src="/assets/icons/amenities/internet" />
+                  IMAGE
                   <strong>{" Internet"}</strong>
                 </p>
               </div>
               <div className="col-xs-6">
                 <p>
-                  <img
-                    className="room-amenity-icon"
-                    src="/assets/icons/amenities/essentials" />
+                  IMAGE
                   <strong>{" Essentials"}</strong>
                 </p>
               </div>
               <div className="col-xs-6">
                 <p>
-                  <img
-                    className="room-amenity-icon"
-                    src="/assets/icons/amenities/breakfast" />
+                  IMAGE
                   <strong>{" Breakfast"}</strong>
                 </p>
               </div>
               <div className="col-xs-6">
                 <p>
-                  <img
-                    className="room-amenity-icon"
-                    src="/assets/icons/amenities/washer" />
+                  IMAGE
                   <strong>{" Washer"}</strong>
                 </p>
               </div>

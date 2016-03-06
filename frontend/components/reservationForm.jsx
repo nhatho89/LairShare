@@ -51,7 +51,7 @@ var ReservationForm = React.createClass({
   },
 
   render: function() {
-    debugger
+    
     // var roomID = this.props.
 
     var host = ReservationStore.params.host;
