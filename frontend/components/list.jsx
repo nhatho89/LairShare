@@ -1,5 +1,6 @@
 var React = require('react');
 var ListItem = require('./listItem.jsx');
+var Index = require('./Index.jsx');
 
 var List = React.createClass({
 
@@ -28,7 +29,7 @@ var List = React.createClass({
         <div className="row">
           <div className="container-fluid search-list-listings">
             <div className="row">
-              {listItems.length > 0 ? listItems : redirectPrompt}
+              {listItems.length > 0 ? Index : redirectPrompt}
             </div>
           </div>
 

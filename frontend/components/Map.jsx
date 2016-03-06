@@ -15,7 +15,6 @@ var Map = React.createClass({
 
   getInitialState: function() {
     return {
-      centerLatLng: this.props.centerLatLng,
       rooms: RoomStore.all()
     }
   },
@@ -33,6 +32,7 @@ var Map = React.createClass({
     console.log('map mounted');
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
+      draggable: true,
       center: this.centerRoomCoords(),
       zoom: 10
     };
@@ -43,12 +43,12 @@ var Map = React.createClass({
   },
 
   centerRoomCoords: function () {
-    if (this.state.centerLatLng) {
+    if (this.props.centerLatLng) {
 
 
       return {
-      lat: this.state.centerLatLng.lat,
-      lng: this.state.centerLatLng.lng
+      lat: this.props.centerLatLng.lat,
+      lng: this.props.centerLatLng.lng
       }
 
     } else {
@@ -87,12 +87,13 @@ var Map = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
-    this.setState({
-      centerLatLng: newProps.centerLatLng
-    })
-    this.map.setCenter({lat: newProps.centerLatLng.lat, lng: newProps.centerLatLng.lng });
+    // this.setState({
+    //   centerLatLng: newProps.centerLatLng
+    // })
+    if (newProps.centerLatLng !== this.props.centerLatLng) {
+      this.map.setCenter({lat: newProps.centerLatLng.lat, lng: newProps.centerLatLng.lng });
+    }
     this._onChange();
-
   },
 
   componentWillUnmount: function(){
@@ -113,10 +114,7 @@ var Map = React.createClass({
       };
       FilterActions.updateBounds(bounds);
     });
-    google.maps.event.addListener(this.map, 'click', function(event) {
-      var coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
-      that.props.onMapClick(coords);
-    });
+
   },
   createMarkerFromRoom: function (room) {
 

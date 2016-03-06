@@ -549,7 +549,7 @@ function MarkerWithLabel(opt_options) {
     opt_options.clickable = true;
   }
   if (typeof opt_options.draggable === "undefined") {
-    opt_options.draggable = false;
+    opt_options.draggable = true;
   }
   if (typeof opt_options.optimized === "undefined") {
     opt_options.optimized = false;

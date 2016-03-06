@@ -51,6 +51,7 @@ var ReservationForm = React.createClass({
   },
 
   render: function() {
+    debugger
     // var roomID = this.props.
 
     var host = ReservationStore.params.host;
@@ -116,7 +117,7 @@ var ReservationForm = React.createClass({
                           type="checkbox"
                           value="agreement"
                           required
-                          title="Before booking agree to the House Rules and Terms."
+                          title="You must agree to the House Rules and Terms."
                           >
                         </input>
                         I agree to the House Rules, Cancellation Policy, and to the Guest Refund Policy. I also agree to pay the total amount shown, which includes Occupancy Taxes and Service Fees.
@@ -126,7 +127,7 @@ var ReservationForm = React.createClass({
                   <div className="row">
                     <button
                       type="submit"
-                      className="btn btn-primary center-block">
+                      className="registration-form-submit-button">
                       Submit
                     </button>
                   </div>

@@ -108,6 +108,27 @@ var SearchIndex = React.createClass({
   render: function() {
 
     var showResult = this.state.showResult;
+    var redirect;
+
+      if (Object.keys(this.state.rooms).length === 0) {
+
+      redirect = (
+        <div>
+          <h4>
+            This demo only contains data for
+            <Link to="/search/San-Francisco">
+              &nbsp;San Francisco
+            </Link>
+          </h4>
+        </div>
+
+      )} else {
+        redirect =  (
+
+          <div></div>
+        )
+      }
+
 
     if (showResult) {
       return (
@@ -115,17 +136,11 @@ var SearchIndex = React.createClass({
           <div className="left-half">
             <div className="row">
               <Filter rooms={this.state.rooms} filterParams={this.state.filterParams}/>
-              <Index rooms={this.state.rooms} history={this.props.history} />
             </div>
             <div className="search-list-result" >
-              <h2 style={{display: "none"}}>Search Result Header Placeholder</h2>
-                <h4>
-                  This demo only contains data for
-                  <Link to="/search/San-Francisco">
-                     &nbsp;San Francisco
-                  </Link>
-                </h4>
-               </div>
+              <Index rooms={this.state.rooms} history={this.props.history} />
+              {redirect}
+            </div>
           </div>
           <div className="right-half">
             <Map

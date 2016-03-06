@@ -4,7 +4,7 @@ var RoomStore = require('../stores/roomStore');
 var UserStore = require('../stores/userStore.js');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
-var Room = require('./Room');
+var RoomDetail = require('./roomDetails.jsx');
 var Map = require('./Map');
 var ApiUtil = require('../util/apiUtil');
 var Carousel = require('nuka-carousel');
@@ -88,11 +88,10 @@ var RoomShow = React.createClass({
     return (
         <div className="carousel-container">
           <Carousel>
-          <img src="assets/underwater/underwater-base-2.jpg"/>
-          <img src="assets/underwater/underwater-bedroom.jpg"/>
-          <img src="assets/underwater/underwater-bathroom.jpg"/>
-          <img src="assets/underwater/underwater-car.jpg"/>
-          <img src="assets/underwater/underwater-dinner.jpg"/>
+          <img className="carousel-pic" src="assets/underwater/underwater-base-2.jpg"/>
+          <img className="carousel-pic" src="assets/underwater/underwater-bedroom.jpg"/>
+          <img className="carousel-pic" src="assets/underwater/underwater-bathroom.jpg"/>
+          <img className="carousel-pic" src="assets/underwater/underwater-dinner.jpg"/>
         </Carousel>
 
 
@@ -100,7 +99,7 @@ var RoomShow = React.createClass({
         <div className="room-show-content-container">
           <div className="left-half-room">
             <div>
-              <Room room={this.state.room} className="half" />
+              <RoomDetail room={this.state.room} className="half" />
             </div>
           </div>
           <div className="right-half-room">

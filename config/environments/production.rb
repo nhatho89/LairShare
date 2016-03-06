@@ -14,6 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
@@ -80,4 +81,11 @@ Rails.application.configure do
   config.serve_static_files = true
   # ...
   config.log_level = :debug
+
+
+
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.assets.compile = true
+
 end
