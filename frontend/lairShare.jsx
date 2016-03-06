@@ -20,14 +20,6 @@ var SearchIndex = require('./components/searchIndex.jsx');
 var Redirect = ReactRouter.Redirect;
 
 
-// var SearchIndex = require('./components/searchIndex');
-// var Redirect = ReactRouter.Redirect;
-
-
-// <Route path="rooms/new" component={RoomForm}/>
-// <Redirect path="rooms" to="/search/San-Francisco" />
-// <Route component={Search} path="rooms"/>
-
 var routes = (
   <Route component={App} path="/">
     <IndexRoute component={LandingPage}/>

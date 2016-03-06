@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
     foreign_key: :guest_id,
     primary_key: :id,
     class_name: 'Reservation'
+    
 
   after_initialize :ensure_session_token
 

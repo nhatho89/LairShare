@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>LairShare</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
   <%= javascript_include_tag 'application' %>
@@ -28,16 +28,74 @@ type="text/javascript"></script>
 <body>
 
 
+  <div id="navbar" class="navbar-collapse collapse">
+    <div class="navbar-left">
+      <ul>
+        <li>
+          <a class="LS-logo" href="#">
+            <img alt="LairShare" src="/assets/LS-logo-1.png" />
+          </a>
+        </li>
+
+
+        <li>
+          <a class="GH-logo" href="https://github.com/nhatho89">
+            <img alt="GitHub" src="/assets/GitHub.png" />
+          </a>
+        </li>
+
+        <li>
+          <a class="LI-logo" href="https://www.linkedin.com/in/nhatho89">
+            <img alt="LinkedIn" src="/assets/LinkedIn.png" />
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <div className="navBar-right">
+
+          <div class="signInUp">
+            <% if signed_in? %>
+            <div class="profile-pic">
+              <%= image_tag("#{current_user.profile_pic}", :alt => "profile-pic") %>
+              <div class="dropdown-content">
+                <a href="#/users/<%= current_user.id %>">My Trips</a>
+                <a href="/signout" data-method="delete" rel="nofollow">Sign out</a>
+              </div>
+            </div>
+
+            <% else %>
+            <div class="signed-out-container">
+              <div class="signin-signout">
+                <div class="sign-in-button">
+                  <%= link_to "Sign In", new_session_url %>
+                </div>
+                <div class="sign-out-button">
+                  <%= link_to "Sign Up", new_user_url %>
+                </div>
+              </div>
+              <div class="demo-button">
+                <form action="<%= session_url %>" method="post">
+                  <input type="hidden" name="user[username]" value="Juggernaut">
+                  <input type="hidden" name="user[password]" value="qweasd">
+
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  <button type="submit" class="demo_user_button">Demo User</button>
+                </form>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+
+    </div>
 
 
 
+  </div>
 
-  <% if signed_in? %>
-  <%= button_to "Sign Out", session_url, :method => :delete %>
-<% else %>
-  <%= link_to "Sign In", new_session_url %>
-  <%= link_to "Sign Up", new_user_url %>
-<% end %>
 
 
 <%= yield %>

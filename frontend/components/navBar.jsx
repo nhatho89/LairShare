@@ -30,47 +30,62 @@ var NavBar = React.createClass({
     //   }
   },
 
+
+
   // <form action="/#/rooms" method="get">
   //   <input type="submit" value="Rooms Index"/>
   // </form>
   render: function() {
+  //   $(window).scroll(function () {
+  //     //if you hard code, then use console
+  //     //.log to determine when you want the
+  //     //nav bar to stick.
+  //     console.log($(window).scrollTop())
+  //   if ($(window).scrollTop() > 280) {
+  //     $('.navbar').addClass('navbar-fixed');
+  //   }
+  //   if ($(window).scrollTop() < 281) {
+  //     $('.navbar').removeClass('navbar-fixed');
+  //   }
+  // });
+
+  // <div id="navbar" className="navbar-collapse collapse">
+  //   <div className="navbar-left">
+  //     <ul>
+  //       <li>
+  //         <a className="LS-logo" href="#">
+  //           <img alt="LairShare" src="/assets/LS-logo-1.png" />
+  //         </a>
+  //       </li>
+  //
+  //
+  //       <li>
+  //         <a className="GH-logo" href="https://github.com/nhatho89">
+  //           <img alt="GitHub" src="/assets/GitHub.png" />
+  //         </a>
+  //       </li>
+  //
+  //       <li>
+  //         <a className="LI-logo" href="https://www.linkedin.com/in/nhatho89">
+  //           <img alt="LinkedIn" src="/assets/LinkedIn.png" />
+  //         </a>
+  //       </li>
+  //     </ul>
+  //
+  //   </div>
+  //
+  //
+  //   <div className="navBar-right" onClick={this.redirectUserProfile}>
+  //     <div className="current-user">
+  //       {contents}
+  //     </div>
+  //   </div>
+  // </div>
     var contents = (this.state.user) ?
-    this.state.user.username.toUpperCase() : <UserLoginForm/>;
+    this.state.user.username.toUpperCase() : "";
     return (
       <div>
 
-        <div id="navbar" className="navbar-collapse collapse">
-          <div className="navbar-left">
-            <ul>
-              <li>
-                <a className="LS-logo" href="#">
-                  <img alt="LairShare" src="/assets/LS-logo-1.png" />
-                </a>
-              </li>
-
-
-              <li>
-                <a className="GH-logo" href="https://github.com/nhatho89">
-                  <img alt="GitHub" src="/assets/GitHub.png" />
-                </a>
-              </li>
-
-              <li>
-                <a className="LI-logo" href="https://www.linkedin.com/in/nhatho89">
-                  <img alt="LinkedIn" src="/assets/LinkedIn.png" />
-                </a>
-              </li>
-            </ul>
-
-          </div>
-
-
-          <div className="navBar-right" onClick={this.redirectUserProfile}>
-              {contents}
-          </div>
-
-
-            </div>
       </div>
     );
   }

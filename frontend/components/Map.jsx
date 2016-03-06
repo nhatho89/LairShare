@@ -42,6 +42,7 @@ var Map = React.createClass({
     Object.keys(this.state.rooms).forEach(this.createMarkerFromRoom);
   },
 
+
   centerRoomCoords: function () {
     if (this.props.centerLatLng) {
 

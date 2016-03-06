@@ -13,6 +13,7 @@ var Modal = require('react-modal');
 var modalStyle = require('./modalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 var History = require('react-router').History;
+var RoomHeader = require('./roomHeader.jsx');
 
 var PropTypes = React.PropTypes;
 
@@ -98,8 +99,11 @@ var RoomShow = React.createClass({
 
         <div className="room-show-content-container">
           <div className="left-half-room">
-            <div>
-              <RoomDetail room={this.state.room} className="half" />
+
+
+            <div className="room-details-container">
+              <RoomHeader room={this.state.room}/>
+              <RoomDetail room={this.state.room} />
             </div>
           </div>
           <div className="right-half-room">
@@ -124,11 +128,26 @@ var RoomShow = React.createClass({
 
             </Modal>
 
-            <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
 
-            <Map
-              singleRoom={true}
-              rooms={rooms} />
+            <div className="map-reserve-container">
+              <div className="room-show-price">
+                <div className="room-show-price-text">
+                  <h1>${this.state.room.price} per Night</h1>
+
+                </div>
+              </div>
+              <div className="reserve-lair-button-container">
+
+                <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
+              </div>
+              <div>
+
+                <Map
+                  singleRoom={true}
+                  rooms={rooms} />
+              </div>
+
+            </div>
           </div>
         </div>
       </div>

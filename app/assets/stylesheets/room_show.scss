@@ -1,29 +1,128 @@
-.reserve-lair-button:hover {
-  height: 40px;
-  width: 80px;
-  background-color: blue;
-  font-weight: bolder;
-  color: white;
+// .reserve-lair-button:hover {
+//   height: 40px;
+//   width: 80px;
+//   background-color: blue;
+//   font-weight: bolder;
+//   color: white;
+// }
+
+.room-details-container {
+  width: 100%;
 }
 
 .reserve-lair-button {
-  height: 30px;
-  width: 70px;
+  position: relative;
+  display: inline-flex;
+  // margin: 30px;
+  justify-content: space-around;
+   border-top: 1px solid #ffffff;
+   background: #8f9da6;
+   background: -webkit-gradient(linear, left top, left bottom, from(#a7b2ba), to(#8f9da6));
+   background: -webkit-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -moz-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -ms-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -o-linear-gradient(top, #a7b2ba, #8f9da6);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+ }
+
+ .reserve-lair-button:hover {
+   box-shadow: #62a2c4 0 1px 0;
+   background: #62a2c4;
+   color: #ccc;
+ }
+ .reserve-lair-button-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+ }
+
+.room-header-container {
+  padding-left: 50px;
 }
 
 .room-show-content-container {
   display: flex;
   justify-content: space-between;
 }
+
+.detail-outer-container {
+  display: flex;
+  justify-content: space-between;;
+  padding-left: 60px;
+}
+
+.inner-list-one {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 40%;
+}
+
+.inner-list-two {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.detail-inner-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.left-half-room {
+  display: flex;
+  width: 60%;
+
+}
+
+.details {
+  width: 100%;
+  padding-left: 50px;
+  background-color: #f5f5f5;
+}
+
 .right-half-room {
   flex-direction: column;
-
+  width: 35%;
   right: 0px;
+  background-color: #f5f5f5;
+}
+
+.room-show-price {
+  // background-color: white;
+  border-bottom: 5px solid silver;
+  width: 100%;
+}
+
+.room-show-price-text {
+  text-align: center;
+}
+
+.map-reserve-container {
+  background-color: white;
+  display:flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 5px solid silver;
 }
 .right-half-room .gmap {
   height: 300px;
   width: 300px;
   right: 0px;
+  margin-bottom: 5px;
+  z-index: 10 !important;
 }
 
 .room-show-content-container {
@@ -36,10 +135,11 @@
 }
 
 .slider-frame {
+  overflow: hidden !important;
+  position: relative !important;
   height: inherit !important;
 }
 
-.corousel-pic {
-  height: 300px !important;
-  overflow: hidden !important;
+.profile-pic {
+  border-radius: 32px;
 }

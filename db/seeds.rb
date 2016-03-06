@@ -7,8 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(
-  username: "Deadpool",
-  password: "qweasd"
+  username: "Juggernaut",
+  password: "qweasd",
+  profile_pic: '/assets/juggernaut.jpg'
   )
 
 Room.create!(

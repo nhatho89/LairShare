@@ -1,12 +1,17 @@
 var React = require('react');
 
 var RoomDetails = React.createClass({
+
+  // componentDidMount: function() {
+  //     debugger
+  // },
+
   render: function() {
+    
+
     var room = this.props.room;
-    // debugger;
     return (
-      <div
-        className="col-md-6 col-md-offset-1 room-body">
+      <div className="details">
         <h3>About this listing</h3>
         <div className="row">
           <div className="col-xs-12">
@@ -18,90 +23,75 @@ var RoomDetails = React.createClass({
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
           <div className="col-md-3 text-muted">
             <p>The Space</p>
           </div>
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-xs-6">
+          <div className="detail-outer-container">
+            <div className="detail-inner-container">
+              <div className="inner-list-one">
+
                 <p>{"Accommodates: "}
-                  <strong>{room.max_guest_num}</strong>
-                </p>
-              </div>
-              <div className="col-xs-6">
-                <p>{"Beds: "}
                   <strong>{room.max_sleep_num}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>{"Bathrooms: "}
                   <strong>{"1"}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
+
                 <p>{"Bed type: "}
                   <strong>{"Real Bed"}</strong>
                 </p>
               </div>
-              <div className="col-xs-6">
+              <div className="inner-list-one">
                 <p>{"Property type: "}
-                  <strong>{"House"}</strong>
+                  <strong>Lair</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>{"Room type: "}
-                  <strong>{room.type_string}</strong>
+                  <strong>{room.type}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
-                <p>{"Bedroom: "}
-                  <strong>{"1"}</strong>
-                </p>
+
               </div>
             </div>
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
           <div className="col-md-3 text-muted">
             <p>Amenities</p>
           </div>
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-xs-6">
+          <div className="detail-outer-container">
+            <div className="detail-inner-container">
+              <div className="inner-list-one">
+
                 <p>
-                  IMAGE
+                  {'IMAGE'}
                   <strong>{" Kitchen"}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>
-                  IMAGE
+                  {'IMAGE'}
                   <strong>{" TV"}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>
-                  IMAGE
+                  {'IMAGE'}
                   <strong>{" Internet"}</strong>
                 </p>
               </div>
-              <div className="col-xs-6">
+
+              <div className="inner-list-one">
+
                 <p>
-                  IMAGE
+                  {'IMAGE'}
                   <strong>{" Essentials"}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>
-                  IMAGE
-                  <strong>{" Breakfast"}</strong>
+                  {'IMAGE'}
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>
-                  IMAGE
+                  {'IMAGE'}
                   <strong>{" Washer"}</strong>
                 </p>
               </div>
@@ -109,43 +99,43 @@ var RoomDetails = React.createClass({
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
           <div className="col-md-3 text-muted">
             <p>Prices</p>
           </div>
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-xs-6">
+          <div className="detail-outer-container">
+            <div className="detail-inner-container">
+              <div className="inner-list-one">
                 <p>{"Cleaning fee: "}
                   <strong>{"$30"}</strong>
                 </p>
-              </div>
-              <div className="col-xs-6">
                 <p>{"Weekly discount: "}
                   <strong>{"0%"}</strong>
                 </p>
               </div>
-              <div className="col-xs-6">
-                <p>{"Monthly discount: "}
-                  <strong>{"0%"}</strong>
-                </p>
-              </div>
-              <div className="col-xs-6">
+              <div className="inner-list-one">
                 <p>{"Cancellation: "}
                   <strong>{"Flexible"}</strong>
+                </p>
+                <p>{"Monthly discount: "}
+                  <strong>{"0%"}</strong>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
           <div className="col-md-3 text-muted">
             <p>House Rules</p>
           </div>
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-xs-12">
+          <div className="detail-outer-container">
+            <div className="detail-inner-container-custom">
+              <div  className="inner-list-one">
                 <p>General courtesy</p>
                 <p>No extra overnight guests</p>
                 <p>No smoking inside the building</p>
@@ -155,38 +145,36 @@ var RoomDetails = React.createClass({
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
           <div className="col-md-3 text-muted">
             <p>Safety Features</p>
           </div>
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-xs-6">
+          <div className="detail-outer-container">
+            <div className="detail-inner-container">
+              <div className="inner-list-one">
                 <p>Smoke Detector</p>
-              </div>
-              <div className="col-xs-6">
                 <p>Safety Card</p>
-              </div>
-              <div className="col-xs-6">
                 <p>Carbon Monoxide Detector</p>
               </div>
-              <div className="col-xs-6">
+              <div className="inner-list-one">
                 <p>First Aid Kit</p>
-              </div>
-              <div className="col-xs-6">
                 <p>Fire Extinguisher</p>
               </div>
             </div>
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
           <div className="col-md-3 text-muted">
             <p>Availability</p>
           </div>
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-xs-6">
+          <div className="detail-outer-container">
+            <div className="detail-inner-container">
+              <div className="inner-list-one">
                 <p><strong>3</strong> nights minimum stay</p>
               </div>
             </div>

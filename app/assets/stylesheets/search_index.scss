@@ -64,7 +64,7 @@ DatePicker {
   left: 0px;
   right: 0px;
   // top: 80px; //no application.html.erb
-  top: 130px;
+  top: 80px;
   bottom: 0px;
 
   display: flex;
@@ -210,9 +210,9 @@ DatePicker {
    vertical-align: middle;
    }
 .room-type-checkbox-container div:hover {
-   border-top-color: #62a2c4;
-   background: #62a2c4;
-   color: #ccc;
+  box-shadow: #62a2c4 0 1px 0;
+  background: #62a2c4;
+  color: #ccc;
    }
 .room-type-checkbox-container div:active {
    border-top-color: #7d9bad;

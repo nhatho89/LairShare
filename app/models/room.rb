@@ -3,7 +3,12 @@ class Room < ActiveRecord::Base
   has_many :reviews
 
   has_many :reservations
-  
+
+  belongs_to :host,
+      primary_key: "id",
+      foreign_key: "host_id",
+      class_name: "User"
+
   def self.in_bounds(bounds)
 
     self.where("lat < ?", bounds['northEast']['lat'])

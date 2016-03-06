@@ -2,78 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-//landing page
-
-// .input-group-btn:first-child:focus + .daterangepicker {
-//     visibility: visible;
-//
-// }
-//
-
-// .daterangepicker {
-//   visibility: hidden;
-// }
-//
-//
-// .daterangepicker:focus {
-//   visibility: visible;
-// }
-
-
-
-
-
-
-//room page
-
-// .carousel-container {
-//   width: 80%;
-//   height: auto;
-//   text-align: center;
-//
-// }
-//
-// .slider-list {
-//   width: 80%;
-//   height: auto;
-//   text-align: center;
-// }
-//
-// .slider-slide {
-//   width: 80%;
-//   height: auto;
-//   justify-content: center;
-// }
-//
-// .slider-frame {
-//   justify-content: center;
-//   text-align: center;
-// }
-
-
-//search
-
-// .price-range-slider-container {
-//   position: relative;
-//   justify-content: center;
-//   width: 80%;
-//   height: auto;
-//   text-align: center;
-// }
-//
-// .search-index-price-range {
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//
-//   text-align: center;
-// }
-
-
-
-
-
-
-
-//navbar
+html, body, #root, #app {
+  height: 100%;
+  // font: sans-serif;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 14px;
+}

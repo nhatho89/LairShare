@@ -72,7 +72,7 @@ var LandingSearchBar = React.createClass({
         </button>
       </span>
     );
-    var design2 = (
+    var design = (
       <div className="col-xs-12">
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
@@ -100,9 +100,8 @@ var LandingSearchBar = React.createClass({
 
     return (
 
-      <div className="search-bar" id="landing-search-bar" ref="searchbar">
-        {design2}
-
+      <div className="search-bar">
+        {design}
       </div>
     );
   }

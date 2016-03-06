@@ -29,7 +29,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="app">
         <NavBar history={this.props.history}/>
         {this.props.children}
       </div>
