@@ -26,6 +26,10 @@ var LandingPage = React.createClass({
           <h1>WELCOME HOME</h1>
           <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
         </div>
+        <div className="landing-page-background-container">
+          <img className="landing-page-background-photo" src="/assets/fort-jefferson.jpg"></img>
+        </div>
+
 
         <LandingSearchBar/>
       </div>

@@ -110,6 +110,7 @@ var RoomShow = React.createClass({
           <div className="right-half-room">
 
             <Modal
+              room={this.state.room}
               isOpen={this.state.showModal}
               onRequestClose={this.closeModal}
               closeTimeoutMS={0}

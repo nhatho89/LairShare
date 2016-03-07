@@ -6,6 +6,10 @@
 //   color: white;
 // }
 
+.room-show-about-container p {
+  padding-right: 10px;
+}
+
 .room-header-container {
   display: flex;
   justify-content: space-between;
@@ -59,11 +63,11 @@
   justify-content: space-around;
    border-top: 1px solid #ffffff;
    background: #8f9da6;
-   background: -webkit-gradient(linear, left top, left bottom, from(#a7b2ba), to(#8f9da6));
-   background: -webkit-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -webkit-gradient(linear, left top, left bottom, from(#ff9900), to(#995c00));
+   background: -webkit-linear-gradient(top, #ff9900, #995c00);
    background: -moz-linear-gradient(top, #a7b2ba, #8f9da6);
    background: -ms-linear-gradient(top, #a7b2ba, #8f9da6);
-   background: -o-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -o-linear-gradient(top, #ff9900, #995c00);
    padding: 5px 10px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
@@ -77,16 +81,20 @@
    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
    text-decoration: none;
    vertical-align: middle;
+   width: 100%;
+   height: 100%;
  }
 
  .reserve-lair-button:hover {
+   background: -webkit-linear-gradient(top, #ff9900, #ffc266);
    box-shadow: #62a2c4 0 1px 0;
-   background: #62a2c4;
-   color: #ccc;
+  //  background: #62a2c4;
+   color: gray;
  }
  .reserve-lair-button-container {
   padding-top: 15px;
   padding-bottom: 15px;
+  width: 50%;
  }
 
 
@@ -106,6 +114,11 @@
   padding-left: 20px;
   padding-right: 20px;
   min-width: 40%;
+}
+
+.inner-list-one img {
+  width: 40px;
+  height: auto;
 }
 
 .inner-list-two {
@@ -163,7 +176,7 @@
   width: 300px;
   right: 0px;
   margin-bottom: 5px;
-  z-index: 10 !important;
+  // z-index: 10 !important;
 }
 
 .room-show-content-container {

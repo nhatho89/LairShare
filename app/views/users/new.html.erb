@@ -1,17 +1,42 @@
 <h1>Sign Up</h1>
 
-<form action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<div class="signin-outter-container">
+  <img class="signin-background" src="/assets/castle.jpg">
+  </img>
+  <div class='sign-in-container'>
+    <form class="signin-form"action="<%= users_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div class='username-container'>
+        <label class="username-label">
+          Username
+        </label>
+          <input class="username-input-field" type="text" name="user[username]">
+        <br>
+      </div>
 
-  <label>
-    Username
-    <input type="text" name="user[username]" value="<%= @user.username %>">
-  </label><br>
+      <div class='password-container'>
+        <label class="password-label">
+          Password
+        </label>
+          <input class="password-input-field" type="password" name="user[password]">
+        <br>
+      </div>
 
-  <label>
-    Password
-    <input type="password" name="user[password]">
-  </label><br>
+      <div class='submit-button-container'>
+        <input type="submit" value="Sign Up">
+      </div>
 
-  <input type="submit" value="Sign Up">
-</form>
+
+    </form>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="user[username]" value="Juggernaut">
+      <input type="hidden" name="user[password]" value="qweasd">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <button type="submit" class="demo_user_button">Demo User</button>
+    </form>
+  </div>
+  <div class="background-opacity">
+
+  </div>
+</div>

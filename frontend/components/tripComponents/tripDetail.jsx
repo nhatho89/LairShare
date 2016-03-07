@@ -19,7 +19,7 @@ var TripDetail = React.createClass({
 
 
   render: function() {
-    
+
     var trip = this.state.trip
     if(typeof trip === 'undefined' || trip === null ) return null;
     // var img_url = "https://res.cloudinary.com/chenjm8683/image/upload/c_scale,w_250"
@@ -28,9 +28,9 @@ var TripDetail = React.createClass({
     var checkoutStr = moment(trip.endDate, 'MM-DD-YYYY').format('ddd, MMM DD, YYYY');
     var nights = TripStore.nights(trip.id);
     var ppn = trip.price;
-    var cleaningFee = 30;
-    var serviceFee = 30;
-    var taxesP = 0.1;
+    var cleaningFee = 300;
+    var serviceFee = 200;
+    var taxes = 0.1;
 
     return (
       <div className="trip-detail-container">
@@ -150,7 +150,7 @@ var TripDetail = React.createClass({
                     Occupancy Taxes
                   </td>
                   <td>
-                    {"$" + Math.floor(ppn*nights*taxesP)}
+                    {"$" + Math.floor(ppn*nights*taxes)}
                   </td>
                 </tr>
                 <tr  style={{borderBottom: "2px solid #ddd"}}>
@@ -158,7 +158,7 @@ var TripDetail = React.createClass({
                     Total
                   </td>
                   <td>
-                    {"$" + (ppn*nights + cleaningFee + serviceFee + Math.floor(ppn*nights*taxesP))}
+                    {"$" + (ppn*nights + cleaningFee + serviceFee + Math.floor(ppn*nights*taxes))}
                   </td>
                 </tr>
                 <tr>
@@ -166,7 +166,7 @@ var TripDetail = React.createClass({
                     Credit Card
                   </td>
                   <td>
-                    AMEX xxxxxxxxxx3001
+                    VISA xxxxxxxxxx6503
                   </td>
                 </tr>
               </tbody>
