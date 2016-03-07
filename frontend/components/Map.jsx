@@ -34,7 +34,7 @@ var Map = React.createClass({
     var mapOptions = {
       draggable: true,
       center: this.centerRoomCoords(),
-      zoom: 10
+      zoom: 11
     };
     this.map = new google.maps.Map(map, mapOptions);
     this.registerListeners();

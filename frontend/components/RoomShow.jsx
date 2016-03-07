@@ -74,29 +74,41 @@ var RoomShow = React.createClass({
   },
 
   render: function () {
+    var roomPics;
+    var carousel;
+
+
+    if (this.state.room.pics) {
+      roomPics = this.state.room.pics;
+
+      carousel = (
+          <Carousel>
+            <img className="carousel-pic" src={roomPics[0].pic_url}/>
+            <img className="carousel-pic" src={roomPics[1].pic_url}/>
+            <img className="carousel-pic" src={roomPics[2].pic_url}/>
+            <img className="carousel-pic" src={roomPics[3].pic_url}/>
+          </Carousel>
+        )
+      } else {
+
+        carousel = "";
+      }
 
     var rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
-      // var reviewURL = "/rooms/" + this.state.room.id + "/review";
-      // var Link = ReactRouter.Link;
+
     }
 
 
 
-
       console.log(this.state.room);
-      // <div className="room-header-container">
-      // <RoomHeader room={this.state.room}/>
-      // </div>
+
     return (
-        <div className="carousel-container">
-          <Carousel>
-          <img className="carousel-pic" src="assets/underwater/underwater-base-2.jpg"/>
-          <img className="carousel-pic" src="assets/underwater/underwater-bedroom.jpg"/>
-          <img className="carousel-pic" src="assets/underwater/underwater-bathroom.jpg"/>
-          <img className="carousel-pic" src="assets/underwater/underwater-dinner.jpg"/>
-        </Carousel>
+
+      <div className="carousel-container">
+
+      {carousel}
 
 
 

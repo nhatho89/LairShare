@@ -134,7 +134,7 @@ Room.create!(
   lng: -122.413820,
   primary_photo_url: 'assets/VolcanoLair/underground.jpg',
   max_sleep_num: 300,
-  description: "Very Hot Place!! This is a very popular place due to it's luxury amenities combined with its virtually unlimited supply of thermal energy. This place comes with its own lava sauna room!"
+  description: "Very Hot Place!! This is a very popular place due to it's luxury amenities combined with its virtually unlimited supply of thermal energy. This place even comes with its own lava sauna room!"
 )
 RoomPic.create!(
   room_id: 4,
@@ -216,14 +216,7 @@ RoomPic.create!(
   pic_url: 'assets/Island/island-5.jpg'
 )
 
-RoomPic.create!(
-  room_id: 6,
-  pic_url: 'assets/Island/island-6.jpg'
-)
-RoomPic.create!(
-  room_id: 6,
-  pic_url: 'assets/Island/island-8.jpg'
-)
+
 
 Reservation.create!(
 
