@@ -19,15 +19,15 @@ var GuestNum = React.createClass({
             className="Guests"
             onChange={this.minSleepNumChanged}
             >
-            <option value="1">1 Guest</option>
-            <option value="2">2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5">5 Guests</option>
-            <option value="6">6 Guests</option>
-            <option value="7">7 Guests</option>
-            <option value="8">8 Guests</option>
-            <option value="9">9 Guests</option>
+            <option value="100">100 Guest</option>
+            <option value="200">200 Guests</option>
+            <option value="300">300 Guests</option>
+            <option value="400">400 Guests</option>
+            <option value="500">500 Guests</option>
+            <option value="600">600 Guests</option>
+            <option value="700">700 Guests</option>
+            <option value="800">800 Guests</option>
+
 
           </select>
         </div>

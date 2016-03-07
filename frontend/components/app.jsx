@@ -26,11 +26,16 @@ var App = React.createClass({
   userChange: function() {
     this.setState({ user: UserStore.currentUser() });
   },
+  // <NavBar history={this.props.history}/>
+  // <div className="landing-page-background">
+  //   <img src='/assets/Island/island.jpeg'>
+  //
+  //   </img>
+  // </div>
 
   render: function() {
     return (
       <div className="app">
-        <NavBar history={this.props.history}/>
         {this.props.children}
       </div>
     );

@@ -113,7 +113,7 @@ var SearchIndex = React.createClass({
       if (Object.keys(this.state.rooms).length === 0) {
 
       redirect = (
-        <div>
+        <div className="redirect-to-sf">
           <h4>
             This demo only contains data for
             <Link to="/search/San-Francisco">

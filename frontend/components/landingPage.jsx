@@ -24,7 +24,7 @@ var LandingPage = React.createClass({
       <div className="landing-page">
         <div className="container-title">
           <h1>WELCOME HOME</h1>
-          <h4>Rent from or share secret lairs with Super Villains across the world!!</h4>
+          <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
         </div>
 
         <LandingSearchBar/>

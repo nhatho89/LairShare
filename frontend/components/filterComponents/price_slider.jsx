@@ -6,9 +6,9 @@ var PriceSlider = React.createClass({
   loadPriceRange: function() {
     $("#search-index-price-range").slider({
       range: true,
-      min: 0,
-      max: 500,
-      values: [50,450],
+      min: 1000,
+      max: 10000,
+      values: [2000,9000],
       slide: function(event,ui) {
         var left = (ui.values[0]/5).toFixed(2) + "%";
         var width = ((ui.values[1] - ui.values[0])/5).toFixed(2) + "%";

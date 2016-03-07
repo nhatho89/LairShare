@@ -86,6 +86,9 @@ var RoomShow = React.createClass({
 
 
       console.log(this.state.room);
+      // <div className="room-header-container">
+      // <RoomHeader room={this.state.room}/>
+      // </div>
     return (
         <div className="carousel-container">
           <Carousel>
@@ -100,9 +103,7 @@ var RoomShow = React.createClass({
         <div className="room-show-content-container">
           <div className="left-half-room">
 
-
             <div className="room-details-container">
-              <RoomHeader room={this.state.room}/>
               <RoomDetail room={this.state.room} />
             </div>
           </div>
@@ -140,7 +141,7 @@ var RoomShow = React.createClass({
 
                 <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
               </div>
-              <div>
+              <div id="room-show-gmap">
 
                 <Map
                   singleRoom={true}

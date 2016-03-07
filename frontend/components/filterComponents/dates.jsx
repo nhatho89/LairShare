@@ -5,6 +5,7 @@ var DatePicker = require('react-datepicker');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
 var FilterStore = require('../../stores/filter_params.js');
+var Guests = require('./guest_num.jsx');
 
 var StayDates = React.createClass({
 
@@ -87,6 +88,8 @@ var StayDates = React.createClass({
 
             onChange={this.handleChangeEnd} />
         </div>
+
+        <Guests/>
       </div>
       );
   }

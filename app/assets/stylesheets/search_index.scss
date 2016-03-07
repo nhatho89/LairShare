@@ -41,6 +41,7 @@ hr {
 
 .room-info {
   display: flex;
+  font-size: 20px;
   flex-direction: column;
   align-items: center;
   padding: 0px 0px;
@@ -64,7 +65,7 @@ DatePicker {
   left: 0px;
   right: 0px;
   // top: 80px; //no application.html.erb
-  top: 80px;
+  top: 0px;
   bottom: 0px;
 
   display: flex;
@@ -208,6 +209,7 @@ DatePicker {
    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
    text-decoration: none;
    vertical-align: middle;
+
    }
 .room-type-checkbox-container div:hover {
   box-shadow: #62a2c4 0 1px 0;
@@ -234,6 +236,17 @@ DatePicker {
 //   background-color: silver;
 // }
 
+
+
+.redirect-to-sf {
+  font-size: 16px;
+  font-weight: bold;
+  bottom: 190px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
 .search-results {
   display: flex;
   flex-wrap: wrap;
@@ -254,8 +267,8 @@ DatePicker {
 }
 
 .room-index-item {
-  width: 300px;
-  height: 350px;
+  width: 40%;
+  height: auto;
   // border: 3px solid black;
   list-style: none;
   background-color: #E7ECEE;
@@ -270,6 +283,8 @@ DatePicker {
   // -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
   // box-shadow: rgba(0,0,0,1) 0 1px 0;
   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  min-height: 300px;
+  min-width: 300px;
 
 
 }
@@ -277,16 +292,19 @@ DatePicker {
 .room-picture img {
   overflow: hidden;
   border-radius: 32px;
+
 }
 
 .room-picture {
   height: 80%;
-  width: 300px;
+  width: 100%;
   display: flex;
   padding: 0px 0px;
   justify-content: center;
   margin-top: 16px;
   margin-bottom: 0px;
+  min-height: 300px;
+  min-width: 300px;
 
 
 }
@@ -303,5 +321,8 @@ DatePicker {
   width: 300px;
   height: 250px;
   overflow: hidden;
+  width: 100%;
+  min-height: 300px;
+  min-width: 300px;
 
 }

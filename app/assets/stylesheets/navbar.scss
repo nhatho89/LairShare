@@ -6,8 +6,7 @@
 // }
 
 #navbar {
-  position: fixed;
-  width: 100%;
+
 }
 
 .signInUp {
@@ -94,6 +93,8 @@
 }
 
 #navbar {
+  position: fixed;
+  width: 100%;
   display:flex;
   justify-content: space-between;
   border: 2px solid #DCDCDC;
@@ -101,6 +102,8 @@
   left:0px;
   right:0px;
   top: 0px;
+  z-index: 100 !important;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
 }
 
 .profile-pic:hover {

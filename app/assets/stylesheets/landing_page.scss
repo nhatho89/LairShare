@@ -1,9 +1,31 @@
 .input-group {
   text-align: center;
+  height: 100px;
+
 }
-.container-title {
-  height: 300px;
+
+.input-group-btn {
+  height: 40%;
+  width: 30%;
+  font-size: 30px;
 }
+
+.input-group-btn .btn {
+  height: 46%;
+  width: 15%;
+  font-size: 30px;
+}
+
+.form-control {
+  height: 40%;
+  width: 30%;
+  font-size: 30px;
+}
+
+// .form-control:active {
+//   width: 70%;
+// }
+
 .container-title h1, h4 {
   transform: translateY(120px);
   text-align: center;
@@ -11,7 +33,7 @@
 
 .container-title h1 {
   display: block;
-  font-size: 60px;
+  font-size: 100px;
   font-weight: 700;
   color: silver;
 }
@@ -20,4 +42,79 @@
   font-size: 18px;
   font-weight: 400;
   color: silver;
+}
+.landing-page-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+.landing-page-background img {
+  position: fixed;
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  // opacity: .85;
+  // min-width: 100%;
+  // min-height: auto;
+  // max-height: 100%;
+  // overflow-x: hidden;
+  // position: absolute;
+
+  // bottom: 0px;
+  // max-width: 100%;
+  // max-height: 100%;
+  // height: auto;
+
+}
+
+// .landing-page-background img.tall {
+//   max-height: 100%;
+//   max-width: 100%;
+//   width: auto;
+//
+// }
+.app {
+  position: absolute;
+  top:75px;
+  right:0px;
+  bottom: 0px;
+  left:0px;
+
+
+}
+
+
+
+.landing-page {
+  top: 0px;
+  right:0px;
+  bottom: 0px;
+  left:0px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.container-title {
+  height: 50%;
+  position: absolute;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-bar {
+  height: 50%;
+  position: absolute;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  bottom:0px
 }

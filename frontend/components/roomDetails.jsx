@@ -5,13 +5,61 @@ var RoomDetails = React.createClass({
   // componentDidMount: function() {
   //     debugger
   // },
-
   render: function() {
-    
+    var hostPicture;
+    if (this.props.room.host) {
+      hostPicture = (<img className="room-show-host-picture" src={this.props.room.host.profile_pic}/>);
+      host = (<p>{this.props.room.host.username}</p>);
+    } else {
+      hostPicture = "";
+      host = "";
+    }
 
     var room = this.props.room;
     return (
       <div className="details">
+
+        <div className="room-header-container">
+          <div className="room-header-container-left">
+            <div className="host-picture-container">
+              {hostPicture}
+            </div>
+            <div className="host-username-container">
+
+              {host}
+            </div>
+
+          </div>
+          <div className="room-header-info">
+            <div className="header-title">
+              <h2>{room.title}</h2>
+              <p>{room.location}</p>
+            </div>
+
+          </div>
+
+          <div className="room-header-icon">
+            <div className="room-detail-icon">
+              <ul>
+
+              </ul>
+
+              <ul>
+
+              </ul>
+
+              <ul>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <hr/>
+
         <h3>About this listing</h3>
         <div className="row">
           <div className="col-xs-12">
@@ -68,16 +116,16 @@ var RoomDetails = React.createClass({
               <div className="inner-list-one">
 
                 <p>
-                  {'IMAGE'}
-                  <strong>{" Kitchen"}</strong>
+                  <img src="/assets/icons/other-1.png"></img>
+                  <strong>{" Guns"}</strong>
                 </p>
                 <p>
-                  {'IMAGE'}
-                  <strong>{" TV"}</strong>
+                  <img src="/assets/icons/sign.png"></img>
+                  <strong>{" Plutonium"}</strong>
                 </p>
                 <p>
-                  {'IMAGE'}
-                  <strong>{" Internet"}</strong>
+                  <img src="/assets/icons/signs.png"></img>
+                  <strong>{" BioWeapon"}</strong>
                 </p>
               </div>
 

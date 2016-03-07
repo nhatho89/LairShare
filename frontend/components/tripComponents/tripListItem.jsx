@@ -10,18 +10,16 @@ var TripListItem = React.createClass({
   },
 
   shouldComponentUpdate : function(newProps){
-    
+
     return this.props.activeTripId !== newProps.activeTripId;
   },
 
   render: function() {
     var trip = this.props.trip;
     var className = "list-group-item";
-    // debugger;
     if(trip.id === this.props.activeTripId) {
       className += " active";
     }
-    // debugger
     return(
 
       <div onClick={this.handleClick} className={className}>

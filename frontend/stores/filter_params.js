@@ -13,7 +13,7 @@ var FilterParamsStore = new Store(AppDispatcher);
 
 
 var _params = {
-  max_sleep_num: 1,
+  max_sleep_num: 100,
 
   bounds: {
     northEast: {
@@ -38,8 +38,8 @@ var _params = {
   },
 
   priceRange: {
-    min: 50,
-    max: 400
+    min: 1000,
+    max: 10000
   }
 };
 

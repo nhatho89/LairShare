@@ -9,6 +9,8 @@ class Room < ActiveRecord::Base
       foreign_key: "host_id",
       class_name: "User"
 
+  has_many :room_pics
+
   def self.in_bounds(bounds)
 
     self.where("lat < ?", bounds['northEast']['lat'])

@@ -24,8 +24,6 @@ var Filters = React.createClass({
         <br/><hr/><br/>
           <PriceSlider/>
         <br/><hr/><br/>
-          <GuestNum/>
-        <br/><hr/><br/>
           <RoomType/>
         <br/><hr/><br/>
       </div>

@@ -23,7 +23,6 @@ class Api::RoomsController < ApplicationController
       @rooms = @rooms.where("price >= ?", params[:priceRange][:min])
     end
 
-
     if (params[:dates][:startDate] && params[:dates][:endDate])
 
 
