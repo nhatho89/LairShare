@@ -31,17 +31,24 @@ var ReservationForm = React.createClass({
 
 
     // this.props.openConfirmationModal();
-    ApiUtil.createReservation({
-      roomId: this.props.room.id,
-      guests: FilterStore.params().max_sleep_num,
-      guestId: UserStore.currentUser(),
-      //TODO may cause errors because dates are in form of moments
-      startDate: FilterStore.params().dates.startDate,
-      endDate: FilterStore.params().dates.endDate,
-      message: this.state.message
-    });
 
-    this.history.push({pathname: '/users/' + UserStore.currentUser.id})
+    if (UserStore.currentUser()) {
+      ApiUtil.createReservation({
+        roomId: this.props.room.id,
+        guests: FilterStore.params().max_sleep_num,
+        guestId: UserStore.currentUser(),
+        //TODO may cause errors because dates are in form of moments
+        startDate: FilterStore.params().dates.startDate,
+        endDate: FilterStore.params().dates.endDate,
+        message: this.state.message
+      });
+      this.history.push({pathname: '/users/' + UserStore.currentUser.id})
+
+    } else {
+      window.location.replace("http://localhost:3000/session/new");
+      // window.location.replace("www.lairshare.xyz/session/new");
+    }
+
   },
 
   messageHandler: function(message) {
@@ -57,6 +64,7 @@ var ReservationForm = React.createClass({
     var cleaningFee = 300;
     var serviceFee = 200;
     var taxes = 0.8;
+
     return (
 
       <div className="reg-most-outer-container">
@@ -130,7 +138,7 @@ var ReservationForm = React.createClass({
                     type="submit"
                     className="registration-form-submit-button"
                     onClick={this.handleSubmit}>
-                    Submit
+                    BOOK NOW
                   </button>
                 </div>
               </div>

@@ -31,6 +31,7 @@ var RoomShow = React.createClass({
   },
 
   componentDidMount: function () {
+    this.scrollFollow();
     this.roomListener = RoomStore.addListener(this._roomChanged);
     ApiUtil.fetchARoom(this.props.params.roomId);
   },
@@ -59,6 +60,40 @@ var RoomShow = React.createClass({
 
   },
 
+  scrollFollow: function() {
+    // debugger
+    var element = $('.map-reserve-container'),
+        originalY = element.offset().top;
+
+    // debugger
+
+    // Space between element and top of screen (when scrolling)
+    var topMargin = 0;
+
+    // Should probably be set in CSS; but here just for emphasis
+    element.css('position', 'relative');
+    // if ($(window).scrollTop(); < 10 ) {
+
+      $(window).on('scroll', function(event) {
+        var roomShowEl = $('.room-show-content-container').offset().top;
+        var scrollTop = $(window).scrollTop();
+        var topPos;
+        var navBar = $('#navbar').offset().top;
+        if (roomShowEl <= navBar) {
+          topPos = navBar - 540
+        } else {
+          topPos = 0;
+        }
+
+
+        element.stop(false, false).animate({
+          top: topPos
+        }, 1);
+
+      });
+    // }
+},
+
   // openConfirmationModal: function() {
   //   this.setState({
   //     openConfModal: true
@@ -74,6 +109,17 @@ var RoomShow = React.createClass({
   // },
 
   render: function () {
+    // if ($('.map-reserve-container').offset()) {
+    //   var el=$('.map-reserve-container');
+    //   var elpos = el.offset().top();
+    //   $(window).scroll(function () {
+    //     var y=$(this).scrollTop();
+    //     if(y<elpos){el.stop().animate({'top':0},500);}
+    //     else{el.stop().animate({'top':y-elpos},500);}
+    //   });
+    //
+    // }
+
     var roomPics;
     var carousel;
 
