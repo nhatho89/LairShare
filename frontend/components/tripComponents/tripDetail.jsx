@@ -19,7 +19,6 @@ var TripDetail = React.createClass({
 
 
   render: function() {
-
     var trip = this.state.trip
     if(typeof trip === 'undefined' || trip === null ) return null;
     // var img_url = "https://res.cloudinary.com/chenjm8683/image/upload/c_scale,w_250"
@@ -32,17 +31,18 @@ var TripDetail = React.createClass({
     var serviceFee = 200;
     var taxes = 0.1;
 
+
     return (
       <div className="trip-detail-container">
-        <div className="row">
+        <div className="flex-row">
           <div className="col-md-4">
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <h4><strong>Check In</strong></h4>
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <p>
                   <strong>{checkinStr}</strong>
                   <br />Flexible check in time
@@ -53,12 +53,12 @@ var TripDetail = React.createClass({
 
           <div className="col-md-4">
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <h4><strong>Check Out</strong></h4>
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <p>
                   <strong>{checkoutStr}</strong>
                   <br />Flexible check out time
@@ -68,31 +68,33 @@ var TripDetail = React.createClass({
           </div>
           <div className="col-md-2 center">
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <h4><strong>{nights > 1 ? "Nights" : "Night"}</strong></h4>
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <p><strong>{nights}</strong></p>
               </div>
             </div>
           </div>
           <div className="col-md-2 center">
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <h4><strong>{trip.guests > 1 ? "Guests" : "Guest"}</strong></h4>
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-12">
+              <div className="receipt-filter-detail">
                 <p><strong>{trip.guests}</strong></p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="row">
+        <hr/>
+
+        <div className="flex-row">
           <div className="col-md-6">
             <h4>
               <a href={"#/rooms/" + trip.id}>
@@ -109,68 +111,68 @@ var TripDetail = React.createClass({
           </div>
           <div className="col-md-6">
             <div className="trip-item-image">
-              INSERT PICTURE HERE!
+              <img className="trip-receipt-pic" src={trip.pic}></img>
             </div>
           </div>
         </div>
 
+        <hr/>
+
         <div className="row">
-          <div className="col-xs-12">
+          <div className="receipt-filter-detail">
             <h4><strong>Receipt</strong></h4>
           </div>
-          <div className="col-xs-12 col-md-offset-3 col-md-6">
-            <table className="table">
-              <tbody>
-                <tr>
-                  <td>
+          <div className="receipt-container">
+
+                <div className="receipt-row">
+                  <ul>
                     {"$" + ppn + " per night × " + nights + (nights > 1 ? "nights" : "night")}
-                  </td>
-                  <td>
+                  </ul>
+                  <ul>
                     {"$" + ppn*nights}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
+                  </ul>
+                </div>
+                <div className="receipt-row">
+                  <ul>
                     Cleaning fee
-                  </td>
-                  <td>
+                  </ul>
+                  <ul>
                     {"$" + cleaningFee}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
+                  </ul>
+                </div>
+                <div className="receipt-row">
+                  <ul>
                     Service fee
-                  </td>
-                  <td>
+                  </ul>
+                  <ul>
                     {"$" + serviceFee}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
+                  </ul>
+                </div>
+                <div className="receipt-row">
+                  <ul>
                     Occupancy Taxes
-                  </td>
-                  <td>
+                  </ul>
+                  <ul>
                     {"$" + Math.floor(ppn*nights*taxes)}
-                  </td>
-                </tr>
-                <tr  style={{borderBottom: "2px solid #ddd"}}>
-                  <td>
+                  </ul>
+                </div>
+                <div className="receipt-row" style={{borderBottom: "2px solid #ddd"}}>
+                  <ul>
                     Total
-                  </td>
-                  <td>
+                  </ul>
+                  <ul>
                     {"$" + (ppn*nights + cleaningFee + serviceFee + Math.floor(ppn*nights*taxes))}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
+                  </ul>
+                </div>
+                <div className="receipt-row">
+                  <ul>
                     Credit Card
-                  </td>
-                  <td>
+                  </ul>
+                  <ul>
                     VISA xxxxxxxxxx6503
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                  </ul>
+                </div>
+
           </div>
         </div>
       </div>

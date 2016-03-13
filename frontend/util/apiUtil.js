@@ -7,7 +7,7 @@ var RoomStore = require('../stores/roomStore.js');
 
 var ApiUtil = {
   fetchAllRooms: function() {
-    
+
     var filter = FilterStore.params();
     filter.dates.startDate = filter.dates.startDate.format()
     filter.dates.endDate = filter.dates.endDate.format()
@@ -50,7 +50,7 @@ var ApiUtil = {
   createReservation: function(reservationParams) {
 
     // var room = RoomStore.find(id);
-    debugger
+
     $.ajax({
       url: 'api/reservations',
       method: "post",
@@ -65,10 +65,10 @@ var ApiUtil = {
       }},
       success: function(newReservation){
         ReservationActions.createNewReservation(newReservation);
-        debugger
+
       },
       error: function(e) {
-        debugger
+        
       }
     });
   },

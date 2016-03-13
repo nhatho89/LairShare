@@ -103,16 +103,16 @@ var UserIndex = React.createClass({
             className="user-trip-categories"
             onClick={this.toggleTab}>
             <li
-              className={activeTabId === 0 ? "active" : ""}>
+              className={activeTabId === 0 ? "active" : "inactive-tab"}>
               {this.tabs[0]}
             </li>
-            <li className={activeTabId === 1 ? "active" : ""}>
+            <li className={activeTabId === 1 ? "active" : "inactive-tab"}>
               {this.tabs[1]}
             </li>
-            <li className={activeTabId === 2 ? "active" : ""}>
+            <li className={activeTabId === 2 ? "active" : "inactive-tab"}>
               {this.tabs[2]}
             </li>
-            <li className={activeTabId === 3 ? "active" : ""}>
+            <li className={activeTabId === 3 ? "active" : "inactive-tab"}>
               {this.tabs[3]}
             </li>
           </ul>

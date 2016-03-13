@@ -7,17 +7,20 @@
 }
 
 .list-group-item {
-  border: 2px solid silver;
+  border: 1px solid silver;
   margin: 3px;
 }
 
 .list-group-item:hover {
-  background-color: silver;
+  background-color: white;
 }
 
 .active {
-  font-weight: bolder;
-  font-size: 24px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: white;
+  text-decoration: underline;
+
 }
 
 .user-trip-index-outer-container {
@@ -46,4 +49,50 @@
   width: 65%;
   margin-left: 25px;
   margin-right: 50px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.trip-item-image {
+  width: 300px;
+  height: 170px;
+}
+
+.trip-receipt-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.panel-heading {
+  background-color: #C0DCF5;
+}
+
+.trip-list-panel {
+}
+
+.list-group {
+  border: 2px solid #C0DCF5;
+
+}
+
+.inactive-tab:hover {
+  cursor: pointer;
+}
+
+.receipt-filter-detail h4 {
+  color: orange;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;;
+}
+
+.receipt-container {
+  display: flex;
+  flex-direction: column;
 }

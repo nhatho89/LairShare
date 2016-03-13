@@ -77,7 +77,6 @@ ReservationStore.params = function() {
 ReservationStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case ReservationConstants.CREATE_RESERVATION:
-    // debugger
       _reservationParams = payload.reservation;
       ReservationStore.__emitChange();
       break;

@@ -59,19 +59,19 @@ var RoomShow = React.createClass({
 
   },
 
-  openConfirmationModal: function() {
-    this.setState({
-      openConfModal: true
-    })
-  },
-
-  closeConfirmationModal: function() {
-    this.setState({
-      openConfModal: false,
-      showModal: false
-    });
-    this.history.push({pathname: '/users/' + UserStore.currentUser.id})
-  },
+  // openConfirmationModal: function() {
+  //   this.setState({
+  //     openConfModal: true
+  //   })
+  // },
+  //
+  // closeConfirmationModal: function() {
+  //   this.setState({
+  //     openConfModal: false,
+  //     showModal: false
+  //   });
+  //   this.history.push({pathname: '/users/' + UserStore.currentUser.id})
+  // },
 
   render: function () {
     var roomPics;
@@ -103,6 +103,15 @@ var RoomShow = React.createClass({
 
 
       console.log(this.state.room);
+      // <Modal
+      //   isOpen={this.state.openConfModal}
+      //   onRequestClose={this.closeConfirmationModal}
+      //   closeTimeoutMS={0}
+      //   style={modalStyle}>
+      //
+      //   <h1>Congrats! You've booked a Lair!</h1>
+      //
+      // </Modal>
 
     return (
 
@@ -128,19 +137,10 @@ var RoomShow = React.createClass({
               closeTimeoutMS={0}
               style={modalStyle}>
 
-              <ReservationForm openConfirmationModal={this.openConfirmationModal} room={this.state.room}/>
+              <ReservationForm room={this.state.room}/>
 
             </Modal>
 
-            <Modal
-              isOpen={this.state.openConfModal}
-              onRequestClose={this.closeConfirmationModal}
-              closeTimeoutMS={0}
-              style={modalStyle}>
-
-              <h1>Congrats! You've booked a Lair!</h1>
-
-            </Modal>
 
 
             <div className="map-reserve-container">
