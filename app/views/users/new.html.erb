@@ -10,7 +10,9 @@
         <label class="username-label">
           Username
         </label>
+        <div class="input-field">
           <input class="username-input-field" type="text" name="user[username]">
+        </div>
         <br>
       </div>
 
@@ -18,25 +20,26 @@
         <label class="password-label">
           Password
         </label>
+        <div class="input-field">
           <input class="password-input-field" type="password" name="user[password]">
+        </div>
+
         <br>
       </div>
 
       <div class='submit-button-container'>
-        <input type="submit" value="Sign Up">
+        <input class="signinup-button" type="submit" value="Sign Up">
       </div>
 
 
-    </form>
-    <form action="<%= session_url %>" method="post">
-      <input type="hidden" name="user[username]" value="Juggernaut">
-      <input type="hidden" name="user[password]" value="qweasd">
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="user[username]" value="Juggernaut">
+        <input type="hidden" name="user[password]" value="qweasd">
 
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <button type="submit" class="demo_user_button">Demo User</button>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit" class="demo_user_button">Demo User</button>
+      </form>
     </form>
   </div>
-  <div class="background-opacity">
 
-  </div>
 </div>

@@ -115,7 +115,7 @@ var SearchIndex = React.createClass({
       redirect = (
         <div className="redirect-to-sf">
           <h4>
-            This demo only contains data for
+            This demo only contains seed data for
             <Link to="/search/San-Francisco">
               &nbsp;San Francisco
             </Link>
