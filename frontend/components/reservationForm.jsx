@@ -236,7 +236,7 @@ var ReservationForm = React.createClass({
     return (
 
       <div className="reg-most-outer-container">
-        <div className="col-xs-12 col-md-7">
+        <div className="reserve-left">
           <form
             className="input-group col-xs-12"
             onSubmit={this.handleSubmit}>
@@ -248,7 +248,7 @@ var ReservationForm = React.createClass({
                 <div className="reg-payment-cards">
                   <label htmlFor="payment-method">Payment Method</label>
                   <select
-                    className="form-control"
+                    className="payment-form-control"
                     id="payment-method">
                     <option>VISA xxxxxxxxxx6503</option>
                   </select>
@@ -257,25 +257,24 @@ var ReservationForm = React.createClass({
             </div>
 
             <div className="reserve-message-container">
-              <h3>Introduce Yourself to {host}</h3>
-              <p>Giving your host more information will make them more likely to confirm your booking request:</p>
+
               <div className="row">
                 <div className="reserve-host-pic-container">
                   <img
                     className="reserve-host-pic"
                     src={room.host.profile_pic} />
                 </div>
-                <div className="col-xs-10 no-padding-left">
+                <div className="reserve-host-intro">
                   <ul>
                     <li>Tell {room.host.username} about yourself</li>
                     <li>What brings you to this Lair? What are your plans?</li>
-                    <li>Should I leave the city?</li>
+                    <li>Should he leave the city?</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="row row-space-3">
-              <div className="input-group col-xs-12">
+            <div className="reserve-host-message-container">
+              <div className="reserve-host-message">
                 <textarea
                   className="form-control"
                   rows="5"
@@ -289,7 +288,7 @@ var ReservationForm = React.createClass({
             <div className="row">
               <div className="col-xs-12">
                 <div className="row">
-                  <div className="checkbox">
+                  <div className="agreement-checkbox">
                     <label>
                       <input
                         type="checkbox"
@@ -302,7 +301,7 @@ var ReservationForm = React.createClass({
                     </label>
                   </div>
                 </div>
-                <div className="row">
+                <div className="reserve-button">
                   <button
                     type="submit"
                     className="registration-form-submit-button">
@@ -321,7 +320,7 @@ var ReservationForm = React.createClass({
               src={room.primary_photo_url} />
           </div>
           <div className="reserve-room-info">
-            <h4>{room.title}</h4>
+            <p><strong>{room.title}</strong></p>
             <p>{room.location}</p>
           </div>
           <div className="row">

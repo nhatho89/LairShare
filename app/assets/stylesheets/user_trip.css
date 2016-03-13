@@ -1,12 +1,4 @@
-/*.user-trip-outer-container {
-  display: flex;
-  width: inherit;
 
-}
-
-.user-trip-outer-container:hover {
-  background-color: silver;
-}*/
 
 .user-trip-categories {
   list-style: none;
@@ -28,6 +20,30 @@
   font-size: 24px;
 }
 
-/*.trip-detail-panel {
-  height: 400px;
-}*/
+.user-trip-index-outer-container {
+  position: absolute;
+  top: 67px;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-item-and-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.trip-list-panel {
+  width: 35%;
+  margin-left: 50px;
+  margin-right: 25px;
+}
+
+.trip-detail-panel {
+  width: 65%;
+  margin-left: 25px;
+  margin-right: 50px;
+}

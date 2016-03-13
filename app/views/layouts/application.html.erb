@@ -32,21 +32,21 @@ type="text/javascript"></script>
     <div class="navbar-left">
       <ul>
         <li>
-          <a class="LS-logo" href="#">
-            <img alt="LairShare" src="/assets/LS-logo-1.png" />
+          <a class="logo" href="#">
+            LairShare
           </a>
         </li>
 
 
         <li>
-          <a class="GH-logo" href="https://github.com/nhatho89">
-            <img alt="GitHub" src="/assets/GitHub.png" />
+          <a class="logo" href="https://github.com/nhatho89">
+            GitHub
           </a>
         </li>
 
         <li>
-          <a class="LI-logo" href="https://www.linkedin.com/in/nhatho89">
-            <img alt="LinkedIn" src="/assets/LinkedIn.png" />
+          <a class="logo" href="https://www.linkedin.com/in/nhatho89">
+            LinkedIn
           </a>
         </li>
       </ul>
@@ -75,19 +75,23 @@ type="text/javascript"></script>
                 <div class="sign-out-button">
                   <%= link_to "Sign Up", new_user_url %>
                 </div>
-              </div>
-              <div class="demo-button">
-                <form action="<%= session_url %>" method="post">
-                  <input type="hidden" name="user[username]" value="Juggernaut">
-                  <input type="hidden" name="user[password]" value="qweasd">
+                <div class="demo-container">
+                  <form action="<%= session_url %>" method="post">
+                    <input type="hidden" name="user[username]" value="Juggernaut">
+                    <input type="hidden" name="user[password]" value="qweasd">
 
-                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <button type="submit" class="demo_user_button">Demo User</button>
-                </form>
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <button type="submit" class="demo_user_button">Demo User</button>
+
+                  </form>
+                </div>
               </div>
             </div>
+
             <% end %>
+
           </div>
+
 
 
     </div>
@@ -102,3 +106,21 @@ type="text/javascript"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!-- <div class="demo-button">
+  <form action="<%= session_url %>" method="post">
+    <input type="hidden" name="user[username]" value="Juggernaut">
+    <input type="hidden" name="user[password]" value="qweasd">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <button type="submit" class="demo_user_button">Demo User</button>
+  </form>
+</div> -->

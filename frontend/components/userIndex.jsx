@@ -97,7 +97,7 @@ var UserIndex = React.createClass({
     //TODO this.props.children is null
     var activeTabId = this.state.activeTabId;
     return (
-      <div className="container-fluid below-nav fixed-full-screen" id="tidx">
+      <div className="user-trip-index-outer-container">
         <div className="user-trip-outer-container">
           <ul
             className="user-trip-categories"
@@ -117,21 +117,23 @@ var UserIndex = React.createClass({
             </li>
           </ul>
         </div>
-        <div className="trip-list-panel">
-          <div>
+        <div className="trip-item-and-detail">
+          <div className="trip-list-panel">
             <div>
-              <TripList
-                highlightTripId={this.highlightTripId}
-                trips={this.state.trips}
-                history={this.props.history}
-                tabName={this.tabs[this.state.activeTabId]}
-                activeTripId={this.state.activeTripId}/>
+              <div>
+                <TripList
+                  highlightTripId={this.highlightTripId}
+                  trips={this.state.trips}
+                  history={this.props.history}
+                  tabName={this.tabs[this.state.activeTabId]}
+                  activeTripId={this.state.activeTripId}/>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="trip-detail-panel">
+          <div className="trip-detail-panel">
 
-          {this.state.activeTripId ? <TripDetail tripId={this.state.activeTripId}/> : ""}
+            {this.state.activeTripId ? <TripDetail tripId={this.state.activeTripId}/> : ""}
+          </div>
         </div>
       </div>
     );

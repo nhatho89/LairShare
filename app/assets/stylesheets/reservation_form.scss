@@ -1,12 +1,100 @@
 .reg-most-outer-container {
-  z-index: 10;
+  display: flex;
+  background-color: aliceblue;
+  height: 100%;
+  width: 100%;
+}
+
+.reservation-review-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.reserve-room-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+// .ReactModalPortal {
+//     padding-right: 100px;
+// }
+
+ul {
+  list-style-type: none;
+}
+
+.reserve-host-pic {
+  border-radius: 15px;
+  height: 85px;
+  width: 85px;
+}
+
+.reserve-left {
+  // margin-right: 5%;
+  margin-left: 5%;
+}
+
+
+
+.reserve-button {
+  height: 40px;
+}
+
+.registration-form-submit-button {
+  justify-content: space-around;
+   border-top: 1px solid #ffffff;
+   background: #8f9da6;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ff9900), to(#995c00));
+   background: -webkit-linear-gradient(top, #ff9900, #995c00);
+   background: -moz-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -ms-linear-gradient(top, #a7b2ba, #8f9da6);
+   background: -o-linear-gradient(top, #ff9900, #995c00);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 28px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   height: 100%;
+   width: 150px;
+}
+
+.reg-payment-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.registration-form-submit-button:hover {
+  background: -webkit-linear-gradient(top, #ff9900, #ffc266);
+  box-shadow: #62a2c4 0 1px 0;
+ //  background: #62a2c4;
+  color: gray;
+}
+
+.form-control {
+  height: 80%;
+  width: 60%;
+}
+
+
+.reserve-host-message-container {
+  height: 100%;
+}
+
+.reserve-host-message {
+  height: 100%;
 }
 
 .reserve-room-pic {
   width: 300px;
-}
-
-.reserve-host-pic {
-  width: 150px;
-  
 }

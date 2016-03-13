@@ -19,6 +19,7 @@ var Filters = React.createClass({
 
     return (
       <div className="search-filters">
+
         <br/><hr/><br/>
           <StayDates/>
         <br/><hr/><br/>

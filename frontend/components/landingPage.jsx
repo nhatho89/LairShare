@@ -31,7 +31,8 @@ var LandingPage = React.createClass({
         </div>
 
 
-        <LandingSearchBar/>
+          <LandingSearchBar/>
+
       </div>
     );
   }

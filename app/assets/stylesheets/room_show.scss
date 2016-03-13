@@ -54,6 +54,7 @@
 
 .room-details-container {
   width: 100%;
+
 }
 
 .reserve-lair-button {
@@ -102,6 +103,12 @@
 .room-show-content-container {
   display: flex;
   justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
+  padding-left: 5%;
+  padding-right: 5%;
+
 }
 
 .detail-outer-container {
@@ -139,9 +146,9 @@
 }
 
 .details {
-  width: 94%;
+  width: 89%;
   padding-left: 50px;
-  font-size: 20px;
+  font-size: 16px;
   background-color: #f5f5f5;
 }
 
@@ -156,14 +163,20 @@
   // background-color: white;
   border-bottom: 5px solid silver;
   width: 100%;
+
 }
 
 .room-show-price-text {
   text-align: center;
 }
 
+.room-show-price-text h1 {
+  color: #1178B3;
+}
+
+
 .map-reserve-container {
-  background-color: white;
+  background-color: aliceblue;
   display:flex;
 
   align-items: center;
@@ -179,11 +192,7 @@
   // z-index: 10 !important;
 }
 
-.room-show-content-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #f5f5f5
-}
+
 
 .slider {
   width: 100% !important;

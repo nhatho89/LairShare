@@ -22,7 +22,7 @@ User.create!(
   profile_pic: '/assets/ultron.jpg'
   )
 User.create!(
-  username: "DocOct",
+  username: "Doc Oc",
   password: "qweasd",
   profile_pic: '/assets/dococt.jpg'
   )
@@ -219,11 +219,20 @@ RoomPic.create!(
 
 
 Reservation.create!(
+  room_id: "4",
+  guest_id: "1",
+  guest_num: "200",
+  start_date: "2016-3-14",
+  end_date: "2016-3-21",
+  status: "1"
+)
 
-    room_id: "4",
-    guest_id: "1",
-    guest_num: "1",
-    start_date: "2016-3-14",
-    end_date: "2016-5-05",
-    status: "1"
-  )
+
+Reservation.create!(
+  room_id: "2",
+  guest_id: "1",
+  guest_num: "100",
+  start_date: "2016-2-14",
+  end_date: "2016-2-25",
+  status: "1"
+)

@@ -5,68 +5,52 @@
 //     width: 100%;
 // }
 
-#navbar {
 
-}
 
 .signInUp {
   position: absolute !important;
-  z-index: 100;
+  z-index: 5;
   display: flex;
-  justify-content: flex-end;
-  top: 8px;
-  right: 50px;
+  flex-direction: flex;
+  justify-content: space-around;;
+  right: 30px;
+  height: 100%;
 }
 
 
 
-[class*="logo"] {
+.logo {
   display: inline;
+  font-family: "Avenir Next";
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 4px silver;
+
+}
+
+.logo:hover {
+  text-shadow: 0 0 30px white;
+}
+
+.navbar-left {
+  width: 30%;
 }
 
 
-.LS-logo img[src="/assets/LS-logo-1.png"] {
-  width: 40px;
-  border-radius: 8px;
-  height: 40px;
+.navbar-left ul li{
 
-}
-.LS-logo img[src="/assets/LS-logo-1.png"]:hover {
-  box-shadow: 0px 0px 20px #000;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
-}
-
-.LI-logo img[src="/assets/LinkedIn.png"] {
-  width: auto;
-  height: 40px;
-}
-.LI-logo img[src="/assets/LinkedIn.png"]:hover {
-  box-shadow: 0px 0px 20px #000;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
-}
-
-.GH-logo img[src="/assets/GitHub.png"] {
-  width: auto;
-  border-radius: 32px;
-  height: 40px;
-}
-.GH-logo img[src="/assets/GitHub.png"]:hover {
-  box-shadow: 0px 0px 20px #000;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
-}
-
-#navbar ul li{
-  list-style: none;
   display: inline;
-  padding: 20px 20px;
 
 }
 
 
-.navBar-left ul {
-  display: inline-block;
+.navbar-left ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   float: left;
-  padding: 5px 5px;
 
 }
 
@@ -97,13 +81,20 @@
   width: 100%;
   display:flex;
   justify-content: space-between;
-  border: 2px solid #DCDCDC;
-  background-color: silver;
+  // border: 2px solid #DCDCDC;
+  background-color: #1178B3;
   left:0px;
   right:0px;
   top: 0px;
-  z-index: 100 !important;
+  z-index: 1 !important;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  font-family: "Avenir Next";
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 4px silver;
+  list-style: none;
 }
 
 .profile-pic:hover {
@@ -117,16 +108,14 @@
 
 
 .profile-pic {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  // overflow: hidden;
+  width: 90%;
+  height: 90%;
+  margin-right: 60px;
 }
 
 
 .profile-pic img{
-  width: 50px;
-  height: 50px;
+  height: 100%;
   border-radius: 32px;
   cursor: pointer;
 
@@ -137,7 +126,7 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 100px;
+  min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
@@ -164,12 +153,13 @@
 .signed-out-container {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
 }
 
 .signin-signout {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;;
+  width: 300px;
 }
 
 .signin-signout div {
@@ -186,10 +176,6 @@
 
 }
 
-.signin-signout {
-  display: flex;
-}
-
 .demo-button {
   text-align: center;
   width: 150px;
@@ -201,6 +187,22 @@
   height: 30px;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.demo_user_button {
+  background-color: #1178B3 !important;
+  border: none !important;
+  font-family: "Avenir Next";
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 4px silver;
+}
+
+.demo_user_button:hover {
+  cursor: pointer;
+  color: #551A8B;
 }
 
 .demo-button button:hover {

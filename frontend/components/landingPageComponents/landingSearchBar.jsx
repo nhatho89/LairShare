@@ -48,53 +48,48 @@ var LandingSearchBar = React.createClass({
 
 
   handleLocChange: function(e) {
-    // console.log(this.refs.locinput.value);
     this.setState({
       loc: this.refs.locinput.value
     });
-    // autocomplete: needs to add a delay using setTimeout and clearTimeout to cancel if the user changes before timeout expires
+  },
+
+  searchBarMoveUp: function() {
+
+    $(".search-bar").animate({'bottom': '15%'},1000);
+
+    // }.bind(this), 1800);
+
+  },
+
+
+
+  searchBarMoveBack: function() {
+    $(".search-bar").animate({'bottom': '0px'},500);
   },
 
   render: function() {
 
-    var buttonSubmit = (
-      <span className="input-group-btn">
-        <button className="btn btn-default" type="button" onClick={this.handleSearch}>Search</button>
-      </span>
+    var searchIcon = (
+      <img className="search-icon" src="assets/icons/search.png" onClick={this.handleSearch}/>
     );
 
-    var buttonProgress = (
-      <span className="input-group-btn">
-        <button className="btn btn-default" disabled>
-          <div className="three-quarters-loader">
-            Loading…
-          </div>
-        </button>
-      </span>
-    );
     var design = (
-      <div className="col-xs-12">
-        <div className="row">
-          <div className="col-xs-offset-2 col-xs-8">
-            <div className="col-xs-offset-2 col-xs-8">
               <form className="input-group" role="form" onSubmit={this.handleSearch}>
                 <input
                    type="text"
-                   className="form-control center"
+                   className="form-control"
                    id="landing-search-input"
                    onChange={this.handleLocChange}
                    placeholder={this.state.placeholder}
                    ref="locinput"
                    onFocus={this.searchBarMoveUp}
-                   onBlur={this.searchBarMoveBack}/>
+                   onBlur={this.searchBarMoveBack}
+                   />
 
-                 {this.state.showLoading ? buttonProgress : buttonSubmit}
+
 
               </form>
-            </div>
-          </div>
-        </div>
-      </div>
+
     );
 
 
@@ -102,6 +97,10 @@ var LandingSearchBar = React.createClass({
 
       <div className="search-bar">
         {design}
+        <div className="search-icon-container">
+
+          {searchIcon}
+        </div>
       </div>
     );
   }
