@@ -3,16 +3,6 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var TripConstants = require('../constants/tripConstants.js');
 var TripStore = new Store(AppDispatcher);
 
-// var _rsvpConfParams = {
-//   roomId: null,
-//   host_fname: null,
-//   checkin: null,
-//   checkout: null,
-//   guests: null,
-//   status: null
-// };
-
-// trip is the same as reservation but from guest perspective
 
 
 var _trips = {};
@@ -25,8 +15,6 @@ var _categories = {
   past: []
 };
 
- // phase B datepicker
-// var _unavailableDates = [];
 
 var resetTripStore = function() {
   _trips = {};
@@ -43,7 +31,7 @@ var resetTripStore = function() {
 var tripBasicInfoConversion = function(trip) {
   return ({
     id: trip.id,
-    roomId: trip.id,
+    roomId: trip.room_id,
     startDate: moment(trip.start_date, "YYYY-MM-DD").format("MM/DD/YYYY"),
     endDate: moment(trip.end_date, "YYYY-MM-DD").format("MM/DD/YYYY"),
     guests: trip.guest_num,
@@ -56,9 +44,8 @@ var addTripDetails = function(responseTrip, convertedTrip) {
   convertedTrip["title"] = responseTrip.title;
   convertedTrip["pic"] = responseTrip.pic;
   convertedTrip["price"] = responseTrip.price;
-  // convertedTrip["host_fname"] = responseTrip.host_fname;
-  convertedTrip["status"] = responseTrip.status;
-  convertedTrip["status"] = responseTrip.status;
+  convertedTrip["host"] = responseTrip.host;
+
   return convertedTrip;
 };
 
@@ -67,7 +54,6 @@ var receiveNewTrip = function(newTrip) {
   convertedTrip = tripBasicInfoConversion(newTrip);
   _trips[_newTripReservationId] = convertedTrip;
   categorize(convertedTrip);
-  // debugger;
 };
 
 var receiveUserTrips = function(trips) {
@@ -137,7 +123,6 @@ TripStore.upcomingTripsWithRoom = function(roomId) {
       result[tripId] = _trips[tripId];
     };
   });
-  // debugger;
   return result;
 };
 
@@ -167,8 +152,7 @@ TripStore.__onDispatch = function(payload) {
       break;
 
 
-      // phase B datepicker
-    // case RsvpConstants.UNAVAILABILITY_RECEIVED:
+    
 
   }
 };

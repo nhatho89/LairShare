@@ -32,15 +32,15 @@
         </div>
 
 
-        <form action="<%= session_url %>" method="post">
-          <input type="hidden" name="user[username]" value="Juggernaut">
-          <input type="hidden" name="user[password]" value="qweasd">
-
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <button type="submit" class="demo_user_button">Demo User</button>
-        </form>
       </div>
 
+    </form>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="user[username]" value="Juggernaut">
+      <input type="hidden" name="user[password]" value="qweasd">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <button type="submit" class="demo_user_button">Demo User</button>
     </form>
   </div>
 

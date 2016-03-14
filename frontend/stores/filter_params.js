@@ -7,9 +7,6 @@ var moment = require('moment');
 
 var FilterParamsStore = new Store(AppDispatcher);
 
-// var _params = { max_sleep_num: 1};
-// var _roomType = {wholeFacility: false, sharedFacility: false, private: false};
-// var _priceRange = {min: 50, max: 450 };
 
 
 var _params = {
@@ -53,20 +50,14 @@ FilterParamsStore.params = function () {
   }
 
   return _params;
-  // Object.assign({}, _params, {roomType: _roomType});
-  // Object.assign({}, _params, {priceRange: _priceRange});
+
 };
 
-// FilterParamsStore.roomType = function() {
-//   return _roomType;
-// };
+
 
 FilterParamsStore.__onDispatch = function (payload) {
   switch(payload.actionType){
-    // case FilterConstants.UPDATE_MAX_SLEEP_NUM:
-    //   _params.maxSleepNum = payload.maxSleepNum;
-    //   FilterParamsStore.__emitChange();
-    //   break;
+
     case FilterConstants.UPDATE_MIN_SLEEP_NUM:
       _params.max_sleep_num = payload.minSleepNum;
       FilterParamsStore.__emitChange();
@@ -91,10 +82,7 @@ FilterParamsStore.__onDispatch = function (payload) {
       _params.dates.endDate = moment(payload.dates.endDate);
       FilterParamsStore.__emitChange();
       break;
-    // case FilterConstants.RESET_DATES:
-    //   _params.dates = {startDate: null, endDate: null};
-    //   FilterParamsStore.__emitChange();
-    //   break;
+  
   }
 };
 

@@ -1,5 +1,6 @@
 var React = require('react');
 var TripStore = require('../../stores/tripStore.js');
+var RoomStore = require('../../stores/roomStore.js');
 
 var TripDetail = React.createClass({
   getInitialState: function() {
@@ -14,6 +15,10 @@ var TripDetail = React.createClass({
     this.setState({
       trip: TripStore.find_by_id(parseInt(newProps.tripId))
     });
+  },
+
+  componentDidMount: function() {
+
   },
 
 
@@ -31,6 +36,7 @@ var TripDetail = React.createClass({
     var serviceFee = 200;
     var taxes = 0.1;
 
+    
 
     return (
       <div className="trip-detail-container">
@@ -97,15 +103,14 @@ var TripDetail = React.createClass({
         <div className="flex-row">
           <div className="col-md-6">
             <h4>
-              <a href={"#/rooms/" + trip.id}>
+              <a href={"#/rooms/" + trip.roomId}>
                 <strong>{trip.title}</strong>
               </a>
             </h4>
             <p>{trip.location}</p>
             <p>
-              {"Host name: " + trip.host_fname}
+              {"Host name: " + trip.host}
               <br />
-              <span className="glyphicon glyphicon-earphone" ariaHidden="true"></span>
               {" (917)456-7890"}
             </p>
           </div>

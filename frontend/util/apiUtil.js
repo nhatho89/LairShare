@@ -3,7 +3,6 @@ var FilterStore = require('../stores/filter_params');
 var ReservationActions = require('../actions/reservationActions.jsx');
 var RoomStore = require('../stores/roomStore.js');
 
-// var ReservationStore = require('../stores/reservationStore.js');
 
 var ApiUtil = {
   fetchAllRooms: function() {
@@ -12,17 +11,12 @@ var ApiUtil = {
     filter.dates.startDate = filter.dates.startDate.format()
     filter.dates.endDate = filter.dates.endDate.format()
 
-    console.log(filter);
       $.get('api/rooms', filter, function(allRooms) {
           RoomActions.receiveAllRooms(allRooms);
         })
     },
 
-  // createRoom: function(data){
-  // $.post('api/rooms/new', { room: data }, function(room) {
-  //   RoomActions.receiveRoom([room]);
-  //   });
-  // },
+
 
   fetchARoom: function(id) {
     $.get('api/rooms/' + id, function(room) {
@@ -31,25 +25,21 @@ var ApiUtil = {
   },
 
   fetchUserDetail: function(userId, receiveDetailCB) {
-    // debugger
     $.ajax({
       url: 'api/users/'+ userId,
       method: "get",
       success: function(user){
 
-        console.log(user);
                   receiveDetailCB(user);
                 },
       error: function(error, status){
-                  // debugger;
-                  // console.log(status)
+
                 }
     });
   },
 
   createReservation: function(reservationParams) {
 
-    // var room = RoomStore.find(id);
 
     $.ajax({
       url: 'api/reservations',
@@ -68,7 +58,7 @@ var ApiUtil = {
 
       },
       error: function(e) {
-        
+
       }
     });
   },
@@ -78,12 +68,11 @@ var ApiUtil = {
       url: 'api/reservations/trips',
       method: "get",
       success: function(trips){
-        // debugger
+
                   receiveUserTripsCB(trips);
                 },
       error: function(error, status){
-                  debugger;
-                  // console.log(status)
+
                 }
     });
   },

@@ -61,24 +61,18 @@ var RoomShow = React.createClass({
   },
 
   scrollFollow: function() {
-    // debugger
     var element = $('.map-reserve-container'),
-        originalY = element.offset().top;
+        originalY = element.offset().top,
+        topMargin = 0;
 
-    // debugger
-
-    // Space between element and top of screen (when scrolling)
-    var topMargin = 0;
-
-    // Should probably be set in CSS; but here just for emphasis
     element.css('position', 'relative');
-    // if ($(window).scrollTop(); < 10 ) {
 
       $(window).on('scroll', function(event) {
-        var roomShowEl = $('.room-show-content-container').offset().top;
-        var scrollTop = $(window).scrollTop();
-        var topPos;
-        var navBar = $('#navbar').offset().top;
+        var roomShowEl = $('.room-show-content-container').offset().top,
+          scrollTop = $(window).scrollTop(),
+          topPos,
+          navBar = $('#navbar').offset().top;
+
         if (roomShowEl <= navBar) {
           topPos = navBar - 540
         } else {
@@ -88,37 +82,13 @@ var RoomShow = React.createClass({
 
         element.stop(false, false).animate({
           top: topPos
-        }, 1);
+        }, 0);
 
       });
     // }
 },
 
-  // openConfirmationModal: function() {
-  //   this.setState({
-  //     openConfModal: true
-  //   })
-  // },
-  //
-  // closeConfirmationModal: function() {
-  //   this.setState({
-  //     openConfModal: false,
-  //     showModal: false
-  //   });
-  //   this.history.push({pathname: '/users/' + UserStore.currentUser.id})
-  // },
-
   render: function () {
-    // if ($('.map-reserve-container').offset()) {
-    //   var el=$('.map-reserve-container');
-    //   var elpos = el.offset().top();
-    //   $(window).scroll(function () {
-    //     var y=$(this).scrollTop();
-    //     if(y<elpos){el.stop().animate({'top':0},500);}
-    //     else{el.stop().animate({'top':y-elpos},500);}
-    //   });
-    //
-    // }
 
     var roomPics;
     var carousel;
@@ -149,15 +119,6 @@ var RoomShow = React.createClass({
 
 
       console.log(this.state.room);
-      // <Modal
-      //   isOpen={this.state.openConfModal}
-      //   onRequestClose={this.closeConfirmationModal}
-      //   closeTimeoutMS={0}
-      //   style={modalStyle}>
-      //
-      //   <h1>Congrats! You've booked a Lair!</h1>
-      //
-      // </Modal>
 
     return (
 

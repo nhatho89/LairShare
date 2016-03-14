@@ -33,6 +33,7 @@ var ReservationForm = React.createClass({
     // this.props.openConfirmationModal();
 
     if (UserStore.currentUser()) {
+
       ApiUtil.createReservation({
         roomId: this.props.room.id,
         guests: FilterStore.params().max_sleep_num,
@@ -63,7 +64,7 @@ var ReservationForm = React.createClass({
     var room = this.props.room;
     var cleaningFee = 300;
     var serviceFee = 200;
-    var taxes = 0.8;
+    var taxes = 0.1;
 
     return (
 

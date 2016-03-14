@@ -1,13 +1,7 @@
 var React = require('react');
 
 var RoomHeader = React.createClass({
-//
-//   getInitialState: function() {
-//     debugger
-//     return {
-//       room: this.props.room
-//     }
-//   },
+
 
   render: function() {
     if (Object.keys(this.props.room).length === 0) {
@@ -15,7 +9,7 @@ var RoomHeader = React.createClass({
       return (
         <div className="room-header-container">
           <div className="host-picture">
-            
+
           </div>
 
           <div className="header-title">

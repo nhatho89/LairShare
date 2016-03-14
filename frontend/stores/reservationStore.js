@@ -12,10 +12,8 @@ var _reservationParams = {
   endDate: null,
   guests: null,
   guestId: null
-  // status: null
 };
 
-// var _newReservationId = null;
 
 var resetReservationStore = function() {
   _reservationParams = {
@@ -37,42 +35,7 @@ ReservationStore.params = function() {
   return _reservationParams;
 };
 
-// var verified = function(avail) {
-//   _reservationStatus = {
-//     verified: true,
-//     avail: avail,
-//     booked: null
-//   };
-// };
 
-// var receiveNewReservation = function(reservation) {
-  // _reservationConfParams = {
-  //   reservationId: reservation.id,
-  //   roomId: reservation.roomId,
-  //   startDate: "",
-  //   endDeate: "",
-  //   guests: "",
-  //   status: ""
-  // };
-
-//   _reservationStatus = {
-//     verified: true,
-//     avail: true,
-//     booked: "new"
-//   }
-// };
-
-// ReservationStore.all = function() {
-//   return Object.assign({}, _reservationParams);
-// };
-//
-// ReservationStore.isVerified = function(){
-//   return _reservationStatus.verified;
-// };
-//
-// ReservationStore.isAvailable = function(){
-//   return _reservationStatus.verified && _reservationStatus.avail;
-// };
 
 ReservationStore.__onDispatch = function(payload) {
   switch(payload.actionType) {

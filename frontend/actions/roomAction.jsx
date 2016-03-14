@@ -10,14 +10,6 @@ var RoomActions = {
     });
   },
 
-  // fetchAllRooms: function() {
-  //   debugger
-  //   ApiUtil.fetchAllRooms(this.receiveAllRooms);
-  // },
-
-  // fetchRoomDetail: function(roomId) {
-  //   ApiUtil.fetchRoomDetail(roomId, this.receiveRoomDetail);
-  // },
 
   receiveRoom: function(room){
     AppDispatcher.dispatch({

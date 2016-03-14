@@ -6,7 +6,6 @@ var FilterConstants = {
   UPDATE_START_DATES: "UPDATE_START_DATES",
   UPDATE_END_DATES: "UPDATE_END_DATES",
   RESET_DATES: "RESET_DATES"
-  // UPDATE_MAX_SLEEP_NUM: "UPDATE_MAX_SLEEP_NUM"
 };
 
 module.exports = FilterConstants;

@@ -58,6 +58,9 @@ type="text/javascript"></script>
 
           <div class="signInUp">
             <% if signed_in? %>
+            <div>
+              <p><%= current_user.username %></p>
+            </div>
             <div class="profile-pic">
               <%= image_tag("#{current_user.profile_pic}", :alt => "profile-pic") %>
               <div class="dropdown-content">
