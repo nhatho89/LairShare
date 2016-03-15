@@ -37,6 +37,9 @@ var RoomShow = React.createClass({
   },
   componentWillUnmount: function () {
     this.roomListener.remove();
+    // this.scrollFollow().off();
+    // $(window).off('scroll', this.scrollFollow());
+
   },
   _roomChanged: function () {
 
@@ -61,9 +64,9 @@ var RoomShow = React.createClass({
   },
 
   scrollFollow: function() {
-    var element = $('.map-reserve-container'),
-        originalY = element.offset().top,
-        topMargin = 0;
+    var element = $('.map-reserve-container');
+        // originalY = element.offset().top,
+        // topMargin = 0;
 
     element.css('position', 'relative');
 

@@ -24,9 +24,18 @@ var StayDates = React.createClass({
     //   console.log("helo");
     // };
 
+    var newStartDate = startDate.clone();
+
+    FilterActions.updateEndDates({
+      endDate: newStartDate.add(3,'days')
+    });
+
+
     FilterActions.updateStartDates({
       startDate: startDate
-    })
+    });
+
+
 
   },
 

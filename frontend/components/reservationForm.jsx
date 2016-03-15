@@ -33,16 +33,17 @@ var ReservationForm = React.createClass({
     // this.props.openConfirmationModal();
 
     if (UserStore.currentUser()) {
+      debugger
 
       ApiUtil.createReservation({
         roomId: this.props.room.id,
         guests: FilterStore.params().max_sleep_num,
         guestId: UserStore.currentUser(),
-        //TODO may cause errors because dates are in form of moments
         startDate: FilterStore.params().dates.startDate,
         endDate: FilterStore.params().dates.endDate,
         message: this.state.message
       });
+
       this.history.push({pathname: '/users/' + UserStore.currentUser.id})
 
     } else {
@@ -119,7 +120,7 @@ var ReservationForm = React.createClass({
             </div>
 
             <div className="row">
-              <div className="col-xs-12">
+              <div>
                 <div className="row">
                   <div className="agreement-checkbox">
                     <label>

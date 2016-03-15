@@ -25,7 +25,7 @@ var _params = {
   },
   dates: {
     startDate: moment(),
-    endDate: moment().add(604800000)
+    endDate: moment().add(3,'days')
   },
 
   roomType: {
@@ -82,7 +82,7 @@ FilterParamsStore.__onDispatch = function (payload) {
       _params.dates.endDate = moment(payload.dates.endDate);
       FilterParamsStore.__emitChange();
       break;
-  
+
   }
 };
 
