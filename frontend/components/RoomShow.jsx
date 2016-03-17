@@ -31,14 +31,14 @@ var RoomShow = React.createClass({
   },
 
   componentDidMount: function () {
-    this.scrollFollow();
+    this.addScrollFollow();
     this.roomListener = RoomStore.addListener(this._roomChanged);
     ApiUtil.fetchARoom(this.props.params.roomId);
   },
   componentWillUnmount: function () {
     this.roomListener.remove();
     // this.scrollFollow().off();
-    // $(window).off('scroll', this.scrollFollow());
+    $(window).off('scroll', this.scrollListener);
 
   },
   _roomChanged: function () {
@@ -63,31 +63,37 @@ var RoomShow = React.createClass({
 
   },
 
-  scrollFollow: function() {
+  scrollListener: function() {
     var element = $('.map-reserve-container');
         // originalY = element.offset().top,
         // topMargin = 0;
 
     element.css('position', 'relative');
 
-      $(window).on('scroll', function(event) {
-        var roomShowEl = $('.room-show-content-container').offset().top,
-          scrollTop = $(window).scrollTop(),
-          topPos,
-          navBar = $('#navbar').offset().top;
+      var roomShowEl = $('.room-show-content-container').offset().top,
+        scrollTop = $(window).scrollTop(),
+        topPos,
+        navBar = $('#navbar').offset().top;
 
-        if (roomShowEl <= navBar) {
-          topPos = navBar - 540
-        } else {
-          topPos = 0;
-        }
+      if (roomShowEl <= navBar) {
+        topPos = navBar - 540
+      } else {
+        topPos = 0;
+      }
 
 
-        element.stop(false, false).animate({
-          top: topPos
-        }, 0);
+      element.stop(false, false).animate({
+        top: topPos
+      }, 0);
 
-      });
+
+
+  },
+
+  addScrollFollow: function() {
+
+
+      $(window).on('scroll', this.scrollListener );
     // }
 },
 

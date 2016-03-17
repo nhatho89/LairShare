@@ -10,10 +10,11 @@ var List = require('./list.jsx');
 var Map = require('./Map.jsx');
 var LoadingScreen = require('./loadingScreen.jsx');
 var Filter = require('./Filters.jsx');
-var Search = require('./Search.jsx');
+// var Search = require('./Search.jsx');
 var ApiUtil = require('../util/apiUtil.js');
 var Index = require('./Index');
 var Link = require('react-router').Link;
+
 
 var SearchIndex = React.createClass({
   mixins: [History],
@@ -115,9 +116,15 @@ var SearchIndex = React.createClass({
       redirect = (
         <div className="redirect-to-sf">
           <h4>
-            This demo only contains seed data for
+            This location has no rooms available, please redirect to one of the following:
             <Link to="/search/San-Francisco">
               &nbsp;San Francisco
+            </Link>
+            <Link to="/search/New-York-City">
+              &nbsp;New York City
+            </Link>
+            <Link to="/search/Bahamas">
+              &nbsp;Bahamas
             </Link>
           </h4>
         </div>

@@ -1,6 +1,10 @@
 var React = require('react');
 var LandingSearchBar = require('./landingPageComponents/landingSearchBar.jsx');
 var DatePicker = require('react-datepicker');
+var Explore = require('./explore.jsx');
+var Footer = require('./footer.jsx');
+var LairShareMedia = require('./lairShareMedia');
+// var Link = require('react-router').Link;
 
 var LandingPage = React.createClass({
 
@@ -22,16 +26,29 @@ var LandingPage = React.createClass({
   render: function() {
     return (
       <div className="landing-page">
-        <div className="container-title">
-          <h1>WELCOME HOME</h1>
-          <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
-        </div>
-        <div className="landing-page-background-container">
-          <img className="landing-page-background-photo" src="/assets/fort-jefferson.jpg"></img>
+        <div className="landing-page-wrapper">
+          <div className="landing-page-background-container">
+            <img className="landing-page-background-photo" src="/assets/fort-jefferson.jpg"></img>
+            <div className="container-title">
+              <h1>WELCOME HOME</h1>
+              <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
+            </div>
+            <LandingSearchBar/>
+          </div>
         </div>
 
+        <div className="explore-landing-page">
+          <Explore/>
+        </div>
+        
+        <div className="media">
+          <LairShareMedia/>
+        </div>
 
-          <LandingSearchBar/>
+        <div className="footer">
+          <Footer/>
+        </div>
+
 
       </div>
     );

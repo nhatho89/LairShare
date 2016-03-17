@@ -3,6 +3,7 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var History = require('react-router').History;
 
 
+
 var LandingSearchBar = React.createClass({
   mixins: [History],
 
@@ -55,7 +56,7 @@ var LandingSearchBar = React.createClass({
 
   searchBarMoveUp: function() {
 
-    $(".search-bar").animate({'bottom': '15%'},1000);
+    $(".search-bar").animate({'bottom': '20%'},1000);
 
     // }.bind(this), 1800);
 
@@ -64,7 +65,7 @@ var LandingSearchBar = React.createClass({
 
 
   searchBarMoveBack: function() {
-    $(".search-bar").animate({'bottom': '0px'},500);
+    $(".search-bar").animate({'bottom': '10%'},500);
   },
 
   render: function() {
