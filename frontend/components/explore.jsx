@@ -28,7 +28,7 @@ var Explore = React.createClass({
             New York City
           </h4>
           <h4 className="city-title-name">
-            Carribeans
+            Caribbean
           </h4>
 
         </div>

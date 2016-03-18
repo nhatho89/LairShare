@@ -17,10 +17,6 @@ var TripDetail = React.createClass({
     });
   },
 
-  componentDidMount: function() {
-
-  },
-
 
 
   render: function() {
@@ -36,7 +32,7 @@ var TripDetail = React.createClass({
     var serviceFee = 200;
     var taxes = 0.1;
 
-    
+
 
     return (
       <div className="trip-detail-container">

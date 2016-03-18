@@ -5,17 +5,21 @@ var Footer = React.createClass({
   render: function() {
     return (
       <div className="footer-container">
-        <li>
-          <a className="logo" href="https://github.com/nhatho89">
-            GitHub
-          </a>
-        </li>
+        <div className="row-container">
 
-        <li>
-          <a className="logo" href="https://www.linkedin.com/in/nhatho89">
-            LinkedIn
-          </a>
-        </li>
+          <div>
+            <a className="logo" href="https://github.com/nhatho89">
+              GitHub
+            </a>
+          </div>
+
+          <div>
+            <a className="logo" href="https://www.linkedin.com/in/nhatho89">
+              LinkedIn
+            </a>
+          </div>
+          
+        </div>
       </div>
 
     );

@@ -9,6 +9,12 @@
 .list-group-item {
   border: 1px solid silver;
   margin: 3px;
+  text-align: center;
+
+}
+
+.list-group-item:hover {
+  cursor: pointer;
 }
 
 .list-group-item:hover {
@@ -69,6 +75,9 @@
 
 .panel-heading {
   background-color: #C0DCF5;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .trip-list-panel {
@@ -95,4 +104,20 @@
 .receipt-container {
   display: flex;
   flex-direction: column;
+}
+
+.panel-heading-left {
+  padding: 5px;
+  font-weight: 800;
+  color: #1178B3
+}
+
+.panel-heading-right {
+  padding: 5px;
+  background-color: green;
+  border-radius: 32px;
+  height: 11px;
+  width: 15px;
+  text-align: center;
+  color: aliceblue;
 }

@@ -13,7 +13,6 @@ var Modal = require('react-modal');
 var modalStyle = require('./modalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 var History = require('react-router').History;
-var RoomHeader = require('./roomHeader.jsx');
 
 var PropTypes = React.PropTypes;
 
@@ -27,7 +26,12 @@ var RoomShow = React.createClass({
   getInitialState: function () {
     var roomId = this.props.params.roomId;
     var room = RoomStore.find(roomId) || {} ;
-    return { room: room, showModal: false, openConfModal: false};
+    return ({
+      room: room,
+      showModal: false,
+      openConfModal: false,
+      centerLatLng: null
+    });
   },
 
   componentDidMount: function () {
@@ -98,9 +102,12 @@ var RoomShow = React.createClass({
 },
 
   render: function () {
-
+    // debugger
     var roomPics;
     var carousel;
+    if (this.state.room) {
+      var centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
+    }
 
 
     if (this.state.room.pics) {
@@ -173,6 +180,7 @@ var RoomShow = React.createClass({
               <div id="room-show-gmap">
 
                 <Map
+                  centerLatLng={centerLatLng}
                   singleRoom={true}
                   rooms={rooms} />
               </div>

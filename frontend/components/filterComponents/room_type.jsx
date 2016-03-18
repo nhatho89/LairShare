@@ -20,7 +20,7 @@ var RoomType = React.createClass({
             <label>Whole Facility
               <input type="checkbox"
                 onChange={this.roomTypeChanged}
-                value={'wholeFacility'}
+                value={'Whole Facility'}
                 defaultChecked="true"/>
             </label>
           </div>
@@ -29,7 +29,7 @@ var RoomType = React.createClass({
 
                 <input type="checkbox"
                   onChange={this.roomTypeChanged}
-                  value={'sharedFacility'}
+                  value={'Shared Facility'}
                   defaultChecked="true"
                   />
               </label>
@@ -38,7 +38,7 @@ var RoomType = React.createClass({
               <label>Private Room
                 <input type="checkbox"
                   onChange={this.roomTypeChanged}
-                  value={'private'}
+                  value={'Private'}
                   defaultChecked="true"
                   />
               </label>

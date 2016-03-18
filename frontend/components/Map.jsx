@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var FilterActions = require('../actions/filter_actions');
 var RoomStore = require('../stores/roomStore.js');
+
 function _getCoordsObj(latLng) {
   return {
     lat: latLng.lat(),
@@ -44,6 +45,7 @@ var Map = React.createClass({
 
 
   centerRoomCoords: function () {
+    // console.log();
     if (this.props.centerLatLng) {
 
 
@@ -142,6 +144,7 @@ var Map = React.createClass({
     }
   },
   render: function(){
+    // debugger
     return ( <div className="gmap" ref="map">Map</div>);
   }
 });

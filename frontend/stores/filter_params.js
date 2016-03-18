@@ -29,9 +29,9 @@ var _params = {
   },
 
   roomType: {
-    wholeFacility: true,
-    sharedFacility: true,
-    private: true
+    "Whole Facility": true,
+    "Shared Facility": true,
+    "Private": true
   },
 
   priceRange: {

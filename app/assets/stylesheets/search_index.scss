@@ -1,3 +1,7 @@
+ul, li {
+  font-family: "Avenir Next";
+}
+
 .sf-button:hover {
   cursor: pointer;
   font-weight: bolder;
@@ -276,13 +280,14 @@ DatePicker {
 
 .room-index-item {
   width: 40%;
-  height: auto;
+  height: 200px;
   // border: 3px solid black;
   list-style: none;
   background-color: #E7ECEE;
 
 
-  padding: 5px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: 10px;
   -webkit-border-radius: 8px;
   // -moz-border-radius: 32px;
@@ -293,6 +298,9 @@ DatePicker {
   text-shadow: rgba(0,0,0,.4) 0 1px 0;
   min-height: 300px;
   min-width: 300px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 
 
 }
@@ -300,19 +308,21 @@ DatePicker {
 .room-picture img {
   overflow: hidden;
   border-radius: 32px;
+  // height: 200px;
 
 }
 
 .room-picture {
-  height: 80%;
+  height: 200px;
   width: 100%;
   display: flex;
   padding: 0px 0px;
   justify-content: center;
   margin-top: 16px;
   margin-bottom: 0px;
-  min-height: 300px;
-  min-width: 300px;
+  // min-height: 300px;
+  // min-width: 300px;
+
 
 
 }
@@ -327,10 +337,15 @@ DatePicker {
 
   background: 50% 50% no-repeat; /* 50% 50% centers image in div */
   width: 300px;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   width: 100%;
   min-height: 200px;
   min-width: 300px;
 
+
+}
+
+.link-to-city {
+  text-decoration: none;
 }

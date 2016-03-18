@@ -4,6 +4,7 @@ var DatePicker = require('react-datepicker');
 var Explore = require('./explore.jsx');
 var Footer = require('./footer.jsx');
 var LairShareMedia = require('./lairShareMedia');
+
 // var Link = require('react-router').Link;
 
 var LandingPage = React.createClass({
@@ -40,7 +41,7 @@ var LandingPage = React.createClass({
         <div className="explore-landing-page">
           <Explore/>
         </div>
-        
+
         <div className="media">
           <LairShareMedia/>
         </div>

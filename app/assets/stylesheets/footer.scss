@@ -1,4 +1,16 @@
 .footer {
   background-color: black;
-  height: 150px;
+  height: 55px;
+}
+
+.footer-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.row-container {
+  display: flex;
+  justify-content: space-around;
 }

@@ -42,12 +42,15 @@ var TripList = React.createClass({
 
 
     return (
-      <div className="panel panel-success">
+      <div className="panel">
         <div className="panel-heading">
-          {this.state.tabName}
-          <span className="badge pull-right">
+          <div className="panel-heading-left">
+            {this.state.tabName}
+
+          </div>
+          <div className="panel-heading-right">
             {listItems.length}
-          </span>
+          </div>
 
         </div>
         <div className="list-group">

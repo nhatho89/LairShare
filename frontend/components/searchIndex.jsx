@@ -94,7 +94,7 @@ var SearchIndex = React.createClass({
   componentDidMount: function() {
     this.currentLocStr = this.props.params.loc;
 
-      this._startSearchProcess();
+    this._startSearchProcess();
     this.roomToken = RoomStore.addListener(this._updateRooms);
     ApiUtil.fetchAllRooms();
     this.filterListener = FilterStore.addListener(this._filtersChanged);
@@ -116,17 +116,17 @@ var SearchIndex = React.createClass({
       redirect = (
         <div className="redirect-to-sf">
           <h4>
-            This location has no rooms available, please redirect to one of the following:
-            <Link to="/search/San-Francisco">
-              &nbsp;San Francisco
-            </Link>
-            <Link to="/search/New-York-City">
-              &nbsp;New York City
-            </Link>
-            <Link to="/search/Bahamas">
-              &nbsp;Bahamas
-            </Link>
+            Doesn't look like anything is here, try these:&#13;&#10;
           </h4>
+          <Link to="/search/San-Francisco" className="link-to-city">
+            &nbsp;&nbsp;San Francisco
+          </Link>
+          <Link to="/search/New-York-City" className="link-to-city">
+            &nbsp;&nbsp;New York City
+          </Link>
+          <Link to="/search/Bahamas" className="link-to-city">
+            &nbsp;&nbsp;Bahamas
+          </Link>
         </div>
 
       )} else {
