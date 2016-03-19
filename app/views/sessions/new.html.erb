@@ -3,44 +3,49 @@
   <img class="signin-background" src="/assets/Island/Island.jpeg">
   </img>
   <div class='sign-in-container'>
-    <form class="signin-form"action="<%= session_url%>" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <div class='username-container'>
-        <label class="username-label">
-          Username
-        </label>
-        <div class="input-field">
-          <input class="username-input-field" type="text" name="user[username]">
+    <div class="signin-form-container">
+      <form class="signin-form"action="<%= session_url%>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class='username-container'>
+          <label class="username-label">
+            Username
+          </label>
+          <div class="input-field">
+            <input class="username-input-field" type="text" name="user[username]">
+          </div>
+          <br>
         </div>
-        <br>
-      </div>
 
-      <div class='password-container'>
-        <label class="password-label">
-          Password
-        </label>
-        <div class="input-field">
-          <input class="password-input-field" type="password" name="user[password]">
+        <div class='password-container'>
+          <label class="password-label">
+            Password
+          </label>
+          <div class="input-field">
+            <input class="password-input-field" type="password" name="user[password]">
+          </div>
+          <br>
         </div>
-        <br>
-      </div>
 
         <div class="session-buttons">
 
-        <div class='submit-button-container'>
-          <input class="signinup-button" type="submit" value="Sign In">
+          <div class='submit-button-container'>
+            <input class="signinup-button" type="submit" value="Sign In">
+          </div>
+
         </div>
 
-      </div>
+      </form>
+    </div>
 
-    </form>
-    <form action="<%= session_url %>" method="post">
-      <input type="hidden" name="user[username]" value="Magneto">
-      <input type="hidden" name="user[password]" value="qweasd">
+    <div class="signin-demo-container">
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="user[username]" value="Magneto">
+        <input type="hidden" name="user[password]" value="qweasd">
 
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <button type="submit" class="demo_user_button">Demo User</button>
-    </form>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit" class="demo_user_button">Demo User</button>
+      </form>
+    </div>
   </div>
 
 </div>

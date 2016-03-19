@@ -3,12 +3,15 @@ var RoomStore = require('../stores/roomStore.js');
 
 var LairShareMedia = React.createClass({
 
-  render: function() {
-    if (RoomStore.find(4)) {
-      var drEvilPic = RoomStore.find(4).host.profile_pic;
+  componentDidMount: function() {
+    // debugger
+  },
 
-    }
-    console.log(drEvilPic);
+  render: function() {
+
+    var drEvilPic = (<img className="quote-picture" src='/assets/drEvil.jpg'></img>)
+    var heisenbergPic = (<img className="quote-picture" src='/assets/heisenberg.jpg'></img>)
+
     return (
       <div className="lair-share-media">
         <div className="col-wrap">
@@ -27,7 +30,7 @@ var LairShareMedia = React.createClass({
               </div>
               <div className="quote-image">
 
-                <img className="quote-picture" src='/assets/drEvil.jpg'/>
+                {drEvilPic}
               </div>
             </div>
           </div>
@@ -46,7 +49,7 @@ var LairShareMedia = React.createClass({
               </div>
               <div className="quote-image">
 
-                <img className="quote-picture" src='/assets/heisenberg.jpg'/>
+                {heisenbergPic}
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ var City = React.createClass({
 
   mouseEnter: function(event) {
     event.preventDefault();
-    $("#" + this.props.city + "-1").css('z-index', 2);//.css('transition', 'all 0.5s ease');
+    $("#" + this.props.city + "-1").css('z-index', 2);
 
   },
 
