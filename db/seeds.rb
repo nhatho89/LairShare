@@ -48,7 +48,7 @@ User.create!(
 Room.create!(
   title: "Underwater Fortress",
   host_id: 5,
-  room_type: "Shared Facility",
+  room_type: "Private",
   price: 8000,
   location: "San Francisco",
   lat: 37.75733081954469,
@@ -203,7 +203,7 @@ RoomPic.create!(
 Room.create!(
   title: "Island Fortress",
   host_id: 4,
-  room_type: "Whole Facility",
+  room_type: "Private",
   price: 5000,
   location: "Caribbean",
   lat: 18.119799,
@@ -238,7 +238,7 @@ RoomPic.create!(
 Room.create!(
   title: "Chemistry Laboratory",
   host_id: 6,
-  room_type: "Private",
+  room_type: "Whole Facility",
   price: 3000,
   location: "New York",
   lat: 40.68000339369621,
