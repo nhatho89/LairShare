@@ -13,6 +13,7 @@ var Modal = require('react-modal');
 var modalStyle = require('./modalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 var History = require('react-router').History;
+var Date = require('./filterComponents/dates.jsx');
 
 var PropTypes = React.PropTypes;
 
@@ -172,6 +173,9 @@ var RoomShow = React.createClass({
                   <h1>${this.state.room.price} per Night</h1>
 
                 </div>
+              </div>
+              <div className="date-container">
+                <Date/>
               </div>
               <div className="reserve-lair-button-container">
 

@@ -1,6 +1,6 @@
 var React = require('react');
 var RoomStore = require('../stores/roomStore.js');
-var LoadingScreen = require('./loadingScreen.jsx');
+// var LoadingScreen = require('./loadingScreen.jsx');
 var RoomAction = require('../actions/roomAction.jsx');
 
 var TripStore = require('../stores/tripStore.js');

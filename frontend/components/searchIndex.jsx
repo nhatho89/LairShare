@@ -124,8 +124,8 @@ var SearchIndex = React.createClass({
           <Link to="/search/New-York-City" className="link-to-city">
             &nbsp;&nbsp;New York City
           </Link>
-          <Link to="/search/Bahamas" className="link-to-city">
-            &nbsp;&nbsp;Bahamas
+          <Link to="/search/Saint-Martin" className="link-to-city">
+            &nbsp;&nbsp;Caribbean
           </Link>
         </div>
 

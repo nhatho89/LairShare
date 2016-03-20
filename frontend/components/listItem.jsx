@@ -15,9 +15,9 @@ var ListItem = React.createClass({
   render: function() {
     var room = this.props.room;
     return(
-      <div className="col-xs-12 col-sm-6 row-space-5">
+      <div>
         <div
-          className="container-fluid cursor-pointer"
+          className="container-fluid"
           id={"room-" + room.id}>
           <Index/>
         </div>
