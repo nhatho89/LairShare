@@ -4,6 +4,7 @@ var DatePicker = require('react-datepicker');
 var Explore = require('./explore.jsx');
 var Footer = require('./footer.jsx');
 var LairShareMedia = require('./lairShareMedia');
+// var LoginInForm = require('./loginForm.jsx');
 
 // var Link = require('react-router').Link;
 
@@ -37,6 +38,9 @@ var LandingPage = React.createClass({
             <LandingSearchBar/>
           </div>
         </div>
+
+
+
 
         <div className="explore-landing-page">
           <Explore/>

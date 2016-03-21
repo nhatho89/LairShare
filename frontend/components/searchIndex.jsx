@@ -106,6 +106,8 @@ var SearchIndex = React.createClass({
     this.props.history.pushState(null, "rooms/" + room.id);
   },
 
+
+
   render: function() {
 
     var showResult = this.state.showResult;
@@ -152,8 +154,8 @@ var SearchIndex = React.createClass({
           <div className="right-half">
             <Map
               centerLatLng={this.state.centerLatLng}
-              onMarkerClick={this.handleMarkerClick}/>
-
+              onMarkerClick={this.handleMarkerClick}
+              />
           </div>
         </div>
       );

@@ -9,11 +9,15 @@ var Map = require('./Map');
 var ApiUtil = require('../util/apiUtil');
 var Carousel = require('nuka-carousel');
 var Modal = require('react-modal');
+var SessionStore = require('../stores/sessionStore');
+var LoginForm = require('./loginForm');
 // var RoomForm = require('./RoomForm.jsx');
-var modalStyle = require('./modalStyle.jsx');
+var authModalStyle = require('./authModalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 var History = require('react-router').History;
 var Date = require('./filterComponents/dates.jsx');
+var SessionActions = require('../actions/sessionAction.js');
+var modalStyle = require('./modalStyle');
 
 var PropTypes = React.PropTypes;
 
@@ -29,23 +33,37 @@ var RoomShow = React.createClass({
     var room = RoomStore.find(roomId) || {} ;
     return ({
       room: room,
+      showSigninModal: false,
       showModal: false,
-      openConfModal: false,
+      signedIn: false,
+      // singleRoom: true,
+      // openConfModal: false,
       centerLatLng: null
     });
   },
 
   componentDidMount: function () {
     this.addScrollFollow();
+    this.sessionListener = SessionStore.addListener(this.sessionChange);
     this.roomListener = RoomStore.addListener(this._roomChanged);
     ApiUtil.fetchARoom(this.props.params.roomId);
   },
   componentWillUnmount: function () {
     this.roomListener.remove();
+    this.sessionListener.remove();
     // this.scrollFollow().off();
     $(window).off('scroll', this.scrollListener);
 
+
   },
+
+  sessionChange: function() {
+    //have to setState to force re-rendering of reservation button after sign in
+    this.setState({
+      signedIn: true
+    })
+  },
+
   _roomChanged: function () {
 
     var roomId = this.props.params.roomId;
@@ -66,6 +84,15 @@ var RoomShow = React.createClass({
 
 
 
+  },
+
+  openSigninModal: function() {
+    // debugger
+    this.setState({showSigninModal: true})
+  },
+
+  closeSigninModal: function() {
+    this.setState({showSigninModal: false})
   },
 
   scrollListener: function() {
@@ -98,11 +125,22 @@ var RoomShow = React.createClass({
   addScrollFollow: function() {
 
 
-      $(window).on('scroll', this.scrollListener );
+    $(window).on('scroll', this.scrollListener );
     // }
-},
+  },
 
   render: function () {
+
+    var button;
+
+    if (SessionStore.currentUser().username) {
+      button = (
+        <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
+      ) } else {
+        button = (
+        <button className="reserve-lair-button" onClick={this.openSigninModal}>Sign In to Reserve!</button>
+        )
+    }
     // debugger
     var roomPics;
     var carousel;
@@ -144,6 +182,18 @@ var RoomShow = React.createClass({
       {carousel}
 
 
+      <Modal
+
+        isOpen={this.state.showSigninModal}
+        onRequestClose={this.closeSigninModal}
+        closeTimeoutMS={0}
+        style={authModalStyle}>
+
+        <LoginForm closeModal={this.closeSigninModal}/>
+
+      </Modal>
+
+
 
         <div className="room-show-content-container">
           <div className="left-half-room">
@@ -179,7 +229,7 @@ var RoomShow = React.createClass({
               </div>
               <div className="reserve-lair-button-container">
 
-                <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
+                {button}
               </div>
               <div id="room-show-gmap">
 

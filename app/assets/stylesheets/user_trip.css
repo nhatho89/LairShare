@@ -113,6 +113,11 @@
 }
 
 .panel-heading-right {
+  position: relative;
+  top: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   padding: 5px;
   background-color: green;
   border-radius: 32px;

@@ -6,8 +6,9 @@ var ReservationStore = require('../stores/reservationStore.js');
 var FilterStore = require('../stores/filter_params');
 // var Modal = require('react-modal');
 // var modalStyle = require('./modalStyle.jsx');
-var ApiUtil = require('../util/apiUtil.js');
 var UserStore = require('../stores/userStore.js');
+var ApiUtil = require('../util/apiUtil.js');
+var SessionStore = require('../stores/sessionStore.js');
 var RoomShow = require('./RoomShow.jsx');
 var History = require('react-router').History;
 var ReservationForm = React.createClass({
@@ -32,19 +33,19 @@ var ReservationForm = React.createClass({
 
     // this.props.openConfirmationModal();
 
-    if (UserStore.currentUser()) {
+    if (SessionStore.currentUser()) {
       debugger
 
       ApiUtil.createReservation({
         roomId: this.props.room.id,
         guests: FilterStore.params().max_sleep_num,
-        guestId: UserStore.currentUser(),
+        guestId: SessionStore.currentUser(),
         startDate: FilterStore.params().dates.startDate,
         endDate: FilterStore.params().dates.endDate,
         message: this.state.message
       });
 
-      this.history.push({pathname: '/users/' + UserStore.currentUser.id})
+      this.history.push({pathname: '/users/' + SessionStore.currentUser.id})
 
     } else {
       window.location.replace("http://localhost:3000/session/new");

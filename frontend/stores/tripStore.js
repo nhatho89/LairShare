@@ -152,7 +152,7 @@ TripStore.__onDispatch = function(payload) {
       break;
 
 
-    
+
 
   }
 };

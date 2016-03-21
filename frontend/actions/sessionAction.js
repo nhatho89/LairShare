@@ -1,8 +1,8 @@
 var AppDispatcher = require('../dispatcher/dispatcher.js');
-var UserConstants = require('../constants/userConstants.js');
+var SessionConstants = require('../constants/sessionConstants.js');
 var UserUtil = require('../util/userUtil.js');
 
-var UserActions = {
+var SessionActions = {
 
   signUp: function(userInfo){
     UserUtil.createUserAccount(userInfo, this.receiveNewUser);
@@ -24,25 +24,25 @@ var UserActions = {
 
   receiveNewUser: function(user){
     AppDispatcher.dispatch({
-      actionType: UserConstants.RECEIVENEWUSER,
+      actionType: SessionConstants.RECEIVENEWUSER,
       user: user
     });
   },
 
   receiveCurrentUser: function(user){
+    // debugger
     AppDispatcher.dispatch({
-      actionType: UserConstants.RECEIVEUSER,
+      actionType: SessionConstants.RECEIVEUSER,
       user: user
     });
   },
 
   removeCurrentUser: function(){
     AppDispatcher.dispatch({
-      actionType: UserConstants.REMOVECURRENTUSER,
-      user: ""
+      actionType: SessionConstants.REMOVECURRENTUSER
     });
   }
 
 };
 
-module.exports = UserActions;
+module.exports = SessionActions;

@@ -1,8 +1,16 @@
 var React = require('react');
-var UserLoginForm = require('./userLoginForm.jsx');
-var CurrentUser = require('./currentUser');
-var UserStore = require('../stores/userStore');
+// var UserLoginForm = require('./userLoginForm.jsx');
+// var CurrentUser = require('./currentUser');
+var SessionStore = require('../stores/sessionStore');
 var UserActions = require('../actions/userAction');
+var SessionActions = require('../actions/sessionAction');
+var LoginForm = require('./loginForm');
+var authModalStyle = require('./authModalStyle.jsx');
+var Modal = require('react-modal');
+var SignupForm = require('./signUpForm');
+var LandingSearchBar = require('./landingPageComponents/landingSearchBar.jsx');
+
+
 var History = require('react-router').History;
 var NavBar = React.createClass({
   mixins: [History],
@@ -10,17 +18,38 @@ var NavBar = React.createClass({
   getInitialState: function() {
     return {
 
-      user: UserStore.currentUser()
+      user: SessionStore.currentUser(),
+      showModal: false,
+      showSignupModal: false
     };
   },
 
+  openSigninModal: function() {
+    this.setState({showModal: true})
+  },
+
+  closeSigninModal: function() {
+    this.setState({showModal: false})
+  },
+
+  openSignupModal: function() {
+    this.setState({showSignupModal: true})
+  },
+
+  closeSignupModal: function() {
+    this.setState({showSignupModal: false})
+  },
+
   componentDidMount: function() {
-    this.userListener = UserStore.addListener(this.userChange);
-    UserActions.getCurrentUser();
+    console.log(this.state.user);
+    this.userListener = SessionStore.addListener(this.userChange);
+    SessionActions.fetchSession();
   },
 
   userChange: function() {
-    this.setState({ user: UserStore.currentUser() });
+
+    this.setState({ user: SessionStore.currentUser() });
+
   },
 
   redirectUserProfile: function() {
@@ -28,14 +57,120 @@ var NavBar = React.createClass({
 
   },
 
+  handleSignOut: function() {
+    SessionActions.logOut();
+    this.history.push({pathname: "/"});
+  },
+
 
 
   render: function() {
+    var display;
 
-    var contents = (this.state.user) ?
-    this.state.user.username.toUpperCase() : "";
+    if (SessionStore.currentUser().username) {
+      display = (
+        <div className="signInUp">
+          <div>
+            <p>{this.state.user.username}</p>
+          </div>
+          <div className="profile-pic">
+            <img className="profile-pic" src={this.state.user.profile_pic}></img>
+
+            <div className="dropdown-content">
+              <a onClick={this.redirectUserProfile}>My Trips</a>
+              <a onClick={this.handleSignOut}>Sign out</a>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      display = (
+        <div className="signed-out-container">
+          <div className="signin-signout">
+            <div className="sign-in-button" onClick={this.openSigninModal}>
+              Sign In
+            </div>
+            <div className="sign-up-button" onClick={this.openSignupModal}>
+              Sign Up
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+
+    // <div>
+    //   <LandingSearchBar/>
+    // </div>
+
+
     return (
-      <div>
+      <div className="navbar">
+
+        <Modal
+
+          isOpen={this.state.showModal}
+          onRequestClose={this.closeSigninModal}
+          closeTimeoutMS={0}
+          style={authModalStyle}>
+
+          <LoginForm closeModal={this.closeSigninModal}/>
+
+        </Modal>
+
+        <Modal
+
+          isOpen={this.state.showSignupModal}
+          onRequestClose={this.closeSignupModal}
+          closeTimeoutMS={0}
+          style={authModalStyle}>
+
+          <SignupForm closeModal={this.closeSignupModal}/>
+
+        </Modal>
+
+        <div id="navbar" className="navbar-collapse collapse">
+          <div className="navbar-left">
+            <ul>
+              <li>
+                <a className="logo" href="/#">
+                  LairShare
+                </a>
+              </li>
+
+
+              <li>
+                <a className="logo" href="/#/search/San-Francisco">
+                  San Francisco
+                </a>
+              </li>
+
+              <li>
+                <a className="logo" href="/#/search/New-York-City">
+                  New York
+                </a>
+              </li>
+
+              <li>
+                <a className="logo" href="/#/search/Saint-Martin">
+                  Caribbean
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+
+          <div className="navBar-right">
+              {display}
+          </div>
+
+
+
+        </div>
 
       </div>
     );

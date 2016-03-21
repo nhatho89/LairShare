@@ -5,6 +5,7 @@ var IndexItem = React.createClass({
   mixins: [ReactRouter.history],
 
 
+
   render: function(){
     var room = this.props.room;
 

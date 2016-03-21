@@ -1,22 +1,22 @@
 var React = require('react');
-var NavBar = require('./navBar.jsx');
+var Navbar = require('./navBar.jsx');
 
 
 
-var UserStore = require('../stores/userStore');
-var UserActions = require('../actions/userAction');
+var SessionStore = require('../stores/sessionStore');
+var SessionActions = require('../actions/sessionAction');
 
 
 var App = React.createClass({
   getInitialState: function() {
     return {
-      user: UserStore.currentUser()
+      user: SessionStore.currentUser()
     };
   },
 
   componentDidMount: function() {
-    this.userListener = UserStore.addListener(this.userChange);
-    UserActions.getCurrentUser();
+    this.userListener = SessionStore.addListener(this.userChange);
+    SessionActions.fetchSession();
   },
 
   componentWillUnmount: function() {
@@ -24,18 +24,14 @@ var App = React.createClass({
   },
 
   userChange: function() {
-    this.setState({ user: UserStore.currentUser() });
+    this.setState({ user: SessionStore.currentUser() });
   },
-  // <NavBar history={this.props.history}/>
-  // <div className="landing-page-background">
-  //   <img src='/assets/Island/island.jpeg'>
-  //
-  //   </img>
-  // </div>
+
 
   render: function() {
     return (
       <div className="app">
+        <Navbar/>
 
         {this.props.children}
 

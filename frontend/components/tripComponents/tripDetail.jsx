@@ -4,7 +4,6 @@ var RoomStore = require('../../stores/roomStore.js');
 
 var TripDetail = React.createClass({
   getInitialState: function() {
-    //this.props is empty
 
     return ({
       trip: TripStore.find_by_id(parseInt(this.props.tripId))
@@ -17,13 +16,10 @@ var TripDetail = React.createClass({
     });
   },
 
-
-
   render: function() {
     var trip = this.state.trip
     if(typeof trip === 'undefined' || trip === null ) return null;
-    // var img_url = "https://res.cloudinary.com/chenjm8683/image/upload/c_scale,w_250"
-    //  + trip.room_pic;
+
     var checkinStr = moment(trip.startDate, 'MM-DD-YYYY').format('ddd, MMM DD, YYYY');
     var checkoutStr = moment(trip.endDate, 'MM-DD-YYYY').format('ddd, MMM DD, YYYY');
     var nights = TripStore.nights(trip.id);
@@ -31,6 +27,7 @@ var TripDetail = React.createClass({
     var cleaningFee = 300;
     var serviceFee = 200;
     var taxes = 0.1;
+
 
 
 
@@ -107,7 +104,7 @@ var TripDetail = React.createClass({
             <p>
               {"Host name: " + trip.host}
               <br />
-              {" (917)456-7890"}
+              {" (555)555-5555"}
             </p>
           </div>
           <div className="col-md-6">

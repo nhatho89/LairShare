@@ -7,6 +7,8 @@ var Index = React.createClass({
     this.props.history.pushState(null, "rooms/" + room.id );
   },
 
+  
+
   render: function(){
     var handleItemClick = this.handleItemClick;
     var that = this;
@@ -21,6 +23,7 @@ var Index = React.createClass({
             var boundClick = handleItemClick.bind(null, room);
             return <IndexItem
               onClick={boundClick}
+
               room={room}
               key={room.id} />
           })

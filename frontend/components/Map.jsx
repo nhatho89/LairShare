@@ -16,7 +16,8 @@ var Map = React.createClass({
 
   getInitialState: function() {
     return {
-      rooms: RoomStore.all()
+      rooms: RoomStore.all(),
+      singleRoom: false
     }
   },
 
@@ -96,6 +97,13 @@ var Map = React.createClass({
     if (newProps.centerLatLng !== this.props.centerLatLng) {
       this.map.setCenter({lat: newProps.centerLatLng.lat, lng: newProps.centerLatLng.lng });
     }
+
+    if (this.props.singleRoom === true) {
+      this.setState({
+        singleRoom: true
+      });
+    }
+    
     this._onChange();
   },
 

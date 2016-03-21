@@ -1,42 +1,74 @@
 // var UserAction = require('../actions/userAction.jsx');
+var SessionStore = require('../stores/sessionStore');
 
 
 var UserUtil = {
-  attemptLogIn: function(user) {
-      $.ajax({
-        url: '/api/session',
-        type: 'POST',
-        dataType: 'json',
-        data: {user: user},
-        success: function(user) {
-          UserAction.logIn(user);
-        }
-      })
-    },
+  createUserAccount: function(credentials, receiveNewUser) {
+    $.ajax({
+      url: 'api/users',
+      method: "post",
+      data: {user: credentials},
+      success: function(user){
+                receiveNewUser(user);
+              },
+      error: function(error, status){
+                debugger;
+                // console.log(status)
+              }
+    });
+  },
 
-  attemptLogOut: function() {
-      $.ajax({
-        url: '/api/session',
-        type: 'DELETE',
-        dataType: 'json',
-        success: function() {
-          UserAction.logOut();
-        }
-      })
-    },
+  createSession: function(credentials, receiveCurrentUser) {
+    // debugger
+    $.ajax({
+      url: 'api/session',
+      method: "post",
+      data: {user: credentials},
+      success: function(user) {
+        // debugger
+                receiveCurrentUser(user);
+              },
+      error: function(error, status) {
+                debugger;
+                // console.log(status);
+              }
+    });
+  },
 
-  getCurrentUser: function() {
 
-      $.ajax({
-        url: '/api/session',
-        type: 'GET',
-        dataType: 'json',
 
-        success: function(user) {
-          UserAction.logIn(user);
-        }
-      })
-    }
+  fetchSession: function(receiveCurrentUser) {
+    $.ajax({
+      url: 'api/session',
+      method: "get",
+      success: function(user){
+                  if (user !== null) {
+                    receiveCurrentUser(user);
+                  } else {
+                    console.log("not logged in");
+                  }
+                },
+      error: function(error, status){
+                  // debugger;
+                  console.log("error");
+                }
+    });
+  },
+
+  destroySession: function(removeCurrentUser) {
+    
+    $.ajax({
+      url: 'api/session',
+      method: "DELETE",
+      success: function(){
+                  removeCurrentUser();
+                },
+      error: function(error, status){
+                  debugger;
+                  // console.log(status)
+                }
+    });
+  }
 };
 
 window.UserUtil = UserUtil;

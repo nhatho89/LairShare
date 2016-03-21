@@ -49,7 +49,9 @@ var TripList = React.createClass({
 
           </div>
           <div className="panel-heading-right">
-            {listItems.length}
+            <p>
+              {listItems.length}
+            </p>
           </div>
 
         </div>
