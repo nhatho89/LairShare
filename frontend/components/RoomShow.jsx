@@ -131,6 +131,25 @@ var RoomShow = React.createClass({
 
   render: function () {
 
+    var Decorators = [{
+      component: React.createClass({
+        render() {
+          return (
+            <button
+              onClick={this.props.previousSlide}>
+              Previous Slide
+            </button>
+          )
+        }
+      }),
+      position: 'CenterLeft',
+      style: {
+        padding: 20
+      }
+    }];
+
+
+
     var button;
 
     if (SessionStore.currentUser().username) {
@@ -142,6 +161,7 @@ var RoomShow = React.createClass({
         )
     }
     // debugger
+
     var roomPics;
     var carousel;
     if (this.state.room) {
@@ -153,7 +173,7 @@ var RoomShow = React.createClass({
       roomPics = this.state.room.pics;
 
       carousel = (
-          <Carousel>
+          <Carousel decorators={Decorators}>
             <img className="carousel-pic" src={roomPics[0].pic_url}/>
             <img className="carousel-pic" src={roomPics[1].pic_url}/>
             <img className="carousel-pic" src={roomPics[2].pic_url}/>

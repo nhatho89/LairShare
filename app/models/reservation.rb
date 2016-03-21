@@ -14,24 +14,10 @@ class Reservation < ActiveRecord::Base
     through: :room,
     source: :host
 
-
-  # has_one :host_profile,
-  #   through: :room,
-  #   source: :host_profile
-
   has_one :room_primary_pic,
     through: :room,
     source: :primary_pic
 
-
-  STATUS = {
-    0 => "PENDING",
-    1 => "CONFIRMED",
-    2 => "DENIED",
-    3 => "CANCELED BY HOST",
-    4 => "CANCELED BY GUEST",
-    5 => "NOT AVAILABLE"
-  }
 
 
 
@@ -46,8 +32,7 @@ class Reservation < ActiveRecord::Base
     return [] if (start_date == "" || end_date == "")
     result = Reservation.where('(start_date < ? AND end_date > ?)',
                               end_date, start_date)
-                        # .where(status: [0, 1, 5])
-                        # .where(status: [1, 5])
+
     result.map(&:room_id).uniq
   end
 
@@ -56,9 +41,6 @@ class Reservation < ActiveRecord::Base
     user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 5)
   end
 
-  # def self.isAvailable(query_params)
-  #
-  # end
 
   def overlapping_requests
     # debugger
@@ -80,11 +62,6 @@ class Reservation < ActiveRecord::Base
     overlapping_requests.where(status: 0)
   end
 
-  # def overlapping_unbookable_period
-  #   overlapping_requests.where(status: [1, 5])
-  # end
-
-  # including pending
   def overlapping_unbookable_period
     overlapping_requests.where(status: [0, 1, 5])
   end

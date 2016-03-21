@@ -32,6 +32,10 @@ ul {
   width: 85px;
 }
 
+.reserve-host-pic-container {
+  padding-top: 10px;
+}
+
 .reserve-left {
   // margin-right: 5%;
   margin-left: 5%;
@@ -70,8 +74,23 @@ ul {
 
 .reg-payment-cards {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
+
+.payment-control-form {
+  width: 60%;
+}
+
+.reserve-host-ul {
+  padding-left: 0px;
+}
+
+#agreement-box {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
 
 
 .registration-form-submit-button:hover {

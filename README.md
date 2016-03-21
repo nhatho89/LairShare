@@ -27,3 +27,5 @@ LairShare is a single-page application built on Rails and React.js, with many de
 - [Frontend technology][frontend]
 
 ## Future Implementations
+
+- Room reviews available to previous renters

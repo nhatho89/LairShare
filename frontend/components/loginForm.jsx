@@ -21,19 +21,6 @@ var LoginModalForm = React.createClass({
     });
   },
 
-
-
-  // resize: function() {
-  //   // resize modal
-  //   $(".modal-dialog").addClass("user-modal");
-  //   // focus
-  //   // $("#inputEmail").focus();
-  // },
-
-  // componentWillUnmount: function(){
-  //   debugger;
-  // },
-
   fillOutLogin: function() {
     var username = "Magneto";
     var password = "qweasd";
@@ -42,30 +29,7 @@ var LoginModalForm = React.createClass({
       password: password
     });
 
-    // not working
-    // var i = 0;
-    // var text;
-
-    // (function type(_this) {
-    //     text = username.slice(0, ++i);
-    //     document.getElementById('inputEmail').value = text;
-    //     if (text === username) {
-    //       typePassword();
-    //     };
-    //     setTimeout(type, 80);
-    // }(this));
-    // i = 0;
-    // var typePassword = function() {
-    //     text = password.slice(0, ++i);
-    //     document.getElementById('inputPassword').value = text;
-    //     if (text === password) return;
-    //     setTimeout(type, 80);
-    // };
   },
-
-  // componentDidMount: function() {
-  //   this.resize();
-  // },
 
   render: function() {
     return(
@@ -74,7 +38,9 @@ var LoginModalForm = React.createClass({
          autoComplete="off"
          onSubmit={this.handleSubmit}>
         <div className="auth-input">
-
+          <div className="username-icon-container">
+            <img className="username-icon" src="/assets/icons/social.png"></img>
+          </div>
             <input
                 type="text"
                 id="username"
@@ -86,7 +52,9 @@ var LoginModalForm = React.createClass({
             />
         </div>
         <div className="auth-input">
-
+          <div className="username-icon-container">
+            <img className="username-icon" src="/assets/icons/lock-1.png"></img>
+          </div>
           <input
             type="password"
             id="inputPassword"
@@ -97,7 +65,7 @@ var LoginModalForm = React.createClass({
             />
         </div>
         <div className="checkbox">
-          <label>
+          <label className="remember-me">
             <input type="checkbox" value="remember-me"></input>
              Remember me
           </label>

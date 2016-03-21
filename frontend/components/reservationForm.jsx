@@ -34,7 +34,7 @@ var ReservationForm = React.createClass({
     // this.props.openConfirmationModal();
 
     if (SessionStore.currentUser()) {
-      debugger
+      // debugger
 
       ApiUtil.createReservation({
         roomId: this.props.room.id,
@@ -81,7 +81,6 @@ var ReservationForm = React.createClass({
                   <h3>Payment</h3>
                 </div>
                 <div className="reg-payment-cards">
-                  <label htmlFor="payment-method">Payment Method</label>
                   <select
                     className="payment-form-control"
                     id="payment-method">
@@ -100,7 +99,7 @@ var ReservationForm = React.createClass({
                     src={room.host.profile_pic} />
                 </div>
                 <div className="reserve-host-intro">
-                  <ul>
+                  <ul className="reserve-host-ul">
                     <li>Tell {room.host.username} about yourself</li>
                     <li>What brings you to this Lair? What are your plans?</li>
                     <li>Should he leave the city?</li>
@@ -122,7 +121,7 @@ var ReservationForm = React.createClass({
 
             <div className="row">
               <div>
-                <div className="row">
+                <div className="row" id="agreement-box">
                   <div className="agreement-checkbox">
                     <label>
                       <input
@@ -156,8 +155,11 @@ var ReservationForm = React.createClass({
               src={room.primary_photo_url} />
           </div>
           <div className="reserve-room-info">
-            <p><strong>{room.title}</strong></p>
-            <p>{room.location}</p>
+
+              <p><strong>{room.title}</strong></p>
+              <p>{room.location}</p>
+
+
           </div>
           <div className="row">
             <p>

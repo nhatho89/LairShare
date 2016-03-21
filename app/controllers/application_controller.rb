@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def require_no_user!
+    render json: {error: "Already logged in"}, status: 400 if current_user
+  end
+
 
   def current_user
     return nil unless session[:token]

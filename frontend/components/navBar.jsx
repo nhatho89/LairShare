@@ -71,7 +71,7 @@ var NavBar = React.createClass({
       display = (
         <div className="signInUp">
           <div>
-            <p>{this.state.user.username}</p>
+            <p>{this.state.user.username[0].toUpperCase() + this.state.user.username.slice(1,this.state.user.username.length)}</p>
           </div>
           <div className="profile-pic">
             <img className="profile-pic" src={this.state.user.profile_pic}></img>

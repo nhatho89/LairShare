@@ -11,8 +11,6 @@ var SignUpForm = React.createClass({
       username: "",
       password: "",
       passwordConfirmation: "",
-      fname: "",
-      lname: "",
       errors: []
     });
   },
@@ -31,10 +29,6 @@ var SignUpForm = React.createClass({
       SessionActions.signUp({
         username: this.state.username,
         password: this.state.password,
-        user_profile_attributes: {
-          fname: this.state.fname,
-          lname: this.state.lname
-        }
       });
     }
   },
@@ -48,6 +42,14 @@ var SignUpForm = React.createClass({
     if (password !== passwordConfirmation) {
       this.errors.push("Password confirmation and Password must match!");
     }
+  },
+
+  handleDemoLogin: function() {
+    SessionActions.logIn({
+      username: "Magneto",
+      password: "qweasd"
+    });
+    this.props.closeModal();
   },
 
 
@@ -66,7 +68,9 @@ var SignUpForm = React.createClass({
       <form className='form-auth' onSubmit={this.handleSubmit}>
         {alert}
         <div className="auth-input">
-
+          <div className="username-icon-container">
+            <img className="username-icon" src="/assets/icons/social.png"></img>
+          </div>
             <input
                 type="text"
                 id="username"
@@ -79,7 +83,9 @@ var SignUpForm = React.createClass({
         </div>
 
         <div className="auth-input">
-
+          <div className="username-icon-container">
+            <img className="username-icon" src="/assets/icons/lock.png"></img>
+          </div>
             <input
               type="password"
               id="password"
@@ -90,6 +96,9 @@ var SignUpForm = React.createClass({
               />
         </div>
         <div className="auth-input">
+          <div className="username-icon-container">
+            <img className="username-icon" src="/assets/icons/lock-1.png"></img>
+          </div>
           <input
             type="password"
             id="passwordConfirmation"
@@ -102,10 +111,18 @@ var SignUpForm = React.createClass({
         </div>
 
         <div className="checkbox" id="signUpCheckbox">
-          <label>
+          <label className="remember-me">
             <input type="checkbox" value="agreement" required></input>
              I agree to the terms and conditions.
           </label>
+
+          <button
+            className="demo-button"
+            type="button"
+            style={{float: "right"}}
+            onClick={this.handleDemoLogin}>
+            Demo Account
+          </button>
         </div>
         <button
           className="auth-button"

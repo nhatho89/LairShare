@@ -14,11 +14,17 @@ var Footer = React.createClass({
           </div>
 
           <div>
+            <a className="logo" href="https://github.com/nhatho89/LairShare">
+              Project Repo
+            </a>
+          </div>
+
+          <div>
             <a className="logo" href="https://www.linkedin.com/in/nhatho89">
               LinkedIn
             </a>
           </div>
-          
+
         </div>
       </div>
 

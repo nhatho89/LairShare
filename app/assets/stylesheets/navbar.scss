@@ -102,17 +102,17 @@
  background-color: rgba(232, 0, 0, 0.37);
  -moz-border-radius: 10px;
  border-radius: 32px;
- -webkit-box-shadow: 0px 0px 30px rgba(232, 0, 0, 0.67);
- -moz-box-shadow:    0px 0px 30px rgba(232, 0, 0, 0.67);
-  box-shadow:         0px 0px 30px rgba(232, 0, 0, 0.67);
+ -webkit-box-shadow: 0px 0px 15px rgba(232, 0, 0, 0.67);
+ -moz-box-shadow:    0px 0px 15px rgba(232, 0, 0, 0.67);
+  box-shadow:         0px 0px 15px rgba(232, 0, 0, 0.67);
 }
 
 
 .profile-pic {
-  width: 65px;
-  height: 100%;
+  width: 60px;
+  height: 60px;
   margin-right: 60px;
-  // top: 4px;
+  top: 2px;
   position: relative;
 }
 
@@ -136,6 +136,7 @@
 .dropdown-content a:hover {
   z-index: 100 !important;
   background-color: #f1f1f1;
+  cursor: pointer;
 }
 
 .profile-pic:hover .dropdown-content {
@@ -169,53 +170,70 @@
   padding: 5px;
 }
 
-.signin-signout a {
-  font-weight: bolder;
-  text-decoration: none;
-}
+// .signin-signout a {
+//   font-weight: bolder;
+//   text-decoration: none;
+// }
+//
+// .signin-signout a:hover {
+//   color: white;
+//
+// }
 
-.signin-signout a:hover {
-  color: white;
+// .demo-button {
+//   text-align: center;
+//   width: 150px;
+//   height: 30px;
+// }
+//
+// .demo-button button{
+//   width: 150px;
+//   height: 30px;
+//   font-size: 20px;
+//   font-weight: bolder;
+// }
+//
+// .demo_user_button {
+//   background-color: #1178B3 !important;
+//   border: none !important;
+//   font-family: "Avenir Next";
+//   font-weight: 600;
+//   text-decoration: none;
+//   font-size: 20px;
+//   color: white;
+//   text-shadow: 1px 1px 4px silver;
+// }
 
-}
-
-.demo-button {
-  text-align: center;
-  width: 150px;
-  height: 30px;
-}
-
-.demo-button button{
-  width: 150px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.demo_user_button {
-  background-color: #1178B3 !important;
-  border: none !important;
-  font-family: "Avenir Next";
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
+// .demo_user_button:hover {
+//   cursor: pointer;
+//   color: #551A8B;
+// }
+//
+// .demo-button button:hover {
+//   box-shadow: 0px 0px 2px 2px white;
+//   color: white;
+//     text-shadow:
+//     -1px -1px 0 #000,
+//     1px -1px 0 #000,
+//     -1px 1px 0 #000,
+//     1px 1px 0 #000;
+//
+//   background-color: silver;
+// }
+.sign-in-button {
   text-shadow: 1px 1px 4px silver;
 }
 
-.demo_user_button:hover {
-  cursor: pointer;
-  color: #551A8B;
+.sign-up-button {
+  text-shadow: 1px 1px 4px silver;
 }
 
-.demo-button button:hover {
-  box-shadow: 0px 0px 2px 2px white;
-  color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+.sign-in-button:hover {
+  cursor: pointer;
+  text-shadow: 0 0 30px white;
+}
 
-  background-color: silver;
+.sign-up-button:hover {
+  cursor: pointer;
+  text-shadow: 0 0 30px white;
 }

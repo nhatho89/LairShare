@@ -5,23 +5,26 @@ module.exports = {
       left              : 0,
       right             : 0,
       bottom            : 0,
-      backgroundColor   : 'rgba(10, 10, 10, 0.75)',
-      zIndex                     : '10'
+      backgroundColor   : 'rgba(10, 10, 10, 0.65)',
+      zIndex                     : '10',
+      justifyContent : 'center',
+      display : 'flex'
+
+
     },
     content : {
-      position                   : 'absolute',
-      top                        : '20%',
-      left                       : '15%',
-      right                      : '15%',
-      bottom                     : '10%',
+      position                   : 'relative',
       border                     : '1px solid #ccc',
       background                 : '#fff',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
-      borderRadius               : '4px',
+      borderRadius               : '15px',
       outline                    : 'none',
-      padding                    : '20px'
-
-
+      padding                    : '20px',
+      backgroundColor : 'aliceblue',
+      boxShadow : '5px 5px 8px black',
+      width: '700px',
+      height: '450px',
+      top: '100px'
     }
   };

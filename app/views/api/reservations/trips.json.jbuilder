@@ -10,6 +10,5 @@ json.array! @trips do |trip|
   json.start_date       trip.start_date
   json.end_date         trip.end_date
   json.guest_num        trip.guest_num
-  json.status           trip.status
-  json.status           Reservation::STATUS[trip.status]
+
 end

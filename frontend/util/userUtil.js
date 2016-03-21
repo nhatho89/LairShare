@@ -4,11 +4,13 @@ var SessionStore = require('../stores/sessionStore');
 
 var UserUtil = {
   createUserAccount: function(credentials, receiveNewUser) {
+    debugger
     $.ajax({
       url: 'api/users',
       method: "post",
       data: {user: credentials},
       success: function(user){
+        debugger
                 receiveNewUser(user);
               },
       error: function(error, status){
@@ -56,7 +58,7 @@ var UserUtil = {
   },
 
   destroySession: function(removeCurrentUser) {
-    
+
     $.ajax({
       url: 'api/session',
       method: "DELETE",
