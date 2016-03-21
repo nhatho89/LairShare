@@ -88,14 +88,17 @@ var SignUpForm = React.createClass({
               placeholder='Password'
               required
               />
-            <input
-              type="password"
-              id="passwordConfirmation"
-              className="auth-control"
-              valueLink={this.linkState("passwordConfirmation")}
-              placeholder='Confirm Password'
-              required
-              />
+        </div>
+        <div className="auth-input">
+          <input
+            type="password"
+            id="passwordConfirmation"
+            className="auth-control"
+            valueLink={this.linkState("passwordConfirmation")}
+            placeholder='Confirm Password'
+            required
+            />
+
         </div>
 
         <div className="checkbox" id="signUpCheckbox">
