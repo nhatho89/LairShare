@@ -1,6 +1,6 @@
 ## LairShare
 
-[LairShare](www.lairshare.xyz) is a web application for users to rent and share secret lairs.
+[LairShare](https://www.lairshare.xyz) is a web application for users to rent and share secret lairs.
 
 
 ## Features
