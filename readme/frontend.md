@@ -10,7 +10,7 @@ A post-install script is configured so that webpack bundles all of the frontend 
 
 ## Webpack
 
-Webpack conveniently bundles all of the frontend components and Flux parts. The [bundle file]('/app/assets/javascripts') is included in the main [application.js](`/app/assets/javascripts/application.js`) file.
+Webpack conveniently bundles all of the frontend components and Flux parts. The [bundle file](/app/assets/javascripts) is included in the main [application.js](/app/assets/javascripts/application.js) file.
 
 ## React & Flux
 

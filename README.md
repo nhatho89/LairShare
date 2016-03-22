@@ -16,15 +16,15 @@
 LairShare was designed and built in two weeks
 
 
-A [database schema](./readme/schema) was prepared to provide a clear structuring of models
+A [database schema](./readme/schema.md) was prepared to provide a clear structuring of models
 
 
 ## Technology
 
 LairShare is a single-page application built on Rails and React.js, with many dependencies in both the backend and the frontend.
 
-- [Backend Technology](./readme/backend)
-- [Frontend technology](./readme/frontend)
+- [Backend Technology](./readme/backend.md)
+- [Frontend technology](./readme/frontend.md)
 
 ## Future Implementations
 
