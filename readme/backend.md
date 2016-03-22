@@ -10,11 +10,11 @@ NewRelic also keeps tracks of any server-side error logs.
 
 ## Database
 
-PostgreSQL RDBMS is a must for Heroku.
+PostgreSQL Relational Database Management System is a must for Heroku.
 
 ## Dependencies
 
-Other notable dependencies include:
+Other dependencies include:
 
 - Google Maps API for location services
 - BCrypt for password-salting and hashing for a secure authentication system

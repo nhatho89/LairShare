@@ -24,10 +24,16 @@ var LoginModalForm = React.createClass({
   fillOutLogin: function() {
     var username = "Magneto";
     var password = "qweasd";
-    this.setState({
-      username: username,
-      password: password
+    // this.setState({
+    //   username: username,
+    //   password: password
+    // });
+
+    SessionActions.logIn({
+      username: 'Magneto',
+      password: 'qweasd'
     });
+    this.props.closeModal();
 
   },
 
@@ -80,7 +86,7 @@ var LoginModalForm = React.createClass({
         <button
            className="auth-button"
            type="submit">
-           Log In
+           Sign In
         </button>
       </form>
     );

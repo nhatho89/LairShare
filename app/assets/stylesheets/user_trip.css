@@ -10,6 +10,7 @@
   border: 1px solid silver;
   margin: 3px;
   text-align: center;
+  border-radius: 7px;
 
 }
 
@@ -21,13 +22,7 @@
   background-color: white;
 }
 
-.active {
-  font-weight: bold;
-  font-size: 16px;
-  background-color: white;
-  text-decoration: underline;
 
-}
 
 .user-trip-index-outer-container {
   position: absolute;
@@ -79,6 +74,7 @@
   padding: 7px;
   display: flex;
   justify-content: space-between;
+  border-radius: 7px;
 }
 
 .trip-list-panel {
@@ -86,6 +82,23 @@
 
 .list-group {
   border: 2px solid #C0DCF5;
+
+}
+
+.active {
+  font-weight: bold;
+  font-size: 17px;
+  background-color: white;
+  border: 1px solid silver;
+  border-radius: 7px;
+  padding: 5px;
+  /*text-decoration: underline;*/
+
+}
+
+.inactive-tab {
+  font-size: 15px;
+  /*border-radius: 7px;*/
 
 }
 

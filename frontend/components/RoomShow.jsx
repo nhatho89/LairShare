@@ -122,6 +122,8 @@ var RoomShow = React.createClass({
 
   },
 
+  // decorators={Decorators}
+
   addScrollFollow: function() {
 
 
@@ -173,7 +175,7 @@ var RoomShow = React.createClass({
       roomPics = this.state.room.pics;
 
       carousel = (
-          <Carousel decorators={Decorators}>
+          <Carousel>
             <img className="carousel-pic" src={roomPics[0].pic_url}/>
             <img className="carousel-pic" src={roomPics[1].pic_url}/>
             <img className="carousel-pic" src={roomPics[2].pic_url}/>

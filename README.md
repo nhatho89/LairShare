@@ -1,6 +1,6 @@
-== LairShare
+## LairShare
 
-[lairshare.xyz][lairshare] is a web application for users to rent and share secret lairs.
+[LairShare](www.lairshare.xyz) is a web application for users to rent and share secret lairs.
 
 
 ## Features
@@ -16,15 +16,15 @@
 LairShare was designed and built in two weeks
 
 
-A [database schema][schema] was prepared to provide a clear structuring of models
+A [database schema](./readme/schema) was prepared to provide a clear structuring of models
 
 
 ## Technology
 
 LairShare is a single-page application built on Rails and React.js, with many dependencies in both the backend and the frontend.
 
-- [Backend technology][backend]
-- [Frontend technology][frontend]
+- [Backend Technology](./readme/backend)
+- [Frontend technology](./readme/frontend)
 
 ## Future Implementations
 
