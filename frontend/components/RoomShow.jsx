@@ -133,22 +133,22 @@ var RoomShow = React.createClass({
 
   render: function () {
 
-    var Decorators = [{
-      component: React.createClass({
-        render() {
-          return (
-            <button
-              onClick={this.props.previousSlide}>
-              Previous Slide
-            </button>
-          )
-        }
-      }),
-      position: 'CenterLeft',
-      style: {
-        padding: 20
-      }
-    }];
+    // var Decorators = [{
+    //   component: React.createClass({
+    //     render() {
+    //       return (
+    //         <button
+    //           onClick={this.props.previousSlide}>
+    //           Previous Slide
+    //         </button>
+    //       )
+    //     }
+    //   }),
+    //   position: 'CenterLeft',
+    //   style: {
+    //     padding: 20
+    //   }
+    // }];
 
 
 
