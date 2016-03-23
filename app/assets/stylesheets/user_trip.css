@@ -7,19 +7,17 @@
 }
 
 .list-group-item {
-  border: 1px solid silver;
+  border: 1px solid #145D08;
   margin: 3px;
   text-align: center;
   border-radius: 7px;
+  background-color: white;
 
 }
 
 .list-group-item:hover {
   cursor: pointer;
-}
-
-.list-group-item:hover {
-  background-color: white;
+  background-color: aliceblue;
 }
 
 
@@ -28,7 +26,7 @@
   position: absolute;
   top: 67px;
   width: 100%;
-  height: 110%;
+  height: 750px;
   background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
@@ -70,7 +68,7 @@
 }
 
 .panel-heading {
-  background-color: #C0DCF5;
+  background-color: #D7F7DB;
   padding: 7px;
   display: flex;
   justify-content: space-between;
@@ -82,24 +80,26 @@
 }*/
 
 .list-group {
-  border: 2px solid #C0DCF5;
-  /*border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;*/
+  border-top: 1px solid #145D08;
+  /*border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;*/
 }
 
 .active {
   font-weight: bold;
   font-size: 17px;
-  background-color: white;
-  border: 1px solid silver;
+  background-color: aliceblue;
+  border: 1px solid #145D08;
   border-radius: 7px;
   padding: 5px;
+  color: #145D08;
   /*text-decoration: underline;*/
 
 }
 
 .inactive-tab {
-  font-size: 15px;
+  font-size: 17px;
+  color: #145D08;
   /*border-radius: 7px;*/
 
 }
@@ -125,7 +125,8 @@
 .panel-heading-left {
   padding: 5px;
   font-weight: 800;
-  color: #1178B3;
+  color: #145D08;
+  font-size: 18px;
 }
 
 .panel-heading-right {
@@ -141,4 +142,10 @@
   width: 15px;
   text-align: center;
   color: aliceblue;
+}
+
+.panel {
+  border: 1px solid #145D08;
+  border-radius: 8px;
+
 }

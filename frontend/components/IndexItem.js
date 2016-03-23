@@ -16,13 +16,16 @@ var IndexItem = React.createClass({
           </ul>
 
           <ul className="room-info">
-            <li>
-              {room.title}
-            </li>
+            <ul className="room-info-inner">
+              <li>
+                {room.title}
+              </li>
 
-            <li>
-              Price: ${room.price}
-            </li>
+              <li>
+                Price: ${room.price}
+              </li>
+
+            </ul>
             <br/>
           </ul>
         </div>

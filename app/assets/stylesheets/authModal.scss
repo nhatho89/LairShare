@@ -36,6 +36,9 @@
   width: 150px;
   background-color: #FDB918;
   border-radius: 7px;
+  color: white;
+  font-size: 16px;
+  text-shadow: .5px .5px black;
 }
 
 .demo-button:hover {
@@ -64,7 +67,7 @@
 .username-icon-container {
   float: left;
   width: 11%;
-  height: 108%;
+  height: 110%;
   padding-right: 10px;
   background-color: #E9E9E9;
   border-top-left-radius: 6px;
