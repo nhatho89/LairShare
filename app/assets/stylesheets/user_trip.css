@@ -43,8 +43,8 @@
 .trip-list-panel {
   width: 35%;
   margin-left: 50px;
-  margin-right: 25px;
-  overflow: scroll;
+  /*margin-right: 25px;*/
+  overflow-y: scroll;
 }
 
 .trip-detail-panel {
@@ -74,7 +74,8 @@
   padding: 7px;
   display: flex;
   justify-content: space-between;
-  border-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
 }
 
 /*.trip-list-panel {
@@ -82,7 +83,8 @@
 
 .list-group {
   border: 2px solid #C0DCF5;
-
+  /*border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;*/
 }
 
 .active {

@@ -25,6 +25,9 @@ module.exports = {
       boxShadow : '5px 5px 8px black',
       width: '700px',
       height: '450px',
-      top: '100px'
+      top: '100px',
+      left              : 0,
+      right             : 0,
+      bottom            : 0
     }
   };
