@@ -71,10 +71,13 @@ var LoginModalForm = React.createClass({
             />
         </div>
         <div className="checkbox">
-          <label className="remember-me">
-            <input type="checkbox" value="remember-me"></input>
-             Remember me
-          </label>
+          <div className="remember-me-container">
+
+            <label className="remember-me">
+              <input type="checkbox" value="remember-me"></input>
+              Remember me
+            </label>
+          </div>
           <button
             className="demo-button"
             type="button"

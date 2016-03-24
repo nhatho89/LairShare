@@ -4,6 +4,7 @@
   list-style: none;
   display: flex;
   justify-content: space-around;
+  padding-right: 40px;
 }
 
 .list-group-item {
@@ -23,33 +24,49 @@
 
 
 .user-trip-index-outer-container {
-  position: absolute;
+  position: fixed;;
   top: 67px;
   width: 100%;
-  height: 750px;
+  height: 100%;
   background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
 }
 
 .trip-item-and-detail {
-  width: 100%;
-  height: 100%;
+  /*width: 100%;*/
+  /*position: relative;*/
+  height: 80%;
   display: flex;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .trip-list-panel {
   width: 35%;
-  margin-left: 50px;
-  /*margin-right: 25px;*/
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-right: 5px;
   overflow-y: scroll;
 }
 
 .trip-detail-panel {
   width: 65%;
   margin-left: 25px;
-  margin-right: 50px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 5px;
+  padding-right: 20px;
+  overflow-y: scroll;
 }
+
 
 .flex-row {
   display: flex;
@@ -89,23 +106,47 @@
   font-weight: bold;
   font-size: 17px;
   background-color: aliceblue;
-  border: 1px solid #145D08;
-  border-radius: 7px;
+  /*border: 1px solid #145D08;*/
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
   padding: 5px;
   color: #145D08;
+
+
   /*text-decoration: underline;*/
 
 }
 
 .inactive-tab {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  padding: 5px;
   font-size: 17px;
   color: #145D08;
-  /*border-radius: 7px;*/
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  padding: 5px;
+  font-size: 17px;
+  color: #145D08;
+  width: 25%;
+  border: 1px solid black;
 
 }
 
+.user-trip-categories .active {
+  width: 25%;
+  border: 1px solid black;
+  border-bottom: none;
+}
+
+
+
 .inactive-tab:hover {
   cursor: pointer;
+}
+
+.receipt-filter-detail {
+  height: 20px;
 }
 
 .receipt-filter-detail h4 {
@@ -120,6 +161,7 @@
 .receipt-container {
   display: flex;
   flex-direction: column;
+  height: 180px;
 }
 
 .panel-heading-left {
@@ -148,4 +190,8 @@
   border: 1px solid #145D08;
   border-radius: 8px;
 
+}
+
+.user-trip-outer-container {
+  margin-bottom: -15px;
 }

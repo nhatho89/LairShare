@@ -111,10 +111,13 @@ var SignUpForm = React.createClass({
         </div>
 
         <div className="checkbox" id="signUpCheckbox">
-          <label className="remember-me">
-            <input type="checkbox" value="agreement" required></input>
-             I agree to the terms and conditions.
-          </label>
+          <div className="remember-me-container">
+            <label className="remember-me">
+              <input type="checkbox" value="agreement" required></input>
+              I agree to the terms and conditions.
+            </label>
+
+          </div>
 
           <button
             className="demo-button"
