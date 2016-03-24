@@ -371,8 +371,8 @@ Reservation.create!(
   room_id: "4",
   guest_id: "1",
   guest_num: "200",
-  start_date: "2016-3-25",
-  end_date: "2016-4-2",
+  start_date: "2016-4-07",
+  end_date: "2016-4-12",
   status: "1"
 )
 
@@ -380,8 +380,8 @@ Reservation.create!(
   room_id: "5",
   guest_id: "1",
   guest_num: "500",
-  start_date: "2016-3-25",
-  end_date: "2016-4-2",
+  start_date: "2016-4-07",
+  end_date: "2016-4-12",
   status: "1"
 )
 
@@ -390,7 +390,7 @@ Reservation.create!(
   room_id: "2",
   guest_id: "1",
   guest_num: "100",
-  start_date: "2016-3-25",
-  end_date: "2016-4-2",
+  start_date: "2016-4-07",
+  end_date: "2016-4-12",
   status: "1"
 )
