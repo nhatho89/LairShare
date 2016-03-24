@@ -17,9 +17,11 @@ class Api::ReservationsController < ApplicationController
   def create
 
     @reservation = current_user.trip_reservations.new(reservation_params)
-        if @reservation.save
+        if @reservation.save!
+
           render json: @reservation, status: 201
         else
+          
           render json: @reservation.errors.full_messages, status: 401
         end
   end

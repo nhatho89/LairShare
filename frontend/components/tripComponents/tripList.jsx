@@ -51,7 +51,7 @@ var TripList = React.createClass({
           <div className="panel-heading-right">
 
               {listItems.length}
-        
+
           </div>
 
         </div>

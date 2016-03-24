@@ -78,6 +78,9 @@ var categorize = function(trip) {
   }
 };
 
+
+
+
 TripStore.all = function() {
   return Object.assign({}, _trips);
 };
