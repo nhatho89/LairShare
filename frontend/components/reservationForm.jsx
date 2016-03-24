@@ -54,9 +54,11 @@ var ReservationForm = React.createClass({
 
   },
 
-  messageHandler: function(message) {
+  messageHandler: function(e) {
+    
+    e.preventDefault();
     this.setState({
-      message: message
+      message: e.target.value
     })
   },
 
