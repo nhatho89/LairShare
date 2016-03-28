@@ -199,42 +199,6 @@ DatePicker {
 }
 
 
-.room-type-checkbox-container div {
-  position: relative;
-  display: inline-flex;
-  // margin: 30px;
-  justify-content: space-around;
-   border-top: 1px solid #ffffff;
-   background: #8f9da6;
-   background: -webkit-gradient(linear, left top, left bottom, from(#a7b2ba), to(#8f9da6));
-   background: -webkit-linear-gradient(top, #a7b2ba, #8f9da6);
-   background: -moz-linear-gradient(top, #a7b2ba, #8f9da6);
-   background: -ms-linear-gradient(top, #a7b2ba, #8f9da6);
-   background: -o-linear-gradient(top, #a7b2ba, #8f9da6);
-   padding: 5px 10px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 14px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-
-   }
-.room-type-checkbox-container div:hover {
-  box-shadow: #62a2c4 0 1px 0;
-  background: #1178B3;
-  // color: #ccc;
-   }
-.room-type-checkbox-container div:active {
-   border-top-color: #7d9bad;
-   background: #7d9bad;
-   }
 
 
 //
@@ -356,3 +320,38 @@ DatePicker {
 .link-to-city {
   text-decoration: none;
 }
+
+
+
+
+
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  // margin: 30px;
+  justify-content: space-around;
+  //  border-top: 1px solid #ffffff;
+   padding: 10px 15px;
+   background-color: #1178B3;
+  //  border-radius: 8px;
+
+  //  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+  //  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+
+.checkbox:hover {
+  background: #48AAE2;
+  cursor: pointer;
+}
+
+.checkbox:active {
+  border-top-color: #7d9bad;
+}
+
+.checkbox-text {
+   cursor: pointer;
+ }

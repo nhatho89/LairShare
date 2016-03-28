@@ -36,14 +36,17 @@ var UserIndex = React.createClass({
 
   toggleTab: function(e) {
     e.preventDefault();
+    // $('.active').css({'background-color': 'red'});
     var clickedTabName = e.target.innerHTML;
     var clickedTabId = this.tabs.indexOf(clickedTabName);
+
     if (clickedTabId !== this.state.activeTabId) {
       this.setState({
         activeTabId: clickedTabId,
         trips: TripStore.getTripsInCategory(clickedTabName.toLowerCase())
       });
     }
+
   },
 
   // logoutRedirect: function() {
