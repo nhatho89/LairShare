@@ -325,7 +325,7 @@ DatePicker {
 
 
 
-.checkbox {
+.checkbox-container {
   position: relative;
   display: inline-flex;
   // margin: 30px;
@@ -343,12 +343,12 @@ DatePicker {
    vertical-align: middle;
 }
 
-.checkbox:hover {
+.checkbox-container:hover {
   background: #48AAE2;
   cursor: pointer;
 }
 
-.checkbox:active {
+.checkbox-container:active {
   border-top-color: #7d9bad;
 }
 
