@@ -6,11 +6,8 @@ var RoomActions = require('../actions/roomAction.jsx');
 var FilterActions = require('../actions/filter_actions.js')
 var History = require('react-router').History;
 
-// var List = require('./list.jsx');
 var Map = require('./Map.jsx');
-// var LoadingScreen = require('./loadingScreen.jsx');
 var Filter = require('./Filters.jsx');
-// var Search = require('./Search.jsx');
 var ApiUtil = require('../util/apiUtil.js');
 var Index = require('./Index');
 var Link = require('react-router').Link;

@@ -31,7 +31,6 @@ var Map = React.createClass({
 
   componentDidMount: function(){
     this.roomListener = RoomStore.addListener(this.setRoom);
-    console.log('map mounted');
     var map = ReactDOM.findDOMNode(this.refs.map);
     var mapOptions = {
       draggable: true,
@@ -46,10 +45,7 @@ var Map = React.createClass({
 
 
   centerRoomCoords: function () {
-    // console.log();
     if (this.props.centerLatLng) {
-
-
       return {
       lat: this.props.centerLatLng.lat,
       lng: this.props.centerLatLng.lng
@@ -58,9 +54,7 @@ var Map = React.createClass({
     } else {
       return CENTER;
     }
-
   },
-
 
   _onChange: function(){
     var rooms = this.state.rooms;
@@ -85,15 +79,10 @@ var Map = React.createClass({
     });
     toAdd.forEach(this.createMarkerFromRoom);
     toRemove.forEach(this.removeMarker);
-
-
-
   },
 
   componentWillReceiveProps: function(newProps) {
-    // this.setState({
-    //   centerLatLng: newProps.centerLatLng
-    // })
+
     if (newProps.centerLatLng !== this.props.centerLatLng) {
       this.map.setCenter({lat: newProps.centerLatLng.lat, lng: newProps.centerLatLng.lng });
     }
@@ -103,12 +92,11 @@ var Map = React.createClass({
         singleRoom: true
       });
     }
-    
+
     this._onChange();
   },
 
   componentWillUnmount: function(){
-    console.log("map UNmounted");
     this.roomListener.remove();
   },
   registerListeners: function(){
@@ -118,7 +106,6 @@ var Map = React.createClass({
 
       var northEast = _getCoordsObj(bounds.getNorthEast());
       var southWest = _getCoordsObj(bounds.getSouthWest());
-      //actually issue the request
       var bounds = {
         northEast: northEast,
         southWest: southWest
@@ -152,7 +139,6 @@ var Map = React.createClass({
     }
   },
   render: function(){
-    // debugger
     return ( <div className="gmap" ref="map">Map</div>);
   }
 });

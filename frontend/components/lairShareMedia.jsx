@@ -3,10 +3,6 @@ var RoomStore = require('../stores/roomStore.js');
 
 var LairShareMedia = React.createClass({
 
-  componentDidMount: function() {
-    // debugger
-  },
-
   render: function() {
 
     var drEvilPic = (<img className="quote-picture" src='/assets/drEvil.jpg'></img>)

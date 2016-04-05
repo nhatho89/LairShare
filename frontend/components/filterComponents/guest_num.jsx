@@ -28,14 +28,11 @@ var GuestNum = React.createClass({
             <option value="700">700 Guests</option>
             <option value="800">800 Guests</option>
 
-
           </select>
         </div>
-
       </div>
     );
   }
-
 });
 
 module.exports = GuestNum;

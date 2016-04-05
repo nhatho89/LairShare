@@ -11,7 +11,6 @@ var Carousel = require('nuka-carousel');
 var Modal = require('react-modal');
 var SessionStore = require('../stores/sessionStore');
 var LoginForm = require('./loginForm');
-// var RoomForm = require('./RoomForm.jsx');
 var authModalStyle = require('./authModalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 var History = require('react-router').History;
@@ -36,8 +35,7 @@ var RoomShow = React.createClass({
       showSigninModal: false,
       showModal: false,
       signedIn: false,
-      // singleRoom: true,
-      // openConfModal: false,
+
       centerLatLng: null
     });
   },
@@ -51,14 +49,12 @@ var RoomShow = React.createClass({
   componentWillUnmount: function () {
     this.roomListener.remove();
     this.sessionListener.remove();
-    // this.scrollFollow().off();
     $(window).off('scroll', this.scrollListener);
 
 
   },
 
   sessionChange: function() {
-    //have to setState to force re-rendering of reservation button after sign in
     this.setState({
       signedIn: true
     })
@@ -87,7 +83,6 @@ var RoomShow = React.createClass({
   },
 
   openSigninModal: function() {
-    // debugger
     this.setState({showSigninModal: true})
   },
 
@@ -97,8 +92,6 @@ var RoomShow = React.createClass({
 
   scrollListener: function() {
     var element = $('.map-reserve-container');
-        // originalY = element.offset().top,
-        // topMargin = 0;
 
     element.css('position', 'relative');
 
@@ -122,35 +115,14 @@ var RoomShow = React.createClass({
 
   },
 
-  // decorators={Decorators}
 
   addScrollFollow: function() {
 
 
     $(window).on('scroll', this.scrollListener );
-    // }
   },
 
   render: function () {
-
-    // var Decorators = [{
-    //   component: React.createClass({
-    //     render() {
-    //       return (
-    //         <button
-    //           onClick={this.props.previousSlide}>
-    //           Previous Slide
-    //         </button>
-    //       )
-    //     }
-    //   }),
-    //   position: 'CenterLeft',
-    //   style: {
-    //     padding: 20
-    //   }
-    // }];
-
-
 
     var button;
 
@@ -162,7 +134,6 @@ var RoomShow = React.createClass({
         <button className="reserve-lair-button" onClick={this.openSigninModal}>Sign In to Reserve!</button>
         )
     }
-    // debugger
 
     var roomPics;
     var carousel;
@@ -195,7 +166,6 @@ var RoomShow = React.createClass({
 
 
 
-      console.log(this.state.room);
 
     return (
 

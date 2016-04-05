@@ -48,12 +48,7 @@ var FilterActions = {
       actionType: FilterConstants.RESET_DATES
     });
   }
-  // updateMaxSleepNum: function (value){
-  //   AppDispatcher.dispatch({
-  //     actionType: FilterConstants.UPDATE_MAX_SLEEP_NUM,
-  //     maxSleepNum: value,
-  //   });
-  // }
+  
 };
 
 module.exports = FilterActions;

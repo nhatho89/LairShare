@@ -1,6 +1,5 @@
 var React = require('react');
 var RoomStore = require('../stores/roomStore.js');
-// var LoadingScreen = require('./loadingScreen.jsx');
 var RoomAction = require('../actions/roomAction.jsx');
 
 var TripStore = require('../stores/tripStore.js');
@@ -28,7 +27,6 @@ var UserIndex = React.createClass({
   },
 
   receiveTrips: function() {
-    // debugger;
     this.setState({
       trips: TripStore.all()
     });
@@ -36,7 +34,6 @@ var UserIndex = React.createClass({
 
   toggleTab: function(e) {
     e.preventDefault();
-    // $('.active').css({'background-color': 'red'});
     var clickedTabName = e.target.innerHTML;
     var clickedTabId = this.tabs.indexOf(clickedTabName);
 
@@ -49,13 +46,8 @@ var UserIndex = React.createClass({
 
   },
 
-  // logoutRedirect: function() {
-  //   debugger;
-  //   this.props.history.pushState(null, '/');
-  // },
 
   componentWillUnmount: function() {
-  //   this.sessionToken.remove();
     this.tripToken.remove();
   },
 
@@ -66,24 +58,13 @@ var UserIndex = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
-    // console.log(newProps);
     this.setState({
       activeTripId: newProps.params.tripId
     });
   },
 
-  // componentWillMount: function() {
-  //   // check login status; if not logged in, redirect to homepage
-  //   // may change to a login page with redirection back to tripIndex upon successful login
-  //   if(!SessionStore.hasCurrentUser()) {
-  //     debugger;
-  //     this.props.history.pushState(null, '/');
-  //   }
-  // },
-
   componentDidMount: function() {
-  //   this.sessionToken = SessionStore.addListener(this.logoutRedirect);
-  //   debugger;
+
     this.tripToken = TripStore.addListener(this.receiveTrips);
     TripAction.fetchUserTrips();
   },
@@ -97,7 +78,7 @@ var UserIndex = React.createClass({
 
   render: function() {
 
-    //TODO this.props.children is null
+
     var activeTabId = this.state.activeTabId;
     return (
       <div className="user-trip-index-outer-container">

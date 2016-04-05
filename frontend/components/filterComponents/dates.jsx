@@ -17,42 +17,23 @@ var StayDates = React.createClass({
 
   handleChangeStart: function(startDate) {
 
-    // if (startDate < moment()) {
-    //   alert("Pick a valid date!")
-    // } else if (startDate && this.props.endDate) {
-    //   console.log("helo");
-    // };
-
     var newStartDate = startDate.clone();
 
     FilterActions.updateEndDates({
       endDate: newStartDate.add(3,'days')
     });
 
-
     FilterActions.updateStartDates({
       startDate: startDate
     });
-
-
-
   },
 
   handleChangeEnd: function(endDate) {
-
-// moment(parseInt(dateTime)).format('MM-DD-YYYY')
-//     if (endDate < (new Date(this.props.startDate).toUTCString())) {
-//       alert("Pick a valid date!")
-//     };
 
     FilterActions.updateEndDates({
       endDate: endDate
     })
   },
-
-
-
-
 
   componentDidMount: function() {
     this.displayListener = FilterStore.addListener(this.displayDate);
@@ -63,29 +44,23 @@ var StayDates = React.createClass({
   },
 
   displayDate: function() {
-
     this.setState({
       startDate: FilterStore.params().dates.startDate,
       endDate: FilterStore.params().dates.endDate
     })
-
   },
 
   render: function() {
 
     return (
       <div>
-
         <div className="dates-title">
           <label>Dates</label>
         </div>
-
         <div className="dates-calendar">
           <label>Check In</label>
           <label>Check Out</label>
-
         </div>
-
         <div className="calendar-filter">
           <DatePicker
             selected={this.state.startDate}
@@ -96,12 +71,9 @@ var StayDates = React.createClass({
 
             onChange={this.handleChangeEnd} />
         </div>
-
-
       </div>
       );
   }
-
 });
 
 module.exports = StayDates;

@@ -1,11 +1,7 @@
 var React = require('react');
 var Navbar = require('./navBar.jsx');
-
-
-
 var SessionStore = require('../stores/sessionStore');
 var SessionActions = require('../actions/sessionAction');
-
 
 var App = React.createClass({
   getInitialState: function() {
@@ -26,7 +22,6 @@ var App = React.createClass({
   userChange: function() {
     this.setState({ user: SessionStore.currentUser() });
   },
-
 
   render: function() {
     return (

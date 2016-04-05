@@ -28,13 +28,10 @@ var TripDetail = React.createClass({
     var serviceFee = 200;
     var taxes = 0.1;
 
-
-
-
     return (
       <div className="trip-detail-container">
         <div className="flex-row">
-          <div className="col-md-4">
+          <div>
             <div className="row">
               <div className="receipt-filter-detail">
                 <h4><strong>Check In</strong></h4>
@@ -50,7 +47,7 @@ var TripDetail = React.createClass({
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div>
             <div className="row">
               <div className="receipt-filter-detail">
                 <h4><strong>Check Out</strong></h4>
@@ -65,7 +62,7 @@ var TripDetail = React.createClass({
               </div>
             </div>
           </div>
-          <div className="col-md-2 center">
+          <div>
             <div className="row">
               <div className="receipt-filter-detail">
                 <h4><strong>{nights > 1 ? "Nights" : "Night"}</strong></h4>
@@ -77,7 +74,7 @@ var TripDetail = React.createClass({
               </div>
             </div>
           </div>
-          <div className="col-md-2 center">
+          <div>
             <div className="row">
               <div className="receipt-filter-detail">
                 <h4><strong>{trip.guests > 1 ? "Guests" : "Guest"}</strong></h4>
@@ -94,7 +91,7 @@ var TripDetail = React.createClass({
         <hr/>
 
         <div className="flex-row">
-          <div className="col-md-6">
+          <div>
             <h4>
               <a href={"#/rooms/" + trip.roomId}>
                 <strong>{trip.title}</strong>
@@ -107,7 +104,7 @@ var TripDetail = React.createClass({
               {" (555)555-5555"}
             </p>
           </div>
-          <div className="col-md-6">
+          <div>
             <div className="trip-item-image">
               <img className="trip-receipt-pic" src={trip.pic}></img>
             </div>

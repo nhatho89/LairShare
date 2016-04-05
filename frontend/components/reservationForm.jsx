@@ -1,11 +1,7 @@
 var React = require('react');
-// var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
 var ReservationStore = require('../stores/reservationStore.js');
-// var ReservationActions = require('../actions/reservationActions.jsx');
 var FilterStore = require('../stores/filter_params');
-// var Modal = require('react-modal');
-// var modalStyle = require('./modalStyle.jsx');
 var UserStore = require('../stores/userStore.js');
 var ApiUtil = require('../util/apiUtil.js');
 var SessionStore = require('../stores/sessionStore.js');
@@ -18,24 +14,10 @@ var ReservationForm = React.createClass({
       message: "Send a message to your host!"
     }
   },
-  // mixins: [LinkedStateMixin],
 
   handleSubmit: function(e) {
-
-    // console.log(e);
     e.preventDefault();
-    // this.openConfirmationModal();
-    // Get roomId from url this.props....
-    // get filter_params from the store
-    // get data from form
-    // send all data to actionHandler
-
-
-    // this.props.openConfirmationModal();
-
     if (SessionStore.currentUser()) {
-      // debugger
-
       ApiUtil.createReservation({
         roomId: this.props.room.id,
         guests: FilterStore.params().max_sleep_num,
@@ -49,13 +31,12 @@ var ReservationForm = React.createClass({
 
     } else {
       window.location.replace("http://localhost:3000/session/new");
-      // window.location.replace("www.lairshare.xyz/session/new");
     }
 
   },
 
   messageHandler: function(e) {
-    
+
     e.preventDefault();
     this.setState({
       message: e.target.value
@@ -227,20 +208,10 @@ var ReservationForm = React.createClass({
             </table>
           </div>
         </div>
-
-
-
       </div>
-
-
-
-
-
     );
   }
 
 });
 
 module.exports = ReservationForm;
-
-//

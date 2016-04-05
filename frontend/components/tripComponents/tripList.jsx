@@ -1,13 +1,10 @@
 var React = require('react');
 var TripStore = require('../../stores/tripStore.js');
 var TripListItem = require('./tripListItem.jsx');
-// var TripDetail = require('./tripDetail.jsx');
-
 
 var TripList = React.createClass({
   getInitialState: function() {
     return({
-
       tabName: this.props.tabName
     });
   },

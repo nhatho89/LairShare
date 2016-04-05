@@ -12,26 +12,17 @@ var PriceSlider = React.createClass({
       slide: function(event,ui) {
         var left = (ui.values[0]/5).toFixed(2) + "%";
         var width = ((ui.values[1] - ui.values[0])/5).toFixed(2) + "%";
-        // console.log(left + " " + width)
-
-        //grayscale on the slide bar will update along with the sliders
         $("#min-max-range").css({left: left, width: width})
-
         $("#search-index-amount").val("$"+ui.values[0]+"-$"+ui.values[1]);
-
       },
 
-
       stop: function(event, ui) {
-        // console.log("stopped"+ui.values[0]+ui.values[1])
         FilterActions.updatePriceRange({
           min: ui.values[0],
           max: ui.values[1]
         })
       }
-
     });
-    //displays default prices
     $("#search-index-amount").val("$"+$("#search-index-price-range").slider("values",0)+"-$"+$("#search-index-price-range").slider("values",1));
   },
 
@@ -66,7 +57,6 @@ var PriceSlider = React.createClass({
         </div>
     );
   }
-
 });
 
 module.exports = PriceSlider;

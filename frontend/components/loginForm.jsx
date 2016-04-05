@@ -24,10 +24,6 @@ var LoginModalForm = React.createClass({
   fillOutLogin: function() {
     var username = "Magneto";
     var password = "qweasd";
-    // this.setState({
-    //   username: username,
-    //   password: password
-    // });
 
     SessionActions.logIn({
       username: 'Magneto',

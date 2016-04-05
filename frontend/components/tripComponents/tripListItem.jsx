@@ -3,9 +3,6 @@ var React = require('react');
 var TripListItem = React.createClass({
 
   handleClick: function() {
-
-    // this.history.push({pathname: "users/" + this.props.trip.id});
-    // this.props.history.pushState(null, '/users/' + this.props.trip.id);
     this.props.highlightTripId(this.props.trip.id);
   },
 

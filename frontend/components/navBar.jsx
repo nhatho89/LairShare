@@ -1,6 +1,4 @@
 var React = require('react');
-// var UserLoginForm = require('./userLoginForm.jsx');
-// var CurrentUser = require('./currentUser');
 var SessionStore = require('../stores/sessionStore');
 var UserActions = require('../actions/userAction');
 var SessionActions = require('../actions/sessionAction');
@@ -8,8 +6,6 @@ var LoginForm = require('./loginForm');
 var authModalStyle = require('./authModalStyle.jsx');
 var Modal = require('react-modal');
 var SignupForm = require('./signUpForm');
-var LandingSearchBar = require('./landingPageComponents/landingSearchBar.jsx');
-
 
 var History = require('react-router').History;
 var NavBar = React.createClass({
@@ -17,7 +13,6 @@ var NavBar = React.createClass({
 
   getInitialState: function() {
     return {
-
       user: SessionStore.currentUser(),
       showModal: false,
       showSignupModal: false
@@ -41,7 +36,6 @@ var NavBar = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log(this.state.user);
     this.userListener = SessionStore.addListener(this.userChange);
     SessionActions.fetchSession();
   },
@@ -97,12 +91,6 @@ var NavBar = React.createClass({
         </div>
       )
     }
-
-
-    // <div>
-    //   <LandingSearchBar/>
-    // </div>
-
 
     return (
       <div className="navbar">

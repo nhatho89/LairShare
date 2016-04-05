@@ -2,9 +2,6 @@ var React = require('react');
 
 var RoomDetails = React.createClass({
 
-  // componentDidMount: function() {
-  //     debugger
-  // },
   render: function() {
     var hostPicture;
     if (this.props.room.host) {

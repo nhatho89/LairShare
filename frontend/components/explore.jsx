@@ -1,11 +1,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
-// var History = require('react-router').History;
 var City = require('./city.jsx');
 
 var Explore = React.createClass({
-
-
 
   render: function() {
     return (
