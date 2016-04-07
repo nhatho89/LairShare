@@ -1,6 +1,5 @@
 var React = require('react');
 var FilterActions = require('../../actions/filter_actions');
-var DateTools = require('../../helpers/date.js');
 var DatePicker = require('react-datepicker');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
