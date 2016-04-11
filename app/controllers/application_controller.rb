@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
     render json: {error: "Already logged in"}, status: 400 if current_user
   end
 
-
   def current_user
     return nil unless session[:token]
     @current_user ||= User.find_by_session_token(session[:token])

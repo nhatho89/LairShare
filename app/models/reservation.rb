@@ -18,32 +18,21 @@ class Reservation < ActiveRecord::Base
     through: :room,
     source: :primary_pic
 
-
-
-
-
   validates :room_id, :guest_id, :guest_num, presence: true
   validate :start_date_before_end_date
-  # validate :requested_period_available
-
-
 
   def self.unavailable_room_ids(start_date, end_date)
     return [] if (start_date == "" || end_date == "")
-    result = Reservation.where('(start_date < ? AND end_date > ?)',
-                              end_date, start_date)
-
+    result = Reservation.where('(start_date < ? AND end_date > ?)', end_date, start_date)
     result.map(&:room_id).uniq
   end
 
-  def self.user_trips_with_details(user)
-    fail
-    user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 5)
-  end
-
+  # def self.user_trips_with_details(user)
+  #   fail
+  #   user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 5)
+  # end
 
   def overlapping_requests
-    # debugger
     Reservation
     .where("(:id IS NULL) OR (id != :id)", id: self.id)
     .where(room_id: self.room_id)
@@ -69,8 +58,6 @@ class Reservation < ActiveRecord::Base
   def query_availability
     overlapping_unbookable_period.empty? && self.guest_num <= self.room.max_guest_num
   end
-
-
 
   private
 
