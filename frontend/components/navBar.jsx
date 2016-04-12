@@ -48,7 +48,10 @@ var NavBar = React.createClass({
 
   redirectUserProfile: function() {
     this.history.push({pathname: "users/" + this.state.user.id});
+  },
 
+  redirectHostProfile: function() {
+    this.history.push({pathname: "host/"})
   },
 
   handleSignOut: function() {
@@ -72,6 +75,7 @@ var NavBar = React.createClass({
 
             <div className="dropdown-content">
               <a onClick={this.redirectUserProfile}>My Trips</a>
+              <a onClick={this.redirectHostProfile}>My Rooms</a>
               <a onClick={this.handleSignOut}>Sign out</a>
             </div>
           </div>

@@ -1,7 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var RoomStore = require('../stores/roomStore');
-var UserStore = require('../stores/userStore.js');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 var RoomDetail = require('./roomDetails.jsx');

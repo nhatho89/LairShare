@@ -20,7 +20,6 @@ SessionStore.currentUser = function() {
   return _currentUser;
 };
 
-
 SessionStore.all = function () {
   return _currentUser;
 };

@@ -17,6 +17,8 @@ var RoomShow = require('./components/RoomShow');
 var ReviewForm = require('./components/ReviewForm');
 var UserIndex = require('./components/userIndex.jsx');
 var SearchIndex = require('./components/searchIndex.jsx');
+var HostIndex = require('./components/hostIndex.jsx');
+
 var Redirect = ReactRouter.Redirect;
 
 
@@ -24,6 +26,7 @@ var routes = (
   <Route component={App} path="/">
     <IndexRoute component={LandingPage}/>
     <Route path="users/:id" component={UserIndex}></Route>
+    <Route path="host" component={HostIndex}/>
     <Route path="/search/:loc" component={SearchIndex} />
     <Route path="rooms/:roomId" component={RoomShow}>
       <Route path="review" components={ReviewForm}/>

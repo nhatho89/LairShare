@@ -2,7 +2,6 @@ var React = require('react');
 var moment = require('moment');
 var ReservationStore = require('../stores/reservationStore.js');
 var FilterStore = require('../stores/filter_params');
-var UserStore = require('../stores/userStore.js');
 var ApiUtil = require('../util/apiUtil.js');
 var SessionStore = require('../stores/sessionStore.js');
 var RoomShow = require('./RoomShow.jsx');

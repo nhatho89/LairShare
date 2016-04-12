@@ -105,7 +105,7 @@ var UserIndex = React.createClass({
             </li>
           </ul>
         </div>
-        <div className="trip-item-and-detail">
+        <div className="trip-item-and-detail active-background" >
           <div className="trip-list-panel">
             <div>
               <div>

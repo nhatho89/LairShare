@@ -29,7 +29,7 @@ class Reservation < ActiveRecord::Base
 
   # def self.user_trips_with_details(user)
   #   fail
-  #   user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 5)
+  #   user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 1)
   # end
 
   def overlapping_requests

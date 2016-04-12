@@ -17,7 +17,7 @@ RoomStore.find = function(id) {
 };
 
 var patchDetail = function(room) {
-_rooms[room.id] = room;
+  _rooms[room.id] = room;
 };
 
 RoomStore.all = function() {

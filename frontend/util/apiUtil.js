@@ -11,17 +11,15 @@ var ApiUtil = {
     filter.dates.startDate = filter.dates.startDate.format()
     filter.dates.endDate = filter.dates.endDate.format()
 
-      $.get('api/rooms', filter, function(allRooms) {
-          RoomActions.receiveAllRooms(allRooms);
-        })
-    },
-
-
+    $.get('api/rooms', filter, function(allRooms) {
+      RoomActions.receiveAllRooms(allRooms);
+    })
+  },
 
   fetchARoom: function(id) {
     $.get('api/rooms/' + id, function(room) {
-        RoomActions.receiveRoom(room);
-      })
+      RoomActions.receiveRoom(room);
+    })
   },
 
   fetchUserDetail: function(userId, receiveDetailCB) {
@@ -29,18 +27,21 @@ var ApiUtil = {
       url: 'api/users/'+ userId,
       method: "get",
       success: function(user){
+        receiveDetailCB(user);
+      },
 
-                  receiveDetailCB(user);
-                },
-      error: function(error, status){
-
-                }
+      error: function(error, status){}
     });
   },
 
+  fetchHostRooms: function(host) {
+    console.log(host);
+    $.get('api/rooms', host, function(hostRooms) {
+      RoomActions.receiveHostRooms(hostRooms);
+    })
+  },
+
   createReservation: function(reservationParams) {
-
-
     $.ajax({
       url: 'api/reservations',
       method: "post",
