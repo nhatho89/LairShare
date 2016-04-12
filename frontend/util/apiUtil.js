@@ -34,20 +34,15 @@ var ApiUtil = {
     });
   },
 
-  fetchHostRooms: function(host) {
-
-
+  fetchAllHostRooms: function(host) {
     $.ajax({
       url: 'api/rooms/',
       method: "get",
       data: host,
       success: function(hostRooms){
-        debugger
         RoomActions.receiveHostRooms(hostRooms);
       },
-
       error: function(error, status){
-        debugger
       }
     });
 

@@ -3,7 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var RoomConstants = require('../constants/roomConstants.js');
 
 var _rooms = {};
-var _hostRoom = {};
+var _hostRoom = [];
 var RoomStore = new Store(AppDispatcher)
 
 var receiveRoom = function(rooms) {
@@ -40,7 +40,6 @@ RoomStore.__onDispatch = function(payload) {
     RoomStore.__emitChange();
     break;
     case RoomConstants.HOST_ROOMS_RECEIVED:
-    // debugger
     _hostRoom = payload.hostRooms;
     RoomStore.__emitChange();
     break;

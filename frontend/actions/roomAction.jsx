@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var RoomConstants = require('../constants/roomConstants');
-var ApiUtil = require('../util/apiUtil.js');
+// var ApiUtil = require('../util/apiUtil.js');
 
 var RoomActions = {
   receiveAllRooms: function(rooms){
@@ -18,12 +18,11 @@ var RoomActions = {
   },
 
   fetchHostRooms: function(host) {
-    debugger
-    ApiUtil.fetchHostRooms(host);
+
+    ApiUtil.fetchAllHostRooms(host)
   },
 
   receiveHostRooms: function(hostRooms) {
-    // debugger
     AppDispatcher.dispatch({
       actionType: RoomConstants.HOST_ROOMS_RECEIVED,
       hostRooms: hostRooms

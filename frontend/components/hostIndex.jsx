@@ -8,14 +8,18 @@ var RoomStore = require('../stores/roomStore.js');
 var HostIndex = React.createClass({
 
   getInitialState: function() {
-    RoomAction.receiveHostRooms();
+    // RoomAction.receiveHostRooms();
     return ({
-      hostRooms: ApiUtil.fetchHostRooms(SessionStore.currentUser())
+      hostRooms: RoomStore.hostRooms()
     })
   },
 
-  componentDidMount: function() {
+  componentWillMount: function() {
     this.roomListener = RoomStore.addListener(this.updateRooms);
+  },
+
+  componentDidMount: function() {
+    RoomAction.fetchHostRooms(SessionStore.currentUser());
   },
 
   updateRooms: function() {
@@ -29,23 +33,29 @@ var HostIndex = React.createClass({
   },
 
   render: function() {
-    var content;
 
-    if (this.hostRooms) {
-      content = this.hostRooms.forEach(function(room) {
-        return (
-          <div className="host-rooms">
-            Hello{room}
+    var content;
+    // debugger
+    if (this.state.hostRooms) {
+      this.state.hostRooms.forEach(function(room) {
+        content = (
+          <div className="trip-item-image">
+            <img className="trip-receipt-pic" src={room.primary_photo_url}/>
           </div>
         )
       })
+    } else {
+      content = (
+        <div>
+          Nope
+        </div>
+    )
     }
 
     return (
       <div className="main-container">
         <div className="host-rooms-container">
           {content}
-          Rooms
         </div>
       </div>
     );
