@@ -17,7 +17,13 @@ var RoomActions = {
     });
   },
 
+  fetchHostRooms: function(host) {
+    debugger
+    ApiUtil.fetchHostRooms(host);
+  },
+
   receiveHostRooms: function(hostRooms) {
+    // debugger
     AppDispatcher.dispatch({
       actionType: RoomConstants.HOST_ROOMS_RECEIVED,
       hostRooms: hostRooms

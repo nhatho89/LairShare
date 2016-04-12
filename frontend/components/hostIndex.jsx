@@ -2,17 +2,30 @@ var React = require('react');
 var RoomAction = require('../actions/roomAction.jsx');
 var SessionStore = require('../stores/sessionStore.js');
 var ApiUtil = require('../util/apiUtil.js');
+var RoomStore = require('../stores/roomStore.js');
 
 
 var HostIndex = React.createClass({
+
   getInitialState: function() {
+    RoomAction.receiveHostRooms();
     return ({
       hostRooms: ApiUtil.fetchHostRooms(SessionStore.currentUser())
     })
   },
 
   componentDidMount: function() {
-    debugger
+    this.roomListener = RoomStore.addListener(this.updateRooms);
+  },
+
+  updateRooms: function() {
+    this.setState({
+      hostRooms: RoomStore.hostRooms()
+    })
+  },
+
+  componentWillUnmount: function() {
+    this.roomListener.remove();
   },
 
   render: function() {

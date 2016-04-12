@@ -35,10 +35,22 @@ var ApiUtil = {
   },
 
   fetchHostRooms: function(host) {
-    console.log(host);
-    $.get('api/rooms', host, function(hostRooms) {
-      RoomActions.receiveHostRooms(hostRooms);
-    })
+
+
+    $.ajax({
+      url: 'api/rooms/',
+      method: "get",
+      data: host,
+      success: function(hostRooms){
+        debugger
+        RoomActions.receiveHostRooms(hostRooms);
+      },
+
+      error: function(error, status){
+        debugger
+      }
+    });
+
   },
 
   createReservation: function(reservationParams) {
@@ -69,7 +81,6 @@ var ApiUtil = {
       url: 'api/reservations/trips',
       method: "get",
       success: function(trips){
-
                   receiveUserTripsCB(trips);
                 },
       error: function(error, status){

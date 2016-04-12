@@ -3,6 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var RoomConstants = require('../constants/roomConstants.js');
 
 var _rooms = {};
+var _hostRoom = {};
 var RoomStore = new Store(AppDispatcher)
 
 var receiveRoom = function(rooms) {
@@ -14,6 +15,10 @@ var receiveRoom = function(rooms) {
 
 RoomStore.find = function(id) {
   return _rooms[id];
+};
+
+RoomStore.hostRooms = function() {
+  return _hostRoom;
 };
 
 var patchDetail = function(room) {
@@ -32,6 +37,11 @@ RoomStore.__onDispatch = function(payload) {
     break;
     case RoomConstants.ROOM_RECEIVED:
     patchDetail(payload.room)
+    RoomStore.__emitChange();
+    break;
+    case RoomConstants.HOST_ROOMS_RECEIVED:
+    // debugger
+    _hostRoom = payload.hostRooms;
     RoomStore.__emitChange();
     break;
   }
