@@ -3,12 +3,14 @@ var RoomAction = require('../actions/roomAction.jsx');
 var SessionStore = require('../stores/sessionStore.js');
 var ApiUtil = require('../util/apiUtil.js');
 var RoomStore = require('../stores/roomStore.js');
+var HostIndexItem = require('./hostIndexItem.jsx');
+var ReactRouter = require('react-router');
 
 
 var HostIndex = React.createClass({
+  mixins: [ReactRouter.history],
 
   getInitialState: function() {
-    // RoomAction.receiveHostRooms();
     return ({
       hostRooms: RoomStore.hostRooms()
     })
@@ -20,6 +22,7 @@ var HostIndex = React.createClass({
 
   componentDidMount: function() {
     RoomAction.fetchHostRooms(SessionStore.currentUser());
+    // this.updateRooms()
   },
 
   updateRooms: function() {
@@ -32,31 +35,29 @@ var HostIndex = React.createClass({
     this.roomListener.remove();
   },
 
-  render: function() {
 
+
+  render: function() {
+    var that = this;
     var content;
-    // debugger
+
+
+
     if (this.state.hostRooms) {
-      this.state.hostRooms.forEach(function(room) {
-        content = (
-          <div className="trip-item-image">
-            <img className="trip-receipt-pic" src={room.primary_photo_url}/>
-          </div>
-        )
-      })
-    } else {
       content = (
-        <div>
-          Nope
-        </div>
-    )
+        this.state.hostRooms.map(function(hostRoom){
+        return <HostIndexItem
+          hostRoom={hostRoom}
+          key={hostRoom.id}
+          />
+      }))
     }
 
     return (
       <div className="main-container">
-        <div className="host-rooms-container">
-          {content}
-        </div>
+
+        {content}
+
       </div>
     );
   }
