@@ -124,9 +124,9 @@ var NavBar = React.createClass({
         <div id="navbar" className="navbar-collapse collapse">
           <div className="navbar-left">
             <ul>
-              <li>
-                <a className="logo" href="/#">
-                  LairShare
+              <li className="absolute-logo">
+                <a href="/#">
+                  <img className="lairshare-logo" src="/assets/lairshare_logo.png"></img>
                 </a>
               </li>
 

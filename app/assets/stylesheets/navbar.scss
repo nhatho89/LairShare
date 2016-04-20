@@ -5,7 +5,16 @@
 //     width: 100%;
 // }
 
+.absolute-logo {
+  position: absolute;
+  left: 33px;
+  top: 0px;
+}
 
+.lairshare-logo {
+  width: 67px;
+  height: 67px;
+}
 
 .signInUp {
   position: absolute !important;
@@ -17,8 +26,6 @@
   height: 100%;
   width: 250px;
 }
-
-
 
 .logo {
   display: inline;
@@ -36,14 +43,8 @@
 }
 
 .navbar-left {
-  width: 50%;
-}
-
-
-.navbar-left ul li{
-
-  display: inline;
-
+  width: 40%;
+  padding-left: 100px;
 }
 
 
@@ -52,7 +53,6 @@
   display: flex;
   justify-content: space-between;
   float: left;
-
 }
 
 .navBar-right {
