@@ -44,7 +44,7 @@ User.create!(
 
 Room.create!(
   title: "Underwater Fortress",
-  host_id: 1,
+  host_id: 2,
   room_type: "Private",
   price: 8000,
   location: "San Francisco",
