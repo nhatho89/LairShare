@@ -63,11 +63,10 @@ var StayDates = React.createClass({
         <div className="calendar-filter">
           <DatePicker
             selected={this.state.startDate}
-
             onChange={this.handleChangeStart} />
+
           <DatePicker
             selected={this.state.endDate}
-
             onChange={this.handleChangeEnd} />
         </div>
       </div>

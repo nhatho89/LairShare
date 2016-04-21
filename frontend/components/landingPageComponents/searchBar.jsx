@@ -27,7 +27,6 @@ handleSearch: function(e) {
     this.setState({
       showLoading: true
     })
-
   }
 },
 
@@ -43,7 +42,6 @@ handleLocChange: function(e) {
 },
 
 searchBarMoveUp: function() {
-
   $(".search-bar").animate({'bottom': '20%'},1000);
 },
 

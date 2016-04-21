@@ -1,5 +1,5 @@
 var React = require('react');
-var RoomStore = require('../stores/roomStore.js');
+var RoomStore = require('../../stores/roomStore.js');
 
 var LairShareMedia = React.createClass({
 

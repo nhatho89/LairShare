@@ -9,8 +9,8 @@ var TripList = require('./tripComponents/tripList.jsx');
 var TripDetail = require('./tripComponents/tripDetail.jsx');
 
 var UserIndex = React.createClass({
+  
   getInitialState: function() {
-
     var roomId = this.props.params.id;
     var room = RoomStore.find(roomId);
     this.tabs = [
@@ -36,16 +36,13 @@ var UserIndex = React.createClass({
     e.preventDefault();
     var clickedTabName = e.target.innerHTML;
     var clickedTabId = this.tabs.indexOf(clickedTabName);
-
     if (clickedTabId !== this.state.activeTabId) {
       this.setState({
         activeTabId: clickedTabId,
         trips: TripStore.getTripsInCategory(clickedTabName.toLowerCase())
       });
     }
-
   },
-
 
   componentWillUnmount: function() {
     this.tripToken.remove();
@@ -64,21 +61,17 @@ var UserIndex = React.createClass({
   },
 
   componentDidMount: function() {
-
     this.tripToken = TripStore.addListener(this.receiveTrips);
     TripAction.fetchUserTrips();
   },
-  highlightTripId: function(tripId) {
 
+  highlightTripId: function(tripId) {
     this.setState({
       activeTripId: tripId
     });
   },
 
-
   render: function() {
-
-
     var activeTabId = this.state.activeTabId;
     return (
       <div className="user-trip-index-outer-container">
@@ -105,6 +98,7 @@ var UserIndex = React.createClass({
             </li>
           </ul>
         </div>
+
         <div className="trip-item-and-detail active-background" >
           <div className="trip-list-panel">
             <div>

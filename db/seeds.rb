@@ -42,12 +42,9 @@ User.create!(
   profile_pic: '/assets/loki.jpg'
   )
 
-
-
-
 Room.create!(
   title: "Underwater Fortress",
-  host_id: 5,
+  host_id: 1,
   room_type: "Private",
   price: 8000,
   location: "San Francisco",

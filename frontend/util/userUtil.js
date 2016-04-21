@@ -37,8 +37,6 @@ var UserUtil = {
     });
   },
 
-
-
   fetchSession: function(receiveCurrentUser) {
     $.ajax({
       url: 'api/session',

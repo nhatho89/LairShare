@@ -17,8 +17,8 @@ var GuestNum = React.createClass({
         <div className="guest-num-selection-container">
           <select
             className="Guests"
-            onChange={this.minSleepNumChanged}
-            >
+            onChange={this.minSleepNumChanged}>
+            
             <option value="100">100 Guest</option>
             <option value="200">200 Guests</option>
             <option value="300">300 Guests</option>

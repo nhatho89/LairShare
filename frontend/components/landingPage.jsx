@@ -1,9 +1,9 @@
 var React = require('react');
 var SearchBar = require('./landingPageComponents/searchBar.jsx');
 var DatePicker = require('react-datepicker');
-var Explore = require('./explore.jsx');
-var Footer = require('./footer.jsx');
-var LairShareMedia = require('./lairShareMedia');
+var Explore = require('./landingPageComponents/explore.jsx');
+var Footer = require('./footerComponents/footer.jsx');
+var LairShareMedia = require('./landingPageComponents/lairShareMedia');
 
 var LandingPage = React.createClass({
 

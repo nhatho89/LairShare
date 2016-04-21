@@ -12,7 +12,6 @@ var TripActions = {
     ApiUtil.fetchTrips(this.receiveUserTrips)
   },
 
-
   receiveNewTripConf: function(newTrip) {
     AppDispatcher.dispatch({
       actionType: TripConstants.TRIP_REQUEST_SUBMITTED,

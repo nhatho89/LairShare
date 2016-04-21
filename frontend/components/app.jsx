@@ -1,5 +1,5 @@
 var React = require('react');
-var Navbar = require('./navBar.jsx');
+var Navbar = require('./navbarComponents/navBar.jsx');
 var SessionStore = require('../stores/sessionStore');
 var SessionActions = require('../actions/sessionAction');
 
@@ -27,9 +27,7 @@ var App = React.createClass({
     return (
       <div className="app">
         <Navbar/>
-
         {this.props.children}
-
       </div>
     );
   }

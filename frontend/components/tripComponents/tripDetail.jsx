@@ -4,7 +4,6 @@ var RoomStore = require('../../stores/roomStore.js');
 
 var TripDetail = React.createClass({
   getInitialState: function() {
-
     return ({
       trip: TripStore.find_by_id(parseInt(this.props.tripId))
     });

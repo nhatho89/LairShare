@@ -8,6 +8,7 @@ var ApiUtil = {
   fetchAllRooms: function() {
 
     var filter = FilterStore.params();
+
     filter.dates.startDate = filter.dates.startDate.format()
     filter.dates.endDate = filter.dates.endDate.format()
 
@@ -35,18 +36,28 @@ var ApiUtil = {
   },
 
   fetchAllHostRooms: function(host) {
-    $.ajax({
-      url: 'api/rooms/',
-      method: "get",
-      data: host,
-      success: function(hostRooms){
-        RoomActions.receiveHostRooms(hostRooms);
-      },
-      error: function(error, status){
-      }
-    });
 
+    var filter = {};
+    filter.host = host.id
+    
+    $.get('api/rooms', filter, function(hostRooms) {
+      RoomActions.receiveHostRooms(hostRooms);
+    })
   },
+
+  // fetchAllHostRooms: function(host) {
+  //   $.ajax({
+  //     url: 'api/rooms/',
+  //     method: "get",
+  //     data: host.id,
+  //     success: function(hostRooms){
+  //       RoomActions.receiveHostRooms(hostRooms);
+  //     },
+  //     error: function(error, status){
+  //     }
+  //   });
+
+  // },
 
   createReservation: function(reservationParams) {
     $.ajax({

@@ -7,7 +7,6 @@ var TripListItem = React.createClass({
   },
 
   shouldComponentUpdate : function(newProps){
-
     return this.props.activeTripId !== newProps.activeTripId;
   },
 
@@ -18,7 +17,6 @@ var TripListItem = React.createClass({
       className += " active";
     }
     return(
-
       <div onClick={this.handleClick} className={className}>
         <p className="list-group-item-heading">{trip.location + ": " + trip.title}</p>
         <p className="list-group-item-text">{trip.startDate + " - " + trip.endDate}</p>

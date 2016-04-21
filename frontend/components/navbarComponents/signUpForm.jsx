@@ -1,6 +1,6 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var SessionActions = require('../actions/sessionAction');
+var SessionActions = require('../../actions/sessionAction');
 
 
 var SignUpForm = React.createClass({

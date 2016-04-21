@@ -30,7 +30,6 @@ var SessionActions = {
   },
 
   receiveCurrentUser: function(user){
-    // debugger
     AppDispatcher.dispatch({
       actionType: SessionConstants.RECEIVEUSER,
       user: user

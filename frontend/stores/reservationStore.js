@@ -35,8 +35,6 @@ ReservationStore.params = function() {
   return _reservationParams;
 };
 
-
-
 ReservationStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case ReservationConstants.CREATE_RESERVATION:
