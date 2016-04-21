@@ -1,16 +1,16 @@
 .bottom-container {
-    padding: 62px 0 25px;
-    background-color: #f5f5f5;
-    margin-bottom: 100px;
+  padding: 62px 0 25px;
+  background-color: #f5f5f5;
+  margin-bottom: 100px;
 }
 
 .wrap {
-    max-width: 1198px;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1198px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.row {
+.footer-row {
   display: flex;
   width: 600px;
   justify-content: space-around;
@@ -18,66 +18,58 @@
 }
 
 .footer-container {
-    font-size: 13px;
-    line-height: 20px;
-    display: flex;
-    width: 100%;
-    text-align: justify;
-    color: #787f8c;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  width: 100%;
+  text-align: justify;
+  color: #787f8c;
 }
 
 .connect-row {
   display: flex;
   justify-content: space-around;
   width: 200px;
-  /* text-align: center; */
   margin: auto;
   padding: 0px;
-
 }
 
-// .footer-container .footer-column:first-child {
-//     display: block;
-//     width: 100%;
-//     max-width: none;
-//     text-align: center;
-// }
 .footer-container .footer-logo {
-    position: static;
-    bottom: 0;
-    margin-bottom: -10px;
+  position: static;
+  bottom: 0;
+  margin-bottom: -10px;
 }
 
 .footer-logo a {
-    -webkit-transition: background .2s;
-    transition: background .2s;
-    text-decoration: none;
-    color: #912d8d;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+  text-decoration: none;
+  color: #912d8d;
 }
 
 .footer-container .heading {
-    display: block;
-    margin: 0 0 7px;
-    text-transform: uppercase;
-    color: #464646;
+  display: block;
+  margin: 0 0 7px;
+  text-transform: uppercase;
+  color: #464646;
 }
 
 .footer-container li {
-    display: block;
-    margin: 0 0 7px;
+  display: block;
+  margin: 0 0 7px;
 }
 
 .footer-container .social {
-    font-size: 22px;
-    line-height: 24px;
-    padding: 10px 0 0;
+  font-size: 22px;
+  line-height: 24px;
+  padding: 10px 0 0;
 }
 
 .footer-container .social li {
-    display: inline-block;
-    margin: 0 2px 0 0;
-    vertical-align: top;
-    letter-spacing: normal;
+  display: inline-block;
+  margin: 0 2px 0 0;
+  vertical-align: top;
+  letter-spacing: normal;
 }
 
 .footer-column {
@@ -104,5 +96,4 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 }

@@ -40,7 +40,6 @@
   justify-content: space-around;
   z-index: 5;
   width: 100%;
-
 }
 
 .city-title-name {
@@ -52,7 +51,6 @@
 .city:hover {
   cursor: pointer;
 }
-
 
 .explore-city {
   height: 218px;

@@ -13,27 +13,23 @@ ul, li {
   text-decoration: underline;
 }
 
-
-
 hr {
   display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #e6e6e6;
-    margin: 1em 0;
-    padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #e6e6e6;
+  margin: 1em 0;
+  padding: 0;
 }
 
 .dates-title {
   font-weight: bold;
-
   display:flex;
   justify-content: space-around;
 }
 
 .dates-calendar {
   font-weight: bold;
-
   display:flex;
   justify-content: space-around;
 }
@@ -60,11 +56,6 @@ hr {
   margin-top: 45px;
 }
 
-DatePicker {
-  background-color: red;
-}
-
-
 #content {
   height: 100%;
   width: 100%;
@@ -75,27 +66,14 @@ DatePicker {
   position: absolute;
   left: 0px;
   right: 0px;
-  // top: 80px; //no application.html.erb
   top: 66px;
   bottom: 0px;
-
   display: flex;
-  // height: inherit;
-  // width: inherit;
   justify-content: space-around;
   background-color: #f5f5f5;
-  // width: 900px;
-
 }
 
-
-//map
-
-
-
 .right-half {
-  // float: right;
-
   position: absolute;
   width: 40%;
   height: 100%;
@@ -103,18 +81,14 @@ DatePicker {
   right: 0px;
 }
 
-
 .left-half {
   position: absolute;
-
   width: 60%;
   height: 100%;
   overflow: auto;
   left: 0px;
   top: 0px;
   bottom: 0px;
-  // float: right;
-
 }
 
 .gmap {
@@ -122,11 +96,6 @@ DatePicker {
   width: 100%;
   bottom: 0px;
 }
-//
-// .search-list-result {
-//   position: relative;
-// }
-
 
 #search-index-amount {
   text-align: center;
@@ -134,14 +103,8 @@ DatePicker {
 
 .search-index-amount {
   display: flex;
-  // align-content: center;
   justify-content: center;
 }
-
-
-// .ui-slider-range {
-//   background-color: : blue;
-// }
 
 .price-range-slider-container {
   width: 90%;
@@ -149,7 +112,6 @@ DatePicker {
 }
 
 .price-range-container {
-
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -157,27 +119,21 @@ DatePicker {
 
 .price-range-title-container {
   display: flex;
-  // align-content: center;
   justify-content: center;
 }
 
 .guest-num-selection-container {
   display: flex;
-  // align-content: center;
   justify-content: center;
 }
 .guest-num-title-container {
   font-weight: bold;
   text-align: center;
-  // align-content: center;
-  // justify-content: center;
 }
 
 .guest-num-container {
   display: flex;
   flex-direction: column;
-  // align-content: center;
-  // justify-content: center;
 }
 
 .Guests {
@@ -192,35 +148,14 @@ DatePicker {
   justify-content: center;
 }
 
-
 .room-type-checkbox-container {
   display: flex;
   justify-content: space-around;
 }
 
-
-
-
-//
-// .room-type-checkbox-container div {
-//   display: inline-block;
-//   border: 2px solid silver;
-//   margin: 2px;
-// }
-
-// .room-type-checkbox-container div:hover {
-//   display: inline-block;
-//   border: 2px solid blue;
-//   margin: 2px;
-//   background-color: silver;
-// }
-
-
-
 .redirect-to-sf {
   font-size: 20px;
   font-weight: bold;
-  // bottom: 190px;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -234,9 +169,7 @@ DatePicker {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  // flex-flow: row wrap;
   text-align: center;
-
 }
 
 .filters {
@@ -245,42 +178,33 @@ DatePicker {
 }
 
 .room-index-item:hover {
-  box-shadow: 0px 0px 5px 5px silver;
-  // bottom: 10px;
+  box-shadow: 0px 0px 2px 2px silver;
 }
 
 .room-index-item {
   width: 40%;
   height: 200px;
-  // border: 3px solid black;
   list-style: none;
   background-color: #E7ECEE;
-
-
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 10px;
-  -webkit-border-radius: 8px;
-  // -moz-border-radius: 32px;
-  border-radius: 15px;
-  // -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  // -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  // box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -webkit-border-radius: 5px;
   text-shadow: rgba(0,0,0,.4) 0 1px 0;
   min-height: 300px;
   min-width: 300px;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-
-
 }
 
 .room-picture img {
   overflow: hidden;
-  border-radius: 15px;
-  // height: 200px;
+  border-radius: 5px;
+}
 
+.room-picture img:hover {
+  cursor: pointer;
 }
 
 .room-picture {
@@ -291,11 +215,6 @@ DatePicker {
   justify-content: center;
   margin-top: 16px;
   margin-bottom: 0px;
-  // min-height: 300px;
-  // min-width: 300px;
-
-
-
 }
 
 .room-index-item ul {
@@ -305,42 +224,29 @@ DatePicker {
 }
 
 .room-index-item ul img {
-
-  background: 50% 50% no-repeat; /* 50% 50% centers image in div */
+  background: 50% 50% no-repeat;
   width: 300px;
   height: 200px;
   overflow: hidden;
   width: 100%;
   min-height: 200px;
   min-width: 300px;
-
-
 }
 
 .link-to-city {
   text-decoration: none;
 }
 
-
-
-
-
 .checkbox-container {
   position: relative;
   display: inline-flex;
-  // margin: 30px;
   justify-content: space-around;
-  //  border-top: 1px solid #ffffff;
-   padding: 10px 15px;
-   background-color: #1178B3;
-  //  border-radius: 8px;
-
-  //  text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 14px;
-  //  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
+  padding: 10px 15px;
+  background-color: #1178B3;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: middle;
 }
 
 .checkbox-container:hover {

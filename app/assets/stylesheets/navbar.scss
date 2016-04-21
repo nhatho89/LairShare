@@ -1,10 +1,3 @@
-// .navbar-fixed {
-//     top: 0;
-//     z-index: 100;
-//   position: fixed;
-//     width: 100%;
-// }
-
 .absolute-logo {
   position: absolute;
   left: 33px;
@@ -35,7 +28,6 @@
   font-size: 20px;
   color: white;
   text-shadow: 1px 1px 4px silver;
-
 }
 
 .logo:hover {
@@ -46,7 +38,6 @@
   width: 40%;
   padding-left: 100px;
 }
-
 
 .navbar-left ul {
   width: 100%;
@@ -59,7 +50,6 @@
   display: flex;
   align-items: center;
   float: right;
-  // margin-top: -20px;
   margin-right: 45px;
 }
 
@@ -71,6 +61,7 @@
   width: 35px;
   height: auto;
 }
+
 .user-icon img {
   width: inherit;
   height: auto;
@@ -82,7 +73,6 @@
   width: 100%;
   display:flex;
   justify-content: space-between;
-  // border: 2px solid #DCDCDC;
   background-color: #1178B3;
   left:0px;
   right:0px;
@@ -103,10 +93,9 @@
  -moz-border-radius: 10px;
  border-radius: 32px;
  -webkit-box-shadow: 0px 0px 15px rgba(232, 0, 0, 0.67);
- -moz-box-shadow:    0px 0px 15px rgba(232, 0, 0, 0.67);
-  box-shadow:         0px 0px 15px rgba(232, 0, 0, 0.67);
+ -moz-box-shadow: 0px 0px 15px rgba(232, 0, 0, 0.67);
+  box-shadow: 0px 0px 15px rgba(232, 0, 0, 0.67);
 }
-
 
 .profile-pic {
   width: 60px;
@@ -116,14 +105,11 @@
   position: relative;
 }
 
-
 .profile-pic img{
   height: 100%;
   border-radius: 32px;
   cursor: pointer;
-
 }
-
 
 .dropdown-content {
   display: none;
@@ -170,56 +156,6 @@
   padding: 5px;
 }
 
-// .signin-signout a {
-//   font-weight: bolder;
-//   text-decoration: none;
-// }
-//
-// .signin-signout a:hover {
-//   color: white;
-//
-// }
-
-// .demo-button {
-//   text-align: center;
-//   width: 150px;
-//   height: 30px;
-// }
-//
-// .demo-button button{
-//   width: 150px;
-//   height: 30px;
-//   font-size: 20px;
-//   font-weight: bolder;
-// }
-//
-// .demo_user_button {
-//   background-color: #1178B3 !important;
-//   border: none !important;
-//   font-family: "Avenir Next";
-//   font-weight: 600;
-//   text-decoration: none;
-//   font-size: 20px;
-//   color: white;
-//   text-shadow: 1px 1px 4px silver;
-// }
-
-// .demo_user_button:hover {
-//   cursor: pointer;
-//   color: #551A8B;
-// }
-//
-// .demo-button button:hover {
-//   box-shadow: 0px 0px 2px 2px white;
-//   color: white;
-//     text-shadow:
-//     -1px -1px 0 #000,
-//     1px -1px 0 #000,
-//     -1px 1px 0 #000,
-//     1px 1px 0 #000;
-//
-//   background-color: silver;
-// }
 .sign-in-button {
   text-shadow: 1px 1px 4px silver;
 }
