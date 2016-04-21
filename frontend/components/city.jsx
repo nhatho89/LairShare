@@ -12,7 +12,6 @@ var City = React.createClass({
   mouseEnter: function(event) {
     event.preventDefault();
     $("#" + this.props.city + "-1").css('z-index', 2);
-
   },
 
   mouseLeave: function(event) {
@@ -25,10 +24,11 @@ var City = React.createClass({
       <div className="city" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
         <div className="city-overlap">
           <img className="city-image" id={this.props.city + "-1"} onClick={this.handleClick} src={"/assets/" + this.props.city + "-1"}/>
-
+          <div className="city-title-container">
+            <h4 className="city-title-name">{this.props.name}</h4>
+          </div>
         </div>
         <div className="city-overlap">
-
           <img className="city-image-1" onClick={this.handleClick} src={"/assets/" + this.props.city + "-2"}/>
         </div>
       </div>

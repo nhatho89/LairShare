@@ -17,32 +17,19 @@ var Explore = React.createClass({
           </div>
         </div>
 
-        <div className="city-title">
-          <h4 className="city-title-name">
-            San Francisco
-          </h4>
-          <h4 className="city-title-name">
-            New York City
-          </h4>
-          <h4 className="city-title-name">
-            Caribbean
-          </h4>
-
-        </div>
-
         <div className="explore-cities">
           <div className="explore-city">
-            <City cityValue="San-Francisco" city="sf"></City>
+            <City cityValue="San-Francisco" name="San Francisco" city="sf"></City>
           </div>
 
           <div className="explore-city">
 
-            <City cityValue="New-York-City" city="nyc"></City>
+            <City cityValue="New-York-City" name="New York City" city="nyc"></City>
           </div>
 
           <div className="explore-city">
 
-            <City cityValue="Saint-Martin" city="carrib"></City>
+            <City cityValue="Saint-Martin" name="Caribbean" city="carrib"></City>
           </div>
         </div>
       </div>

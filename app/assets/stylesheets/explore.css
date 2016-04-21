@@ -1,11 +1,11 @@
 .city-image {
   width: 350px;
-  height: auto;
+  height: 220px;
   position: absolute;
 }
 .city-image-1 {
   width: 350px;
-  height: auto;
+  height: 220px;
 }
 
 .explore-cities {
@@ -45,6 +45,7 @@
 .city-title-name {
   font-size: 18px;
   color: black;
+  text-align: center;
   text-shadow: 0px 0px 10px white;
 }
 
@@ -55,4 +56,11 @@
 .explore-city {
   height: 218px;
   overflow:hidden;
+  border: 1px solid black;
+}
+
+.city-title-container {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
 }
