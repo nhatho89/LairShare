@@ -13,6 +13,7 @@ var RoomDetails = React.createClass({
     }
 
     var room = this.props.room;
+
     return (
       <div className="details">
 
@@ -31,6 +32,20 @@ var RoomDetails = React.createClass({
             <div className="header-title">
               <h2>{room.title}</h2>
               <p>{room.location}</p>
+                <div className="room-header-icon-row">
+                  <div className="room-header-icon-col">
+                    <i className="fa fa-bed fa-2x" aria-hidden="true"></i>
+                    <strong>{room.max_sleep_num}</strong>
+                  </div>
+                  <div className="room-header-icon-col">
+                    <i className="fa fa-home fa-2x" aria-hidden="true"></i>
+                    <strong>{room.type}</strong>
+                  </div>
+                  <div className="room-header-icon-col">
+                    <i className="fa fa-usd fa-2x" aria-hidden="true"></i>
+                    <strong>{room.price}</strong>
+                  </div>
+                </div>
             </div>
 
           </div>
@@ -38,7 +53,6 @@ var RoomDetails = React.createClass({
           <div className="room-header-icon">
             <div className="room-detail-icon">
               <ul>
-
               </ul>
 
               <ul>

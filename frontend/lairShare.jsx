@@ -11,8 +11,8 @@ var hashHistory = require('react-router').hashHistory;
 var NavBar = require('./components/navbarComponents/navBar');
 var RoomShow = require('./components/RoomShow');
 var ReviewForm = require('./components/ReviewForm');
-var UserIndex = require('./components/userIndex.jsx');
-var SearchIndex = require('./components/searchIndex.jsx');
+var UserIndex = require('./components/tripComponents/userIndex.jsx');
+var SearchIndex = require('./components/searchComponents/searchIndex.jsx');
 var HostIndex = require('./components/hostIndex.jsx');
 
 var Redirect = ReactRouter.Redirect;

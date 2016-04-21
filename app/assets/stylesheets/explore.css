@@ -38,7 +38,7 @@
   position: absolute;
   display: flex;
   justify-content: space-around;
-  z-index: 5;
+  /*z-index: 5;*/
   width: 100%;
 }
 
@@ -62,5 +62,5 @@
 .city-title-container {
   width: 100%;
   position: absolute;
-  z-index: 10;
+  z-index: 3;
 }

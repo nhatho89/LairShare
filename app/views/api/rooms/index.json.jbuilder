@@ -10,5 +10,6 @@ json.array! @rooms do |room|
   json.max_sleep_num room.max_sleep_num
   json.lat room.lat
   json.lng room.lng
+  json.room_type room.room_type
 
 end

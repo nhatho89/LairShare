@@ -1,15 +1,15 @@
 var React = require('react');
-var RoomStore = require('../stores/roomStore.js');
-var RoomAction = require('../actions/roomAction.jsx');
+var RoomStore = require('../../stores/roomStore.js');
+var RoomAction = require('../../actions/roomAction.jsx');
 
-var TripStore = require('../stores/tripStore.js');
-var TripAction = require('../actions/tripAction.js');
+var TripStore = require('../../stores/tripStore.js');
+var TripAction = require('../../actions/tripAction.js');
 
-var TripList = require('./tripComponents/tripList.jsx');
-var TripDetail = require('./tripComponents/tripDetail.jsx');
+var TripList = require('./tripList.jsx');
+var TripDetail = require('./tripDetail.jsx');
 
 var UserIndex = React.createClass({
-  
+
   getInitialState: function() {
     var roomId = this.props.params.id;
     var room = RoomStore.find(roomId);

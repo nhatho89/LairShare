@@ -1,5 +1,5 @@
 var React = require('react');
-var FilterActions = require('../../actions/filter_actions');
+var FilterActions = require('../../../actions/filter_actions');
 
 var GuestNum = React.createClass({
 
@@ -18,7 +18,7 @@ var GuestNum = React.createClass({
           <select
             className="Guests"
             onChange={this.minSleepNumChanged}>
-            
+
             <option value="100">100 Guest</option>
             <option value="200">200 Guests</option>
             <option value="300">300 Guests</option>

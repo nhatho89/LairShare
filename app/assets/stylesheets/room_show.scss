@@ -198,3 +198,27 @@
 .profile-pic {
   border-radius: 32px;
 }
+
+.room-header-icon-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room-header-icon-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-header-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.header-title {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

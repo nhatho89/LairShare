@@ -1,14 +1,14 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var RoomStore = require('../stores/roomStore.js');
-var FilterStore = require('../stores/filter_params.js');
-var RoomActions = require('../actions/roomAction.jsx');
-var FilterActions = require('../actions/filter_actions.js')
+var RoomStore = require('../../stores/roomStore.js');
+var FilterStore = require('../../stores/filter_params.js');
+var RoomActions = require('../../actions/roomAction.jsx');
+var FilterActions = require('../../actions/filter_actions.js')
 var History = require('react-router').History;
 
-var Map = require('./Map.jsx');
+var Map = require('../Map.jsx');
 var Filter = require('./Filters.jsx');
-var ApiUtil = require('../util/apiUtil.js');
+var ApiUtil = require('../../util/apiUtil.js');
 var Index = require('./Index');
 var Link = require('react-router').Link;
 

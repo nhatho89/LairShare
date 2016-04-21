@@ -1,9 +1,9 @@
 var React = require('react');
-var FilterActions = require('../../actions/filter_actions');
+var FilterActions = require('../../../actions/filter_actions');
 var DatePicker = require('react-datepicker');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
-var FilterStore = require('../../stores/filter_params.js');
+var FilterStore = require('../../../stores/filter_params.js');
 
 var StayDates = React.createClass({
 

@@ -28,7 +28,7 @@ var LandingPage = React.createClass({
           </div>
         </div>
 
-        <div className="explore-landing-page">
+        <div className="explore-landing-page" id="explore-container">
           <Explore/>
         </div>
 

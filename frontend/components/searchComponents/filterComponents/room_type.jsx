@@ -1,5 +1,5 @@
 var React = require('react');
-var FilterActions = require('../../actions/filter_actions');
+var FilterActions = require('../../../actions/filter_actions');
 
 var RoomType = React.createClass({
 

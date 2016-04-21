@@ -160,11 +160,7 @@ var RoomShow = React.createClass({
     var rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
-
     }
-
-
-
 
     return (
 
@@ -172,19 +168,13 @@ var RoomShow = React.createClass({
 
       {carousel}
 
-
       <Modal
-
         isOpen={this.state.showSigninModal}
         onRequestClose={this.closeSigninModal}
         closeTimeoutMS={0}
         style={authModalStyle}>
-
         <LoginForm closeModal={this.closeSigninModal}/>
-
       </Modal>
-
-
 
         <div className="room-show-content-container">
           <div className="left-half-room">

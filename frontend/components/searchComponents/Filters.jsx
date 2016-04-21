@@ -1,6 +1,5 @@
 var React = require('react');
 var RoomType = require('./filterComponents/room_type.jsx');
-var GuestNum = require('./filterComponents/guest_num.jsx');
 var StayDates = require('./filterComponents/dates.jsx');
 var PriceSlider = require('./filterComponents/price_slider.jsx');
 var Guests = require('./filterComponents/guest_num.jsx');
