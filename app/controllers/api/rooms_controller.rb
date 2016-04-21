@@ -26,11 +26,11 @@ class Api::RoomsController < ApplicationController
       @rooms = @rooms.where("price >= ?", params[:priceRange][:min])
     end
 
-    # if (params[:dates][:startDate] && params[:dates][:endDate])
-    #   end_date = params[:dates][:endDate]
-    #   start_date = params[:dates][:startDate]
-    #   @rooms = @rooms.where.not(id: Reservation.unavailable_room_ids(start_date, end_date))
-    # end
+    if (params[:dates][:startDate] && params[:dates][:endDate])
+      end_date = params[:dates][:endDate]
+      start_date = params[:dates][:startDate]
+      @rooms = @rooms.where.not(id: Reservation.unavailable_room_ids(start_date, end_date))
+    end
 
 
     render 'index'
