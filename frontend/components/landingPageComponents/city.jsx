@@ -25,7 +25,7 @@ var City = React.createClass({
         <div className="city-overlap">
           <img className="city-image" id={this.props.city + "-1"} onClick={this.handleClick} src={"/assets/" + this.props.city + "-1"}/>
           <div className="city-title-container">
-            <h4 className="city-title-name">{this.props.name}</h4>
+            <h4 className="city-title-name" onClick={this.handleClick}>{this.props.name}</h4>
           </div>
         </div>
         <div className="city-overlap">

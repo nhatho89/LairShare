@@ -3,6 +3,7 @@ var RoomType = require('./filterComponents/room_type.jsx');
 var StayDates = require('./filterComponents/dates.jsx');
 var PriceSlider = require('./filterComponents/price_slider.jsx');
 var Guests = require('./filterComponents/guest_num.jsx');
+var Bounds = require('./filterComponents/bounds.jsx');
 
 var Filters = React.createClass({
 
@@ -10,14 +11,16 @@ var Filters = React.createClass({
     return (
       <div className="search-filters">
 
-        <br/><hr/><br/>
+        <hr/>
           <StayDates/>
+        <hr/>
           <Guests/>
-        <br/><hr/><br/>
+          <Bounds/>
+        <hr/>
           <PriceSlider/>
-        <br/><hr/><br/>
+        <hr/>
           <RoomType/>
-        <br/><hr/><br/>
+        <hr/>
       </div>
     );
   }
