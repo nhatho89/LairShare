@@ -21,7 +21,7 @@ var UserIndex = React.createClass({
     ];
     return({
       activeTabId: 0,
-      activeTripId: null,
+      activeTripId: 1,
       trips: TripStore.all()
     });
   },
@@ -73,6 +73,7 @@ var UserIndex = React.createClass({
 
   render: function() {
     var activeTabId = this.state.activeTabId;
+
     return (
       <div className="user-trip-index-outer-container">
         <div className="user-trip-outer-container">
