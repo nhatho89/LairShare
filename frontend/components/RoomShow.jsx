@@ -13,7 +13,7 @@ var LoginForm = require('./navbarComponents/loginForm');
 var authModalStyle = require('./navbarComponents/authModalStyle.jsx');
 var ReservationForm = require('./reservationForm.jsx');
 var History = require('react-router').History;
-var Date = require('./filterComponents/dates.jsx');
+var Date = require('./searchComponents/filterComponents/dates.jsx');
 var SessionActions = require('../actions/sessionAction.js');
 var modalStyle = require('./modalStyle');
 
@@ -28,14 +28,13 @@ var RoomShow = React.createClass({
   },
   getInitialState: function () {
     var roomId = this.props.params.roomId;
-    var room = RoomStore.find(roomId) || {} ;
+    var room = RoomStore.find(roomId) || {};
     return ({
       room: room,
       showSigninModal: false,
       showModal: false,
       signedIn: false,
-
-      centerLatLng: null
+      centerLatLng: {lat: room.lat, lng: room.lng}
     });
   },
 
@@ -49,8 +48,6 @@ var RoomShow = React.createClass({
     this.roomListener.remove();
     this.sessionListener.remove();
     $(window).off('scroll', this.scrollListener);
-
-
   },
 
   sessionChange: function() {
@@ -63,7 +60,10 @@ var RoomShow = React.createClass({
 
     var roomId = this.props.params.roomId;
     var room = RoomStore.find(roomId);
-    this.setState({ room: room });
+    this.setState({
+      room: room,
+      centerLatLng: {lat: room.lat, lng: room.lng}
+    });
   },
 
   reservationClick: function() {
@@ -76,8 +76,6 @@ var RoomShow = React.createClass({
 
   closeModal: function() {
     this.setState({showModal: false})
-
-
 
   },
 
@@ -100,7 +98,7 @@ var RoomShow = React.createClass({
         navBar = $('#navbar').offset().top;
 
       if (roomShowEl <= navBar) {
-        topPos = navBar - 540
+        topPos = navBar - 541
       } else {
         topPos = 0;
       }

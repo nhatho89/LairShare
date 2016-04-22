@@ -63,6 +63,7 @@ var Map = React.createClass({
 
     Object.keys(rooms).forEach(function(id, idx){
       var room = that.state.rooms[id];
+
       var idx = -1;
       for(var i = 0; i < toRemove.length; i++){
         if(toRemove[i].roomId == room.id){
@@ -97,6 +98,7 @@ var Map = React.createClass({
   },
 
   componentWillUnmount: function(){
+    this.markers.forEach(this.removeMarker);
     this.roomListener.remove();
   },
   registerListeners: function(){

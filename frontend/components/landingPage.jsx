@@ -16,7 +16,7 @@ var LandingPage = React.createClass({
 
   render: function() {
     return (
-      <div className="landing-page">
+      <div className="landing-page" id="landing-page">
         <div className="landing-page-wrapper">
           <div className="landing-page-background-container">
             <img className="landing-page-background-photo" src="/assets/fort-jefferson.jpg"></img>
@@ -32,11 +32,11 @@ var LandingPage = React.createClass({
           <Explore/>
         </div>
 
-        <div className="media">
+        <div className="media" id="media-container">
           <LairShareMedia/>
         </div>
 
-        <div className="footer">
+        <div className="footer" id="bottom-container">
           <Footer/>
         </div>
 

@@ -19,6 +19,7 @@ var NavBarRight = React.createClass({
     this.history.push({pathname: "host/"})
   },
 
+  // <a onClick={this.redirectHostProfile}>My Rooms</a>
   render: function() {
     var display;
     if (this.props.user.username) {
@@ -31,7 +32,6 @@ var NavBarRight = React.createClass({
             <img className="profile-pic" src={this.props.user.profile_pic}></img>
             <div className="dropdown-content">
               <a onClick={this.redirectUserProfile}>My Trips</a>
-              <a onClick={this.redirectHostProfile}>My Rooms</a>
               <a onClick={this.handleSignOut}>Sign out</a>
             </div>
           </div>

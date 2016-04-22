@@ -1,11 +1,11 @@
 .absolute-logo {
   position: absolute;
-  left: 33px;
+  left: 15px;
   top: 0px;
 }
 
 .lairshare-logo {
-  width: 67px;
+  width: 170px;
   height: 67px;
 }
 
@@ -23,26 +23,25 @@
 .logo {
   display: inline;
   font-family: "Avenir Next";
-  font-weight: 600;
+  font-weight: 300;
   text-decoration: none;
   font-size: 20px;
   color: white;
-  text-shadow: 1px 1px 4px silver;
   z-index: 4;
 }
 
-.logo:hover {
-  text-shadow: 0 0 30px white;
-}
-
 .navbar-left {
-  // width: 40%;
+  display: flex;
   height: 67px;
-  padding-left: 100px;
+  width: 400px;
+  padding-left: 220px;
 }
 
 .navbar-left ul {
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   margin: 0px;
 }
 
@@ -84,7 +83,6 @@
   text-decoration: none;
   font-size: 20px;
   color: white;
-  text-shadow: 1px 1px 4px silver;
   list-style: none;
 }
 
@@ -105,8 +103,9 @@
   height: 100%;
 }
 
-#explore-dropdown-text {
+.explore-dropdown-text {
   // height: 100%;
+  font-weight: 400;
   margin: 0px;
   flex-direction: column;
   justify-content: center;
@@ -131,7 +130,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.6);
   min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 }
@@ -144,6 +143,7 @@
 
 .profile-pic:hover .dropdown-content {
   display: block;
+  top: 65px;
 }
 
 .dropdown:hover .dropbtn {
@@ -153,6 +153,7 @@
 .dropdown-content a {
   color: white;
   border: 1px solid rgba(0,0,0,0.7);
+  font-weight: 300;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -190,4 +191,12 @@
 .sign-up-button:hover {
   cursor: pointer;
   text-shadow: 0 0 30px white;
+}
+
+#fa-row {
+  display: flex;
+}
+
+#fa-row p {
+  margin: 0;
 }

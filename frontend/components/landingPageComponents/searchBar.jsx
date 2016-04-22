@@ -42,11 +42,11 @@ handleLocChange: function(e) {
 },
 
 searchBarMoveUp: function() {
-  $(".search-bar").animate({'bottom': '20%'},1000);
+  $(".search-bar").animate({'bottom': '30%'},1000);
 },
 
 searchBarMoveBack: function() {
-  $(".search-bar").animate({'bottom': '10%'},500);
+  $(".search-bar").animate({'bottom': '20%'},500);
 },
 
 render: function() {
@@ -56,26 +56,30 @@ render: function() {
   );
 
   var design = (
-    <form className="input-group" role="form" onSubmit={this.handleSearch}>
-      <input
-         type="text"
-         className="form-control"
-         id="landing-search-input"
-         onChange={this.handleLocChange}
-         placeholder={this.state.placeholder}
-         ref="locinput"
-         onFocus={this.searchBarMoveUp}
-         onBlur={this.searchBarMoveBack}
-         />
-    </form>
+    <div className="input-space">
+      <form className="input-group" role="form" onSubmit={this.handleSearch}>
+        <input
+          type="text"
+          className="form-control"
+          id="landing-search-input"
+          onChange={this.handleLocChange}
+          placeholder={this.state.placeholder}
+          ref="locinput"
+          onFocus={this.searchBarMoveUp}
+          onBlur={this.searchBarMoveBack}
+          />
+      </form>
+    </div>
   );
 
   return (
 
     <div className="search-bar">
-      {design}
-      <div className="search-icon-container">
-        {searchIcon}
+      <div className="center">  
+        {design}
+        <div className="search-icon-container">
+          <button className="search-button" onClick={this.handleSearch}>Search</button>
+        </div>
       </div>
     </div>
   );}
