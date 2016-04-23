@@ -46,7 +46,6 @@ var ReservationForm = React.createClass({
 
     var nights = FilterStore.params().dates.endDate.diff(FilterStore.params().dates.startDate, 'days');
     var room = this.props.room;
-    var cleaningFee = 300;
     var serviceFee = 200;
     var taxes = 0.1;
 
@@ -174,14 +173,6 @@ var ReservationForm = React.createClass({
                 </tr>
                 <tr>
                   <td>
-                    Cleaning fee
-                  </td>
-                  <td>
-                    {"$" + 300}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     Service fee
                   </td>
                   <td>
@@ -201,7 +192,7 @@ var ReservationForm = React.createClass({
                     Total
                   </td>
                   <td>
-                    {"$" + (room.price*nights + cleaningFee + serviceFee + Math.floor(room.price*nights*taxes))}
+                    {"$" + (room.price*nights + serviceFee + Math.floor(room.price*nights*taxes))}
                   </td>
                 </tr>
               </tbody>

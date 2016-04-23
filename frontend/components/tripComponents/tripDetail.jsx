@@ -23,7 +23,6 @@ var TripDetail = React.createClass({
     var checkoutStr = moment(trip.endDate, 'MM-DD-YYYY').format('ddd, MMM DD, YYYY');
     var nights = TripStore.nights(trip.id);
     var ppn = trip.price;
-    var cleaningFee = 300;
     var serviceFee = 200;
     var taxes = 0.1;
 
@@ -128,14 +127,6 @@ var TripDetail = React.createClass({
                 </div>
                 <div className="receipt-row">
                   <ul>
-                    Cleaning fee
-                  </ul>
-                  <ul>
-                    {"$" + cleaningFee}
-                  </ul>
-                </div>
-                <div className="receipt-row">
-                  <ul>
                     Service fee
                   </ul>
                   <ul>
@@ -155,7 +146,7 @@ var TripDetail = React.createClass({
                     Total
                   </ul>
                   <ul>
-                    {"$" + (ppn*nights + cleaningFee + serviceFee + Math.floor(ppn*nights*taxes))}
+                    {"$" + (ppn*nights + serviceFee + Math.floor(ppn*nights*taxes))}
                   </ul>
                 </div>
                 <div className="receipt-row">
