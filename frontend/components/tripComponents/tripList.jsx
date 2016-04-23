@@ -5,8 +5,13 @@ var TripListItem = require('./tripListItem.jsx');
 var TripList = React.createClass({
   getInitialState: function() {
     return({
-      tabName: this.props.tabName
+      tabName: this.props.tabName,
+      activeTripId: this.props.activeTripId
     });
+  },
+
+  componentDidMount: function() {
+    this.props.highlightTripId(this.state.activeTripId);
   },
 
   componentWillReceiveProps: function(newProps) {
@@ -21,8 +26,8 @@ var TripList = React.createClass({
 
     var trips = this.props.trips;
     var trip;
-    var className = "list-group-item";
-    var classNameActive = "list-group-item active"
+    // var className = "list-group-item";
+    // var classNameActive = "list-group-item active"
     var that = this;
     var listItems = Object.keys(trips).map(function(tripId) {
       trip = trips[tripId];
@@ -36,6 +41,8 @@ var TripList = React.createClass({
           />
       );
     });
+
+    // debugger
 
     return (
       <div className="panel">
