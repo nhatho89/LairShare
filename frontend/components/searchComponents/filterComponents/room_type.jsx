@@ -10,14 +10,15 @@ var RoomType = React.createClass({
 
   render: function() {
     return (
-      <div className="room-type-container">
+      <div className="room-type-row">
+
         <div className="room-type-title-container">
-          <label>Room Type:</label><br/><br/>
+          <label><strong>Room Type</strong></label><br/><br/>
         </div>
 
-        <div className="room-type-checkbox-container">
           <div className="checkbox-container">
-            <label className="checkbox-text">Whole Facility
+            <label className="checkbox-text">
+              <i className="fa fa-building" aria-hidden="true"></i>&nbsp;Whole Facility
               <input type="checkbox"
                 onChange={this.roomTypeChanged}
                 value={'Whole Facility'}
@@ -26,8 +27,8 @@ var RoomType = React.createClass({
           </div>
 
           <div className="checkbox-container">
-            <label className="checkbox-text">Shared Facility
-
+            <label className="checkbox-text">
+              <i className="fa fa-home" aria-hidden="true"></i>&nbsp;Shared Facility
               <input type="checkbox"
                 onChange={this.roomTypeChanged}
                 value={'Shared Facility'}
@@ -37,7 +38,8 @@ var RoomType = React.createClass({
           </div>
 
           <div className="checkbox-container">
-            <label className="checkbox-text">Private Room
+            <label className="checkbox-text">
+              <i className="fa fa-lock" aria-hidden="true"></i>&nbsp;Private Room
               <input type="checkbox"
                 onChange={this.roomTypeChanged}
                 value={'Private'}
@@ -45,7 +47,7 @@ var RoomType = React.createClass({
                 />
             </label>
           </div>
-        </div>
+
       </div>
     );
   }
@@ -53,3 +55,41 @@ var RoomType = React.createClass({
 });
 
 module.exports = RoomType;
+
+// <div className="room-type-container">
+//   <div className="room-type-title-container">
+//     <label>Room Type:</label><br/><br/>
+//   </div>
+//
+//   <div className="room-type-checkbox-container">
+//     <div className="checkbox-container">
+//       <label className="checkbox-text">Whole Facility
+//         <input type="checkbox"
+//           onChange={this.roomTypeChanged}
+//           value={'Whole Facility'}
+//           defaultChecked="true"/>
+//       </label>
+//     </div>
+//
+//     <div className="checkbox-container">
+//       <label className="checkbox-text">Shared Facility
+//
+//         <input type="checkbox"
+//           onChange={this.roomTypeChanged}
+//           value={'Shared Facility'}
+//           defaultChecked="true"
+//           />
+//       </label>
+//     </div>
+//
+//     <div className="checkbox-container">
+//       <label className="checkbox-text">Private Room
+//         <input type="checkbox"
+//           onChange={this.roomTypeChanged}
+//           value={'Private'}
+//           defaultChecked="true"
+//           />
+//       </label>
+//     </div>
+//   </div>
+// </div>

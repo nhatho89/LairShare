@@ -34,26 +34,31 @@ var PriceSlider = React.createClass({
     $("#search-index-price-range").css('z-index', 0);
 
     return (
-      <div className="price-range-container">
+      <div className="price-range-container price-row">
           <div className="price-range-title-container">
             <label>Price Range</label><br/>
           </div>
-          <div className="search-index-amount">
-            <input type="text" id="search-index-amount" readOnly="true" style={{border:'0', color:'#f6931f', fontWeight:'bold', background: "transparent"}} />
-          </div><br/>
-          <div className="price-range-slider-container">
-            <div id="search-index-price-range" className="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-              <div id="min-max-range" className="ui-slider-range ui-widget-header ui-corner-all" style={{left: '15%', width: '30%'}}>
+
+          <div className="price-range-container-right">
+            <div className="search-index-amount">
+              <input type="text" id="search-index-amount" readOnly="true" style={{border:'0', color:'#f6931f', fontWeight:'bold', background: "transparent"}} />
+            </div><br/>
+            <div className="price-range-slider-container">
+              <div id="search-index-price-range" className="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                <div id="min-max-range" className="ui-slider-range ui-widget-header ui-corner-all" style={{left: '15%', width: '30%'}}>
+                </div>
+                <span
+                  className="ui-slider-handle ui-state-default ui-corner-all"
+                  tabIndex="0"
+                  style={{left: '15%'}}>
+                </span>
+                <span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex="0" style={{left: '60%'}}>
+                </span>
               </div>
-              <span
-                 className="ui-slider-handle ui-state-default ui-corner-all"
-                 tabIndex="0"
-                 style={{left: '15%'}}>
-              </span>
-              <span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex="0" style={{left: '60%'}}>
-              </span>
             </div>
           </div>
+
+
         </div>
     );
   }

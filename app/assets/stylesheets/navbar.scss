@@ -79,7 +79,7 @@
   z-index: 10 !important;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
   font-family: "Avenir Next";
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   font-size: 20px;
   color: white;
@@ -175,22 +175,20 @@
   padding: 5px;
 }
 
-.sign-in-button {
-  text-shadow: 1px 1px 4px silver;
-}
-
-.sign-up-button {
-  text-shadow: 1px 1px 4px silver;
-}
+// .sign-in-button {
+//   text-shadow: 1px 1px 4px silver;
+// }
+//
+// .sign-up-button {
+//   text-shadow: 1px 1px 4px silver;
+// }
 
 .sign-in-button:hover {
   cursor: pointer;
-  text-shadow: 0 0 30px white;
 }
 
 .sign-up-button:hover {
   cursor: pointer;
-  text-shadow: 0 0 30px white;
 }
 
 #fa-row {

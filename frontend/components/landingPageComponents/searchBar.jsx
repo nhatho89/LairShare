@@ -57,7 +57,7 @@ render: function() {
 
   var design = (
     <div className="input-space">
-      <form className="input-group" role="form" onSubmit={this.handleSearch}>
+      <form className="input-group" id="searchbar-form" role="form" onSubmit={this.handleSearch}>
         <input
           type="text"
           className="form-control"
@@ -75,7 +75,7 @@ render: function() {
   return (
 
     <div className="search-bar">
-      <div className="center">  
+      <div className="center">
         {design}
         <div className="search-icon-container">
           <button className="search-button" onClick={this.handleSearch}>Search</button>

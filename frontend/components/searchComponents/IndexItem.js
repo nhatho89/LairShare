@@ -8,25 +8,21 @@ var IndexItem = React.createClass({
     var room = this.props.room;
 
     return (
-        <div className="room-index-item" onClick={this.props.onClick}>
-          <ul className="room-picture">
+      <div className="room-index-item-container room-row room-wrap room-center" onClick={this.props.onClick}>
+        <div className="room-index-item-inner-container room-col">
+          <div className="room-image room-row room-center">
             <img src={room.primary_photo_url}/>
-          </ul>
-
-          <ul className="room-info">
-            <ul className="room-info-inner">
-              <li>
-                {room.title}
-              </li>
-
-              <li>
-                Price: ${room.price}
-              </li>
-
-            </ul>
-            <br/>
-          </ul>
+          </div>
+          <div className="room-detail room-col">
+            <p className="room-detail-title">
+              {room.title}<br/>
+              Price: ${room.price}
+            </p>
+            <p className="room-detail-price">
+            </p>
+          </div>
         </div>
+      </div>
     );
   }
 });

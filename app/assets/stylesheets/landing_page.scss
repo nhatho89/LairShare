@@ -48,7 +48,6 @@ h4, h1 {
   color: white;
   height: 46px;
   width: 150px;
-  padding-left: 11px;
 }
 
 .search-icon-container:hover {
@@ -143,6 +142,7 @@ h4, h1 {
   color: white;
   font-size: 16px;
   border: 0px;
+  float: right;
 }
 
 .center {
@@ -160,4 +160,9 @@ h4, h1 {
 
 #landing-search-input {
   border: 0px;
+  width: 490px;
+}
+
+#searchbar-form {
+  width: 490px;
 }

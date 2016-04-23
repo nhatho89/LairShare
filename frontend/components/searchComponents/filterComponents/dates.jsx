@@ -4,13 +4,16 @@ var DatePicker = require('react-datepicker');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var moment = require('moment');
 var FilterStore = require('../../../stores/filter_params.js');
+var Guests = require('./guest_num.jsx');
+
 
 var StayDates = React.createClass({
 
   getInitialState: function() {
     return {
       startDate: moment(),
-      endDate: moment()
+      endDate: moment(),
+      guestNeeded: true
     }
   },
 
@@ -39,7 +42,17 @@ var StayDates = React.createClass({
   },
 
   componentWillUnmount: function() {
+
     this.displayListener.remove();
+  },
+
+  componentWillReceiveProps: function(newProps) {
+    if (this.props) {
+      this.setState({
+        guestNeeded: newProps.guestNeeded
+      })
+    }
+
   },
 
   displayDate: function() {
@@ -50,17 +63,21 @@ var StayDates = React.createClass({
   },
 
   render: function() {
+    // <div className="dates-calendar">
+    //   <label>Check In</label>
+    //   <label>Check Out</label>
+    // </div>
 
-    return (
-      <div>
-        <div className="dates-title">
-          <label>Dates</label>
-        </div>
-        <div className="dates-calendar">
-          <label>Check In</label>
-          <label>Check Out</label>
-        </div>
-        <div className="calendar-filter">
+    var dates;
+
+    if (this.state.guestNeeded) {
+
+      dates = (
+        <div className="filter-row">
+          <div className="dates-title">
+            <label>Dates</label>
+          </div>
+
           <DatePicker
             selected={this.state.startDate}
             onChange={this.handleChangeStart} />
@@ -68,8 +85,38 @@ var StayDates = React.createClass({
           <DatePicker
             selected={this.state.endDate}
             onChange={this.handleChangeEnd} />
+
+          <Guests/>
         </div>
-      </div>
+      )
+
+    } else {
+
+      dates = (
+        <div className="filter-col">
+          <div className="dates-title" style={{width: "100%"}}>
+            <label style={{textAlign: "center"}}>Dates</label>
+          </div>
+          <div className="filter-row">
+
+            <DatePicker
+            selected={this.state.startDate}
+            onChange={this.handleChangeStart} />
+
+            <DatePicker
+            selected={this.state.endDate}
+            onChange={this.handleChangeEnd} />
+
+          </div>
+        </div>
+      )
+    }
+
+
+
+
+    return (
+      dates
       );
   }
 });

@@ -204,10 +204,11 @@ var RoomShow = React.createClass({
                 </div>
               </div>
               <div className="date-container">
-                <Date/>
+                <Date
+                  guestNeeded={false}
+                  />
               </div>
               <div className="reserve-lair-button-container">
-
                 {button}
               </div>
               <div id="room-show-gmap">

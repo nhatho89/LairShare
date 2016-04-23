@@ -21,7 +21,6 @@ var Index = React.createClass({
             var boundClick = handleItemClick.bind(null, room);
             return <IndexItem
               onClick={boundClick}
-
               room={room}
               key={room.id} />
           })
