@@ -98,7 +98,7 @@ var RoomShow = React.createClass({
         navBar = $('#navbar').offset().top;
 
       if (roomShowEl <= navBar) {
-        topPos = navBar - 541
+        topPos = navBar - 543
       } else {
         topPos = 0;
       }
@@ -199,7 +199,7 @@ var RoomShow = React.createClass({
             <div className="map-reserve-container">
               <div className="room-show-price">
                 <div className="room-show-price-text">
-                  <h1>${this.state.room.price} per Night</h1>
+                  <p>${this.state.room.price} per Night</p>
 
                 </div>
               </div>

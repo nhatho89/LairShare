@@ -93,6 +93,7 @@ var ReservationForm = React.createClass({
               <div className="reserve-host-message">
                 <textarea
                   className="form-control"
+                  id="message-host-form"
                   rows="5"
                   placeholder="Message your host..."
                   onChange={this.messageHandler}

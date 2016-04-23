@@ -6,24 +6,23 @@
   font-size: 16px;
   padding-left: 10px;
   padding-right: 20px;
+  -webkit-appearance: none;
 }
 
 .auth-input {
   text-align: center;
-  height: 15%;
+  height: 30px;
   width: 100%;
   display: flex;
 }
 
 .auth-control {
   width: 100%;
-    height: 100%;
-    font-size: 30px;
-    background-color: #F9F9D1;
-    /* border-radius: 7px; */
-    padding-left: 10px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+  height: 100%;
+  font-size: 20px;
+  padding-left: 10px;
+  font-weight: 200;
+
 }
 
 .checkbox {
@@ -35,32 +34,31 @@
 
 .demo-button {
   float: right;
-  height: 100%;
-  width: 150px;
-  background-color: #FDB918;
-  border-radius: 7px;
+  height: 45px;
+  width: 100px;
   color: white;
-  font-size: 16px;
-  text-shadow: .5px .5px black;
+  font-size: 14px;
+  background-color: #B98405;
 }
 
 .demo-button:hover {
   cursor: pointer;
-  background-color: #B98405;
+  background-color: #FDB918;
 }
 
 .auth-button {
-  height: 15%;
+  height: 45px;
   width: 100%;
-  background-color: #1178B3;
-  border-radius: 7px;
+  background-color: #0B6192;
   font-size: 23px;
   color: white;
 }
 
 .auth-button:hover {
   cursor: pointer;
-  background-color: #0B6192;
+  // background-color: #1178B3;
+  background-color: #109EEF;
+
 }
 
 .remember-me:hover {
@@ -70,13 +68,12 @@
 .username-icon-container {
   float: left;
   width: 11%;
-  height: 110%;
+  height: 36px;
   padding-right: 10px;
-  background-color: #E9E9E9;
-  border-top-left-radius: 6px;
   position: relative;
-  border-bottom-left-radius: 6px;
-  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .username-icon {
@@ -88,6 +85,8 @@
 }
 
 .remember-me-container {
+  font-size: 12px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;

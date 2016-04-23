@@ -25,8 +25,8 @@ var _params = {
   },
 
   roomType: {
-    "Whole Facility": true,
-    "Shared Facility": true,
+    "Whole": true,
+    "Shared": true,
     "Private": true
   },
 

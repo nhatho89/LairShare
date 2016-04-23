@@ -110,7 +110,7 @@ RoomPic.create!(
 Room.create!(
   title: "Forest Shelter",
   host_id: 3,
-  room_type: "Shared Facility",
+  room_type: "Shared",
   price: 4000,
   location: "San Francisco",
   lat: 37.79328295176572,
@@ -141,7 +141,7 @@ RoomPic.create!(
 Room.create!(
   title: "Volcano Lair",
   host_id: 5,
-  room_type: "Shared Facility",
+  room_type: "Shared",
   price: 7000,
   location: "Caribbean",
   lat: 18.057155,
@@ -171,7 +171,7 @@ RoomPic.create!(
 Room.create!(
   title: "Mountain Bunker",
   host_id: 4,
-  room_type: "Whole Facility",
+  room_type: "Whole",
   price: 6000,
   location: "San Francisco",
   lat: 37.52861709268237,
@@ -235,7 +235,7 @@ RoomPic.create!(
 Room.create!(
   title: "Chemistry Laboratory",
   host_id: 6,
-  room_type: "Whole Facility",
+  room_type: "Whole",
   price: 3000,
   location: "New York",
   lat: 40.68000339369621,
@@ -269,7 +269,7 @@ RoomPic.create!(
 Room.create!(
   title: "Skyrise Office",
   host_id: 5,
-  room_type: "Shared Facility",
+  room_type: "Shared",
   price: 7000,
   location: "New York",
   lat: 40.736738336295254,
@@ -303,7 +303,7 @@ RoomPic.create!(
 Room.create!(
   title: "Aircraft Carrier",
   host_id: 7,
-  room_type: "Whole Facility",
+  room_type: "Whole",
   price: 9000,
   location: "Caribbean",
   lat: 18.163325568174066,

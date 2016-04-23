@@ -18,7 +18,7 @@ module.exports = {
       background                 : '#fff',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
-      borderRadius               : '15px',
+      borderRadius               : '0px',
       outline                    : 'none',
       padding                    : '20px',
       backgroundColor : 'aliceblue',

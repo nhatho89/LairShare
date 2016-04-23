@@ -1,4 +1,6 @@
 module.exports = {
+
+
     overlay : {
       position          : 'fixed',
       top               : 0,
@@ -9,6 +11,7 @@ module.exports = {
       zIndex                     : '10',
       display : 'flex',
       justifyContent : 'center'
+
 
     },
 
@@ -22,14 +25,13 @@ module.exports = {
       background                 : '#fff',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
-      borderRadius               : '15px',
       outline                    : 'none',
       padding                    : '20px',
-      height : '250px',
-      width : '450px',
+      height : '300px',
+      width : '250px',
       backgroundColor : '#f5f5f5',
-      boxShadow : '5px 5px 8px black'
-
+      boxShadow : '5px 5px 8px black',
+      borderRadius : 0
 
     }
   };

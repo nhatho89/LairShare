@@ -33,6 +33,7 @@ var LoginModalForm = React.createClass({
 
   },
 
+  // <img className="username-icon" src="/assets/icons/social.png"></img>
   render: function() {
     return(
       <form
@@ -41,7 +42,7 @@ var LoginModalForm = React.createClass({
          onSubmit={this.handleSubmit}>
         <div className="auth-input">
           <div className="username-icon-container">
-            <img className="username-icon" src="/assets/icons/social.png"></img>
+            <i className="fa fa-user fa-lg" aria-hidden="true"></i>
           </div>
             <input
                 type="text"
@@ -55,7 +56,7 @@ var LoginModalForm = React.createClass({
         </div>
         <div className="auth-input">
           <div className="username-icon-container">
-            <img className="username-icon" src="/assets/icons/lock-1.png"></img>
+            <i className="fa fa-lock fa-lg" aria-hidden="true"></i>
           </div>
           <input
             type="password"

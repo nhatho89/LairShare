@@ -142,7 +142,9 @@
 }
 
 .room-show-price {
-  border-bottom: 5px solid silver;
+  background-color: #4F5152;
+  border: 1px solid #4F5152;
+  border-top: 2px solid #4F5152;
   width: 100%;
 }
 
@@ -150,8 +152,9 @@
   text-align: center;
 }
 
-.room-show-price-text h1 {
-  color: #1178B3;
+.room-show-price-text p {
+  font-size: 16px;
+  color: white;
 }
 
 .map-reserve-container {
@@ -160,8 +163,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border: 5px solid silver;
-  height: 540px;
+  border: 1px solid silver;
 }
 
 .date-container {

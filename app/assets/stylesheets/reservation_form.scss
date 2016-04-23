@@ -8,9 +8,9 @@
 .reservation-review-container {
   display: flex;
   flex-direction: column;
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-top: 5%;
+  margin-right: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .reserve-room-info {
@@ -33,9 +33,13 @@ ul {
 }
 
 .reserve-left {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 20px;
+  margin-right: 10px;
   width: 350px;
+}
+
+#message-host-form {
+  width: 300px;
 }
 
 .reserve-button {
