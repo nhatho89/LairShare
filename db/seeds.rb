@@ -334,6 +334,108 @@ RoomPic.create!(
 )
 
 
+Room.create!(
+  title: "Palace",
+  host_id: 6,
+  room_type: "Shared",
+  price: 7000,
+  location: "Caribbean",
+  lat: 18.288245,
+  lng: -62.940745,
+  primary_photo_url: 'assets/mansion/mansion-1.jpg',
+  max_sleep_num: 400,
+  description: "A palace fit for a king. You've done the work building up your empire. Now relax and run the operation in a peaceful mansion secluded from those that want to do you harm."
+
+)
+
+RoomPic.create!(
+  room_id: 10,
+  pic_url: 'assets/mansion/mansion-1.jpg'
+)
+
+RoomPic.create!(
+  room_id: 10,
+  pic_url: 'assets/mansion/mansion-3.jpg'
+)
+
+RoomPic.create!(
+  room_id: 10,
+  pic_url: 'assets/mansion/mansion-2.jpg'
+)
+RoomPic.create!(
+  room_id: 10,
+  pic_url: 'assets/mansion/mansion-4.jpg'
+)
+
+
+Room.create!(
+  title: "Super Yacht",
+  host_id: 7,
+  room_type: "Whole",
+  price: 4000,
+  location: "New York",
+  lat: 40.819729,
+  lng: -73.778917,
+  primary_photo_url: 'assets/super_yacht/yacht-1.jpg',
+  max_sleep_num: 200,
+  description: "A floating paradise that happens to be armed to the teeth. Sail safe and relaxed on this super yacht!"
+
+)
+
+RoomPic.create!(
+  room_id: 11,
+  pic_url: 'assets/super_yacht/yacht-1.jpg'
+)
+
+RoomPic.create!(
+  room_id: 11,
+  pic_url: 'assets/super_yacht/yacht-3.jpeg'
+)
+
+RoomPic.create!(
+  room_id: 11,
+  pic_url: 'assets/super_yacht/yacht-2.jpg'
+)
+RoomPic.create!(
+  room_id: 11,
+  pic_url: 'assets/super_yacht/yacht-4.jpg'
+)
+
+
+Room.create!(
+  title: "Air Ship",
+  host_id: 3,
+  room_type: "Private",
+  price: 7000,
+  location: "San Francisco",
+  lat: 37.824397,
+  lng: -122.501085,
+  primary_photo_url: 'assets/blimp/blimp-1.jpg',
+  max_sleep_num: 300,
+  description: "You are literally untouchable up here. Floating above the clouds, you can take your operation anywhere in the world!"
+
+)
+
+RoomPic.create!(
+  room_id: 12,
+  pic_url: 'assets/blimp/blimp-1.jpg'
+)
+
+RoomPic.create!(
+  room_id: 12,
+  pic_url: 'assets/blimp/blimp-3.jpg'
+)
+
+RoomPic.create!(
+  room_id: 12,
+  pic_url: 'assets/blimp/blimp-2.jpg'
+)
+RoomPic.create!(
+  room_id: 12,
+  pic_url: 'assets/blimp/blimp-4.jpg'
+)
+
+
 
 Reservation.create!(
   room_id: "4",
@@ -368,8 +470,8 @@ Reservation.create!(
   room_id: "4",
   guest_id: "1",
   guest_num: "200",
-  start_date: "2016-4-07",
-  end_date: "2016-4-12",
+  start_date: "2016-5-07",
+  end_date: "2016-5-12",
   status: "1"
 )
 
@@ -377,8 +479,8 @@ Reservation.create!(
   room_id: "5",
   guest_id: "1",
   guest_num: "500",
-  start_date: "2016-4-07",
-  end_date: "2016-4-12",
+  start_date: "2016-5-07",
+  end_date: "2016-5-12",
   status: "1"
 )
 
@@ -387,7 +489,7 @@ Reservation.create!(
   room_id: "2",
   guest_id: "1",
   guest_num: "100",
-  start_date: "2016-4-07",
-  end_date: "2016-4-12",
+  start_date: "2016-5-07",
+  end_date: "2016-5-12",
   status: "1"
 )
