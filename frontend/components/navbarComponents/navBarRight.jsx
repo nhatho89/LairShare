@@ -41,11 +41,11 @@ var NavBarRight = React.createClass({
       display = (
         <div className="signed-out-container">
           <div className="signin-signout">
-            <div className="sign-in-button" onClick={this.props.openSigninModal}>
-              Sign In
+            <div className="sign-in-button dropdown-container" onClick={this.props.openSigninModal}>
+              <p className="auth-text">Sign In</p>
             </div>
-            <div className="sign-up-button" onClick={this.props.openSignupModal}>
-              Sign Up
+            <div className="sign-up-button dropdown-container" onClick={this.props.openSignupModal}>
+              <p className="auth-text">Sign Up</p>
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@ var NavBarLeft = React.createClass({
         <ul>
           <li className="absolute-logo"><a href="/#"><img className="lairshare-logo" id="lairshare-logo-container" src="/assets/lairshare_logo_rec.png" onClick={this.scrollToElement}></img></a></li>
 
-          <div className="explore-dropdown">
+          <div className="explore-dropdown dropdown-container">
             <p className="explore-dropdown explore-dropdown-text" id="explore-dropdown-text" onClick={this.scrollToElement}>Explore</p>
             <div className="dropdown-content">
               <a className="logo" href="/#/search/San-Francisco">San Francisco</a>
@@ -55,14 +55,14 @@ var NavBarLeft = React.createClass({
             </div>
           </div>
 
-          <div className="explore-dropdown">
+          <div className="explore-dropdown dropdown-container">
             <p className="explore-dropdown explore-dropdown-text" id="customers-dropdown-text" onClick={this.scrollToElement}>Customers</p>
             <div className="dropdown-content">
               <a className="logo" id="customers-dropdown-text" onClick={this.scrollToElement} >Testimonies</a>
             </div>
           </div>
 
-          <div className="explore-dropdown">
+          <div className="explore-dropdown dropdown-container">
             <p className="explore-dropdown explore-dropdown-text" id="connect-dropdown-text" onClick={this.scrollToElement}>Connect</p>
             <div className="dropdown-content">
               <a className="icon-linkedin logo" id="fa-row" href="https://www.linkedin.com/in/nhatho89"><i className="fa fa-linkedin fa-lg" aria-hidden="true"></i><p>&nbsp;&nbsp;&nbsp;LinkedIn</p></a>

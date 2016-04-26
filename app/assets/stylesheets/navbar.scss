@@ -198,3 +198,46 @@
 #fa-row p {
   margin: 0;
 }
+
+.dropdown-container > p:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 20px;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.dropdown-container > p:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.dropdown-container > p {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-container > p:hover {
+  color: white;
+}
+
+.auth-text {
+  height: 67px;
+  margin: 0px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.signin-signout > div {
+  padding: 0px;
+}
