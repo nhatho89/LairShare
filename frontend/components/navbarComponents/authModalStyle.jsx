@@ -26,9 +26,9 @@ module.exports = {
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
       outline                    : 'none',
-      padding                    : '20px',
-      height : '300px',
-      width : '250px',
+      padding                    : '5px',
+      height : '320px',
+      width : '270px',
       backgroundColor : '#f5f5f5',
       boxShadow : '5px 5px 8px black',
       borderRadius : 0

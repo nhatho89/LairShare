@@ -35,13 +35,44 @@ var NavBar = React.createClass({
   },
 
   componentDidMount: function() {
+    // this.addScrollFollow();
     this.userListener = SessionStore.addListener(this.userChange);
     SessionActions.fetchSession();
   },
 
+  // componentWillUnmount: function() {
+  //   $(window).off('scroll', this.scrollListener);
+  //
+  // },
+
   userChange: function() {
     this.setState({ user: SessionStore.currentUser() });
   },
+
+  // addScrollFollow: function() {
+  //   $(window).on('scroll', this.scrollListener );
+  // },
+  //
+  // scrollListener: function() {
+  //   var element = $('#navbar').offset().top;
+  //
+  //   // element.css('position', 'relative');
+  //
+  //     var subtitle = $('#subtitle').offset().top,
+  //     scrollTop = $(window).scrollTop(),
+  //     topPos
+  //
+  //
+  //     if (subtitle <= element) {
+  //       $("#navbar").css("backgroundColor", "#1178B3")
+  //     } else {
+  //       $("#navbar").css("backgroundColor", "#1178B3")
+  //     }
+  //
+  //     // element.stop(false, false).animate({
+  //     //   top: topPos
+  //     // }, 0);
+  // },
 
   render: function() {
 
