@@ -35,9 +35,10 @@ var NavBar = React.createClass({
   },
 
   componentDidMount: function() {
-    if ($('#subtitle')) {
-      this.addScrollFollow();
-    }
+    // debugger
+    // if ($('#subtitle').offset() !== undefined) {
+    //   this.addScrollFollow();
+    // }
     this.userListener = SessionStore.addListener(this.userChange);
     SessionActions.fetchSession();
   },

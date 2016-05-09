@@ -111,7 +111,7 @@ var SearchIndex = React.createClass({
       redirect = (
         <div className="redirect-to-sf">
           <h4>
-            Doesn't look like anything is here, try these:&#13;&#10;
+            Looks like nothing is here, try these:&#13;&#10;
           </h4>
           <Link to="/search/San-Francisco" className="link-to-city">
             &nbsp;&nbsp;San Francisco

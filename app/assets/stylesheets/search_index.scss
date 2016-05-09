@@ -94,7 +94,10 @@ hr {
 
 .price-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: relative;
+  left: 10px;
+  width: 95%;
 }
 
 .price-range-container-right {

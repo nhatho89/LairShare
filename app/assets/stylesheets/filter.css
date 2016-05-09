@@ -1,6 +1,10 @@
 .filter-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: relative;
+  left: 10px;
+  /*right: 10px;*/
+  width: 95%;
 }
 
 .filter-col {
@@ -32,7 +36,10 @@
 
 .room-type-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: relative;
+  left: 10px;
+  width: 95%;
 }
 
 /*.room-type-title-container {
