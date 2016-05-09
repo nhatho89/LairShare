@@ -97,7 +97,7 @@ var RoomShow = React.createClass({
         topPos,
         navBar = $('#navbar').offset().top;
       if (roomShowEl - 67 <= navBar) {
-        topPos = navBar - 543
+        topPos = navBar - 535
       } else {
         topPos = 0;
       }
