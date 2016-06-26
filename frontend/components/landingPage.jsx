@@ -30,7 +30,7 @@ var LandingPage = React.createClass({
       // var subtitle = $('#subtitle').offset().top;
       var el = document.getElementById('navbar');
       if (150 <= element) {
-        console.log(element);
+        // console.log(element);
         $('#navbar').addClass('morph')
         // el.style.opacity = "0.0";
         // el.style.visibility = "visible";
