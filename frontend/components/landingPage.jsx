@@ -7,6 +7,41 @@ var LairShareMedia = require('./landingPageComponents/lairShareMedia');
 
 var LandingPage = React.createClass({
 
+  componentDidMount: function() {
+    // document.getElementsById('navbar').style.backgroundColor = "#4a4a4a";
+    $('#navbar').removeClass('morph')
+    this.addScrollFollow();
+  },
+
+  addScrollFollow: function() {
+    window.addEventListener('scroll', this.scrollListener);
+  },
+
+  componentWillUnmount: function() {
+    // var el = document.getElementById('navbar')
+    // el.style.backgroundColor = "#4a4a4a";
+    $('#navbar').addClass('morph')
+    window.removeEventListener('scroll', this.scrollListener);
+  },
+
+  scrollListener: function() {
+    var element = $('#navbar').offset().top;
+
+      // var subtitle = $('#subtitle').offset().top;
+      var el = document.getElementById('navbar');
+      if (150 <= element) {
+        console.log(element);
+        $('#navbar').addClass('morph')
+        // el.style.opacity = "0.0";
+        // el.style.visibility = "visible";
+      } else {
+        $('#navbar').removeClass('morph')
+        // el.style.opacity = "1";
+        // el.style.visibility = "hidden";
+      }
+
+  },
+
   getInitialState: function() {
     return (
       {startDate: null,
@@ -21,8 +56,8 @@ var LandingPage = React.createClass({
           <div className="landing-page-background-container">
             <img className="landing-page-background-photo" src="/assets/fort-jefferson.jpg"></img>
             <div className="container-title">
-              <h1>WELCOME HOME</h1>
-              <h4 id="subtitle">Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
+              <h1 id="subtitle">WELCOME HOME</h1>
+              <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
             </div>
             <SearchBar/>
           </div>

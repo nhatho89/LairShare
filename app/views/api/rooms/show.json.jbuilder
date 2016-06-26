@@ -10,8 +10,6 @@ json.max_sleep_num @room.max_sleep_num
 json.lat @room.lat
 json.lng @room.lng
 
-
-
 json.pics do
   json.array! (@room.room_pics) do |room_pic|
     json.pic_id   room_pic.id

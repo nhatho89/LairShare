@@ -93,18 +93,21 @@ var RoomShow = React.createClass({
     element.css('position', 'relative');
 
       var roomShowEl = $('.room-show-content-container').offset().top,
-        scrollTop = $(window).scrollTop(),
+        // scrollTop = $(window).scrollTop(),
         topPos,
         navBar = $('#navbar').offset().top;
       if (roomShowEl - 67 <= navBar) {
-        topPos = navBar - 535
+        // topPos = navBar - 535
+        element.css('position', 'fixed');
+        element.css('top', 67)
       } else {
-        topPos = 0;
+        topPos = 67;
+        element.css('top', 0)
       }
 
-      element.stop(false, false).animate({
-        top: topPos
-      }, 0);
+      // element.animate({
+      //   top: topPos
+      // },0);
   },
 
   addScrollFollow: function() {

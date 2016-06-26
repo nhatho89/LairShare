@@ -471,7 +471,7 @@ Reservation.create!(
   guest_id: "1",
   guest_num: "200",
   start_date: "2016-5-25",
-  end_date: "2016-5-12",
+  end_date: "2016-5-28",
   status: "1"
 )
 
@@ -480,7 +480,7 @@ Reservation.create!(
   guest_id: "1",
   guest_num: "500",
   start_date: "2016-5-25",
-  end_date: "2016-5-12",
+  end_date: "2016-5-28",
   status: "1"
 )
 
@@ -490,6 +490,6 @@ Reservation.create!(
   guest_id: "1",
   guest_num: "100",
   start_date: "2016-5-25",
-  end_date: "2016-5-12",
+  end_date: "2016-5-28",
   status: "1"
 )

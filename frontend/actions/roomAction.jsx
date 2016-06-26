@@ -3,6 +3,7 @@ var RoomConstants = require('../constants/roomConstants');
 
 var RoomActions = {
   receiveAllRooms: function(rooms){
+    
     AppDispatcher.dispatch({
       actionType: RoomConstants.ROOMS_RECEIVED,
       rooms: rooms
@@ -10,6 +11,7 @@ var RoomActions = {
   },
 
   receiveRoom: function(room){
+    
     AppDispatcher.dispatch({
       actionType: RoomConstants.ROOM_RECEIVED,
       room: room

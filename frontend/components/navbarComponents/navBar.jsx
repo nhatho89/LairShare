@@ -80,25 +80,23 @@ var NavBar = React.createClass({
   render: function() {
 
     return (
-      <div className="navbar">
+      <div>
+        <div id="navbar" className="navbar">
+          <Modal
+            isOpen={this.state.showModal}
+            onRequestClose={this.closeSigninModal}
+            closeTimeoutMS={0}
+            style={authModalStyle}>
+            <LoginForm closeModal={this.closeSigninModal}/>
+          </Modal>
 
-        <Modal
-          isOpen={this.state.showModal}
-          onRequestClose={this.closeSigninModal}
-          closeTimeoutMS={0}
-          style={authModalStyle}>
-          <LoginForm closeModal={this.closeSigninModal}/>
-        </Modal>
-
-        <Modal
-          isOpen={this.state.showSignupModal}
-          onRequestClose={this.closeSignupModal}
-          closeTimeoutMS={0}
-          style={authModalStyle}>
-          <SignupForm closeModal={this.closeSignupModal}/>
-        </Modal>
-
-        <div id="navbar" className="navbar-collapse collapse">
+          <Modal
+            isOpen={this.state.showSignupModal}
+            onRequestClose={this.closeSignupModal}
+            closeTimeoutMS={0}
+            style={authModalStyle}>
+            <SignupForm closeModal={this.closeSignupModal}/>
+          </Modal>
 
           <NavBarLeft/>
 

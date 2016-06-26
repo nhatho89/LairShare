@@ -57,8 +57,6 @@ var PriceSlider = React.createClass({
               </div>
             </div>
           </div>
-
-
         </div>
     );
   }

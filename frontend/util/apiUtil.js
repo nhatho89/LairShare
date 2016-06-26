@@ -39,7 +39,7 @@ var ApiUtil = {
 
     var filter = {};
     filter.host = host.id
-    
+
     $.get('api/rooms', filter, function(hostRooms) {
       RoomActions.receiveHostRooms(hostRooms);
     })

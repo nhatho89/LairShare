@@ -21,7 +21,7 @@ var UserUtil = {
   },
 
   createSession: function(credentials, receiveCurrentUser) {
-    // debugger
+    debugger
     $.ajax({
       url: 'api/session',
       method: "post",

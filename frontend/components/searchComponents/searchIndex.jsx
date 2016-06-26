@@ -60,7 +60,6 @@ var SearchIndex = React.createClass({
     var newParams = FilterStore.params();
     this.setState({ filterParams: newParams });
     ApiUtil.fetchAllRooms();
-
   },
 
   _showMaps: function(centerLatLng) {

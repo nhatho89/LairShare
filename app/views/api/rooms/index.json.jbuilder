@@ -11,5 +11,11 @@ json.array! @rooms do |room|
   json.lat room.lat
   json.lng room.lng
   json.room_type room.room_type
+  json.pics do
+    json.array! (room.room_pics) do |room_pic|
+      json.pic_id   room_pic.id
+      json.pic_url  room_pic.pic_url
+    end
+  end
 
 end
