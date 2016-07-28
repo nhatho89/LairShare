@@ -72,6 +72,19 @@ h4, h1 {
   color: white;
   margin-top: 40px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 silver, 0 -1px silver;
+  position: absolute;
+  z-index: 2;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+}
+
+#subtitle {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .landing-page-background {
