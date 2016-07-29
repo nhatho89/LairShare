@@ -56,7 +56,7 @@ var LandingPage = React.createClass({
         <div className="landing-page-wrapper">
           <div className="landing-page-background-container">
             <div className="container-title">
-              <video id="landing-video" src="http://res.cloudinary.com/dluf4bbwq/video/upload/v1469747459/LairShareLanding_pmpohe.mp4" autoPlay loop muted>
+              <video id="landing-video" src="http://res.cloudinary.com/dluf4bbwq/video/upload/v1469768987/LairShare_cjceks.mp4" autoPlay loop muted>
               </video>
               <h1 id="subtitle">WELCOME HOME</h1>
               <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
