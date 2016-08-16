@@ -23,13 +23,13 @@ var City = React.createClass({
     return (
       <div className="city" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
         <div className="city-overlap">
-          <img className="city-image" id={this.props.city + "-1"} onClick={this.handleClick} src={"/assets/" + this.props.city + "-1"}/>
+          <img className="city-image" id={this.props.city + "-1"} onClick={this.handleClick} src={"http://res.cloudinary.com/dgni2wt1u/image/upload/v1471298401/" + this.props.city + "-1.jpg"}/>
           <div className="city-title-container">
             <h4 className="city-title-name" onClick={this.handleClick}>{this.props.name}</h4>
           </div>
         </div>
         <div className="city-overlap">
-          <img className="city-image-1" onClick={this.handleClick} src={"/assets/" + this.props.city + "-2"}/>
+          <img className="city-image-1" onClick={this.handleClick} src={"http://res.cloudinary.com/dgni2wt1u/image/upload/v1471298401/" + this.props.city + "-2.jpg"}/>
         </div>
       </div>
     );
