@@ -59,7 +59,7 @@ var LandingPage = React.createClass({
               <video id="landing-video" src="http://res.cloudinary.com/dxqtuwks5/video/upload/v1471303546/LairShareFast_pwhoj2.mp4" autoPlay loop muted>
               </video>
               <h1 id="subtitle">WELCOME HOME</h1>
-              <h4>Rent secret lairs from other super villains to expand your vincinity of chaos!!</h4>
+              <h4>Rent secret lairs from other super villains to expand your vicinity of chaos!!</h4>
             </div>
             <SearchBar/>
           </div>
