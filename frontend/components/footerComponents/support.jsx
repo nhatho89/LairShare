@@ -15,7 +15,6 @@ var Support = React.createClass({
       </div>
     );
   }
-
 });
 
 module.exports = Support;

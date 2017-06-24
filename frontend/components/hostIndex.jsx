@@ -22,7 +22,6 @@ var HostIndex = React.createClass({
 
   componentDidMount: function() {
     RoomAction.fetchHostRooms(SessionStore.currentUser());
-    // this.updateRooms()
   },
 
   updateRooms: function() {
@@ -35,13 +34,9 @@ var HostIndex = React.createClass({
     this.roomListener.remove();
   },
 
-
-
   render: function() {
     var that = this;
     var content;
-
-
 
     if (this.state.hostRooms) {
       content = (

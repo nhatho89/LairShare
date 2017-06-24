@@ -15,7 +15,7 @@ var Link = require('react-router').Link;
 var SearchIndex = React.createClass({
   mixins: [History],
 
-  getInitialState: function() {
+  getInitialState() {
     return({
       rooms: RoomStore.all(),
       filterParams: FilterStore.params(),
@@ -24,114 +24,96 @@ var SearchIndex = React.createClass({
     });
   },
 
-  _updateRooms: function() {
+  _updateRooms() {
     this.setState({
       rooms: RoomStore.all()
     });
   },
 
-  _updateMapsStatus: function() {
-
+  _updateMapsStatus() {
       this._startSearchProcess();
-
   },
 
-  _startSearchProcess: function() {
+  _startSearchProcess() {
     this._geoConverter(this.props.params.loc);
   },
 
-
-  _geoConverter: function(locStr) {
+  _geoConverter(locStr) {
     this.geocoder = new google.maps.Geocoder();
     var _showMaps = this._showMaps;
-    this.geocoder.geocode({"address": locStr}, function(results, status){
+    this.geocoder.geocode({"address": locStr}, function(results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         var latLng = {
           lat: results[0].geometry.location.lat(),
           lng: results[0].geometry.location.lng()
         };
-
         _showMaps(latLng);
       }
     });
   },
 
-  _filtersChanged: function () {
+  _filtersChanged() {
     var newParams = FilterStore.params();
     this.setState({ filterParams: newParams });
     ApiUtil.fetchAllRooms();
   },
 
-  _showMaps: function(centerLatLng) {
-
+  _showMaps(centerLatLng) {
     this.setState({
       showResult: true,
       centerLatLng: centerLatLng
     });
   },
 
-  componentWillReceiveProps: function(newProps) {
-
+  componentWillReceiveProps(newProps) {
     var newLocStr = newProps.params.loc;
-
     this._geoConverter(newProps.params.loc);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this.roomToken.remove();
     this.filterListener.remove();
-
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     this.currentLocStr = this.props.params.loc;
-
     this._startSearchProcess();
     this.roomToken = RoomStore.addListener(this._updateRooms);
     ApiUtil.fetchAllRooms();
     this.filterListener = FilterStore.addListener(this._filtersChanged);
-
   },
 
-
-  handleMarkerClick: function (room) {
+  handleMarkerClick(room) {
     this.props.history.pushState(null, "rooms/" + room.id);
   },
 
+  _renderDefaultIndex() {
+    if (Object.keys(this.state.rooms).length === 0) {
+    return (
+      <div className="redirect-to-sf">
+        <h4>
+          Looks like nothing is here, try these:&#13;&#10;
+        </h4>
+        <Link to="/search/San-Francisco" className="link-to-city">
+          &nbsp;&nbsp;San Francisco
+        </Link>
+        <Link to="/search/New-York-City" className="link-to-city">
+          &nbsp;&nbsp;New York City
+        </Link>
+        <Link to="/search/Saint-Martin" className="link-to-city">
+          &nbsp;&nbsp;Caribbean
+        </Link>
+      </div>
 
+    )} else {
+      return null;
+    }
+  },
 
-  render: function() {
+  render() {
+    const redirect = this._renderDefaultIndex();
 
-    var showResult = this.state.showResult;
-    var redirect;
-
-      if (Object.keys(this.state.rooms).length === 0) {
-
-      redirect = (
-        <div className="redirect-to-sf">
-          <h4>
-            Looks like nothing is here, try these:&#13;&#10;
-          </h4>
-          <Link to="/search/San-Francisco" className="link-to-city">
-            &nbsp;&nbsp;San Francisco
-          </Link>
-          <Link to="/search/New-York-City" className="link-to-city">
-            &nbsp;&nbsp;New York City
-          </Link>
-          <Link to="/search/Saint-Martin" className="link-to-city">
-            &nbsp;&nbsp;Caribbean
-          </Link>
-        </div>
-
-      )} else {
-        redirect =  (
-
-          <div></div>
-        )
-      }
-
-
-    if (showResult) {
+    if (this.state.showResult) {
       return (
         <div className="search-container">
           <div className="left-half">

@@ -27,8 +27,8 @@ var RoomShow = React.createClass({
     router: React.PropTypes.func
   },
   getInitialState: function () {
-    var roomId = this.props.params.roomId;
-    var room = RoomStore.find(roomId) || {};
+    let roomId = this.props.params.roomId;
+    let room = RoomStore.find(roomId) || {};
     return ({
       room: room,
       showSigninModal: false,
@@ -58,8 +58,8 @@ var RoomShow = React.createClass({
 
   _roomChanged: function () {
 
-    var roomId = this.props.params.roomId;
-    var room = RoomStore.find(roomId);
+    let roomId = this.props.params.roomId;
+    let room = RoomStore.find(roomId);
     this.setState({
       room: room,
       centerLatLng: {lat: room.lat, lng: room.lng}
@@ -88,26 +88,18 @@ var RoomShow = React.createClass({
   },
 
   scrollListener: function() {
-    var element = $('.map-reserve-container');
-
+    let element = $('.map-reserve-container');
     element.css('position', 'relative');
-
-      var roomShowEl = $('.room-show-content-container').offset().top,
-        // scrollTop = $(window).scrollTop(),
+      let roomShowEl = $('.room-show-content-container').offset().top,
         topPos,
         navBar = $('#navbar').offset().top;
       if (roomShowEl - 67 <= navBar) {
-        // topPos = navBar - 535
         element.css('position', 'fixed');
         element.css('top', 67)
       } else {
         topPos = 67;
         element.css('top', 0)
       }
-
-      // element.animate({
-      //   top: topPos
-      // },0);
   },
 
   addScrollFollow: function() {
@@ -115,9 +107,7 @@ var RoomShow = React.createClass({
   },
 
   render: function () {
-
-    var button;
-
+    let button;
     if (SessionStore.currentUser().username) {
       button = (
         <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
@@ -127,30 +117,28 @@ var RoomShow = React.createClass({
         )
     }
 
-    var roomPics;
-    var carousel;
+    let roomPics;
+    let carousel;
     if (this.state.room) {
-      var centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
+      let centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
     }
-
 
     if (this.state.room.pics) {
       roomPics = this.state.room.pics;
 
-      carousel = (
-          <Carousel>
-            <img className="carousel-pic" src={roomPics[0].pic_url}/>
-            <img className="carousel-pic" src={roomPics[1].pic_url}/>
-            <img className="carousel-pic" src={roomPics[2].pic_url}/>
-            <img className="carousel-pic" src={roomPics[3].pic_url}/>
-          </Carousel>
+      const carousel = (
+        <Carousel>
+          <img className="carousel-pic" src={roomPics[0].pic_url}/>
+          <img className="carousel-pic" src={roomPics[1].pic_url}/>
+          <img className="carousel-pic" src={roomPics[2].pic_url}/>
+          <img className="carousel-pic" src={roomPics[3].pic_url}/>
+        </Carousel>
         )
       } else {
-
         carousel = "";
       }
 
-    var rooms = [];
+    let rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
     }

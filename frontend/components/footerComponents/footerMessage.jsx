@@ -13,7 +13,6 @@ var FooterMessage = React.createClass({
       </div>
     );
   }
-
 });
 
 module.exports = FooterMessage;

@@ -1,37 +1,30 @@
-// var UserAction = require('../actions/userAction.jsx');
 var SessionStore = require('../stores/sessionStore');
 
 
 var UserUtil = {
   createUserAccount: function(credentials, receiveNewUser) {
-    debugger
     $.ajax({
       url: 'api/users',
       method: "post",
       data: {user: credentials},
       success: function(user){
-        debugger
                 receiveNewUser(user);
               },
       error: function(error, status){
-                debugger;
                 // console.log(status)
               }
     });
   },
 
   createSession: function(credentials, receiveCurrentUser) {
-    debugger
     $.ajax({
       url: 'api/session',
       method: "post",
       data: {user: credentials},
       success: function(user) {
-        // debugger
                 receiveCurrentUser(user);
               },
       error: function(error, status) {
-                debugger;
                 // console.log(status);
               }
     });
@@ -49,7 +42,6 @@ var UserUtil = {
                   }
                 },
       error: function(error, status){
-                  // debugger;
                   console.log("error");
                 }
     });
@@ -64,7 +56,6 @@ var UserUtil = {
                   removeCurrentUser();
                 },
       error: function(error, status){
-                  debugger;
                   // console.log(status)
                 }
     });

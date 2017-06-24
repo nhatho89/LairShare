@@ -6,7 +6,6 @@ var PriceSlider = require('./filterComponents/price_slider.jsx');
 var Filters = React.createClass({
 
   render: function(){
-    // <Bounds/>
     return (
       <div className="search-filters">
         <div className="dates-guests">

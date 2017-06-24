@@ -42,13 +42,6 @@ var FilterActions = {
       dates: value
     })
   },
-  // 
-  // resetDates: function() {
-  //   AppDispatcher.dispatch({
-  //     actionType: FilterConstants.RESET_DATES
-  //   });
-  // }
-
 };
 
 module.exports = FilterActions;

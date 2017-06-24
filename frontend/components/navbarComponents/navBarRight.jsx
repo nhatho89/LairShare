@@ -19,7 +19,6 @@ var NavBarRight = React.createClass({
     this.history.push({pathname: "host/"})
   },
 
-  // <a onClick={this.redirectHostProfile}>My Rooms</a>
   render: function() {
     var display;
     if (this.props.user.username) {

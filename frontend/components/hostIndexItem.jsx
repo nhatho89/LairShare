@@ -16,7 +16,6 @@ var HostIndexItem = React.createClass({
     var handleItemClick = this.handleItemClick.bind(null, hostRoom);
 
     var content;
-    // debugger
     if (hostRoom) {
         content = (
           <div className="trip-item-image" onClick={this.handleItemClick}>
@@ -28,7 +27,7 @@ var HostIndexItem = React.createClass({
         <div>
           No Host Room
         </div>
-    )
+      )
     }
 
     return (

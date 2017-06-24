@@ -26,8 +26,6 @@ var TripList = React.createClass({
 
     var trips = this.props.trips;
     var trip;
-    // var className = "list-group-item";
-    // var classNameActive = "list-group-item active"
     var that = this;
     var listItems = Object.keys(trips).map(function(tripId) {
       trip = trips[tripId];
@@ -41,8 +39,6 @@ var TripList = React.createClass({
           />
       );
     });
-
-    // debugger
 
     return (
       <div className="panel">

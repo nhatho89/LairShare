@@ -35,7 +35,6 @@ SessionStore.__onDispatch = function (payload) {
       SessionStore.__emitChange();
       break;
     case SessionConstants.RECEIVEUSER:
-    // debugger
       receiveUser(payload.user);
       SessionStore.__emitChange();
       break;

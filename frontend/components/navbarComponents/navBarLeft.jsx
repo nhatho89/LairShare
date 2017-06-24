@@ -5,14 +5,6 @@ var History = require('react-router').History;
 var NavBarLeft = React.createClass({
   mixins: [History],
 
-  // scrollToView: function() {
-  //   var element = document.getElementById("explore-container");
-  //   setTimeout(function(){
-  //   $('html, body').animate({
-  //     scrollTop: element.offsetTop}, "slow");
-  //   }, 251);
-  // },
-
   scrollToElement: function(e) {
     var element;
     if (e.target.id === "explore-dropdown-text") {
@@ -31,16 +23,11 @@ var NavBarLeft = React.createClass({
 					scrollTop: element.offsetTop - 30}, "slow");
 			}, 251);
     } else {
-      // this.history.push({pathname: "/#"});
       this.history.pushState(null, "/#");
-      // this.scrollToView();
     }
   },
 
-
-  // <a className="logo" href="/#/hostform">Be A Host</a>
   render: function() {
-
     return (
       <div className="navbar-left">
         <ul>
@@ -76,7 +63,6 @@ var NavBarLeft = React.createClass({
       </div>
     );
   }
-
 });
 
 module.exports = NavBarLeft;

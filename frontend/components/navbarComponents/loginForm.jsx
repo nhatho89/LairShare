@@ -33,7 +33,6 @@ var LoginModalForm = React.createClass({
 
   },
 
-  // <img className="username-icon" src="/assets/icons/social.png"></img>
   render: function() {
     return(
       <form

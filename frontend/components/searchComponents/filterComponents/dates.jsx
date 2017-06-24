@@ -63,15 +63,9 @@ var StayDates = React.createClass({
   },
 
   render: function() {
-    // <div className="dates-calendar">
-    //   <label>Check In</label>
-    //   <label>Check Out</label>
-    // </div>
-
     var dates;
 
     if (this.state.guestNeeded) {
-
       dates = (
         <div className="filter-row">
           <div className="dates-title">
@@ -89,9 +83,7 @@ var StayDates = React.createClass({
           <Guests/>
         </div>
       )
-
     } else {
-
       dates = (
         <div className="filter-col">
           <div className="dates-title" style={{width: "100%"}}>
@@ -111,10 +103,6 @@ var StayDates = React.createClass({
         </div>
       )
     }
-
-
-
-
     return (
       dates
       );

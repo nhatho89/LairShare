@@ -6,10 +6,6 @@ var TripListItem = React.createClass({
     this.props.highlightTripId(this.props.trip.id);
   },
 
-  // shouldComponentUpdate : function(newProps){
-  //   return this.props.activeTripId !== newProps.activeTripId;
-  // },
-
   componentWilllMount: function() {
     var trip = this.props.trip;
     var className = "list-group-item";
@@ -23,13 +19,7 @@ var TripListItem = React.createClass({
     var trip = this.props.trip;
     var className = "list-group-item";
     var activeClassName = "";
-    // if(trip.id === this.props.activeTripId) {
-    //   debugger
-    //   var activeClassName = " active";
-    // } else {
-    //   var activeClassName = "";
-    // }
-    console.log(this.props.activeTripId);
+
     return(
       <div onClick={this.handleClick} className={className + activeClassName}>
         <p className="list-group-item-heading">{trip.location + ": " + trip.title}</p>

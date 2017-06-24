@@ -35,10 +35,6 @@ var NavBar = React.createClass({
   },
 
   componentDidMount: function() {
-    // debugger
-    // if ($('#subtitle').offset() !== undefined) {
-    //   this.addScrollFollow();
-    // }
     this.userListener = SessionStore.addListener(this.userChange);
     SessionActions.fetchSession();
   },
@@ -58,23 +54,15 @@ var NavBar = React.createClass({
 
   scrollListener: function() {
     var element = $('#navbar').offset().top;
-
-    // element.css('position', 'relative');
-
       var subtitle = $('#subtitle').offset().top,
       scrollTop = $(window).scrollTop(),
       topPos
-
 
       if (subtitle <= element) {
         $("#navbar").css("backgroundColor", "rgb(74, 74, 74)")
       } else {
         $("#navbar").css("backgroundColor", "#1178B3")
       }
-
-      // element.stop(false, false).animate({
-      //   top: topPos
-      // }, 0);
   },
 
   render: function() {

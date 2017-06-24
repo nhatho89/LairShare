@@ -29,3 +29,8 @@ LairShare is a single-page application built on Rails and React.js, with many de
 ## Future Implementations
 
 - Room reviews available to previous renters
+- Room average rating displays under each room in search results
+- Search result boxes will display several photos of the room
+- Room information page will show previous renter testimonials
+- Users can register to host rooms
+- Map tags bounce and displays price has you hover on each search result

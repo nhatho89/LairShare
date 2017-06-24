@@ -15,7 +15,6 @@ var LearnMore = React.createClass({
       </div>
     );
   }
-
 });
 
 module.exports = LearnMore;

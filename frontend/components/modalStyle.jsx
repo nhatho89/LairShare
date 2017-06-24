@@ -9,8 +9,6 @@ module.exports = {
       zIndex                     : '10',
       justifyContent : 'center',
       display : 'flex'
-
-
     },
     content : {
       position                   : 'relative',
@@ -31,6 +29,3 @@ module.exports = {
       bottom            : 0
     }
   };
-
-
-  

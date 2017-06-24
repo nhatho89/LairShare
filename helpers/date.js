@@ -20,7 +20,6 @@ module.exports = {
     d1 = Date.parse(dateStr);
     dmin = Date.parse(min);
     dmax = Date.parse(max);
-    // debugger;
     return (d1 >= dmin && d1 <= dmax);
   },
 
