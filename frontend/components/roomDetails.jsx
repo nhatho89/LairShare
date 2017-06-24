@@ -3,7 +3,8 @@ var React = require('react');
 var RoomDetails = React.createClass({
 
   render: function() {
-    var hostPicture;
+    let hostPicture, host;
+
     if (this.props.room.host) {
       hostPicture = (<img className="room-show-host-picture" src={this.props.room.host.profile_pic}/>);
       host = (<p>{this.props.room.host.username}</p>);

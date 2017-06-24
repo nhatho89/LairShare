@@ -27,8 +27,8 @@ var RoomShow = React.createClass({
     router: React.PropTypes.func
   },
   getInitialState: function () {
-    let roomId = this.props.params.roomId;
-    let room = RoomStore.find(roomId) || {};
+    var roomId = this.props.params.roomId;
+    var room = RoomStore.find(roomId) || {};
     return ({
       room: room,
       showSigninModal: false,
@@ -58,8 +58,8 @@ var RoomShow = React.createClass({
 
   _roomChanged: function () {
 
-    let roomId = this.props.params.roomId;
-    let room = RoomStore.find(roomId);
+    var roomId = this.props.params.roomId;
+    var room = RoomStore.find(roomId);
     this.setState({
       room: room,
       centerLatLng: {lat: room.lat, lng: room.lng}
@@ -88,9 +88,9 @@ var RoomShow = React.createClass({
   },
 
   scrollListener: function() {
-    let element = $('.map-reserve-container');
+    var element = $('.map-reserve-container');
     element.css('position', 'relative');
-      let roomShowEl = $('.room-show-content-container').offset().top,
+      var roomShowEl = $('.room-show-content-container').offset().top,
         topPos,
         navBar = $('#navbar').offset().top;
       if (roomShowEl - 67 <= navBar) {
@@ -107,7 +107,7 @@ var RoomShow = React.createClass({
   },
 
   render: function () {
-    let button;
+    var button;
     if (SessionStore.currentUser().username) {
       button = (
         <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
@@ -117,16 +117,16 @@ var RoomShow = React.createClass({
         )
     }
 
-    let roomPics;
-    let carousel;
+    var roomPics;
+    var carousel;
     if (this.state.room) {
-      let centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
+      var centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
     }
 
     if (this.state.room.pics) {
       roomPics = this.state.room.pics;
 
-      const carousel = (
+      carousel = (
         <Carousel>
           <img className="carousel-pic" src={roomPics[0].pic_url}/>
           <img className="carousel-pic" src={roomPics[1].pic_url}/>
@@ -138,7 +138,7 @@ var RoomShow = React.createClass({
         carousel = "";
       }
 
-    let rooms = [];
+    var rooms = [];
     if (this.state.room) {
       rooms.push(this.state.room);
     }
