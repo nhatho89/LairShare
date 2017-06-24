@@ -16,3 +16,13 @@ json.pics do
     json.pic_url  room_pic.pic_url
   end
 end
+
+json.reviews do
+  json.array! (@room.reviws) do |review|
+    json.id review.id
+    json.body review.body
+    json.rating review.rating
+    json.room review.room
+    json.user review.user
+  end
+end

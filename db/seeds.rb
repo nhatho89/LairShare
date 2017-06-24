@@ -493,3 +493,10 @@ Reservation.create!(
   end_date: "2016-5-28",
   status: "1"
 )
+
+Review.create!(
+  user_id: 1,
+  room_id: 1,
+  rating: 4,
+  body: "It was a nice room, but the many windows presented opportunities for superheroes to spy one me. I swear I saw Xavier creeping on my windows."
+)
