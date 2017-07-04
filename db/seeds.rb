@@ -500,3 +500,10 @@ Review.create!(
   rating: 4,
   body: "It was a nice room, but the many windows presented opportunities for superheroes to spy one me. I swear I saw Xavier creeping on my windows."
 )
+
+Review.create!(
+  user_id: 3,
+  room_id: 1,
+  rating: 1,
+  body: "I had a horrible time here. The bathrooms were not stocked with essentials and there were leaks in the theater room. Have you ever watched Titanic under water while water is rushing in? I wasn't trying to watch a horror film! Would not stay again!"
+)

@@ -18,7 +18,7 @@ json.pics do
 end
 
 json.reviews do
-  json.array! (@room.reviws) do |review|
+  json.array! (@room.reviews) do |review|
     json.id review.id
     json.body review.body
     json.rating review.rating

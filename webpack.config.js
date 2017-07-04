@@ -18,11 +18,20 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+			},
+      {
+        test: /\.scss$/,
+        loader: 'style!css?localIdentName=[path][name]--[local]!postcss-loader!sass',
       }
+
     ]
   },
   devtool: 'source-maps',
   resolve: {
-    extensions: ["", ".js", ".jsx" ]
+    extensions: ["", ".js", ".jsx", ".scss", ".css" ]
   }
 };

@@ -17,6 +17,7 @@ var Date = require('./searchComponents/filterComponents/dates.jsx');
 var SessionActions = require('../actions/sessionAction.js');
 var modalStyle = require('./modalStyle');
 
+
 var PropTypes = React.PropTypes;
 
 var RoomShow = React.createClass({
@@ -106,22 +107,9 @@ var RoomShow = React.createClass({
     $(window).on('scroll', this.scrollListener );
   },
 
-  render: function () {
-    var button;
-    if (SessionStore.currentUser().username) {
-      button = (
-        <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
-      ) } else {
-        button = (
-        <button className="reserve-lair-button" onClick={this.openSigninModal}>Sign In to Reserve!</button>
-        )
-    }
-
-    var roomPics;
-    var carousel;
-    if (this.state.room) {
-      var centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
-    }
+  _renderCarousel: function() {
+    let roomPics;
+    let carousel;
 
     if (this.state.room.pics) {
       roomPics = this.state.room.pics;
@@ -137,18 +125,11 @@ var RoomShow = React.createClass({
       } else {
         carousel = "";
       }
+      return carousel;
+  },
 
-    var rooms = [];
-    if (this.state.room) {
-      rooms.push(this.state.room);
-    }
-
+  _renderSignInModal: function() {
     return (
-
-      <div className="carousel-container">
-
-      {carousel}
-
       <Modal
         isOpen={this.state.showSigninModal}
         onRequestClose={this.closeSigninModal}
@@ -156,54 +137,83 @@ var RoomShow = React.createClass({
         style={authModalStyle}>
         <LoginForm closeModal={this.closeSigninModal}/>
       </Modal>
+    )
+  },
 
+  _renderLeftContainer: function() {
+    return (
+      <div className="left-half-room">
+        <div className="room-details-container">
+          <RoomDetail room={this.state.room} />
+        </div>
+      </div>
+    );
+  },
+
+  _renderRightContainer: function() {
+    var button;
+    if (SessionStore.currentUser().username) {
+      button = (
+        <button className="reserve-lair-button" onClick={this.openModal}>Reserve Lair!</button>
+      ) } else {
+        button = (
+        <button className="reserve-lair-button" onClick={this.openSigninModal}>Sign In to Reserve!</button>
+        )
+    }
+
+    let rooms = [];
+    let centerLatLng;
+    if (this.state.room) {
+      rooms.push(this.state.room);
+      centerLatLng = {lat: this.state.room.lat, lng: this.state.room.lng}
+    }
+
+    return (
+      <div className="right-half-room">
+        <Modal
+          room={this.state.room}
+          isOpen={this.state.showModal}
+          onRequestClose={this.closeModal}
+          closeTimeoutMS={0}
+          style={modalStyle}>
+          <ReservationForm room={this.state.room}/>
+        </Modal>
+
+        <div className="map-reserve-container">
+          <div className="room-show-price">
+            <div className="room-show-price-text">
+              <p>${this.state.room.price} per Night</p>
+
+            </div>
+          </div>
+          <div className="date-container">
+            <Date
+              guestNeeded={false}
+              />
+          </div>
+          <div className="reserve-lair-button-container">
+            {button}
+          </div>
+          <div id="room-show-gmap">
+            <Map
+              centerLatLng={centerLatLng}
+              singleRoom={true}
+              rooms={rooms}/>
+          </div>
+
+        </div>
+      </div>
+    )
+  },
+
+  render: function () {
+    return (
+      <div className="carousel-container">
+        {this._renderCarousel()}
+        {this._renderSignInModal()}
         <div className="room-show-content-container">
-          <div className="left-half-room">
-
-            <div className="room-details-container">
-              <RoomDetail room={this.state.room} />
-            </div>
-          </div>
-          <div className="right-half-room">
-
-            <Modal
-              room={this.state.room}
-              isOpen={this.state.showModal}
-              onRequestClose={this.closeModal}
-              closeTimeoutMS={0}
-              style={modalStyle}>
-
-              <ReservationForm room={this.state.room}/>
-
-            </Modal>
-
-
-
-            <div className="map-reserve-container">
-              <div className="room-show-price">
-                <div className="room-show-price-text">
-                  <p>${this.state.room.price} per Night</p>
-
-                </div>
-              </div>
-              <div className="date-container">
-                <Date
-                  guestNeeded={false}
-                  />
-              </div>
-              <div className="reserve-lair-button-container">
-                {button}
-              </div>
-              <div id="room-show-gmap">
-
-                <Map
-                  centerLatLng={centerLatLng}
-                  singleRoom={true}
-                  rooms={rooms} />
-              </div>
-
-            </div>
-          </div>
+          {this._renderLeftContainer()}
+          {this._renderRightContainer()}
         </div>
       </div>
     );
