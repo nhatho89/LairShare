@@ -97,7 +97,6 @@ hr {
   justify-content: space-between;
   position: relative;
   left: 10px;
-  // width: 95%;
 }
 
 .price-range-container-right {
@@ -158,6 +157,7 @@ hr {
   width: 300px;
   padding: 10px;
   margin-top: 5px;
+
 }
 
 .room-index-item-container:hover {
@@ -166,10 +166,7 @@ hr {
 }
 
 .room-index-item-inner-container {
-  // border: 1px solid rgba(30,30,30,0.1);
-  // border-radius: 5px;
   width: 290px;
-  // margin-top: 5px;
 }
 
 .room-image {

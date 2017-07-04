@@ -49,8 +49,8 @@
     "react-datepicker": "^0.23.2",
     "react-dom": "^0.14.2",
     "react-modal": "^0.6.1",
-    "react-rater": "^0.4.3",
     "react-router": "^1.0.0-rc4",
+    "react-star-rating-component": "^1.2.4",
     "sass-loader": "^3.0.0",
     "style-loader": "^0.18.2",
     "webpack": "^1.12.2"

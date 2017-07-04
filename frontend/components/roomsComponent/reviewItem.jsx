@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var LairImage = require('../Images/lairImage.jsx');
 import { styles } from './reviewItemStyle.scss';
-import Rater from 'react-rater';
+import StarRatingComponent from 'react-star-rating-component';
 
 var ReviewItem = React.createClass({
 
@@ -11,13 +11,22 @@ var ReviewItem = React.createClass({
       <div className={`${styles}`}>
         <div className={`user-info-container`}>
           <div className={`user-info`}>
-            <LairImage imageType={'review-icon'} image={this.props.review.user.profile_pic}/>
-            <p>
+            <LairImage imageType={'review-icon'}
+                       image={this.props.review.user.profile_pic}
+                       />
+                     <p className={'username'}>
               {this.props.review.user.username}
             </p>
           </div>
-          <div>
-            <Rater total={5} rating={3} interactive={false} onRate={function(){}}/>
+          <div className={'room-rating'}>
+            <StarRatingComponent
+                  name={'rate1'}
+                  value={this.props.review.rating}
+                  starCount={5}
+                  starColor={"black"}
+                  emptyStarColor={'silver'}
+                  editing={false}
+                  />
           </div>
         </div>
         <p>

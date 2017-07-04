@@ -11,6 +11,7 @@ json.array! @rooms do |room|
   json.lat room.lat
   json.lng room.lng
   json.room_type room.room_type
+  json.avg_rating room.reviews.average(:rating)
   json.pics do
     json.array! (room.room_pics) do |room_pic|
       json.pic_id   room_pic.id

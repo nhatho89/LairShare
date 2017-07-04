@@ -27,11 +27,6 @@ class Reservation < ActiveRecord::Base
     result.map(&:room_id).uniq
   end
 
-  # def self.user_trips_with_details(user)
-  #   fail
-  #   user.trip_reservations.includes(:room, :room_primary_pic).where("reservations.status != ?", 1)
-  # end
-
   def overlapping_requests
     Reservation
     .where("(:id IS NULL) OR (id != :id)", id: self.id)

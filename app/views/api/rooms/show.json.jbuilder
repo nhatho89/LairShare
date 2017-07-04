@@ -9,6 +9,7 @@ json.description @room.description
 json.max_sleep_num @room.max_sleep_num
 json.lat @room.lat
 json.lng @room.lng
+json.avg_rating @room.reviews.average(:rating)
 
 json.pics do
   json.array! (@room.room_pics) do |room_pic|
