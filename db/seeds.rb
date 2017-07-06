@@ -441,8 +441,8 @@ Reservation.create!(
   room_id: "4",
   guest_id: "1",
   guest_num: "200",
-  start_date: "2016-1-12",
-  end_date: "2016-1-19",
+  start_date: "2017-1-12",
+  end_date: "2017-1-19",
   status: "1"
 )
 
@@ -450,8 +450,8 @@ Reservation.create!(
   room_id: "5",
   guest_id: "1",
   guest_num: "500",
-  start_date: "2016-3-7",
-  end_date: "2016-3-14",
+  start_date: "2017-3-7",
+  end_date: "2017-3-14",
   status: "1"
 )
 
@@ -460,8 +460,8 @@ Reservation.create!(
   room_id: "2",
   guest_id: "1",
   guest_num: "100",
-  start_date: "2016-2-14",
-  end_date: "2016-2-25",
+  start_date: "2017-2-14",
+  end_date: "2017-2-25",
   status: "1"
 )
 
@@ -470,8 +470,8 @@ Reservation.create!(
   room_id: "4",
   guest_id: "1",
   guest_num: "200",
-  start_date: "2016-5-25",
-  end_date: "2016-5-28",
+  start_date: "2017-5-25",
+  end_date: "2017-5-28",
   status: "1"
 )
 
@@ -479,8 +479,8 @@ Reservation.create!(
   room_id: "5",
   guest_id: "1",
   guest_num: "500",
-  start_date: "2016-5-25",
-  end_date: "2016-5-28",
+  start_date: "2017-5-25",
+  end_date: "2017-5-28",
   status: "1"
 )
 
@@ -489,8 +489,8 @@ Reservation.create!(
   room_id: "2",
   guest_id: "1",
   guest_num: "100",
-  start_date: "2016-5-25",
-  end_date: "2016-5-28",
+  start_date: "2017-5-25",
+  end_date: "2017-5-28",
   status: "1"
 )
 
@@ -517,7 +517,7 @@ Review.create!(
 
 Review.create!(
   user_id: 5,
-  room_id: 2,
+  room_id: 1,
   rating: 3,
   body: "It was good. Not great, but good."
 )
@@ -531,7 +531,7 @@ Review.create!(
 
 Review.create!(
   user_id: 5,
-  room_id: 3,
+  room_id: 12,
   rating: 3,
   body: "It was meh."
 )
@@ -553,14 +553,14 @@ Review.create!(
 Review.create!(
   user_id: 6,
   room_id: 5,
-  rating: 2,
+  rating: 3,
   body: "Wife hated it. It was dark. Piza guy couldn't find it."
 )
 
 Review.create!(
   user_id: 2,
   room_id: 5,
-  rating: 4,
+  rating: 5,
   body: "No one can hurt me here."
 )
 
@@ -581,7 +581,7 @@ Review.create!(
 Review.create!(
   user_id: 5,
   room_id: 7,
-  rating: 1,
+  rating: 2,
   body: "Don't rent this place! It smells like chemicals..."
 )
 
@@ -601,7 +601,7 @@ Review.create!(
 
 Review.create!(
   user_id: 4,
-  room_id: 8,
+  room_id: 9,
   rating: 4,
   body: "Very productive here, but where are the sharks with the laser beams?"
 )
@@ -629,8 +629,8 @@ Review.create!(
 
 Review.create!(
   user_id: 1,
-  room_id: 10,
-  rating: 2,
+  room_id: 12,
+  rating: 3,
   body: "Not my thing."
 )
 

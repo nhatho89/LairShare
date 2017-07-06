@@ -1,5 +1,6 @@
 var React = require('react');
-var ReviewsList = require('./roomsComponent/reviewsList')
+var ReviewsList = require('./roomsComponent/reviewsList');
+var ReviewForm = require('./roomsComponent/reviewForm');
 
 var RoomDetails = React.createClass({
 
@@ -247,6 +248,12 @@ var RoomDetails = React.createClass({
     )
   },
 
+  _renderReviewForm() {
+    return (
+      <ReviewForm room={this.props.room}/>
+    )
+  },
+
   render: function() {
     return (
       <div className="details">
@@ -268,6 +275,7 @@ var RoomDetails = React.createClass({
         {this._renderAvailability()}
         <hr/>
         {this._renderReviews()}
+        {this._renderReviewForm()}
       </div>
     );
   }

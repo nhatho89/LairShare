@@ -45,20 +45,6 @@ var ApiUtil = {
     })
   },
 
-  // fetchAllHostRooms: function(host) {
-  //   $.ajax({
-  //     url: 'api/rooms/',
-  //     method: "get",
-  //     data: host.id,
-  //     success: function(hostRooms){
-  //       RoomActions.receiveHostRooms(hostRooms);
-  //     },
-  //     error: function(error, status){
-  //     }
-  //   });
-
-  // },
-
   createReservation: function(reservationParams) {
     $.ajax({
       url: 'api/reservations',
@@ -96,7 +82,25 @@ var ApiUtil = {
   },
 
 
-  createReview: function(data) {
+  createReview: function(data, callback) {
+    $.ajax({
+      url: 'api/reviews',
+      method: "post",
+      dataType: "json",
+      data: {review: {
+        room_id: Number(data.room),
+        user_id: Number(data.user),
+        rating: Number(data.rating),
+        body: data.body
+      }},
+      success: function(review){
+                  console.log("success! ", review);
+                  callback();
+                },
+      error: function(error, status){
+                  console.log("error");
+                }
+    });
     $.post('api/reviews', { review: data }, function (room) {
       RoomActions.receiveAll([room]);
     });

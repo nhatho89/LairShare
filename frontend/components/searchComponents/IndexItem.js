@@ -29,6 +29,9 @@ var IndexItem = React.createClass({
               emptyStarColor={'silver'}
               editing={false}
               />
+            <p style={{margin: '0px', paddingLeft: '10px', fontSize: "14px"}}>
+              {this.props.room.reviews.length + " review (s)"}
+            </p>
           </div>
         </div>
       </div>

@@ -10,7 +10,6 @@ var ApiUtil = require('./util/apiUtil.js');
 var hashHistory = require('react-router').hashHistory;
 var NavBar = require('./components/navbarComponents/navBar');
 var RoomShow = require('./components/RoomShow');
-var ReviewForm = require('./components/ReviewForm');
 var UserIndex = require('./components/tripComponents/userIndex.jsx');
 var SearchIndex = require('./components/searchComponents/searchIndex.jsx');
 var HostIndex = require('./components/hostIndex.jsx');
@@ -27,7 +26,6 @@ var routes = (
     <Route path="hostform" component={HostForm}/>
     <Route path="/search/:loc" component={SearchIndex} />
     <Route path="rooms/:roomId" component={RoomShow}>
-      <Route path="review" components={ReviewForm}/>
     </Route>
   </Route>
 );

@@ -9,8 +9,13 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.create!(review_params)
-    render json: review
+    review = Review.new(review_params)
+    review.user = current_user
+    if review.save!
+      render json: review, status: 201
+    else
+      render json: review.errors.full_messages, status: 401
+    end
   end
 
   def delete
@@ -21,8 +26,8 @@ class Api::ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(
-      :room,
-      :user,
+      :room_id,
+      :user_id,
       :body,
       :rating,
     )

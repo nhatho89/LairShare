@@ -20,7 +20,7 @@ var ReviewsList = React.createClass({
       <div className={`${styles}`}>
         <div className={'room-review-summary'}>
           <h3>
-            {`${reviews.length}` + " Reviews"}
+            {"Reviews " + "(" + `${reviews.length}` + ")"}
           </h3>
           <p className={'room-rating-avg'}>
             {"Average Rating: "}
