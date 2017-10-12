@@ -63,26 +63,22 @@ h4, h1 {
   display: block;
   font-size: 50px;
   color: white;
-  margin-top: 70px;
-  margin-bottom: -50px;
 }
 
 .container-title h4 {
   font-size: 18px;
   color: white;
-  margin-top: 40px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 silver, 0 -1px silver;
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 200px;
   left: 50%;
   transform: translateX(-50%);
   width: 700px;
 }
 
 #subtitle {
-  position: absolute;
-  top: 75px;
+  position: relative;
+  margin-bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -101,13 +97,8 @@ h4, h1 {
 }
 
 .app {
-  // top: 55px;
-  // right:0px;
-  // bottom: 0px;
-  // left:-10px;
   height: 100%;
   width: 100%;
-  // position: relative;
 }
 
 .landing-page {
@@ -123,31 +114,29 @@ h4, h1 {
 }
 
 .landing-page-wrapper {
-  height: 650px;
+  height: 550px;
   position: relative;
   display: flex;
   flex-direction: column;
-  // border: 1px solid white;
 
 }
 
 .container-title {
   height: 50%;
   position: absolute;
-  top: 100px;
-  width:100%;
+  width: 100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .search-bar {
+  margin-top: 70px;
   height: 45px;
-  position: absolute;
+  position: relative;
   width: 100%;
   justify-content: center;
   display:flex;
-  bottom: 20%;
 }
 
 .search-button {
@@ -189,6 +178,4 @@ h4, h1 {
 #landing-video {
   position: absolute;
   width: 100%;
-  height: auto;
-  top: -100px;
 }

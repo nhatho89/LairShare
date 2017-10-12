@@ -1,0 +1,28 @@
+:local(.styles) {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .user-info-container {
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: flex;
+  }
+
+  .username {
+    padding-left: 20px;
+  }
+
+  .room-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}

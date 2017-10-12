@@ -1,0 +1,15 @@
+:local(.styles) {
+
+  .room-review-summary {
+    display: flex;
+    justify-content: flex;
+  }
+
+  .room-rating-avg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+  }
+
+}

@@ -42,11 +42,11 @@ handleLocChange: function(e) {
 },
 
 searchBarMoveUp: function() {
-  $(".search-bar").animate({'bottom': '30%'},1000);
+  $(".search-bar").animate({'bottom': '50px'},1000);
 },
 
 searchBarMoveBack: function() {
-  $(".search-bar").animate({'bottom': '20%'},500);
+  $(".search-bar").animate({'bottom': '0px'},500);
 },
 
 render: function() {

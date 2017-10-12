@@ -1,5 +1,6 @@
 class Room < ActiveRecord::Base
   validates :description, :max_sleep_num, :lat, :lng, presence: true
+
   has_many :reviews
 
   has_many :reservations

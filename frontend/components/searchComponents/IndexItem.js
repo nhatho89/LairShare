@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactRouter = require('react-router');
+import StarRatingComponent from 'react-star-rating-component';
 
 var IndexItem = React.createClass({
   mixins: [ReactRouter.history],
@@ -18,7 +19,18 @@ var IndexItem = React.createClass({
               {room.title}<br/>
               Price: ${room.price}
             </p>
-            <p className="room-detail-price">
+          </div>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+            <StarRatingComponent
+              name={'rate1'}
+              value={Number(this.props.room.avg_rating)}
+              starCount={5}
+              starColor={"black"}
+              emptyStarColor={'silver'}
+              editing={false}
+              />
+            <p style={{margin: '0px', paddingLeft: '10px', fontSize: "14px"}}>
+              {this.props.room.reviews.length + " review (s)"}
             </p>
           </div>
         </div>

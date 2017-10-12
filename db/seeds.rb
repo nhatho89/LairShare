@@ -441,8 +441,8 @@ Reservation.create!(
   room_id: "4",
   guest_id: "1",
   guest_num: "200",
-  start_date: "2016-1-12",
-  end_date: "2016-1-19",
+  start_date: "2017-1-12",
+  end_date: "2017-1-19",
   status: "1"
 )
 
@@ -450,8 +450,8 @@ Reservation.create!(
   room_id: "5",
   guest_id: "1",
   guest_num: "500",
-  start_date: "2016-3-7",
-  end_date: "2016-3-14",
+  start_date: "2017-3-7",
+  end_date: "2017-3-14",
   status: "1"
 )
 
@@ -460,8 +460,8 @@ Reservation.create!(
   room_id: "2",
   guest_id: "1",
   guest_num: "100",
-  start_date: "2016-2-14",
-  end_date: "2016-2-25",
+  start_date: "2017-2-14",
+  end_date: "2017-2-25",
   status: "1"
 )
 
@@ -470,8 +470,8 @@ Reservation.create!(
   room_id: "4",
   guest_id: "1",
   guest_num: "200",
-  start_date: "2016-5-25",
-  end_date: "2016-5-28",
+  start_date: "2017-5-25",
+  end_date: "2017-5-28",
   status: "1"
 )
 
@@ -479,8 +479,8 @@ Reservation.create!(
   room_id: "5",
   guest_id: "1",
   guest_num: "500",
-  start_date: "2016-5-25",
-  end_date: "2016-5-28",
+  start_date: "2017-5-25",
+  end_date: "2017-5-28",
   status: "1"
 )
 
@@ -489,7 +489,175 @@ Reservation.create!(
   room_id: "2",
   guest_id: "1",
   guest_num: "100",
-  start_date: "2016-5-25",
-  end_date: "2016-5-28",
+  start_date: "2017-5-25",
+  end_date: "2017-5-28",
   status: "1"
+)
+
+Review.create!(
+  user_id: 1,
+  room_id: 1,
+  rating: 4,
+  body: "It was a nice room, but the many windows presented opportunities for superheroes to spy one me. I swear I saw Xavier creeping on my windows."
+)
+
+Review.create!(
+  user_id: 3,
+  room_id: 1,
+  rating: 1,
+  body: "I had a horrible time here. The bathrooms were not stocked with essentials and there were leaks in the theater room. Have you ever watched Titanic under water while water is rushing in? I wasn't trying to watch a horror film! Would not stay again!"
+)
+
+Review.create!(
+  user_id: 3,
+  room_id: 2,
+  rating: 5,
+  body: "This was an awesome place!"
+)
+
+Review.create!(
+  user_id: 5,
+  room_id: 1,
+  rating: 3,
+  body: "It was good. Not great, but good."
+)
+
+Review.create!(
+  user_id: 6,
+  room_id: 3,
+  rating: 4,
+  body: "My wife adored this place, I thought it was okay."
+)
+
+Review.create!(
+  user_id: 5,
+  room_id: 12,
+  rating: 3,
+  body: "It was meh."
+)
+
+Review.create!(
+  user_id: 2,
+  room_id: 4,
+  rating: 4,
+  body: "Gorgeous view from the top!"
+)
+
+Review.create!(
+  user_id: 7,
+  room_id: 4,
+  rating: 5,
+  body: "This place is really hot! In a good way. Nothing beats natural volcanic hot tubs!"
+)
+
+Review.create!(
+  user_id: 6,
+  room_id: 5,
+  rating: 3,
+  body: "Wife hated it. It was dark. Pizza guy couldn't find it."
+)
+
+Review.create!(
+  user_id: 2,
+  room_id: 5,
+  rating: 5,
+  body: "No one can hurt me here."
+)
+
+Review.create!(
+  user_id: 7,
+  room_id: 6,
+  rating: 2,
+  body: "The beaches are so beautiful and distracting, I can't get any work done. All my men are frolicking."
+)
+
+Review.create!(
+  user_id: 5,
+  room_id: 6,
+  rating: 5,
+  body: "I gotta tell ya, I wish I wasn't hiding right now because I've got a gorgeous tan."
+)
+
+Review.create!(
+  user_id: 5,
+  room_id: 7,
+  rating: 2,
+  body: "Don't rent this place! It smells like chemicals..."
+)
+
+Review.create!(
+  user_id: 4,
+  room_id: 7,
+  rating: 5,
+  body: "I made soooooo much $$$$"
+)
+
+Review.create!(
+  user_id: 1,
+  room_id: 8,
+  rating: 1,
+  body: "Boring office..."
+)
+
+Review.create!(
+  user_id: 5,
+  room_id: 9,
+  rating: 4,
+  body: "Very productive here, but where are the sharks with the laser beams?"
+)
+
+Review.create!(
+  user_id: 2,
+  room_id: 9,
+  rating: 5,
+  body: "OMG!! SOO MANY BOMBS!!"
+)
+
+Review.create!(
+  user_id: 3,
+  room_id: 9,
+  rating: 5,
+  body: "I can literally blow up a country."
+)
+
+Review.create!(
+  user_id: 5,
+  room_id: 10,
+  rating: 4,
+  body: "I feel like Heisenberg is watching me constantly..."
+)
+
+Review.create!(
+  user_id: 1,
+  room_id: 12,
+  rating: 3,
+  body: "Not my thing."
+)
+
+Review.create!(
+  user_id: 6,
+  room_id: 11,
+  rating: 5,
+  body: "Wife loves it. I love it. Kids love it. Whats not to love?"
+)
+
+Review.create!(
+  user_id: 3,
+  room_id: 11,
+  rating: 5,
+  body: "I forget why I'm out here. Oh well."
+)
+
+Review.create!(
+  user_id: 2,
+  room_id: 12,
+  rating: 2,
+  body: "I'm scared of heights..."
+)
+
+Review.create!(
+  user_id: 7,
+  room_id: 12,
+  rating: 2,
+  body: "Wait...Avengers have a flying Aircraft Carrier...this is useless!"
 )

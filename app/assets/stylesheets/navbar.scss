@@ -173,13 +173,7 @@
 .signin-signout {
   display: flex;
   justify-content: space-around;;
-  width: 250px;
 }
-
-.signin-signout div {
-  padding: 5px;
-}
-
 
 .sign-in-button:hover {
   cursor: pointer;
@@ -237,5 +231,5 @@
 }
 
 .signin-signout > div {
-  padding: 0px;
+  padding-right: 15px;
 }
