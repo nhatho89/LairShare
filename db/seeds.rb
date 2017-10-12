@@ -554,7 +554,7 @@ Review.create!(
   user_id: 6,
   room_id: 5,
   rating: 3,
-  body: "Wife hated it. It was dark. Piza guy couldn't find it."
+  body: "Wife hated it. It was dark. Pizza guy couldn't find it."
 )
 
 Review.create!(
@@ -600,7 +600,7 @@ Review.create!(
 )
 
 Review.create!(
-  user_id: 4,
+  user_id: 5,
   room_id: 9,
   rating: 4,
   body: "Very productive here, but where are the sharks with the laser beams?"

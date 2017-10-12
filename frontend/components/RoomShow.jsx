@@ -144,7 +144,7 @@ var RoomShow = React.createClass({
     return (
       <div className="left-half-room">
         <div className="room-details-container">
-          <RoomDetail room={this.state.room} />
+          <RoomDetail openSigninModal={this.openSigninModal} room={this.state.room} />
         </div>
       </div>
     );

@@ -250,7 +250,7 @@ var RoomDetails = React.createClass({
 
   _renderReviewForm() {
     return (
-      <ReviewForm room={this.props.room}/>
+      <ReviewForm openSigninModal={this.props.openSigninModal.bind(this)} room={this.props.room}/>
     )
   },
 
