@@ -2,12 +2,10 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
-var History = require('react-router').History;
 import { styles } from './reviewFormStyle.scss';
 import StarRatingComponent from 'react-star-rating-component';
 
 var ReviewForm = React.createClass({
-  mixins: [History],
   getInitialState: function () {
     return {
       rating: 5,
@@ -34,7 +32,6 @@ var ReviewForm = React.createClass({
         })
       };
 
-      console.log("logging review ", review);
       ApiUtil.createReview(review, callback);
 
     }
