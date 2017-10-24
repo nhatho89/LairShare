@@ -244,15 +244,21 @@ var RoomDetails = React.createClass({
 
   _renderReviews() {
     return (
-      <ReviewsList room={this.props.room}/>
+      <div>
+        reviews list
+      </div>
     )
   },
+  // <ReviewsList room={this.props.room}/>
 
   _renderReviewForm() {
     return (
-      <ReviewForm openSigninModal={this.props.openSigninModal} room={this.props.room}/>
+      <div>
+        review form
+      </div>
     )
   },
+  // <ReviewForm openSigninModal={this.props.openSigninModal} room={this.props.room}/>
 
   render: function() {
     return (

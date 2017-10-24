@@ -90,7 +90,7 @@ var ReviewForm = React.createClass({
       );
     } else if (this.state.reviewStatus == "complete"){
       return (
-        <div>
+        <div className={`${styles}`}>
           Thank you for submitting a review!
         </div>
       )
