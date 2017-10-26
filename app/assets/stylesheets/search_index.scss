@@ -151,20 +151,21 @@ hr {
  display: flex;
  flex-wrap: wrap;
  justify-content: space-around;
- margin: 50px;
+ margin: 30px;
 }
 
 .room-index-item-container {
-  width: 300px;
+  width: 275px;
   padding: 20px;
   margin: 10px;
-  box-shadow: .1px .1px .1px .1px silver
+  box-shadow: .1px .1px .1px .1px silver;
 
+  -webkit-box-shadow: .1px .1px .1px .1px;
 }
 
 .room-index-item-container:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 1px 1px silver
+  box-shadow: 1px 1px 1px 1px silver;
 }
 
 .room-index-item-inner-container {
