@@ -30,7 +30,6 @@
   height: 15%;
   display: flex;
   justify-content: space-between;
-  // background-color: none;
 }
 
 .demo-button {
@@ -39,27 +38,25 @@
   width: 100px;
   color: white;
   font-size: 14px;
-  background-color: #B98405;
+  background-color: black;
 }
 
 .demo-button:hover {
   cursor: pointer;
-  background-color: #FDB918;
+  opacity: .7;
 }
 
 .auth-button {
   height: 45px;
   width: 100%;
-  background-color: #0B6192;
+  background-color: #0c6fb5;
   font-size: 23px;
   color: white;
 }
 
 .auth-button:hover {
   cursor: pointer;
-  // background-color: #1178B3;
-  background-color: #109EEF;
-
+  opacity: .7;
 }
 
 .remember-me:hover {

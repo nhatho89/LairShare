@@ -47,22 +47,8 @@
 
 .reserve-lair-button {
   position: relative;
-  border-top: 1px solid #ffffff;
-  background: #8f9da6;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff9900), to(#995c00));
-
-  background: -webkit-linear-gradient(top, #168DC3, #0B3D88);
-  background: -moz-linear-gradient(top, #a7b2ba, #8f9da6);
-  background: -ms-linear-gradient(top, #a7b2ba, #8f9da6);
-  background: -o-linear-gradient(top, #ff9900, #995c00);
+  background: #0c6fb5;
   padding: 5px 10px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 4px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 1px 0;
   color: white;
   font-size: 14px;
   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
@@ -73,9 +59,7 @@
  }
 
  .reserve-lair-button:hover {
-   background: -webkit-linear-gradient(top, #77C9EF, #426FB1);
-   box-shadow: #62a2c4 0 1px 0;
-  //  color: gray;
+  opacity: .7;
   cursor: pointer;
  }
 
