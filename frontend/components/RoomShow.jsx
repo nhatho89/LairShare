@@ -30,6 +30,7 @@ var RoomShow = React.createClass({
   getInitialState: function () {
     var roomId = this.props.params.roomId;
     var room = RoomStore.find(roomId) || {};
+    
     return ({
       room: room,
       showSigninModal: false,
@@ -90,17 +91,17 @@ var RoomShow = React.createClass({
 
   scrollListener: function() {
     var element = $('.map-reserve-container');
-    element.css('position', 'relative');
-      var roomShowEl = $('.room-show-content-container').offset().top,
-        topPos,
-        navBar = $('#navbar').offset().top;
-      if (roomShowEl - 67 <= navBar) {
-        element.css('position', 'fixed');
-        element.css('top', 67)
-      } else {
-        topPos = 67;
-        element.css('top', 0)
-      }
+    var roomShowEl = $('.room-show-content-container').offset().top,
+      topPos,
+      navBar = $('#navbar').offset().top;
+    if (roomShowEl - 67 <= navBar) {
+      element.css('position', 'fixed');
+      element.css('top', 67);
+    } else {
+      topPos = 67;
+      element.css('top', 0);
+      element.css('position', 'relative');
+    }
   },
 
   addScrollFollow: function() {
