@@ -59,7 +59,7 @@ var receiveNewTrip = function(newTrip) {
 var receiveUserTrips = function(trips) {
   resetTripStore();
   trips.forEach(function(trip) {
-    convertedTrip = tripBasicInfoConversion(trip);
+    let convertedTrip = tripBasicInfoConversion(trip);
     categorize(convertedTrip);
     _trips[trip.id] = addTripDetails(trip, convertedTrip);
   });
